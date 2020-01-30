@@ -10,7 +10,7 @@ namespace ComicBud
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new OpenComicPage());
         }
 
         protected override void OnStart()

@@ -11,8 +11,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xam.Plugin.WebView" Version="2.1.3" />
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="ComicWebPage.xaml.cs">
+      <DependentUpon>ComicWebPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="OpenComicPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

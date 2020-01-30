@@ -5,6 +5,8 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
+using Xam.Plugin.WebView.iOS;
+
 namespace ComicBud.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -22,6 +24,8 @@ namespace ComicBud.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            FormsWebViewRenderer.Initialize();
+
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

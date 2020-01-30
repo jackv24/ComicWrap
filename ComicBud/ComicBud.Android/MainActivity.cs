@@ -7,6 +7,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
+using Xam.Plugin.WebView.Droid;
+
 namespace ComicBud.Droid
 {
     [Activity(Label = "ComicBud", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -14,6 +16,8 @@ namespace ComicBud.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            FormsWebViewRenderer.Initialize();
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 

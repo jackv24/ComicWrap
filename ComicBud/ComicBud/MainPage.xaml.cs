@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Essentials;
+
+using Xam.Plugin.WebView.Abstractions;
 
 namespace ComicBud
 {
@@ -16,18 +19,16 @@ namespace ComicBud
         public MainPage()
         {
             InitializeComponent();
-
-            hybridWebView.RegisterAction(data => DisplayAlert("Alert", data, "OK"));
         }
 
-        private void WebView_Navigating(object sender, WebNavigatingEventArgs e)
+        private void formsWebView_OnNavigationStarted(object sender, Xam.Plugin.WebView.Abstractions.Delegates.DecisionHandlerDelegate e)
         {
-            labelLoading.IsVisible = true;
+            MainThread.BeginInvokeOnMainThread(() => Title = "Loading...");
         }
 
-        private void WebView_Navigated(object sender, WebNavigatedEventArgs e)
+        private void formsWebView_OnNavigationCompleted(object sender, string e)
         {
-            labelLoading.IsVisible = false;
+            MainThread.BeginInvokeOnMainThread(async () => Title = await ((FormsWebView)sender).InjectJavascriptAsync("(function(){return(document.title);})();"));
         }
     }
 }

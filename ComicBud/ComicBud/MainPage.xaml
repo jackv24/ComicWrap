@@ -5,18 +5,18 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:local="clr-namespace:ComicBud;assembly=ComicBud"
+             xmlns:xamweb="clr-namespace:Xam.Plugin.WebView.Abstractions;assembly=Xam.Plugin.WebView.Abstractions"
              x:Class="ComicBud.MainPage"
-             Title="Goodbye to Halos">
+             Title="Title Goes Here">
 
     <StackLayout>
 
-        <Label x:Name="labelLoading" Text="Loading..." IsVisible="false" />
-
-        <local:HybridWebView x:Name="hybridWebView"
-                             Url="https://goodbyetohalos.com/"
+        <xamweb:FormsWebView x:Name="formsWebView"
+                             ContentType="Internet"
+                             Source="https://goodbyetohalos.com/"
                              VerticalOptions="FillAndExpand"
-                             Navigating="WebView_Navigating"
-                             Navigated="WebView_Navigated" />
+                             OnNavigationStarted="formsWebView_OnNavigationStarted"
+                             OnNavigationCompleted="formsWebView_OnNavigationCompleted" />
 
     </StackLayout>
 

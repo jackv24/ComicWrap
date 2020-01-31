@@ -11,7 +11,69 @@
     <MasterDetailPage.Master>
         <ContentPage x:Name="mainContentPage" Title="ComicBud">
             <StackLayout>
-                <Label Text="Testing"/>
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <Frame HeightRequest="150"
+                           BackgroundColor="DodgerBlue">
+                        <Label Text="ComicBud"
+                               Padding="0"
+                               FontSize="Title"
+                               VerticalTextAlignment="End"
+                               VerticalOptions="FillAndExpand"
+                               TextColor="White"/>
+                    </Frame>
+                    <ListView HeightRequest="155"
+                              RowHeight="50"
+                              VerticalOptions="Start">
+                        <ListView.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Home</x:String>
+                                <x:String>Library</x:String>
+                                <x:String>Discover</x:String>
+                            </x:Array>
+                        </ListView.ItemsSource>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Label Text="{Binding StringFormat='{0}'}"
+                                           FontSize="Title"
+                                           VerticalTextAlignment="Center"
+                                           Margin="20, 0, 0, 0"/>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <ListView HeightRequest="55"
+                              RowHeight="50"
+                              VerticalOptions="Start">
+                        <ListView.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>GitHub</x:String>
+                            </x:Array>
+                        </ListView.ItemsSource>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Label Text="{Binding StringFormat='{0}'}"
+                                           FontSize="Title"
+                                           VerticalTextAlignment="Center"
+                                           Margin="20, 0, 0, 0"/>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                <StackLayout>
+                    <Frame VerticalOptions="End">
+                        <RelativeLayout>
+                            <Frame Padding="0">
+                                <Label Text="Test1" TextColor="Black"/>
+                            </Frame>
+                            <Frame RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}">
+                                <Label Text="Test2" TextColor="Black"/>
+                            </Frame>
+                        </RelativeLayout>
+                    </Frame>
+                </StackLayout>
             </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>

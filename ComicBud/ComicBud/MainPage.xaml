@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:ComicBud"
              mc:Ignorable="d"
-             x:Class="ComicBud.MainPage">
+             x:Class="ComicBud.MainPage"
+             IsGestureEnabled="True">
 
     <MasterDetailPage.Master>
         <ContentPage x:Name="mainContentPage" Title="ComicBud">

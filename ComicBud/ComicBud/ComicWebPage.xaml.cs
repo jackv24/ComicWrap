@@ -41,9 +41,11 @@ namespace ComicBud
             Title = await ((WebView)sender).EvaluateJavaScriptAsync("document.title");
         }
 
-        private void WebView_Navigated(object sender, WebNavigatedEventArgs e)
+        private async void WebView_Navigated(object sender, WebNavigatedEventArgs e)
         {
             labelLoading.IsVisible = false;
+
+            Title = await ((WebView)sender).EvaluateJavaScriptAsync("document.title");
         }
 
         private string GetMainHostName(string url)

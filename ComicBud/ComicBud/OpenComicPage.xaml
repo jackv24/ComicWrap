@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:ComicBud"
              mc:Ignorable="d"
              x:Class="ComicBud.OpenComicPage"
              Title="Enter URL">
     <ContentPage.Content>
         <StackLayout>
-            <Entry Placeholder="Enter Webcomic URL"
+            
+            <Entry Placeholder="Enter webcomic archive page URL."
                    ClearButtonVisibility="WhileEditing"
                    Keyboard="Url"
                    ReturnType="Go"
@@ -16,6 +18,10 @@
                    IsTextPredictionEnabled="False"
                    Completed="Entry_Completed"
                    FontSize="Large" />
+
+            <ListView x:Name="listPages"
+                      ItemSelected="listPages_ItemSelected"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

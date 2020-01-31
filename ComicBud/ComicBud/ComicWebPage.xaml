@@ -17,7 +17,7 @@
         <WebView x:Name="webView"
                  VerticalOptions="FillAndExpand"
                  Navigating="WebView_Navigating"
-                 Navigated="WebView_Navigated" />
+                 Navigated="WebView_Navigated"/>
 
     </StackLayout>
 

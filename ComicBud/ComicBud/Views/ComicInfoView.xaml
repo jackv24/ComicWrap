@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewmodels="clr-namespace:ComicBud.ViewModels"
+             mc:Ignorable="d"
+             x:Class="ComicBud.Views.ComicInfoView">
+
+    <ContentView.BindingContext>
+        <viewmodels:ComicInfoViewModel />
+    </ContentView.BindingContext>
+
+    <ContentView.Content>
+        <StackLayout Orientation="Horizontal">
+            <Frame WidthRequest="50"
+                   HeightRequest="70"/>
+            <StackLayout RelativeLayout.XConstraint=
+                                "{ConstraintExpression Type=RelativeToParent,
+                                                       Property=Width,
+                                                       Factor=0,
+                                                       Constant=100}"
+                         Margin="0, 10, 0, 0">
+                <Label Text="Comic Name Here"
+                       HorizontalTextAlignment="Start"
+                       FontSize="Subtitle"
+                       LineBreakMode="WordWrap"
+                       WidthRequest="90"/>
+                <Label Text="Last Read"
+                       HorizontalTextAlignment="Start"
+                       FontSize="Micro"/>
+                <Label Text="Updated"
+                       HorizontalTextAlignment="Start"
+                       FontSize="Micro"/>
+            </StackLayout>
+
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding OpenComicCommand}"/>
+            </StackLayout.GestureRecognizers>
+            
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

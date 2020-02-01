@@ -8,9 +8,11 @@ using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using ComicBud.ViewModels;
+
 namespace ComicBud.PageModels
 {
-    public class MainPageModel : PageModelBase
+    public class MainPageModel : ViewModelBase
     {
         public MainPageModel() : base()
         {

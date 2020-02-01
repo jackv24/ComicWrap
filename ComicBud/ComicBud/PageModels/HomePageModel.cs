@@ -9,9 +9,11 @@ using Xamarin.Forms.Xaml;
 
 using Acr.UserDialogs;
 
+using ComicBud.ViewModels;
+
 namespace ComicBud.PageModels
 {
-    public class HomePageModel : PageModelBase
+    public class HomePageModel : ViewModelBase
     {
         public HomePageModel() : base()
         {
@@ -22,7 +24,7 @@ namespace ComicBud.PageModels
 
         private async Task AddComicUrl()
         {
-            await UserDialogs.Instance.AlertAsync("This has not been implemented yet!");
+            await UserDialogs.Instance.AlertAsync("Adding comics not yet implemented");
         }
     }
 }

@@ -8,11 +8,11 @@ using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ComicBud.PageModels
+namespace ComicBud.ViewModels
 {
-    public class PageModelBase : INotifyPropertyChanged
+    public class ViewModelBase : INotifyPropertyChanged
     {
-        public PageModelBase()
+        public ViewModelBase()
         {
 
         }

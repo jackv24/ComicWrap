@@ -15,7 +15,7 @@
     
     <MasterDetailPage.Master>
         <ContentPage Title="ComicBud">
-            <ListView ItemsSource="{Binding MasterNavigationItems}" />
+            <ListView ItemsSource="{Binding MasterNavigationItems}"/>
         </ContentPage>
     </MasterDetailPage.Master>
     

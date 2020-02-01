@@ -8,6 +8,8 @@ using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using Acr.UserDialogs;
+
 using ComicBud.ViewModels;
 
 namespace ComicBud.PageModels
@@ -18,6 +20,7 @@ namespace ComicBud.PageModels
         {
             MasterNavigationItems = new ObservableCollection<string>
             {
+                "Home",
                 "Library",
                 "Discover",
             };

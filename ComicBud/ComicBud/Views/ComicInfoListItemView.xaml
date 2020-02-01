@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewmodels="clr-namespace:ComicBud.ViewModels"
              mc:Ignorable="d"
-             x:Class="ComicBud.Views.ComicInfoView">
+             x:Class="ComicBud.Views.ComicInfoListItemView">
 
     <ContentView.BindingContext>
         <viewmodels:ComicInfoViewModel />
@@ -13,40 +13,27 @@
 
     <ContentView.Content>
         <StackLayout Orientation="Horizontal">
-            <Frame WidthRequest="60"
-                   HeightRequest="84"/>
+            <Frame WidthRequest="40"
+                   HeightRequest="56"/>
             <StackLayout RelativeLayout.XConstraint=
                                 "{ConstraintExpression Type=RelativeToParent,
                                                        Property=Width,
                                                        Factor=0,
                                                        Constant=100}"
-                         Margin="0, 5, 0, 0"
-                         Spacing="0">
+                         Margin="0, 5, 0, 0">
                 <Label Text="Comic Name Here"
                        HorizontalTextAlignment="Start"
                        FontSize="Subtitle"
-                       LineBreakMode="WordWrap"
-                       WidthRequest="90"/>
-                <Label Text="Last Read"
+                       LineBreakMode="WordWrap"/>
+                <Label Text="196 Chapters"
                        HorizontalTextAlignment="Start"
-                       FontSize="Micro"
-                       Margin="0, 5, 0, 0"/>
-                <Label Text="3 days ago"
-                       HorizontalTextAlignment="Start"
-                       FontSize="Small"/>
-                <Label Text="Updated"
-                       HorizontalTextAlignment="Start"
-                       FontSize="Micro"
-                       Margin="0, 5, 0, 0"/>
-                <Label Text="2 days ago"
-                       HorizontalTextAlignment="Start"
-                       FontSize="Small"/>
+                       FontSize="Micro"/>
             </StackLayout>
 
             <StackLayout.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding OpenComicCommand}"/>
             </StackLayout.GestureRecognizers>
-            
+
         </StackLayout>
     </ContentView.Content>
 </ContentView>

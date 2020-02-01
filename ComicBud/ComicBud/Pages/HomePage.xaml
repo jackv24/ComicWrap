@@ -18,54 +18,56 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <ScrollView Orientation="Vertical">
-            <StackLayout Margin="10">
-                <StackLayout Orientation="Vertical">
-                    <Label Text="Recent"
-                           FontSize="Subtitle"/>
-                    <ScrollView Orientation="Horizontal"
-                                HorizontalScrollBarVisibility="Never">
-                        <StackLayout Orientation="Horizontal"
-                                     Spacing="10"
-                                     Padding="0, 5, 0, 5">
-                            <views:ComicInfoView />
-                            <views:ComicInfoView />
-                            <views:ComicInfoView />
-                            <views:ComicInfoView />
-                            <views:ComicInfoView />
-                            <views:ComicInfoView />
-                        </StackLayout>
-                    </ScrollView>
+        <RefreshView IsRefreshing="{Binding IsRefreshing}"
+                     Command="{Binding RefreshCommand}">
+            <ScrollView Orientation="Vertical">
+                <StackLayout Margin="10">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Recent"
+                               FontSize="Subtitle"/>
+                        <ScrollView Orientation="Horizontal"
+                                    HorizontalScrollBarVisibility="Never">
+                            <StackLayout Orientation="Horizontal"
+                                         Spacing="10"
+                                         Padding="0, 5, 0, 5">
+                                <views:ComicInfoView />
+                                <views:ComicInfoView />
+                                <views:ComicInfoView />
+                                <views:ComicInfoView />
+                                <views:ComicInfoView />
+                                <views:ComicInfoView />
+                            </StackLayout>
+                        </ScrollView>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical"
+                                 Margin="0, 10, 0, 0">
+                        <Label Text="Updated"
+                               FontSize="Subtitle"/>
+                        <ScrollView Orientation="Horizontal"
+                                    HorizontalScrollBarVisibility="Never">
+                            <StackLayout Orientation="Horizontal"
+                                         Spacing="10"
+                                         Padding="0, 5, 0, 5">
+                                <views:ComicInfoView />
+                                <views:ComicInfoView />
+                                <views:ComicInfoView />
+                                <views:ComicInfoView />
+                                <views:ComicInfoView />
+                                <views:ComicInfoView />
+                            </StackLayout>
+                        </ScrollView>
+                    </StackLayout>
+                    <StackLayout Margin="0, 20, 0, 0">
+                        <Label Text="Library"
+                               FontSize="Subtitle"/>
+                        <views:ComicInfoListItemView />
+                        <views:ComicInfoListItemView />
+                        <views:ComicInfoListItemView />
+                        <views:ComicInfoListItemView />
+                        <views:ComicInfoListItemView />
+                    </StackLayout>
                 </StackLayout>
-                <StackLayout Orientation="Vertical"
-                             Margin="0, 10, 0, 0">
-                    <Label Text="Updated"
-                           FontSize="Subtitle"/>
-                    <ScrollView Orientation="Horizontal"
-                                HorizontalScrollBarVisibility="Never">
-                        <StackLayout Orientation="Horizontal"
-                                     Spacing="10"
-                                     Padding="0, 5, 0, 5">
-                            <views:ComicInfoView />
-                            <views:ComicInfoView />
-                            <views:ComicInfoView />
-                            <views:ComicInfoView />
-                            <views:ComicInfoView />
-                            <views:ComicInfoView />
-                        </StackLayout>
-                    </ScrollView>
-                </StackLayout>
-                <StackLayout Margin="0, 20, 0, 0">
-                    <Label Text="Library"
-                           FontSize="Subtitle"/>
-                    <views:ComicInfoView />
-                    <views:ComicInfoView />
-                    <views:ComicInfoView />
-                    <views:ComicInfoView />
-                    <views:ComicInfoView />
-                    <views:ComicInfoView />
-                </StackLayout>
-            </StackLayout>
-        </ScrollView>
+            </ScrollView>
+        </RefreshView>
     </ContentPage.Content>
 </ContentPage>

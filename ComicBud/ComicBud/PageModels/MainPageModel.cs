@@ -14,7 +14,13 @@ namespace ComicBud.PageModels
     {
         public MainPageModel() : base()
         {
-
+            MasterNavigationItems = new ObservableCollection<string>
+            {
+                "Library",
+                "Discover",
+            };
         }
+
+        public ObservableCollection<string> MasterNavigationItems { get; }
     }
 }

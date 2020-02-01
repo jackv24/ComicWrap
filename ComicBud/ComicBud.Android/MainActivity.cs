@@ -7,6 +7,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
+using Acr.UserDialogs;
+
 namespace ComicBud.Droid
 {
     [Activity(Label = "ComicBud", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -14,6 +16,8 @@ namespace ComicBud.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            UserDialogs.Init(this);
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 

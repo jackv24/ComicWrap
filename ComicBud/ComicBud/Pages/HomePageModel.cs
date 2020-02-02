@@ -82,6 +82,8 @@ namespace ComicBud.Pages
             var loadedComics = ComicDatabase.Instance.GetComics();
             foreach (var comic in loadedComics)
                 Comics.Add(comic);
+
+            RaisePropertyChanged(nameof(IsAnyComics));
         }
     }
 }

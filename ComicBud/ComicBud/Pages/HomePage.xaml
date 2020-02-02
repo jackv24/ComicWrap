@@ -36,7 +36,9 @@
                                          BindableLayout.ItemsSource="{Binding Comics}">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
-                                        <views:ComicInfoView />
+                                        <ContentView>
+                                            <views:ComicInfoView/>
+                                        </ContentView>
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
                             </StackLayout>
@@ -50,7 +52,9 @@
                         <StackLayout BindableLayout.ItemsSource="{Binding Comics}">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
-                                    <views:ComicInfoListItemView />
+                                    <ContentView>
+                                        <views:ComicInfoListItemView/>
+                                    </ContentView>
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>
                         </StackLayout>

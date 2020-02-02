@@ -49,7 +49,7 @@ namespace ComicBud.Views
         private async Task OpenComic()
         {
             var navService = FreshIOC.Container.Resolve<IFreshNavigationService>(Constants.DefaultNavigationServiceName);
-            var page = FreshPageModelResolver.ResolvePageModel<ComicDetailPageModel>();
+            var page = FreshPageModelResolver.ResolvePageModel<ComicDetailPageModel>(Comic);
             await navService.PushPage(page, null);
         }
 

@@ -50,5 +50,10 @@ namespace ComicBud.Systems
             else
                 database.Insert(comic);
         }
+
+        public void DeleteComic(Comic comic)
+        {
+            database.Delete(comic);
+        }
     }
 }

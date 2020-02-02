@@ -9,7 +9,8 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="ic_share_white_36dp" />
-        <ToolbarItem IconImageSource="ic_more_vert_white_36dp" />
+        <ToolbarItem IconImageSource="ic_more_vert_white_36dp"
+                     Command="{Binding OpenOptionsCommand}"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>

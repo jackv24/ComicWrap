@@ -13,15 +13,16 @@
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.0.35" />
     <PackageReference Include="AngleSharp" Version="0.13.0" />
+    <PackageReference Include="FreshMvvm" Version="3.0.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Pages\HomePage.xaml">
+    <EmbeddedResource Update="Pages\ComicDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\MainPage.xaml">
+    <EmbeddedResource Update="Pages\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ComicInfoListItemView.xaml">

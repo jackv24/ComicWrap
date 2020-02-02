@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using FreshMvvm;
+
 namespace ComicBud.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]

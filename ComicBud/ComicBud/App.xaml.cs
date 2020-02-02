@@ -2,6 +2,10 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using FreshMvvm;
+
+using ComicBud.Pages;
+
 namespace ComicBud
 {
     public partial class App : Application
@@ -10,7 +14,9 @@ namespace ComicBud
         {
             InitializeComponent();
 
-            MainPage = new Pages.MainPage();
+            var page = FreshPageModelResolver.ResolvePageModel<HomePageModel>();
+            var navContainer = new FreshNavigationContainer(page);
+            MainPage = navContainer;
         }
 
         protected override void OnStart()

@@ -8,12 +8,11 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using Acr.UserDialogs;
+using FreshMvvm;
 
-using ComicBud.ViewModels;
-
-namespace ComicBud.PageModels
+namespace ComicBud.Pages
 {
-    public class HomePageModel : ViewModelBase
+    public class HomePageModel : FreshBasePageModel
     {
         public HomePageModel() : base()
         {
@@ -32,7 +31,7 @@ namespace ComicBud.PageModels
             set
             {
                 _isRefreshing = value;
-                OnPropertyChanged();
+                RaisePropertyChanged();
             }
         }
 
@@ -45,7 +44,12 @@ namespace ComicBud.PageModels
                 cancelText: "Cancel",
                 inputType: InputType.Url);
 
-            // TODO: Navigate
+            if (string.IsNullOrEmpty(result.Text))
+                return;
+
+            // TODO: Create new comic data
+
+            await CoreMethods.PushPageModel<ComicDetailPageModel>();
         }
 
         private async Task Refresh()

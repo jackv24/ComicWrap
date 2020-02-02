@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:ComicBud.Views"
+             mc:Ignorable="d"
+             x:Class="ComicBud.Pages.ComicDetailPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="ic_share_white_36dp" />
+        <ToolbarItem IconImageSource="ic_more_vert_white_36dp" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame>
+                <views:ComicInfoView/>
+            </Frame>
+            <ListView ItemsSource="{Binding Chapters}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

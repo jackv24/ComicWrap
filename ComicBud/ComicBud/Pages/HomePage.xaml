@@ -3,16 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:pagemodels="clr-namespace:ComicBud.PageModels"
+             xmlns:pages="clr-namespace:ComicBud.Pages"
              xmlns:views="clr-namespace:ComicBud.Views"
              mc:Ignorable="d"
              x:Class="ComicBud.Pages.HomePage"
              Title="ComicBud">
 
-    <ContentPage.BindingContext>
-        <pagemodels:HomePageModel />
-    </ContentPage.BindingContext>
-    
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="ic_add_white_36dp" Command="{Binding AddComicUrlCommand}" />
     </ContentPage.ToolbarItems>
@@ -20,7 +16,7 @@
     <ContentPage.Resources>
         <x:String x:Key="pageBorder">10</x:String>
     </ContentPage.Resources>
-    
+
     <ContentPage.Content>
         <RefreshView IsRefreshing="{Binding IsRefreshing}"
                      Command="{Binding RefreshCommand}">

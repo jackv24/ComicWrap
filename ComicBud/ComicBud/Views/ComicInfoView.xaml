@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:viewmodels="clr-namespace:ComicBud.ViewModels"
+             xmlns:views="clr-namespace:ComicBud.Views"
              mc:Ignorable="d"
              x:Class="ComicBud.Views.ComicInfoView">
 
     <ContentView.BindingContext>
-        <viewmodels:ComicInfoViewModel />
+        <views:ComicInfoViewModel />
     </ContentView.BindingContext>
 
     <ContentView.Content>
@@ -20,13 +20,13 @@
                                                        Property=Width,
                                                        Factor=0,
                                                        Constant=100}"
-                         Margin="0, 5, 0, 0"
+                         Margin="0, 5, 10, 0"
                          Spacing="0">
-                <Label Text="Comic Name Here"
+                <Label Text="{Binding ComicName}"
                        HorizontalTextAlignment="Start"
                        FontSize="Subtitle"
                        LineBreakMode="WordWrap"
-                       WidthRequest="90"/>
+                       WidthRequest="100"/>
                 <Label Text="Last Read"
                        HorizontalTextAlignment="Start"
                        FontSize="Micro"

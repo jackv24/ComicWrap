@@ -12,14 +12,36 @@ using Acr.UserDialogs;
 using FreshMvvm;
 
 using ComicBud.Pages;
+using ComicBud.Systems;
 
-namespace ComicBud.ViewModels
+namespace ComicBud.Views
 {
-    public class ComicInfoViewModel
+    public class ComicInfoViewModel : INotifyPropertyChanged
     {
         public ComicInfoViewModel()
         {
             OpenComicCommand = new Command(async () => await OpenComic());
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private Comic _comic;
+
+        public Comic Comic
+        {
+            get { return _comic; }
+            set
+            {
+                _comic = value;
+
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(ComicName));
+            }
+        }
+
+        public string ComicName
+        {
+            get { return Comic != null ? Comic.Name : "TODO: Comics"; }
         }
 
         public Command OpenComicCommand { get; }
@@ -29,6 +51,11 @@ namespace ComicBud.ViewModels
             var navService = FreshIOC.Container.Resolve<IFreshNavigationService>(Constants.DefaultNavigationServiceName);
             var page = FreshPageModelResolver.ResolvePageModel<ComicDetailPageModel>();
             await navService.PushPage(page, null);
+        }
+
+        private void OnPropertyChanged([CallerMemberName]string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

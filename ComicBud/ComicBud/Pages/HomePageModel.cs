@@ -10,6 +10,8 @@ using Xamarin.Forms.Xaml;
 using Acr.UserDialogs;
 using FreshMvvm;
 
+using ComicBud.Systems;
+
 namespace ComicBud.Pages
 {
     public class HomePageModel : FreshBasePageModel
@@ -17,7 +19,11 @@ namespace ComicBud.Pages
         public HomePageModel() : base()
         {
             AddComicUrlCommand = new Command(async () => await AddComicUrl());
-            RefreshCommand = new Command(async () => await Refresh());
+            RefreshCommand = new Command(Refresh);
+
+            Comics = new ObservableCollection<Comic>();
+
+            ReloadComics();
         }
 
         private bool _isRefreshing;
@@ -35,6 +41,13 @@ namespace ComicBud.Pages
             }
         }
 
+        public ObservableCollection<Comic> Comics { get; }
+
+        public bool IsAnyComics
+        {
+            get { return Comics.Count > 0; }
+        }
+
         private async Task AddComicUrl()
         {
             PromptResult result = await UserDialogs.Instance.PromptAsync(
@@ -47,16 +60,28 @@ namespace ComicBud.Pages
             if (string.IsNullOrEmpty(result.Text))
                 return;
 
-            // TODO: Create new comic data
+            var comic = new Comic
+            {
+                ArchiveUrl = result.Text
+            };
 
-            await CoreMethods.PushPageModel<ComicDetailPageModel>();
+            ComicDatabase.Instance.UpdateComic(comic);
+            ReloadComics();
         }
 
-        private async Task Refresh()
+        private void Refresh()
         {
-            await UserDialogs.Instance.AlertAsync("Refreshing comics not yet implemented");
+            ReloadComics();
 
             IsRefreshing = false;
+        }
+
+        private void ReloadComics()
+        {
+            Comics.Clear();
+            var loadedComics = ComicDatabase.Instance.GetComics();
+            foreach (var comic in loadedComics)
+                Comics.Add(comic);
         }
     }
 }

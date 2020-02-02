@@ -16,8 +16,5 @@ namespace ComicBud.Views
         {
             InitializeComponent();
         }
-
-        public virtual bool IsLastReadVisible { get { return true; } }
-        public virtual bool IsLastUpdatedVisible { get { return true; } }
     }
 }

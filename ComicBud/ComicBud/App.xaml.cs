@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using FreshMvvm;
+using SQLite;
 
 using ComicBud.Pages;
 

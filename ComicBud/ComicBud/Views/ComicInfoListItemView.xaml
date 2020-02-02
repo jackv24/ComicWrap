@@ -33,7 +33,6 @@
             <StackLayout.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding OpenComicCommand}"/>
             </StackLayout.GestureRecognizers>
-
         </StackLayout>
     </ContentView.Content>
 </ContentView>

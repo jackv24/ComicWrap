@@ -38,7 +38,14 @@ namespace ComicBud.PageModels
 
         private async Task AddComicUrl()
         {
-            await UserDialogs.Instance.AlertAsync("Adding comics not yet implemented");
+            PromptResult result = await UserDialogs.Instance.PromptAsync(
+                "Enter webcomic archive page URL",
+                title: "Add Webcomic",
+                okText: "Add",
+                cancelText: "Cancel",
+                inputType: InputType.Url);
+
+            // TODO: Navigate
         }
 
         private async Task Refresh()

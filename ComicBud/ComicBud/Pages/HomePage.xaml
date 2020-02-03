@@ -22,7 +22,7 @@
                      Command="{Binding RefreshCommand}">
             <ScrollView Orientation="Vertical">
                 <StackLayout Margin="0, 10, 0, 10">
-                    
+
                     <StackLayout Orientation="Vertical"
                                  IsVisible="{Binding IsAnyComics}">
                         <Label Text="Recent"
@@ -36,30 +36,13 @@
                                          BindableLayout.ItemsSource="{Binding Comics}">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
-                                        <ContentView>
-                                            <views:ComicInfoView/>
-                                        </ContentView>
+                                        <views:ComicInfoView Comic="{Binding}"/>
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
                             </StackLayout>
                         </ScrollView>
                     </StackLayout>
-                    
-                    <StackLayout Margin="10, 20, 10, 0"
-                                 IsVisible="{Binding IsAnyComics}">
-                        <Label Text="Library"
-                               FontSize="Subtitle"/>
-                        <StackLayout BindableLayout.ItemsSource="{Binding Comics}">
-                            <BindableLayout.ItemTemplate>
-                                <DataTemplate>
-                                    <ContentView>
-                                        <views:ComicInfoListItemView/>
-                                    </ContentView>
-                                </DataTemplate>
-                            </BindableLayout.ItemTemplate>
-                        </StackLayout>
-                    </StackLayout>
-                    
+
                 </StackLayout>
             </ScrollView>
         </RefreshView>

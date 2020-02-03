@@ -7,10 +7,6 @@
              mc:Ignorable="d"
              x:Class="ComicBud.Views.ComicInfoView">
 
-    <ContentView.BindingContext>
-        <views:ComicInfoViewModel />
-    </ContentView.BindingContext>
-
     <ContentView.Content>
         <StackLayout Orientation="Horizontal">
             <Frame WidthRequest="60"
@@ -22,7 +18,8 @@
                                                        Constant=100}"
                          Margin="0, 5, 10, 0"
                          Spacing="0">
-                <Label Text="{Binding ComicName}"
+                <Label x:Name="labelComicName"
+                       Text="Not Working"
                        HorizontalTextAlignment="Start"
                        FontSize="Subtitle"
                        LineBreakMode="WordWrap"
@@ -42,11 +39,6 @@
                        HorizontalTextAlignment="Start"
                        FontSize="Small"/>
             </StackLayout>
-
-            <StackLayout.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding OpenComicCommand}"/>
-            </StackLayout.GestureRecognizers>
-            
         </StackLayout>
     </ContentView.Content>
 </ContentView>

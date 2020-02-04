@@ -9,35 +9,32 @@
 
     <ContentView.Content>
         <StackLayout Orientation="Horizontal">
-            <Frame WidthRequest="60"
-                   HeightRequest="84"/>
-            <StackLayout RelativeLayout.XConstraint=
-                                "{ConstraintExpression Type=RelativeToParent,
-                                                       Property=Width,
-                                                       Factor=0,
-                                                       Constant=100}"
-                         Margin="0, 5, 10, 0"
-                         Spacing="0">
+            <BoxView BackgroundColor="Gray"
+                     WidthRequest="100"
+                     HeightRequest="140"
+                     HorizontalOptions="Start"
+                     VerticalOptions="Start"/>
+            <StackLayout Orientation="Vertical"
+                         Margin="5, 5, 10, 0"
+                         Spacing="0"
+                         HorizontalOptions="FillAndExpand">
                 <Label x:Name="labelComicName"
                        Text="Not Working"
                        HorizontalTextAlignment="Start"
-                       FontSize="Subtitle"
-                       LineBreakMode="WordWrap"
-                       WidthRequest="100"/>
-                <Label Text="Last Read"
-                       HorizontalTextAlignment="Start"
-                       FontSize="Micro"
-                       Margin="0, 5, 0, 0"/>
-                <Label Text="3 days ago"
-                       HorizontalTextAlignment="Start"
-                       FontSize="Small"/>
-                <Label Text="Updated"
-                       HorizontalTextAlignment="Start"
-                       FontSize="Micro"
-                       Margin="0, 5, 0, 0"/>
-                <Label Text="2 days ago"
-                       HorizontalTextAlignment="Start"
-                       FontSize="Small"/>
+                       FontSize="Medium"
+                       LineBreakMode="TailTruncation"
+                       MaxLines="2"
+                       VerticalOptions="Start"/>
+                <StackLayout Orientation="Vertical"
+                             VerticalOptions="EndAndExpand">
+                    <Label Text="Chapter 2-01"
+                           HorizontalTextAlignment="Start"
+                           FontSize="Small"/>
+                    <Slider Value="0.7"/>
+                    <Label Text="Updated 3 days ago"
+                           HorizontalTextAlignment="Start"
+                           FontSize="Small"/>
+                </StackLayout>
             </StackLayout>
         </StackLayout>
     </ContentView.Content>

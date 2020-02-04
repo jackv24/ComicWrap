@@ -45,7 +45,7 @@ namespace ComicBud.Views
             var comicInfoView = (ComicInfoView)bindable;
             var comic = (Comic)newValue;
 
-            comicInfoView.labelComicName.Text = comic.ArchiveUrl;
+            comicInfoView.labelComicName.Text = comic.Name;
         }
 
         private async Task OpenComic()

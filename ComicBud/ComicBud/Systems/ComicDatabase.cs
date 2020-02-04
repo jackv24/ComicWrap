@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 
+using Xamarin.Essentials;
+
 using SQLite;
 
 namespace ComicBud.Systems
@@ -18,6 +20,17 @@ namespace ComicBud.Systems
 
             database = new SQLiteConnection(dbPath);
             database.CreateTable<Comic>();
+
+            const string isCreatedKey = "ComicDatabase_isCreated";
+            bool isCreated = Preferences.Get(isCreatedKey, false);
+            if (!isCreated)
+            {
+                Preferences.Set(isCreatedKey, true);
+                UpdateComic(new Comic
+                {
+                    Name = "Example Comic"
+                });
+            }
         }
 
         private SQLiteConnection database;

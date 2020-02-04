@@ -1,1 +1,1 @@
-# ComicBud
+# ComicWrap

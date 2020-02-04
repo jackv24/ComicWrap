@@ -30,7 +30,7 @@
                     <Label Text="Chapter 2-01"
                            HorizontalTextAlignment="Start"
                            FontSize="Small"/>
-                    <Slider Value="0.7"/>
+                    <ProgressBar Progress="0.7"/>
                     <Label Text="Updated 3 days ago"
                            HorizontalTextAlignment="Start"
                            FontSize="Small"/>

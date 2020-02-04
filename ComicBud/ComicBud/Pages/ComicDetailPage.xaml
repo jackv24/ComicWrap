@@ -18,7 +18,16 @@
             <Frame>
                 <views:ComicInfoView/>
             </Frame>
-            <ListView ItemsSource="{Binding Chapters}"/>
+            <RefreshView IsRefreshing="{Binding IsRefreshing}"
+                     Command="{Binding RefreshCommand}">
+                <ListView ItemsSource="{Binding Pages}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </RefreshView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

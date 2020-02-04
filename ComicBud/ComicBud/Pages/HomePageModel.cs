@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace ComicBud.Pages
             AddComicUrlCommand = new Command(async () => await AddComicUrl());
             RefreshCommand = new Command(Refresh);
 
-            Comics = new ObservableCollection<Comic>();
+            Comics = new ObservableCollection<ComicData>();
 
             ReloadComics();
         }
@@ -42,7 +43,7 @@ namespace ComicBud.Pages
             }
         }
 
-        public ObservableCollection<Comic> Comics { get; }
+        public ObservableCollection<ComicData> Comics { get; }
 
         public bool IsAnyComics
         {
@@ -63,12 +64,12 @@ namespace ComicBud.Pages
                 cancelText: "Cancel",
                 inputType: InputType.Url);
 
-            string url = result.Text;
 
-            if (string.IsNullOrEmpty(url))
+            if (!result.Ok)
                 return;
 
-            if (!IsUrlValid(url))
+            string url = result.Text;
+            if (!ComicUpdater.IsUrlValid(url))
             {
                 await UserDialogs.Instance.AlertAsync("URL is invalid.");
 
@@ -86,13 +87,22 @@ namespace ComicBud.Pages
                 webpageName = document.Title;
             }
 
-            var comic = new Comic
+            var comic = new ComicData
             {
                 Name = webpageName,
                 ArchiveUrl = url
             };
 
-            ComicDatabase.Instance.UpdateComic(comic);
+            // Add comic to database before adding pages, so the ID auto set
+            ComicDatabase.Instance.SetData(comic);
+
+            var pages = await ComicUpdater.GetPages(url);
+            foreach (var page in pages)
+            {
+                page.ComicId = comic.Id;
+                ComicDatabase.Instance.SetData(page);
+            }
+
             ReloadComics();
         }
 
@@ -106,25 +116,11 @@ namespace ComicBud.Pages
         private void ReloadComics()
         {
             Comics.Clear();
-            var loadedComics = ComicDatabase.Instance.GetComics();
+            var loadedComics = ComicDatabase.Instance.GetData<ComicData>();
             foreach (var comic in loadedComics)
                 Comics.Add(comic);
 
             RaisePropertyChanged(nameof(IsAnyComics));
-        }
-
-        private bool IsUrlValid(string url)
-        {
-            try
-            {
-                var uri = new Uri(url);
-            }
-            catch (UriFormatException)
-            {
-                return false;
-            }
-
-            return true;
         }
     }
 }

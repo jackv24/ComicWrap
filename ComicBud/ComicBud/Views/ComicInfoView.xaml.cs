@@ -28,22 +28,22 @@ namespace ComicBud.Views
 
         public static BindableProperty ComicProperty = BindableProperty.Create(
             propertyName: "Comic",
-            returnType: typeof(Comic),
+            returnType: typeof(ComicData),
             declaringType: typeof(ComicInfoView),
             defaultBindingMode: BindingMode.OneWay,
             propertyChanged: OnComicNamePropertyChanged
             );
 
-        public Comic Comic
+        public ComicData Comic
         {
-            get { return (Comic)GetValue(ComicProperty); }
+            get { return (ComicData)GetValue(ComicProperty); }
             set { SetValue(ComicProperty, value); }
         }
 
         private static void OnComicNamePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var comicInfoView = (ComicInfoView)bindable;
-            var comic = (Comic)newValue;
+            var comic = (ComicData)newValue;
 
             comicInfoView.labelComicName.Text = comic.Name;
         }

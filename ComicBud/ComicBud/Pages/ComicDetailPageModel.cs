@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -19,56 +20,33 @@ namespace ComicBud.Pages
         public ComicDetailPageModel()
         {
             OpenOptionsCommand = new Command(async () => await OpenOptions());
+            RefreshCommand = new Command(async () => await Refresh());
         }
 
-        public Command OpenOptionsCommand { get; }
+        private bool _isRefreshing;
 
-        public Comic Comic { get; private set; }
-        public ObservableCollection<string> Chapters { get; set; }
+        public Command OpenOptionsCommand { get; }
+        public Command RefreshCommand { get; }
+
+        public bool IsRefreshing
+        {
+            get { return _isRefreshing; }
+            set
+            {
+                _isRefreshing = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public ComicData Comic { get; private set; }
+        public ObservableCollection<ComicPageData> Pages { get; set; }
 
         public override void Init(object initData)
         {
-            Comic = initData as Comic;
+            Comic = initData as ComicData;
 
-            Chapters = new ObservableCollection<string>
-            {
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-                "Chapter 0",
-            };
+            Pages = GetOrderedPages(
+                ComicDatabase.Instance.GetData<ComicPageData>(data => data.ComicId == Comic.Id));
         }
 
         private async Task OpenOptions()
@@ -85,7 +63,7 @@ namespace ComicBud.Pages
                     return;
 
                 case "Delete":
-                    ComicDatabase.Instance.DeleteComic(Comic);
+                    ComicDatabase.Instance.DeleteData(Comic);
                     break;
 
                 default:
@@ -94,6 +72,45 @@ namespace ComicBud.Pages
 
             await CoreMethods.PopPageModel();
             UserDialogs.Instance.Toast($"Deleted Comic: {Comic.Name}");
+        }
+
+        private async Task Refresh()
+        {
+            IsRefreshing = true;
+
+            var newPages = await ComicUpdater.GetPages(Comic.ArchiveUrl);
+
+            // Remove old pages from database, they will be replaced
+            foreach (var page in Pages)
+                ComicDatabase.Instance.DeleteData(page);
+
+            // New page data is bare, so fill out missing data
+            foreach (var newPage in newPages)
+            {
+                newPage.ComicId = Comic.Id;
+
+                foreach (var oldPage in Pages)
+                {
+                    // Transfer persistent data to new page data
+                    if (newPage.Url == oldPage.Url)
+                        newPage.IsRead = oldPage.IsRead;
+                }
+
+                ComicDatabase.Instance.SetData(newPage);
+            }
+
+            // Clear old pages collection and fill with new pages
+            Pages = GetOrderedPages(newPages);
+
+            IsRefreshing = false;
+        }
+
+        private ObservableCollection<ComicPageData> GetOrderedPages(IEnumerable<ComicPageData> pages)
+        {
+            var reordered = pages
+                .Reverse();
+
+            return new ObservableCollection<ComicPageData>(reordered);
         }
     }
 }

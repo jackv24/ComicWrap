@@ -10,6 +10,11 @@ using SQLite;
 
 namespace ComicBud.Systems
 {
+    public interface IComicData
+    {
+        int Id { get; set; }
+    }
+
     public class ComicDatabase
     {
         public ComicDatabase()
@@ -19,14 +24,17 @@ namespace ComicBud.Systems
             string dbPath = Path.Combine(dbFolderPath, dbFileName);
 
             database = new SQLiteConnection(dbPath);
-            database.CreateTable<Comic>();
+            database.CreateTables(CreateFlags.None,
+                typeof(ComicData),
+                typeof(ComicPageData)
+                );
 
             const string isCreatedKey = "ComicDatabase_isCreated";
             bool isCreated = Preferences.Get(isCreatedKey, false);
             if (!isCreated)
             {
                 Preferences.Set(isCreatedKey, true);
-                UpdateComic(new Comic
+                SetData(new ComicData
                 {
                     Name = "Example Comic"
                 });
@@ -47,24 +55,27 @@ namespace ComicBud.Systems
             }
         }
 
-        public IEnumerable<Comic> GetComics(Func<Comic, bool> predicate = null)
+        public IEnumerable<T> GetData<T>(Func<T, bool> predicate = null)
+            where T : IComicData, new()
         {
-            var table = database.Table<Comic>();
+            var table = database.Table<T>();
             if (predicate == null)
                 return table;
             else
                 return table.Where(predicate);
         }
 
-        public void UpdateComic(Comic comic)
+        public void SetData<T>(T comic)
+            where T : IComicData, new()
         {
-            if (comic.ID != 0)
+            if (comic.Id != 0)
                 database.Update(comic);
             else
                 database.Insert(comic);
         }
 
-        public void DeleteComic(Comic comic)
+        public void DeleteData<T>(T comic)
+            where T : IComicData, new()
         {
             database.Delete(comic);
         }

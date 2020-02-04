@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 
 using Acr.UserDialogs;
 using FreshMvvm;
+using AngleSharp;
 
 using ComicBud.Systems;
 
@@ -62,12 +63,33 @@ namespace ComicBud.Pages
                 cancelText: "Cancel",
                 inputType: InputType.Url);
 
-            if (string.IsNullOrEmpty(result.Text))
+            string url = result.Text;
+
+            if (string.IsNullOrEmpty(url))
                 return;
+
+            if (!IsUrlValid(url))
+            {
+                await UserDialogs.Instance.AlertAsync("URL is invalid.");
+
+                // Stay in add comic until given url is valid or cancelled
+                await AddComicUrl();
+                return;
+            }
+
+            string webpageName;
+            // TEMP
+            {
+                var config = Configuration.Default.WithDefaultLoader();
+                var context = BrowsingContext.New(config);
+                var document = await context.OpenAsync(url);
+                webpageName = document.Title;
+            }
 
             var comic = new Comic
             {
-                ArchiveUrl = result.Text
+                Name = webpageName,
+                ArchiveUrl = url
             };
 
             ComicDatabase.Instance.UpdateComic(comic);
@@ -89,6 +111,20 @@ namespace ComicBud.Pages
                 Comics.Add(comic);
 
             RaisePropertyChanged(nameof(IsAnyComics));
+        }
+
+        private bool IsUrlValid(string url)
+        {
+            try
+            {
+                var uri = new Uri(url);
+            }
+            catch (UriFormatException)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

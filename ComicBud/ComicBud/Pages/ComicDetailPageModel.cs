@@ -85,8 +85,7 @@ namespace ComicBud.Pages
                     return;
 
                 case "Delete":
-                    // TODO: Uncomment when Comic isn't null
-                    //ComicDatabase.Instance.DeleteComic(Comic);
+                    ComicDatabase.Instance.DeleteComic(Comic);
                     break;
 
                 default:
@@ -94,7 +93,7 @@ namespace ComicBud.Pages
             }
 
             await CoreMethods.PopPageModel();
-            UserDialogs.Instance.Toast("Deleted Comic: {0}");
+            UserDialogs.Instance.Toast($"Deleted Comic: {Comic.Name}");
         }
     }
 }

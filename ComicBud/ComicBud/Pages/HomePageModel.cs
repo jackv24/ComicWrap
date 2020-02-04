@@ -48,6 +48,11 @@ namespace ComicBud.Pages
             get { return Comics.Count > 0; }
         }
 
+        protected override void ViewIsAppearing(object sender, EventArgs e)
+        {
+            Refresh();
+        }
+
         private async Task AddComicUrl()
         {
             PromptResult result = await UserDialogs.Instance.PromptAsync(
@@ -71,8 +76,8 @@ namespace ComicBud.Pages
 
         private void Refresh()
         {
+            IsRefreshing = true;
             ReloadComics();
-
             IsRefreshing = false;
         }
 

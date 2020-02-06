@@ -21,12 +21,14 @@ namespace ComicWrap.Pages
         {
             OpenOptionsCommand = new Command(async () => await OpenOptions());
             RefreshCommand = new Command(async () => await Refresh());
+            OpenPageCommand = new Command<ComicPageData>(async (page) => await OpenPage(page));
         }
 
         private bool _isRefreshing;
 
         public Command OpenOptionsCommand { get; }
         public Command RefreshCommand { get; }
+        public Command<ComicPageData> OpenPageCommand { get; }
 
         public bool IsRefreshing
         {
@@ -103,6 +105,11 @@ namespace ComicWrap.Pages
             Pages = GetOrderedPages(newPages);
 
             IsRefreshing = false;
+        }
+
+        private async Task OpenPage(ComicPageData pageData)
+        {
+            await CoreMethods.PushPageModel<ComicReaderPageModel>(pageData);
         }
 
         private ObservableCollection<ComicPageData> GetOrderedPages(IEnumerable<ComicPageData> pages)

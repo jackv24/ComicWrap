@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 
 using Acr.UserDialogs;
 using FreshMvvm;
+using AngleSharp;
 
 using ComicWrap.Systems;
 
@@ -35,13 +36,13 @@ namespace ComicWrap.Pages
             }
         }
 
-        private string _pageUrl;
-        public string PageUrl
+        private HtmlWebViewSource _pageSource;
+        public HtmlWebViewSource PageSource
         {
-            get { return _pageUrl; }
+            get { return _pageSource; }
             set
             {
-                _pageUrl = value;
+                _pageSource = value;
                 RaisePropertyChanged();
             }
         }
@@ -51,7 +52,24 @@ namespace ComicWrap.Pages
             var pageData = (ComicPageData)initData;
 
             PageName = pageData.Name;
-            PageUrl = pageData.Url;
+
+            // Load page as HTML instead of directly so it can be manipulated
+            var context = ComicUpdater.GetBrowsingContext();
+            context.OpenAsync(pageData.Url).ContinueWith((task) =>
+            {
+                var document = task.Result;
+
+                // NOTE: below code currently zooms, but pinch-to-zoom doesn't work so zoom is permanent
+                //var meta = document.CreateElement("meta");
+                //meta.SetAttribute("name", "viewport");
+                //meta.SetAttribute("content", "width=device-width, initial-scale=0.25, maximum-scale=3.0 user-scalable=1");
+                //document.Head.AppendChild(meta);
+
+                PageSource = new HtmlWebViewSource()
+                {
+                    Html = document.ToHtml()
+                };
+            });
         }
 
         private async Task Refresh()

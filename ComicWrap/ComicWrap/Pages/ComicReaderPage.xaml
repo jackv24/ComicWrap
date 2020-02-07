@@ -14,7 +14,7 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <WebView Source="{Binding PageUrl}"
+            <WebView Source="{Binding PageSource}"
                      VerticalOptions="FillAndExpand"/>
         </StackLayout>
     </ContentPage.Content>

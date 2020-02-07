@@ -77,6 +77,8 @@ namespace ComicWrap.Systems
         public void DeleteData<T>(T comic)
             where T : IComicData, new()
         {
+            // TODO: When deleting comic also delete linked entries for all linked tables "e.g., pages"
+
             database.Delete(comic);
         }
     }

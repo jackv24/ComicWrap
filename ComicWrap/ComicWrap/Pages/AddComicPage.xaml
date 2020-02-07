@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popupPages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:popupPages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             mc:Ignorable="d"
+             x:Class="ComicWrap.Pages.AddComicPage">
+    <popupPages:PopupPage.Content>
+        <Frame BackgroundColor="#80000000">
+            <Frame VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   WidthRequest="300"
+                   BackgroundColor="White">
+                <StackLayout>
+                    <Label Text="Add New Comic"
+                           TextColor="Black"
+                           FontSize="Medium"
+                           Margin="0, 0, 0, 10"/>
+                    
+                    <Label Text="Archive URL:"
+                           TextColor="Black"
+                           FontSize="Small"/>
+                    <Entry Placeholder="https://webcomic.com/archive"
+                           Text="{Binding ArchivePageUrl}"/>
+                    
+                    <Label Text="Current Page Url:"
+                           TextColor="Black"
+                           FontSize="Small"/>
+                    <Entry Placeholder="https://webcomic.com/page/1"
+                           Text="{Binding CurrentPageUrl}"/>
+                    
+                    <StackLayout Orientation="Horizontal"
+                                 Margin="0, 20, 0, 0">
+                        <Button Text="Cancel"
+                                HorizontalOptions="StartAndExpand"
+                                Command="{Binding CancelCommand}"/>
+                        <Button Text="Add"
+                                HorizontalOptions="EndAndExpand"
+                                Command="{Binding SubmitCommand}"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </Frame>
+    </popupPages:PopupPage.Content>
+</popupPages:PopupPage>

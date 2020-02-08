@@ -46,14 +46,10 @@ namespace ComicWrap.Systems
                 ArchiveUrl = archiveUrl
             };
 
-            var pages = await UpdateComic(comic);
-
-            // TODO: Mark all as read up to current page url
-
-            // TODO: Save to database
+            var pages = await UpdateComic(comic, currentPageUrl);
         }
 
-        public static async Task<IEnumerable<ComicPageData>> UpdateComic(ComicData comic)
+        public static async Task<IEnumerable<ComicPageData>> UpdateComic(ComicData comic, string markReadUpToUrl = null)
         {
             // Load comic archive page
             var document = await GetBrowsingContext().OpenAsync(comic.ArchiveUrl);
@@ -72,11 +68,28 @@ namespace ComicWrap.Systems
 
             // Add new data back into database before setting up pages, so comic Id is set
             await ComicDatabase.Instance.UpdateComic(comic);
+            
+            bool doMarkReadUpTo = !string.IsNullOrEmpty(markReadUpToUrl);
+            bool reachedReadPage = false;
 
             // New page data is bare, so fill out missing data
-            foreach (var newPage in newPages)
+            // Loop backwards so we can mark previously read pages
+            for (int i = newPages.Count - 1; i >= 0; i--)
             {
+                ComicPageData newPage = newPages[i];
                 newPage.ComicId = comic.Id;
+
+                // Mark all pages before current page as read
+                if (doMarkReadUpTo && newPage.Url == markReadUpToUrl)
+                    reachedReadPage = true;
+
+                if (reachedReadPage)
+                {
+                    newPage.IsRead = true;
+
+                    // Page already marked read, no need to check old pages
+                    continue;
+                }
 
                 foreach (var oldPage in oldPages)
                 {

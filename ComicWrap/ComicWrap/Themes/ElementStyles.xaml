@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" 
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:fresh="clr-namespace:FreshMvvm;assembly=FreshMvvm"
                     x:Class="ComicWrap.Themes.ElementStyles">
     
     <Style TargetType="Label">
@@ -16,11 +17,10 @@
         <Setter Property="BackgroundColor" Value="{DynamicResource MainBackgroundColor}"/>
     </Style>
     <Style TargetType="fresh:FreshNavigationContainer">
-        <!-- Also changes flash colour when navigating pages -->
+        <!--Also changes flash colour when navigating pages-->
         <Setter Property="BackgroundColor" Value="{DynamicResource MainBackgroundColor}"/>
+        <Setter Property="BarBackgroundColor" Value="{DynamicResource MainBackgroundColor}"/>
+        <Setter Property="BarTextColor" Value="{DynamicResource MainTextColor}"/>
     </Style>
-    <Style TargetType="Button">
-        <Setter Property="BackgroundColor" Value="{DynamicResource MainBackgroundColor}"/>
-    </Style>
-    
+
 </ResourceDictionary>

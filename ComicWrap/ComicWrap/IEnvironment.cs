@@ -9,6 +9,7 @@ namespace ComicWrap
     {
         Theme GetOperatingSystemTheme();
         Task<Theme> GetOperatingSystemThemeAsync();
+        void ApplyTheme(Theme theme);
     }
 
     public enum Theme { Light, Dark }

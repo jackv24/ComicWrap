@@ -23,8 +23,7 @@ namespace ComicWrap
 
         protected override void OnStart()
         {
-            var theme = DependencyService.Get<IEnvironment>().GetOperatingSystemTheme();
-            SetTheme(theme);
+            UpdateTheme();
         }
 
         protected override void OnSleep()
@@ -33,31 +32,40 @@ namespace ComicWrap
 
         protected override void OnResume()
         {
-            var theme = DependencyService.Get<IEnvironment>().GetOperatingSystemTheme();
-            SetTheme(theme);
+            UpdateTheme();
         }
 
-        private void SetTheme(Theme theme)
+        private void UpdateTheme()
         {
+            var environment = DependencyService.Get<IEnvironment>();
+            var theme = environment.GetOperatingSystemTheme();
+
             var mergedDictionaries = Application.Current.Resources.MergedDictionaries;
-            if (mergedDictionaries != null && mergedDictionaries.Count > 0)
+            if (mergedDictionaries != null)
             {
                 mergedDictionaries.Clear();
 
-                switch(theme)
+                ResourceDictionary themeDict;
+                switch (theme)
                 {
                     case Theme.Dark:
-                        mergedDictionaries.Add(new DarkTheme());
+                        themeDict = new DarkTheme();
                         break;
 
                     case Theme.Light:
                     default:
-                        mergedDictionaries.Add(new LightTheme());
-                        break;
+                        themeDict = new LightTheme();
+                    break;
                 }
 
-                mergedDictionaries.Add(new ElementStyles());
+                var styleDict = new ElementStyles();
+
+                mergedDictionaries.Add(themeDict);
+                styleDict.MergedDictionaries.Add(themeDict);
+                mergedDictionaries.Add(styleDict);
             }
+
+            environment.ApplyTheme(theme);
         }
     }
 }

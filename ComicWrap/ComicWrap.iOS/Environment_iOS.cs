@@ -40,6 +40,11 @@ namespace ComicWrap.iOS
         public Task<Theme> GetOperatingSystemThemeAsync()
             => Device.InvokeOnMainThreadAsync(GetOperatingSystemTheme);
 
+        public void ApplyTheme(Theme theme)
+        {
+
+        }
+
         private static UIViewController GetVisibleViewController()
         {
             UIViewController viewController = null;

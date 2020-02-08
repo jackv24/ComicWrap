@@ -71,10 +71,17 @@ namespace ComicWrap.Pages
             isRefreshTaskRunning = true;
             IsRefreshing = true;
 
-            Comics.Clear();
+            // Load comics from local database
             var loadedComics = await ComicDatabase.Instance.GetComics();
+
+            // Update UI
+            Comics.Clear();
             foreach (var comic in loadedComics)
                 Comics.Add(comic);
+
+            // Update comics from internet after loading from database so UI is filled ASAP
+            foreach (var comic in loadedComics)
+                await ComicUpdater.UpdateComic(comic);
 
             RaisePropertyChanged(nameof(IsAnyComics));
 

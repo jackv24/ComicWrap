@@ -20,17 +20,18 @@ namespace ComicWrap.Pages
     {
         public HomePageModel() : base()
         {
-            AddComicUrlCommand = new Command(async () => await AddComicUrl());
+            AddComicCommand = new Command(async () => await OpenAddComicPopup());
             RefreshCommand = new Command(Refresh);
 
             Comics = new ObservableCollection<ComicData>();
 
-            ReloadComics();
+            Refresh();
         }
 
         private bool _isRefreshing;
+        private bool isRefreshTaskRunning;
 
-        public Command AddComicUrlCommand { get; }
+        public Command AddComicCommand { get; }
         public Command RefreshCommand { get; }
 
         public bool IsRefreshing
@@ -55,29 +56,32 @@ namespace ComicWrap.Pages
             Refresh();
         }
 
-        private async Task AddComicUrl()
+        private async Task OpenAddComicPopup()
         {
             var page = (PopupPage)FreshPageModelResolver.ResolvePageModel<AddComicPageModel>();
             await PopupNavigation.Instance.PushAsync(page);
-
-            ReloadComics();
         }
 
-        private void Refresh()
+        private async void Refresh()
         {
+            // Method is "fire and forget" so make sure it's not already running
+            if (isRefreshTaskRunning)
+                return;
+
+            isRefreshTaskRunning = true;
             IsRefreshing = true;
-            ReloadComics();
-            IsRefreshing = false;
-        }
 
-        private void ReloadComics()
-        {
             Comics.Clear();
-            var loadedComics = ComicDatabase.Instance.GetData<ComicData>();
+            var loadedComics = await ComicDatabase.Instance.GetComics();
             foreach (var comic in loadedComics)
                 Comics.Add(comic);
 
             RaisePropertyChanged(nameof(IsAnyComics));
+
+            isRefreshTaskRunning = false;
+            IsRefreshing = false;
+
+            // TODO: Get comic updates in the background
         }
     }
 }

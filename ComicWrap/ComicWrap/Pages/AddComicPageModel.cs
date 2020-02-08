@@ -66,33 +66,13 @@ namespace ComicWrap.Pages
             }
 
             // Pop page immediately, comic will load in background
-            // TODO: Extract comic importing code elsewhere
             await PopupNavigation.Instance.PopAsync();
 
-            string webpageName;
-            // TEMP
-            {
-                var config = Configuration.Default.WithDefaultLoader();
-                var context = BrowsingContext.New(config);
-                var document = await context.OpenAsync(url);
-                webpageName = document.Title;
-            }
+            // TODO: Add "ghost" comic to home page while importing
 
-            var comic = new ComicData
-            {
-                Name = webpageName,
-                ArchiveUrl = url
-            };
+            await ComicUpdater.ImportComic(ArchivePageUrl, CurrentPageUrl);
 
-            // Add comic to database before adding pages, so the ID auto set
-            ComicDatabase.Instance.SetData(comic);
-
-            var pages = await ComicUpdater.GetPages(url);
-            foreach (var page in pages)
-            {
-                page.ComicId = comic.Id;
-                ComicDatabase.Instance.SetData(page);
-            }
+            // TODO: Refresh home page
         }
     }
 }

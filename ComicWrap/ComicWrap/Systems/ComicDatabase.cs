@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.IO;
+using System.Threading.Tasks;
 
 using Xamarin.Essentials;
 
@@ -10,11 +12,6 @@ using SQLite;
 
 namespace ComicWrap.Systems
 {
-    public interface IComicData
-    {
-        int Id { get; set; }
-    }
-
     public class ComicDatabase
     {
         public ComicDatabase()
@@ -23,25 +20,19 @@ namespace ComicWrap.Systems
             string dbFileName = "Comics.db3";
             string dbPath = Path.Combine(dbFolderPath, dbFileName);
 
-            database = new SQLiteConnection(dbPath);
-            database.CreateTables(CreateFlags.None,
+            // Use synchonous connection on startup so we know database
+            // is setup correctly before anything else accesses it
+            var syncDatabase = new SQLiteConnection(dbPath);
+            syncDatabase.CreateTables(CreateFlags.None,
                 typeof(ComicData),
                 typeof(ComicPageData)
                 );
 
-            const string isCreatedKey = "ComicDatabase_isCreated";
-            bool isCreated = Preferences.Get(isCreatedKey, false);
-            if (!isCreated)
-            {
-                Preferences.Set(isCreatedKey, true);
-                SetData(new ComicData
-                {
-                    Name = "Example Comic"
-                });
-            }
+            // Use async connection at runtime for responsiveness
+            database = new SQLiteAsyncConnection(dbPath);
         }
 
-        private SQLiteConnection database;
+        private SQLiteAsyncConnection database;
 
         private static ComicDatabase _instance;
         public static ComicDatabase Instance
@@ -55,31 +46,54 @@ namespace ComicWrap.Systems
             }
         }
 
-        public IEnumerable<T> GetData<T>(Func<T, bool> predicate = null)
-            where T : IComicData, new()
+        public async Task UpdateComic(ComicData comicData)
         {
-            var table = database.Table<T>();
-            if (predicate == null)
-                return table;
+            if (comicData.Id == 0)
+                await database.InsertAsync(comicData);
             else
-                return table.Where(predicate);
+                await database.UpdateAsync(comicData);
         }
 
-        public void SetData<T>(T comic)
-            where T : IComicData, new()
+        public async Task UpdateComicPages(IEnumerable<ComicPageData> comicPages)
         {
-            if (comic.Id != 0)
-                database.Update(comic);
-            else
-                database.Insert(comic);
+            // Update comic pages in a transaction for efficiency (there may be lots)
+            await database.RunInTransactionAsync((database) =>
+            {
+                foreach (var pageData in comicPages)
+                {
+                    if (pageData.Id == 0)
+                        database.Insert(pageData);
+                    else
+                        database.Update(pageData);
+                }
+            });
         }
 
-        public void DeleteData<T>(T comic)
-            where T : IComicData, new()
+        public async Task DeleteComic(ComicData comicData)
         {
-            // TODO: When deleting comic also delete linked entries for all linked tables "e.g., pages"
+            await database.RunInTransactionAsync((database) =>
+            {
+                // Delete comic pages that are linked to the comic
+                var table = database.Table<ComicPageData>();
+                table.Delete((pageData) => pageData.ComicId == comicData.Id);
 
-            database.Delete(comic);
+                // Delete comic
+                database.Delete(comicData);
+            });
+        }
+
+        public async Task<List<ComicData>> GetComics()
+        {
+            var table = database.Table<ComicData>();
+            return await table.ToListAsync();
+        }
+
+        public async Task<List<ComicPageData>> GetComicPages(ComicData comic)
+        {
+            var table = database.Table<ComicPageData>();
+            return await table
+                .Where(page => page.ComicId == comic.Id)
+                .ToListAsync();
         }
     }
 }

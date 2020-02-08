@@ -20,11 +20,12 @@ namespace ComicWrap.Pages
         public ComicDetailPageModel()
         {
             OpenOptionsCommand = new Command(async () => await OpenOptions());
-            RefreshCommand = new Command(async () => await Refresh());
+            RefreshCommand = new Command(() => Refresh(refreshComic: true));
             OpenPageCommand = new Command<ComicPageData>(async (page) => await OpenPage(page));
         }
 
         private bool _isRefreshing;
+        private bool isRefreshTaskRunning;
 
         public Command OpenOptionsCommand { get; }
         public Command RefreshCommand { get; }
@@ -47,8 +48,8 @@ namespace ComicWrap.Pages
         {
             Comic = initData as ComicData;
 
-            Pages = GetOrderedPages(
-                ComicDatabase.Instance.GetData<ComicPageData>(data => data.ComicId == Comic.Id));
+            Pages = new ObservableCollection<ComicPageData>();
+            Refresh(refreshComic: false);
         }
 
         private async Task OpenOptions()
@@ -65,7 +66,7 @@ namespace ComicWrap.Pages
                     return;
 
                 case "Delete":
-                    ComicDatabase.Instance.DeleteData(Comic);
+                    await ComicDatabase.Instance.DeleteComic(Comic);
                     break;
 
                 default:
@@ -76,48 +77,35 @@ namespace ComicWrap.Pages
             UserDialogs.Instance.Toast($"Deleted Comic: {Comic.Name}");
         }
 
-        private async Task Refresh()
+        private async void Refresh(bool refreshComic = true)
         {
+            // Only one refresh task should be running (since Refresh is a "fire and forget" async method)
+            if (isRefreshTaskRunning)
+                return;
+
+            isRefreshTaskRunning = true;
             IsRefreshing = true;
 
-            var newPages = await ComicUpdater.GetPages(Comic.ArchiveUrl);
+            // Get comic pages from database (fast) or internet (slow)
+            var newPages = refreshComic
+                ? await ComicUpdater.UpdateComic(Comic)
+                : await ComicDatabase.Instance.GetComicPages(Comic);
 
-            // Remove old pages from database, they will be replaced
-            foreach (var page in Pages)
-                ComicDatabase.Instance.DeleteData(page);
+            // Display new page list
+            var reordered = newPages.Reverse();
+            
+            // Need to use ObservableCollection methods so UI is updated
+            Pages.Clear();
+            foreach (var page in reordered)
+                Pages.Add(page);
 
-            // New page data is bare, so fill out missing data
-            foreach (var newPage in newPages)
-            {
-                newPage.ComicId = Comic.Id;
-
-                foreach (var oldPage in Pages)
-                {
-                    // Transfer persistent data to new page data
-                    if (newPage.Url == oldPage.Url)
-                        newPage.IsRead = oldPage.IsRead;
-                }
-
-                ComicDatabase.Instance.SetData(newPage);
-            }
-
-            // Clear old pages collection and fill with new pages
-            Pages = GetOrderedPages(newPages);
-
+            isRefreshTaskRunning = false;
             IsRefreshing = false;
         }
 
         private async Task OpenPage(ComicPageData pageData)
         {
             await CoreMethods.PushPageModel<ComicReaderPageModel>(pageData);
-        }
-
-        private ObservableCollection<ComicPageData> GetOrderedPages(IEnumerable<ComicPageData> pages)
-        {
-            var reordered = pages
-                .Reverse();
-
-            return new ObservableCollection<ComicPageData>(reordered);
         }
     }
 }

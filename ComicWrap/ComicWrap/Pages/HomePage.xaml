@@ -12,7 +12,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="ic_search_white_36dp" />
         <ToolbarItem IconImageSource="ic_sort_white_36dp" />
-        <ToolbarItem IconImageSource="ic_more_vert_white_36dp" Command="{Binding AddComicUrlCommand}"/>
+        <ToolbarItem IconImageSource="ic_more_vert_white_36dp" Command="{Binding AddComicCommand}"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>

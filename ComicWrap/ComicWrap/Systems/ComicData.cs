@@ -3,7 +3,7 @@
 namespace ComicWrap.Systems
 {
     [Table("comics")]
-    public class ComicData : IComicData
+    public class ComicData
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

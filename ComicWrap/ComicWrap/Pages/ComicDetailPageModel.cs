@@ -49,6 +49,12 @@ namespace ComicWrap.Pages
             Comic = initData as ComicData;
 
             Pages = new ObservableCollection<ComicPageData>();
+        }
+
+        protected override void ViewIsAppearing(object sender, EventArgs e)
+        {
+            base.ViewIsAppearing(sender, e);
+
             Refresh(refreshComic: false);
         }
 

@@ -69,6 +69,10 @@ namespace ComicWrap.Pages
                 {
                     Html = document.ToHtml()
                 };
+
+                // TODO: Wait until page has loaded or is navigated away before marking as read
+                pageData.IsRead = true;
+                ComicDatabase.Instance.UpdateComicPage(pageData);
             });
         }
 

@@ -69,6 +69,11 @@ namespace ComicWrap.Systems
             });
         }
 
+        public async Task UpdateComicPage(ComicPageData pageData)
+        {
+            await database.UpdateAsync(pageData);
+        }
+
         public async Task DeleteComic(ComicData comicData)
         {
             await database.RunInTransactionAsync((database) =>

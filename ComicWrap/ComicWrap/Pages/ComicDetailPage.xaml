@@ -18,12 +18,27 @@
         <StackLayout>
             <RefreshView IsRefreshing="{Binding IsRefreshing}"
                      Command="{Binding RefreshCommand}">
+                <!-- Page List -->
                 <ListView ItemsSource="{Binding Pages}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextCell Text="{Binding Name}"
-                                      Command="{Binding Source={x:Reference page}, Path=BindingContext.OpenPageCommand}"
-                                      CommandParameter="{Binding}"/>
+                            <ViewCell>
+                                <Button Text="{Binding Name}"
+                                        Command="{Binding Source={x:Reference page}, Path=BindingContext.OpenPageCommand}"
+                                        CommandParameter="{Binding}"
+                                        BackgroundColor="Black"
+                                        HorizontalOptions="StartAndExpand">
+                                    <Button.Triggers>
+                                        <!-- IsRead Triggers -->
+                                        <DataTrigger TargetType="Button" Binding="{Binding IsRead}" Value="false">
+                                            <Setter Property="TextColor" Value="White" />
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Button" Binding="{Binding IsRead}" Value="true">
+                                            <Setter Property="TextColor" Value="Gray" />
+                                        </DataTrigger>
+                                    </Button.Triggers>
+                                </Button>
+                            </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>

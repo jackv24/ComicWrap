@@ -6,6 +6,7 @@ using FreshMvvm;
 using SQLite;
 
 using ComicWrap.Pages;
+using ComicWrap.Themes;
 
 namespace ComicWrap
 {
@@ -22,6 +23,8 @@ namespace ComicWrap
 
         protected override void OnStart()
         {
+            var theme = DependencyService.Get<IEnvironment>().GetOperatingSystemTheme();
+            SetTheme(theme);
         }
 
         protected override void OnSleep()
@@ -30,6 +33,31 @@ namespace ComicWrap
 
         protected override void OnResume()
         {
+            var theme = DependencyService.Get<IEnvironment>().GetOperatingSystemTheme();
+            SetTheme(theme);
+        }
+
+        private void SetTheme(Theme theme)
+        {
+            var mergedDictionaries = Application.Current.Resources.MergedDictionaries;
+            if (mergedDictionaries != null && mergedDictionaries.Count > 0)
+            {
+                mergedDictionaries.Clear();
+
+                switch(theme)
+                {
+                    case Theme.Dark:
+                        mergedDictionaries.Add(new DarkTheme());
+                        break;
+
+                    case Theme.Light:
+                    default:
+                        mergedDictionaries.Add(new LightTheme());
+                        break;
+                }
+
+                mergedDictionaries.Add(new ElementStyles());
+            }
         }
     }
 }

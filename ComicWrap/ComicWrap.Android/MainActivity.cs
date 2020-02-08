@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 
 using Acr.UserDialogs;
+using Plugin.CurrentActivity;
 
 namespace ComicWrap.Droid
 {
@@ -17,6 +18,8 @@ namespace ComicWrap.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             UserDialogs.Init(this);
+
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;

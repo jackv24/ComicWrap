@@ -4,7 +4,7 @@
                     x:Class="ComicWrap.Themes.LightTheme">
 
     <Color x:Key="MainTextColor">Black</Color>
-    <Color x:Key="DisabledTextColor">Gray</Color>
+    <Color x:Key="DisabledTextColor">LightGray</Color>
     <Color x:Key="MainBackgroundColor">White</Color>
 
 </ResourceDictionary>

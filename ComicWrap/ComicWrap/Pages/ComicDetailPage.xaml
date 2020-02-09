@@ -23,21 +23,24 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Button Text="{Binding Name}"
-                                        Command="{Binding Source={x:Reference page}, Path=BindingContext.OpenPageCommand}"
-                                        CommandParameter="{Binding}"
-                                        BackgroundColor="{DynamicResource MainBackgroundColor}"
-                                        HorizontalOptions="StartAndExpand">
-                                    <Button.Triggers>
+                                <Label Text="{Binding Name}"
+                                       BackgroundColor="{DynamicResource MainBackgroundColor}"
+                                       HorizontalOptions="FillAndExpand"
+                                       Padding="20, 5, 20, 5">
+                                    <Label.Triggers>
                                         <!-- IsRead Triggers -->
-                                        <DataTrigger TargetType="Button" Binding="{Binding IsRead}" Value="false">
+                                        <DataTrigger TargetType="Label" Binding="{Binding IsRead}" Value="false">
                                             <Setter Property="TextColor" Value="{DynamicResource MainTextColor}" />
                                         </DataTrigger>
-                                        <DataTrigger TargetType="Button" Binding="{Binding IsRead}" Value="true">
+                                        <DataTrigger TargetType="Label" Binding="{Binding IsRead}" Value="true">
                                             <Setter Property="TextColor" Value="{DynamicResource DisabledTextColor}"/>
                                         </DataTrigger>
-                                    </Button.Triggers>
-                                </Button>
+                                    </Label.Triggers>
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={x:Reference page}, Path=BindingContext.OpenPageCommand}"
+                                                              CommandParameter="{Binding}" />
+                                    </Label.GestureRecognizers>
+                                </Label>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>

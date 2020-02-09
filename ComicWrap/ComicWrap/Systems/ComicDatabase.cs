@@ -95,9 +95,14 @@ namespace ComicWrap.Systems
 
         public async Task<List<ComicPageData>> GetComicPages(ComicData comic)
         {
+            return await GetComicPages(comic.Id);
+        }
+
+        public async Task<List<ComicPageData>> GetComicPages(int comicId)
+        {
             var table = database.Table<ComicPageData>();
             return await table
-                .Where(page => page.ComicId == comic.Id)
+                .Where(page => page.ComicId == comicId)
                 .ToListAsync();
         }
     }

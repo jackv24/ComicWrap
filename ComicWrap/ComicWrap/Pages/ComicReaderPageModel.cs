@@ -4,15 +4,18 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 using Acr.UserDialogs;
 using FreshMvvm;
 using AngleSharp;
 
 using ComicWrap.Systems;
+using ComicWrap.Views;
 
 namespace ComicWrap.Pages
 {
@@ -21,9 +24,19 @@ namespace ComicWrap.Pages
         public ComicReaderPageModel()
         {
             RefreshCommand = new Command(async () => await Refresh());
+
+            NavigatingCommand = new Command(async (args) => await OnNavigating(args));
+            NavigatedCommand = new Command(async (args) => await OnNavigated(args));
         }
 
-        public Command RefreshCommand { get; }
+
+        public ICommand RefreshCommand { get; }
+
+        public ICommand NavigatingCommand { get; }
+        public ICommand NavigatedCommand { get; }
+
+        public ComicPageData LastPageData { get; private set; }
+        public string PageUrl { get; private set; }
 
         private string _pageName;
         public string PageName
@@ -51,34 +64,122 @@ namespace ComicWrap.Pages
         {
             var pageData = (ComicPageData)initData;
 
+            InitAsync(pageData);
+        }
+
+        private async Task InitAsync(ComicPageData pageData)
+        {
             PageName = pageData.Name;
+            PageUrl = pageData.Url;
 
-            // Load page as HTML instead of directly so it can be manipulated
-            var context = ComicUpdater.GetBrowsingContext();
-            context.OpenAsync(pageData.Url).ContinueWith((task) =>
-            {
-                var document = task.Result;
+            // For some reason Navigated event is not called on first load
+            await OnPageLoaded(pageData);
 
-                // NOTE: below code currently zooms, but pinch-to-zoom doesn't work so zoom is permanent
-                //var meta = document.CreateElement("meta");
-                //meta.SetAttribute("name", "viewport");
-                //meta.SetAttribute("content", "width=device-width, initial-scale=0.25, maximum-scale=3.0 user-scalable=1");
-                //document.Head.AppendChild(meta);
-
-                PageSource = new HtmlWebViewSource()
-                {
-                    Html = document.ToHtml()
-                };
-
-                // TODO: Wait until page has loaded or is navigated away before marking as read
-                pageData.IsRead = true;
-                ComicDatabase.Instance.UpdateComicPage(pageData);
-            });
+            // Call after manual OnPageLoaded above just in case Navigated event does get called
+            await LoadPage(pageData);
         }
 
         private async Task Refresh()
         {
             await UserDialogs.Instance.AlertAsync("Refreshing not yet implemented!");
+        }
+
+        private async Task OnNavigating(object o)
+        {
+            var args = (CustomWebView.WebViewNavigatingArgs)o;
+            var webView = (CustomWebView)args.Sender;
+            var e = args.EventArgs;
+
+            // Don't do anything when called multiple times on same page
+            if (string.IsNullOrEmpty(e.Url)
+                || new Uri(e.Url).ToRelative() == new Uri(PageUrl).ToRelative())
+            {
+                return;
+            }
+
+            var nextPageBase = new Uri(e.Url).Host.Replace("www.", string.Empty);
+            var currentPageBase = new Uri(PageUrl).Host.Replace("www.", string.Empty);
+
+            if (nextPageBase != currentPageBase)
+            {
+                // Next page is not on same site, open in system default app instead
+                e.Cancel = true;
+                await Launcher.OpenAsync(e.Url);
+            }
+            else
+            {
+                PageName = "Loading...";
+                PageUrl = e.Url;
+
+                var pageData = await LoadPageData(e.Url);
+                if (pageData != null)
+                {
+                    e.Cancel = true;
+                    await LoadPage(pageData);
+                }
+            }
+        }
+
+        private async Task OnNavigated(object o)
+        {
+            var args = (CustomWebView.WebViewNavigatedArgs)o;
+            var webView = (CustomWebView)args.Sender;
+            var e = args.EventArgs;
+
+            var pageData = await LoadPageData(e.Url);
+            if (pageData != null)
+            {
+                await OnPageLoaded(pageData);
+            }
+            else
+            {
+                PageName = await webView.EvaluateJavaScriptAsync("document.title");
+                PageUrl = e.Url;
+            }
+        }
+
+        private async Task<ComicPageData> LoadPageData(string pageUrl)
+        {
+            string pageUrlRelative = new Uri(pageUrl).ToRelative();
+
+            var pages = await ComicDatabase.Instance.GetComicPages(LastPageData.ComicId);
+            foreach (var page in pages)
+            {
+                string otherPageUrlRelative = new Uri(page.Url).ToRelative();
+                if (otherPageUrlRelative == pageUrlRelative)
+                    return page;
+            }
+
+            return null;
+        }
+
+        private async Task LoadPage(ComicPageData pageData)
+        {
+            LastPageData = pageData;
+
+            // Load page as HTML instead of directly so it can be manipulated
+            var context = ComicUpdater.GetBrowsingContext();
+            var document = await context.OpenAsync(pageData.Url);
+
+            // NOTE: below code currently zooms, but pinch-to-zoom doesn't work so zoom is permanent
+            //var meta = document.CreateElement("meta");
+            //meta.SetAttribute("name", "viewport");
+            //meta.SetAttribute("content", "width=device-width, initial-scale=0.25, maximum-scale=3.0 user-scalable=1");
+            //document.Head.AppendChild(meta);
+
+            PageSource = new HtmlWebViewSource()
+            {
+                Html = document.ToHtml()
+            };
+        }
+
+        private async Task OnPageLoaded(ComicPageData pageData)
+        {
+            PageName = pageData.Name;
+            PageUrl = pageData.Url;
+
+            pageData.IsRead = true;
+            await ComicDatabase.Instance.UpdateComicPage(pageData);
         }
     }
 }

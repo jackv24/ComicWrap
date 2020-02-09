@@ -46,7 +46,7 @@ namespace ComicWrap.Systems
                 ArchiveUrl = archiveUrl
             };
 
-            var pages = await UpdateComic(comic, currentPageUrl);
+            await UpdateComic(comic, currentPageUrl);
         }
 
         public static async Task<IEnumerable<ComicPageData>> UpdateComic(ComicData comic, string markReadUpToUrl = null)

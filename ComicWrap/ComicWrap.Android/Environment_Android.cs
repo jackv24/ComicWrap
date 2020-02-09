@@ -22,17 +22,12 @@ namespace ComicWrap.Droid
                 var config = CrossCurrentActivity.Current.AppContext.Resources.Configuration;
                 var uiModeFlags = config.UiMode & UiMode.NightMask;
 
-                switch (uiModeFlags)
+                return uiModeFlags switch
                 {
-                    case UiMode.NightYes:
-                        return Theme.Dark;
-
-                    case UiMode.NightNo:
-                        return Theme.Light;
-
-                    default:
-                        throw new NotSupportedException($"UiMode {uiModeFlags} not supported");
-                }
+                    UiMode.NightYes => Theme.Dark,
+                    UiMode.NightNo => Theme.Light,
+                    _ => throw new NotSupportedException($"UiMode {uiModeFlags} not supported"),
+                };
             }
             else
             {

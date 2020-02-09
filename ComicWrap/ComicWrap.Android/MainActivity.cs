@@ -18,8 +18,10 @@ namespace ComicWrap.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             // Android requires theme to be set before creating activity
-            var environment = new Environment_Android();
-            environment.MainActivity = this;
+            var environment = new Environment_Android
+            {
+                MainActivity = this
+            };
             environment.ApplyTheme(environment.GetOperatingSystemTheme());
 
             UserDialogs.Init(this);

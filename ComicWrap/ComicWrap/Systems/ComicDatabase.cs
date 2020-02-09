@@ -32,7 +32,7 @@ namespace ComicWrap.Systems
             database = new SQLiteAsyncConnection(dbPath);
         }
 
-        private SQLiteAsyncConnection database;
+        private readonly SQLiteAsyncConnection database;
 
         private static ComicDatabase _instance;
         public static ComicDatabase Instance

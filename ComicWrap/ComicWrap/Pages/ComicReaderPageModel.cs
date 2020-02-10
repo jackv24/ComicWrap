@@ -13,6 +13,8 @@ using Xamarin.Essentials;
 using Acr.UserDialogs;
 using FreshMvvm;
 using AngleSharp;
+using AsyncAwaitBestPractices;
+using AsyncAwaitBestPractices.MVVM;
 
 using ComicWrap.Systems;
 using ComicWrap.Views;
@@ -23,17 +25,17 @@ namespace ComicWrap.Pages
     {
         public ComicReaderPageModel()
         {
-            RefreshCommand = new Command(async () => await Refresh());
+            RefreshCommand = new AsyncCommand(Refresh);
 
-            NavigatingCommand = new Command(async (args) => await OnNavigating(args));
-            NavigatedCommand = new Command(async (args) => await OnNavigated(args));
+            NavigatingCommand = new AsyncCommand<CustomWebViewNavigatingArgs>(OnNavigating);
+            NavigatedCommand = new AsyncCommand<CustomWebViewNavigatedArgs>(OnNavigated);
         }
 
 
-        public ICommand RefreshCommand { get; }
+        public IAsyncCommand RefreshCommand { get; }
 
-        public ICommand NavigatingCommand { get; }
-        public ICommand NavigatedCommand { get; }
+        public IAsyncCommand<CustomWebViewNavigatingArgs> NavigatingCommand { get; }
+        public IAsyncCommand<CustomWebViewNavigatedArgs> NavigatedCommand { get; }
 
         public ComicPageData LastPageData { get; private set; }
         public string PageUrl { get; private set; }
@@ -64,7 +66,7 @@ namespace ComicWrap.Pages
         {
             var pageData = (ComicPageData)initData;
 
-            InitAsync(pageData);
+            InitAsync(pageData).SafeFireAndForget();
         }
 
         private async Task InitAsync(ComicPageData pageData)
@@ -84,9 +86,8 @@ namespace ComicWrap.Pages
             await UserDialogs.Instance.AlertAsync("Refreshing not yet implemented!");
         }
 
-        private async Task OnNavigating(object o)
+        private async Task OnNavigating(CustomWebViewNavigatingArgs args)
         {
-            var args = (CustomWebView.WebViewNavigatingArgs)o;
             var webView = (CustomWebView)args.Sender;
             var e = args.EventArgs;
 
@@ -120,9 +121,8 @@ namespace ComicWrap.Pages
             }
         }
 
-        private async Task OnNavigated(object o)
+        private async Task OnNavigated(CustomWebViewNavigatedArgs args)
         {
-            var args = (CustomWebView.WebViewNavigatedArgs)o;
             var webView = (CustomWebView)args.Sender;
             var e = args.EventArgs;
 

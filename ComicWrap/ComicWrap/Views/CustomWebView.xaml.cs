@@ -10,21 +10,21 @@ using Xamarin.Forms.Xaml;
 
 namespace ComicWrap.Views
 {
+    public struct CustomWebViewNavigatingArgs
+    {
+        public object Sender { get; set; }
+        public WebNavigatingEventArgs EventArgs { get; set; }
+    }
+
+    public struct CustomWebViewNavigatedArgs
+    {
+        public object Sender { get; set; }
+        public WebNavigatedEventArgs EventArgs { get; set; }
+    }
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CustomWebView : WebView
     {
-        public struct WebViewNavigatingArgs
-        {
-            public object Sender { get; set; }
-            public WebNavigatingEventArgs EventArgs { get; set; }
-        }
-
-        public struct WebViewNavigatedArgs
-        {
-            public object Sender { get; set; }
-            public WebNavigatedEventArgs EventArgs { get; set; }
-        }
-
         public static readonly BindableProperty NavigatingCommandProperty =
             BindableProperty.Create(nameof(NavigatingCommand), typeof(ICommand), typeof(CustomWebView));
         
@@ -53,7 +53,7 @@ namespace ComicWrap.Views
 
         private void OnNavigating(object sender, WebNavigatingEventArgs e)
         {
-            var args = new WebViewNavigatingArgs
+            var args = new CustomWebViewNavigatingArgs
             {
                 Sender = sender,
                 EventArgs = e
@@ -65,7 +65,7 @@ namespace ComicWrap.Views
 
         private void OnNavigated(object sender, WebNavigatedEventArgs e)
         {
-            var args = new WebViewNavigatedArgs
+            var args = new CustomWebViewNavigatedArgs
             {
                 Sender = sender,
                 EventArgs = e

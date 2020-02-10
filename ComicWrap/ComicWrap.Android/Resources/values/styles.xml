@@ -14,6 +14,7 @@
     <item name="colorPrimaryDark">#BDBDBD</item>
     <item name="android:navigationBarColor">#FFFFFF</item>
     <item name="android:drawableTint">#000000</item>"
+    <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
   </style>
 
   <style name="DarkTheme" parent="MainTheme.Base">
@@ -41,5 +42,10 @@
   
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
     <item name="colorAccent">#FF4081</item>
+  </style>
+
+  <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+    <item name="spinBars">true</item>
+    <item name="color">#000000</item>
   </style>
 </resources>

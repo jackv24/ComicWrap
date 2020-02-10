@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using FreshMvvm;
+using AsyncAwaitBestPractices;
+using AsyncAwaitBestPractices.MVVM;
 using Rg.Plugins.Popup.Services;
 using Rg.Plugins.Popup.Pages;
 
@@ -20,19 +23,28 @@ namespace ComicWrap.Pages
     {
         public HomePageModel() : base()
         {
-            AddComicCommand = new Command(async () => await OpenAddComicPopup());
-            RefreshCommand = new Command(Refresh);
+            AddComicCommand = new AsyncCommand(OpenAddComicPopup);
+
+            RefreshCommand = new AsyncCommand(async () =>
+            {
+                try
+                {
+                    await Refresh();
+                }
+                catch (OperationCanceledException)
+                {
+                    // Should cancel silently
+                }
+            });
 
             Comics = new ObservableCollection<ComicData>();
-
-            Refresh();
         }
 
+        private CancellationTokenSource pageCancelTokenSource;
         private bool _isRefreshing;
-        private bool isRefreshTaskRunning;
 
-        public Command AddComicCommand { get; }
-        public Command RefreshCommand { get; }
+        public IAsyncCommand AddComicCommand { get; }
+        public IAsyncCommand RefreshCommand { get; }
 
         public bool IsRefreshing
         {
@@ -53,7 +65,20 @@ namespace ComicWrap.Pages
 
         protected override void ViewIsAppearing(object sender, EventArgs e)
         {
-            Refresh();
+            base.ViewIsAppearing(sender, e);
+
+            pageCancelTokenSource = new CancellationTokenSource();
+
+            // Will call refresh command (don't set true in manually called refresh command
+            // or it will be called multiple times)
+            IsRefreshing = true;
+        }
+
+        protected override void ViewIsDisappearing(object sender, EventArgs e)
+        {
+            base.ViewIsDisappearing(sender, e);
+
+            pageCancelTokenSource.Cancel();
         }
 
         private async Task OpenAddComicPopup()
@@ -62,14 +87,9 @@ namespace ComicWrap.Pages
             await PopupNavigation.Instance.PushAsync(page);
         }
 
-        private async void Refresh()
+        private async Task Refresh()
         {
-            // Method is "fire and forget" so make sure it's not already running
-            if (isRefreshTaskRunning)
-                return;
-
-            isRefreshTaskRunning = true;
-            IsRefreshing = true;
+            var cancelToken = pageCancelTokenSource.Token;
 
             // Load comics from local database
             var loadedComics = await ComicDatabase.Instance.GetComics();
@@ -81,11 +101,10 @@ namespace ComicWrap.Pages
 
             // Update comics from internet after loading from database so UI is filled ASAP
             foreach (var comic in loadedComics)
-                await ComicUpdater.UpdateComic(comic);
+                await ComicUpdater.UpdateComic(comic, cancelToken: cancelToken);
 
             RaisePropertyChanged(nameof(IsAnyComics));
 
-            isRefreshTaskRunning = false;
             IsRefreshing = false;
 
             // TODO: Get comic updates in the background

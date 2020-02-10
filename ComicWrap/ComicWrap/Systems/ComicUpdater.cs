@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 using AngleSharp;
@@ -49,16 +50,26 @@ namespace ComicWrap.Systems
             await UpdateComic(comic, currentPageUrl);
         }
 
-        public static async Task<IEnumerable<ComicPageData>> UpdateComic(ComicData comic, string markReadUpToUrl = null)
+        public static async Task<IEnumerable<ComicPageData>> UpdateComic(
+            ComicData comic,
+            string markReadUpToUrl = null,
+            CancellationToken cancelToken = default)
         {
+
             // Load comic archive page
+            cancelToken.ThrowIfCancellationRequested();
             var document = await GetBrowsingContext().OpenAsync(comic.ArchiveUrl);
 
             // Update comic name
             comic.Name = document.Title;
 
-            var newPages = await DiscoverPages(document);
+            var newPages = DiscoverPages(document);
+            cancelToken.ThrowIfCancellationRequested();
             var oldPages = await ComicDatabase.Instance.GetComicPages(comic);
+
+            // TODO: We can not cancel anymore as the database is being written to, block any other
+            //       database writes instead! (maybe combine below database calls into one transaction?)
+            cancelToken.ThrowIfCancellationRequested();
 
             // Remove old data from database
             await ComicDatabase.Instance.DeleteComic(comic);
@@ -104,7 +115,7 @@ namespace ComicWrap.Systems
             return newPages;
         }
 
-        private static async Task<List<ComicPageData>> DiscoverPages(IDocument document)
+        private static List<ComicPageData> DiscoverPages(IDocument document)
         {
             // TODO: Expand to work with more sites
 

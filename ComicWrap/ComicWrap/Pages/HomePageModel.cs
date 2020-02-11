@@ -79,6 +79,7 @@ namespace ComicWrap.Pages
             base.ViewIsDisappearing(sender, e);
 
             pageCancelTokenSource.Cancel();
+            IsRefreshing = false;
         }
 
         private async Task OpenAddComicPopup()

@@ -105,5 +105,10 @@ namespace ComicWrap.Systems
                 .Where(page => page.ComicId == comicId)
                 .ToListAsync();
         }
+
+        public async Task RunInTransactionAsync(Action<SQLiteConnection> action)
+        {
+            await database.RunInTransactionAsync(action);
+        }
     }
 }

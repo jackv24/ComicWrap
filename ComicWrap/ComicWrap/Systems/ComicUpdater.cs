@@ -66,20 +66,8 @@ namespace ComicWrap.Systems
             var newPages = DiscoverPages(document);
             cancelToken.ThrowIfCancellationRequested();
             var oldPages = await ComicDatabase.Instance.GetComicPages(comic);
-
-            // TODO: We can not cancel anymore as the database is being written to, block any other
-            //       database writes instead! (maybe combine below database calls into one transaction?)
             cancelToken.ThrowIfCancellationRequested();
 
-            // Remove old data from database
-            await ComicDatabase.Instance.DeleteComic(comic);
-
-            // Reset comic ID so UpdateComic uses Insert
-            comic.Id = 0;
-
-            // Add new data back into database before setting up pages, so comic Id is set
-            await ComicDatabase.Instance.UpdateComic(comic);
-            
             bool doMarkReadUpTo = !string.IsNullOrEmpty(markReadUpToUrl);
             bool reachedReadPage = false;
 
@@ -88,7 +76,6 @@ namespace ComicWrap.Systems
             for (int i = newPages.Count - 1; i >= 0; i--)
             {
                 ComicPageData newPage = newPages[i];
-                newPage.ComicId = comic.Id;
 
                 // Mark all pages before current page as read
                 if (doMarkReadUpTo && newPage.Url == markReadUpToUrl)
@@ -110,7 +97,34 @@ namespace ComicWrap.Systems
                 }
             }
 
-            await ComicDatabase.Instance.UpdateComicPages(newPages);
+            // NOTE: After this point we can no longer cancel as database is being written to
+            cancelToken.ThrowIfCancellationRequested();
+
+            // Run database operations as one transaction to prevent issues
+            await ComicDatabase.Instance.RunInTransactionAsync(database =>
+            {
+                // Delete any existing pages that aren't in the new pages
+                var deletePages = oldPages.Where(page => !newPages.Contains(page));
+                foreach (var page in deletePages)
+                    database.Delete(page);
+
+                // Add comic to database first so ID is set
+                if (comic.Id == 0)
+                    database.Insert(comic);
+                else
+                    database.Update(comic);
+
+                // Add pages to database after Comic.Id is set so their ComicId is correct
+                foreach (var page in newPages)
+                {
+                    page.ComicId = comic.Id;
+
+                    if (page.Id == 0)
+                        database.Insert(page);
+                    else
+                        database.Update(page);
+                }
+            });
 
             return newPages;
         }

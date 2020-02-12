@@ -28,7 +28,16 @@ namespace ComicWrap.Pages
             {
                 try
                 {
-                    await Refresh();
+                    var cancelToken = pageCancelTokenSource.Token;
+                    
+                    // Refresh without updating first so list loads quickly
+                    cancelToken.ThrowIfCancellationRequested();
+                    await Refresh(doUpdate: false, cancelToken);
+
+                    cancelToken.ThrowIfCancellationRequested();
+                    await Refresh(doUpdate: true, cancelToken);
+
+                    IsRefreshing = false;
                 }
                 catch (OperationCanceledException)
                 {
@@ -110,11 +119,11 @@ namespace ComicWrap.Pages
             UserDialogs.Instance.Toast($"Deleted Comic: {Comic.Name}");
         }
 
-        private async Task Refresh()
+        private async Task Refresh(bool doUpdate, CancellationToken cancelToken)
         {
-            var cancelToken = pageCancelTokenSource.Token;
-
-            var newPages = await ComicUpdater.UpdateComic(Comic, cancelToken: cancelToken);
+            var newPages = doUpdate
+                ? await ComicUpdater.UpdateComic(Comic, cancelToken: cancelToken)
+                : await ComicDatabase.Instance.GetComicPages(Comic);
 
             // Display new page list
             var reordered = newPages.Reverse();
@@ -123,8 +132,6 @@ namespace ComicWrap.Pages
             Pages.Clear();
             foreach (var page in reordered)
                 Pages.Add(page);
-
-            IsRefreshing = false;
         }
 
         private async Task OpenPage(ComicPageData pageData)

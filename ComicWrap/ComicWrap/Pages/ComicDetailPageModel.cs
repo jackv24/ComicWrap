@@ -28,6 +28,8 @@ namespace ComicWrap.Pages
             {
                 try
                 {
+                    IsRefreshing = true;
+
                     var cancelToken = pageCancelTokenSource.Token;
                     
                     // Refresh without updating first so list loads quickly
@@ -81,9 +83,8 @@ namespace ComicWrap.Pages
 
             pageCancelTokenSource = new CancellationTokenSource();
 
-            // Will call refresh command (don't set true in manually called refresh command
-            // or it will be called multiple times)
-            IsRefreshing = true;
+            if (RefreshCommand.CanExecute(null))
+                RefreshCommand.Execute(null);
         }
 
         protected override void ViewIsDisappearing(object sender, EventArgs e)

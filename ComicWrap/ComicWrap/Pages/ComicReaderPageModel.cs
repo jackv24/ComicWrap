@@ -91,6 +91,10 @@ namespace ComicWrap.Pages
             var webView = (CustomWebView)args.Sender;
             var e = args.EventArgs;
 
+            // TODO: Fix iOS navigating events better with this solution: https://stackoverflow.com/questions/37298586/xamarin-forms-webview-navigating-event-raised-on-ios-for-internal-navigation
+            if (e.Url.StartsWith("file"))
+                return;
+
             // Don't do anything when called multiple times on same page
             if (string.IsNullOrEmpty(e.Url)
                 || new Uri(e.Url).ToRelative() == new Uri(PageUrl).ToRelative())

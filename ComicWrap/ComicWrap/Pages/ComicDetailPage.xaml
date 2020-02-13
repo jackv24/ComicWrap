@@ -15,37 +15,37 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout>
-            <RefreshView IsRefreshing="{Binding IsRefreshing}"
-                     Command="{Binding RefreshCommand}">
-                <!-- Page List -->
-                <ListView ItemsSource="{Binding Pages}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Label Text="{Binding Name}"
-                                       BackgroundColor="{DynamicResource MainBackgroundColor}"
-                                       HorizontalOptions="FillAndExpand"
-                                       Padding="20, 5, 20, 5">
-                                    <Label.Triggers>
-                                        <!-- IsRead Triggers -->
-                                        <DataTrigger TargetType="Label" Binding="{Binding IsRead}" Value="false">
-                                            <Setter Property="TextColor" Value="{DynamicResource MainTextColor}" />
-                                        </DataTrigger>
-                                        <DataTrigger TargetType="Label" Binding="{Binding IsRead}" Value="true">
-                                            <Setter Property="TextColor" Value="{DynamicResource DisabledTextColor}"/>
-                                        </DataTrigger>
-                                    </Label.Triggers>
-                                    <Label.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding Source={x:Reference page}, Path=BindingContext.OpenPageCommand}"
-                                                              CommandParameter="{Binding}" />
-                                    </Label.GestureRecognizers>
-                                </Label>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </RefreshView>
-        </StackLayout>
+        <!-- Page List -->
+            <ListView ItemsSource="{Binding Pages}"
+                      IsPullToRefreshEnabled="True"
+                      IsRefreshing="{Binding IsRefreshing}"
+                      RefreshCommand="{Binding RefreshCommand}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Name}"
+                                   BackgroundColor="{DynamicResource MainBackgroundColor}"
+                                   HorizontalOptions="FillAndExpand"
+                                   VerticalOptions="FillAndExpand"
+                                   VerticalTextAlignment="Center"
+                                   Padding="20, 5, 20, 5">
+                                <Label.Triggers>
+                                    <!-- IsRead Triggers -->
+                                    <DataTrigger TargetType="Label" Binding="{Binding IsRead}" Value="false">
+                                        <Setter Property="TextColor" Value="{DynamicResource MainTextColor}" />
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Label" Binding="{Binding IsRead}" Value="true">
+                                        <Setter Property="TextColor" Value="{DynamicResource DisabledTextColor}"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={x:Reference page}, Path=BindingContext.OpenPageCommand}"
+                                                                      CommandParameter="{Binding}" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
     </ContentPage.Content>
 </ContentPage>

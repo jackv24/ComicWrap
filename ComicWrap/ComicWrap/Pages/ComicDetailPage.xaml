@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:ComicWrap.Views"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              mc:Ignorable="d"
              x:Class="ComicWrap.Pages.ComicDetailPage"
              x:Name="page">
@@ -19,7 +20,8 @@
             <ListView ItemsSource="{Binding Pages}"
                       IsPullToRefreshEnabled="True"
                       IsRefreshing="{Binding IsRefreshing}"
-                      RefreshCommand="{Binding RefreshCommand}">
+                      RefreshCommand="{Binding RefreshCommand}"
+                      ios:ListView.RowAnimationsEnabled="false">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

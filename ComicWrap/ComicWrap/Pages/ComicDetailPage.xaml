@@ -7,10 +7,10 @@
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              mc:Ignorable="d"
              x:Class="ComicWrap.Pages.ComicDetailPage"
-             x:Name="page">
+             x:Name="page"
+             Title="{Binding Comic.Name}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="ic_share_white_36dp" />
         <ToolbarItem IconImageSource="ic_more_vert_white_36dp"
                      Command="{Binding OpenOptionsCommand}"/>
     </ContentPage.ToolbarItems>

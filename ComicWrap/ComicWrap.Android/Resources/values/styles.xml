@@ -11,7 +11,8 @@
     <!-- colorPrimary is used for the default action bar background -->
     <item name="colorPrimary">#FFFFFF</item>
     <!-- colorPrimaryDark is used for the status bar -->
-    <item name="colorPrimaryDark">#BDBDBD</item>
+    <item name="colorPrimaryDark">#F5F5F5</item>
+    <item name="android:windowLightStatusBar">true</item>
     <item name="android:navigationBarColor">#FFFFFF</item>
     <item name="android:drawableTint">#000000</item>"
     <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>

@@ -31,7 +31,7 @@ namespace ComicWrap.Pages
                     IsRefreshing = true;
 
                     var cancelToken = pageCancelTokenSource.Token;
-                    
+
                     // Refresh without updating first so list loads quickly
                     cancelToken.ThrowIfCancellationRequested();
                     await Refresh(doUpdate: false, cancelToken);
@@ -52,6 +52,7 @@ namespace ComicWrap.Pages
 
         private CancellationTokenSource pageCancelTokenSource;
         private bool _isRefreshing;
+        private ComicData _comic;
 
         public IAsyncCommand OpenOptionsCommand { get; }
         public IAsyncCommand RefreshCommand { get; }
@@ -67,7 +68,17 @@ namespace ComicWrap.Pages
             }
         }
 
-        public ComicData Comic { get; private set; }
+        public ComicData Comic
+        {
+            get { return _comic; }
+            private set
+            {
+                _comic = value;
+
+                RaisePropertyChanged();
+            }
+        }
+
         public ObservableCollection<ComicPageData> Pages { get; set; }
 
         public override void Init(object initData)
@@ -128,7 +139,7 @@ namespace ComicWrap.Pages
 
             // Display new page list
             var reordered = newPages.Reverse();
-            
+
             // Need to use ObservableCollection methods so UI is updated
             Pages.Clear();
             foreach (var page in reordered)

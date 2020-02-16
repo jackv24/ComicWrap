@@ -44,7 +44,8 @@ namespace ComicWrap.Systems
             var comic = new ComicData
             {
                 Name = document.Title,
-                ArchiveUrl = archiveUrl
+                ArchiveUrl = archiveUrl,
+                CurrentPageUrl = currentPageUrl
             };
 
             await UpdateComic(comic, currentPageUrl);
@@ -63,7 +64,7 @@ namespace ComicWrap.Systems
             // Update comic name
             comic.Name = document.Title;
 
-            var newPages = DiscoverPages(document);
+            var newPages = DiscoverPages(document, comic.CurrentPageUrl);
             cancelToken.ThrowIfCancellationRequested();
             var oldPages = await ComicDatabase.Instance.GetComicPages(comic);
             cancelToken.ThrowIfCancellationRequested();
@@ -129,7 +130,7 @@ namespace ComicWrap.Systems
             return newPages;
         }
 
-        private static List<ComicPageData> DiscoverPages(IDocument document)
+        public static List<ComicPageData> DiscoverPages(IDocument document, string knownPageUrl)
         {
             // TODO: Expand to work with more sites
 

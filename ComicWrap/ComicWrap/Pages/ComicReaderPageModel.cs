@@ -51,8 +51,8 @@ namespace ComicWrap.Pages
             }
         }
 
-        private HtmlWebViewSource _pageSource;
-        public HtmlWebViewSource PageSource
+        private UrlWebViewSource _pageSource;
+        public UrlWebViewSource PageSource
         {
             get { return _pageSource; }
             set
@@ -65,20 +65,20 @@ namespace ComicWrap.Pages
         public override void Init(object initData)
         {
             var pageData = (ComicPageData)initData;
+            LastPageData = pageData;
+
+            PageName = pageData.Name;
+            PageUrl = pageData.Url;
+
+            PageSource = new UrlWebViewSource { Url = pageData.Url };
 
             InitAsync(pageData).SafeFireAndForget();
         }
 
         private async Task InitAsync(ComicPageData pageData)
         {
-            PageName = pageData.Name;
-            PageUrl = pageData.Url;
-
-            // For some reason Navigated event is not called on first load
-            await OnPageLoaded(pageData);
-
-            // Call after manual OnPageLoaded above just in case Navigated event does get called
-            await LoadPage(pageData);
+            pageData.IsRead = true;
+            await ComicDatabase.Instance.UpdateComicPage(pageData);
         }
 
         private async Task Refresh()
@@ -91,10 +91,6 @@ namespace ComicWrap.Pages
             var webView = (CustomWebView)args.Sender;
             var e = args.EventArgs;
 
-            // TODO: Fix iOS navigating events better with this solution: https://stackoverflow.com/questions/37298586/xamarin-forms-webview-navigating-event-raised-on-ios-for-internal-navigation
-            if (e.Url.StartsWith("file"))
-                return;
-
             // Don't do anything when called multiple times on same page
             if (string.IsNullOrEmpty(e.Url)
                 || new Uri(e.Url).ToRelative() == new Uri(PageUrl).ToRelative())
@@ -102,26 +98,14 @@ namespace ComicWrap.Pages
                 return;
             }
 
-            var nextPageBase = new Uri(e.Url).Host.Replace("www.", string.Empty);
-            var currentPageBase = new Uri(PageUrl).Host.Replace("www.", string.Empty);
+            PageName = "Loading...";
+            PageUrl = e.Url;
 
-            if (nextPageBase != currentPageBase)
+            var pageData = await LoadPageData(e.Url);
+            if (pageData != null && !pageData.IsRead)
             {
-                // Next page is not on same site, open in system default app instead
-                e.Cancel = true;
-                await Launcher.OpenAsync(e.Url);
-            }
-            else
-            {
-                PageName = "Loading...";
-                PageUrl = e.Url;
-
-                var pageData = await LoadPageData(e.Url);
-                if (pageData != null)
-                {
-                    e.Cancel = true;
-                    await LoadPage(pageData);
-                }
+                pageData.IsRead = true;
+                await ComicDatabase.Instance.UpdateComicPage(pageData);
             }
         }
 
@@ -133,7 +117,8 @@ namespace ComicWrap.Pages
             var pageData = await LoadPageData(e.Url);
             if (pageData != null)
             {
-                await OnPageLoaded(pageData);
+                PageName = pageData.Name;
+                PageUrl = pageData.Url;
             }
             else
             {
@@ -151,39 +136,13 @@ namespace ComicWrap.Pages
             {
                 string otherPageUrlRelative = new Uri(page.Url).ToRelative();
                 if (otherPageUrlRelative == pageUrlRelative)
+                {
+                    LastPageData = page;
                     return page;
+                }
             }
 
             return null;
-        }
-
-        private async Task LoadPage(ComicPageData pageData)
-        {
-            LastPageData = pageData;
-
-            // Load page as HTML instead of directly so it can be manipulated
-            var context = ComicUpdater.GetBrowsingContext();
-            var document = await context.OpenAsync(pageData.Url);
-
-            // NOTE: below code currently zooms, but pinch-to-zoom doesn't work so zoom is permanent
-            //var meta = document.CreateElement("meta");
-            //meta.SetAttribute("name", "viewport");
-            //meta.SetAttribute("content", "width=device-width, initial-scale=0.25, maximum-scale=3.0 user-scalable=1");
-            //document.Head.AppendChild(meta);
-
-            PageSource = new HtmlWebViewSource()
-            {
-                Html = document.ToHtml()
-            };
-        }
-
-        private async Task OnPageLoaded(ComicPageData pageData)
-        {
-            PageName = pageData.Name;
-            PageUrl = pageData.Url;
-
-            pageData.IsRead = true;
-            await ComicDatabase.Instance.UpdateComicPage(pageData);
         }
     }
 }

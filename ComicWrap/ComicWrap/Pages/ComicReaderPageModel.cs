@@ -31,14 +31,16 @@ namespace ComicWrap.Pages
             NavigatedCommand = new AsyncCommand<CustomWebViewNavigatedArgs>(OnNavigated);
         }
 
+        private string lastNavigatedUrl;
+
+        private Dictionary<string, ComicPageData> cachedPages;
 
         public IAsyncCommand RefreshCommand { get; }
 
         public IAsyncCommand<CustomWebViewNavigatingArgs> NavigatingCommand { get; }
         public IAsyncCommand<CustomWebViewNavigatedArgs> NavigatedCommand { get; }
 
-        public ComicPageData LastPageData { get; private set; }
-        public string PageUrl { get; private set; }
+        public int ComicId { get; private set; }
 
         private string _pageName;
         public string PageName
@@ -65,11 +67,9 @@ namespace ComicWrap.Pages
         public override void Init(object initData)
         {
             var pageData = (ComicPageData)initData;
-            LastPageData = pageData;
+            ComicId = pageData.ComicId;
 
             PageName = pageData.Name;
-            PageUrl = pageData.Url;
-
             PageSource = new UrlWebViewSource { Url = pageData.Url };
 
             InitAsync(pageData).SafeFireAndForget();
@@ -91,19 +91,24 @@ namespace ComicWrap.Pages
             var webView = (CustomWebView)args.Sender;
             var e = args.EventArgs;
 
-            // Don't do anything when called multiple times on same page
-            if (string.IsNullOrEmpty(e.Url)
-                || new Uri(e.Url).ToRelative() == new Uri(PageUrl).ToRelative())
+            if (!string.IsNullOrEmpty(lastNavigatedUrl))
             {
-                return;
+                // Don't do anything when called multiple times on same page
+                if (string.IsNullOrEmpty(e.Url)
+                    || new Uri(e.Url).ToRelative() == new Uri(lastNavigatedUrl).ToRelative())
+                {
+                    return;
+                }
             }
 
-            PageName = "Loading...";
-            PageUrl = e.Url;
+            lastNavigatedUrl = e.Url;
 
             var pageData = await LoadPageData(e.Url);
             if (pageData != null && !pageData.IsRead)
             {
+                PageName = pageData.Name;
+
+                // Mark as read and save to database (don't need to update cachedPages since pageData is a class reference)
                 pageData.IsRead = true;
                 await ComicDatabase.Instance.UpdateComicPage(pageData);
             }
@@ -114,33 +119,27 @@ namespace ComicWrap.Pages
             var webView = (CustomWebView)args.Sender;
             var e = args.EventArgs;
 
+            // Set document title to page name if it's a comic page, else just webpage title
             var pageData = await LoadPageData(e.Url);
-            if (pageData != null)
-            {
-                PageName = pageData.Name;
-                PageUrl = pageData.Url;
-            }
-            else
-            {
-                PageName = await webView.EvaluateJavaScriptAsync("document.title");
-                PageUrl = e.Url;
-            }
+            PageName = pageData != null
+                ? pageData.Name
+                : await webView.EvaluateJavaScriptAsync("document.title");
         }
 
         private async Task<ComicPageData> LoadPageData(string pageUrl)
         {
-            string pageUrlRelative = new Uri(pageUrl).ToRelative();
-
-            var pages = await ComicDatabase.Instance.GetComicPages(LastPageData.ComicId);
-            foreach (var page in pages)
+            // Get cached pages once, since no pages will be added or removed and ComicPageData is a class
+            if (cachedPages == null)
             {
-                string otherPageUrlRelative = new Uri(page.Url).ToRelative();
-                if (otherPageUrlRelative == pageUrlRelative)
-                {
-                    LastPageData = page;
-                    return page;
-                }
+                var pages = await ComicDatabase.Instance.GetComicPages(ComicId);
+                cachedPages = pages
+                    .ToDictionary(page => new Uri(page.Url).ToRelative());
             }
+
+            string pageUrlRelative = new Uri(pageUrl).ToRelative();
+            
+            if (cachedPages.ContainsKey(pageUrlRelative))
+                return cachedPages[pageUrlRelative];
 
             return null;
         }

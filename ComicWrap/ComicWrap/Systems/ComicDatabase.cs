@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Essentials;
 
-using SQLite;
+using Realms;
 
 namespace ComicWrap.Systems
 {
@@ -16,23 +16,14 @@ namespace ComicWrap.Systems
     {
         public ComicDatabase()
         {
-            string dbFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string dbFileName = "Comics.db3";
-            string dbPath = Path.Combine(dbFolderPath, dbFileName);
+            //string dbFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            //string dbFileName = "Comics.db3";
+            //string dbPath = Path.Combine(dbFolderPath, dbFileName);
 
-            // Use synchonous connection on startup so we know database
-            // is setup correctly before anything else accesses it
-            var syncDatabase = new SQLiteConnection(dbPath);
-            syncDatabase.CreateTables(CreateFlags.None,
-                typeof(ComicData),
-                typeof(ComicPageData)
-                );
-
-            // Use async connection at runtime for responsiveness
-            database = new SQLiteAsyncConnection(dbPath);
+            realm = Realm.GetInstance();
         }
 
-        private readonly SQLiteAsyncConnection database;
+        private readonly Realm realm;
 
         private static ComicDatabase _instance;
         public static ComicDatabase Instance
@@ -46,69 +37,57 @@ namespace ComicWrap.Systems
             }
         }
 
-        public async Task UpdateComic(ComicData comicData)
+        public void AddComic(ComicData comicData)
         {
-            if (comicData.Id == 0)
-                await database.InsertAsync(comicData);
-            else
-                await database.UpdateAsync(comicData);
-        }
-
-        public async Task UpdateComicPages(IEnumerable<ComicPageData> comicPages)
-        {
-            // Update comic pages in a transaction for efficiency (there may be lots)
-            await database.RunInTransactionAsync((database) =>
-            {
-                foreach (var pageData in comicPages)
-                {
-                    if (pageData.Id == 0)
-                        database.Insert(pageData);
-                    else
-                        database.Update(pageData);
-                }
-            });
-        }
-
-        public async Task UpdateComicPage(ComicPageData pageData)
-        {
-            await database.UpdateAsync(pageData);
+            realm.Add(comicData, true);
         }
 
         public async Task DeleteComic(ComicData comicData)
         {
-            await database.RunInTransactionAsync((database) =>
+            await WriteAsync(realm =>
             {
-                // Delete comic pages that are linked to the comic
-                var table = database.Table<ComicPageData>();
-                table.Delete((pageData) => pageData.ComicId == comicData.Id);
+                realm.Remove(comicData);
 
-                // Delete comic
-                database.Delete(comicData);
+                // TODO: Test if removing comic also removes pages
             });
         }
 
-        public async Task<List<ComicData>> GetComics()
+        public List<ComicData> GetComics()
         {
-            var table = database.Table<ComicData>();
-            return await table.ToListAsync();
+            return realm.All<ComicData>()
+                .ToList();
         }
 
-        public async Task<List<ComicPageData>> GetComicPages(ComicData comic)
+        public async Task WriteAsync(Action<Realm> action)
         {
-            return await GetComicPages(comic.Id);
+            if (action == null)
+                return;
+
+            await realm.WriteAsync(realm => action(realm));
         }
 
-        public async Task<List<ComicPageData>> GetComicPages(int comicId)
+        public void Write(Action action)
         {
-            var table = database.Table<ComicPageData>();
-            return await table
-                .Where(page => page.ComicId == comicId)
-                .ToListAsync();
+            if (action == null)
+                return;
+
+            using (var trans = realm.BeginWrite())
+            {
+                action();
+                trans.Commit();
+            }
         }
 
-        public async Task RunInTransactionAsync(Action<SQLiteConnection> action)
+        public void Write(Action<Realm> action)
         {
-            await database.RunInTransactionAsync(action);
+            if (action == null)
+                return;
+
+            using (var trans = realm.BeginWrite())
+            {
+                action(realm);
+                trans.Commit();
+            }
         }
     }
 }

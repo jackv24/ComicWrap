@@ -135,7 +135,7 @@ namespace ComicWrap.Pages
         {
             var newPages = doUpdate
                 ? await ComicUpdater.UpdateComic(Comic, cancelToken: cancelToken)
-                : await ComicDatabase.Instance.GetComicPages(Comic);
+                : Comic.Pages;
 
             // Display new page list
             var reordered = newPages.Reverse();

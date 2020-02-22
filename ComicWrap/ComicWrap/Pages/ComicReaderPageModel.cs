@@ -27,7 +27,7 @@ namespace ComicWrap.Pages
         {
             RefreshCommand = new AsyncCommand(Refresh);
 
-            NavigatingCommand = new AsyncCommand<CustomWebViewNavigatingArgs>(OnNavigating);
+            NavigatingCommand = new Command<CustomWebViewNavigatingArgs>(OnNavigating);
             NavigatedCommand = new AsyncCommand<CustomWebViewNavigatedArgs>(OnNavigated);
         }
 
@@ -37,10 +37,10 @@ namespace ComicWrap.Pages
 
         public IAsyncCommand RefreshCommand { get; }
 
-        public IAsyncCommand<CustomWebViewNavigatingArgs> NavigatingCommand { get; }
+        public Command<CustomWebViewNavigatingArgs> NavigatingCommand { get; }
         public IAsyncCommand<CustomWebViewNavigatedArgs> NavigatedCommand { get; }
 
-        public int ComicId { get; private set; }
+        public ComicData Comic { get; private set; }
 
         private string _pageName;
         public string PageName
@@ -67,18 +67,12 @@ namespace ComicWrap.Pages
         public override void Init(object initData)
         {
             var pageData = (ComicPageData)initData;
-            ComicId = pageData.ComicId;
+            Comic = pageData.Comic;
 
             PageName = pageData.Name;
             PageSource = new UrlWebViewSource { Url = pageData.Url };
 
-            InitAsync(pageData).SafeFireAndForget();
-        }
-
-        private async Task InitAsync(ComicPageData pageData)
-        {
-            pageData.IsRead = true;
-            await ComicDatabase.Instance.UpdateComicPage(pageData);
+            ComicDatabase.Instance.Write(() => pageData.IsRead = true);
         }
 
         private async Task Refresh()
@@ -86,7 +80,7 @@ namespace ComicWrap.Pages
             await UserDialogs.Instance.AlertAsync("Refreshing not yet implemented!");
         }
 
-        private async Task OnNavigating(CustomWebViewNavigatingArgs args)
+        private void OnNavigating(CustomWebViewNavigatingArgs args)
         {
             var webView = (CustomWebView)args.Sender;
             var e = args.EventArgs;
@@ -103,14 +97,13 @@ namespace ComicWrap.Pages
 
             lastNavigatedUrl = e.Url;
 
-            var pageData = await LoadPageData(e.Url);
+            var pageData = LoadPageData(e.Url);
             if (pageData != null && !pageData.IsRead)
             {
                 PageName = pageData.Name;
 
                 // Mark as read and save to database (don't need to update cachedPages since pageData is a class reference)
-                pageData.IsRead = true;
-                await ComicDatabase.Instance.UpdateComicPage(pageData);
+                ComicDatabase.Instance.Write(() => pageData.IsRead = true);
             }
         }
 
@@ -120,18 +113,18 @@ namespace ComicWrap.Pages
             var e = args.EventArgs;
 
             // Set document title to page name if it's a comic page, else just webpage title
-            var pageData = await LoadPageData(e.Url);
+            var pageData = LoadPageData(e.Url);
             PageName = pageData != null
                 ? pageData.Name
                 : await webView.EvaluateJavaScriptAsync("document.title");
         }
 
-        private async Task<ComicPageData> LoadPageData(string pageUrl)
+        private ComicPageData LoadPageData(string pageUrl)
         {
             // Get cached pages once, since no pages will be added or removed and ComicPageData is a class
             if (cachedPages == null)
             {
-                var pages = await ComicDatabase.Instance.GetComicPages(ComicId);
+                var pages = Comic.Pages;
                 cachedPages = pages
                     .ToDictionary(page => new Uri(page.Url).ToRelative());
             }

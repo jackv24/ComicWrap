@@ -210,11 +210,14 @@
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.4.0.991640" />
     <PackageReference Include="Xamarin.Essentials" Version="1.4.0" />
+    <PackageReference Include="Realm">
+      <Version>4.3.0</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\ComicWrap\ComicWrap.csproj">
-      <Project>{AE33BF29-1380-4477-A338-EDA6582CB2E1}</Project>
+      <Project>{8C55CAFB-54C5-455D-B477-66BF3E7A067A}</Project>
       <Name>ComicWrap</Name>
     </ProjectReference>
   </ItemGroup>

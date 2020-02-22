@@ -3,7 +3,6 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using FreshMvvm;
-using SQLite;
 
 using ComicWrap.Pages;
 using ComicWrap.Themes;

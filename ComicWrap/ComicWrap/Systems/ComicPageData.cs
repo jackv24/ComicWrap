@@ -1,14 +1,14 @@
-﻿using SQLite;
+﻿using System;
+using Realms;
 
 namespace ComicWrap.Systems
 {
-    [Table("comic_pages")]
-    public class ComicPageData
+    public class ComicPageData : RealmObject
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        [PrimaryKey]
+        public string Id { get; set; } = Guid.NewGuid().ToString();
 
-        public int ComicId { get; set; }
+        public ComicData Comic { get; set; }
 
         public string Name { get; set; }
         public string Url { get; set; }

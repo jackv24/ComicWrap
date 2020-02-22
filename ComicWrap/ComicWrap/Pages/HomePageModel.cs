@@ -93,7 +93,7 @@ namespace ComicWrap.Pages
             var cancelToken = pageCancelTokenSource.Token;
 
             // Load comics from local database
-            var loadedComics = await ComicDatabase.Instance.GetComics();
+            var loadedComics = ComicDatabase.Instance.GetComics();
 
             // Update UI
             Comics.Clear();

@@ -56,17 +56,13 @@ namespace ComicWrap.Systems
             string markReadUpToUrl = null,
             CancellationToken cancelToken = default)
         {
-
             // Load comic archive page
             cancelToken.ThrowIfCancellationRequested();
             var document = await GetBrowsingContext().OpenAsync(comic.ArchiveUrl);
 
-            // Update comic name
-            comic.Name = document.Title;
-
             var newPages = DiscoverPages(document, comic.CurrentPageUrl);
             cancelToken.ThrowIfCancellationRequested();
-            var oldPages = await ComicDatabase.Instance.GetComicPages(comic);
+            var oldPages = comic.Pages.ToList();
             cancelToken.ThrowIfCancellationRequested();
 
             bool doMarkReadUpTo = !string.IsNullOrEmpty(markReadUpToUrl);
@@ -102,28 +98,21 @@ namespace ComicWrap.Systems
             cancelToken.ThrowIfCancellationRequested();
 
             // Run database operations as one transaction to prevent issues
-            await ComicDatabase.Instance.RunInTransactionAsync(database =>
+            ComicDatabase.Instance.Write(realm =>
             {
+                comic.Name = document.Title;
+                realm.Add(comic, update: true);
+
                 // Delete any existing pages that aren't in the new pages
                 var deletePages = oldPages.Where(page => !newPages.Contains(page));
                 foreach (var page in deletePages)
-                    database.Delete(page);
-
-                // Add comic to database first so ID is set
-                if (comic.Id == 0)
-                    database.Insert(comic);
-                else
-                    database.Update(comic);
+                    realm.Remove(page);
 
                 // Add pages to database after Comic.Id is set so their ComicId is correct
                 foreach (var page in newPages)
                 {
-                    page.ComicId = comic.Id;
-
-                    if (page.Id == 0)
-                        database.Insert(page);
-                    else
-                        database.Update(page);
+                    page.Comic = comic;
+                    realm.Add(page);
                 }
             });
 

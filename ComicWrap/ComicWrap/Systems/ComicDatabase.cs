@@ -39,31 +39,26 @@ namespace ComicWrap.Systems
 
         public void AddComic(ComicData comicData)
         {
-            realm.Add(comicData, true);
+            using (var trans = realm.BeginWrite())
+            {
+                realm.Add(comicData, true);
+                trans.Commit();
+            }
         }
 
-        public async Task DeleteComic(ComicData comicData)
+        public void DeleteComic(ComicData comicData)
         {
-            await WriteAsync(realm =>
+            using (var trans = realm.BeginWrite())
             {
                 realm.Remove(comicData);
-
-                // TODO: Test if removing comic also removes pages
-            });
+                trans.Commit();
+            }
         }
 
         public List<ComicData> GetComics()
         {
             return realm.All<ComicData>()
                 .ToList();
-        }
-
-        public async Task WriteAsync(Action<Realm> action)
-        {
-            if (action == null)
-                return;
-
-            await realm.WriteAsync(realm => action(realm));
         }
 
         public void Write(Action action)

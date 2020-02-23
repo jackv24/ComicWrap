@@ -120,7 +120,11 @@ namespace ComicWrap.Pages
                     return;
 
                 case "Delete":
-                    await ComicDatabase.Instance.DeleteComic(Comic);
+                    {
+                        var comicName = Comic.Name;
+                        ComicDatabase.Instance.DeleteComic(Comic);
+                        UserDialogs.Instance.Toast($"Deleted Comic: {comicName}");
+                    }
                     break;
 
                 default:
@@ -128,7 +132,6 @@ namespace ComicWrap.Pages
             }
 
             await CoreMethods.PopPageModel();
-            UserDialogs.Instance.Toast($"Deleted Comic: {Comic.Name}");
         }
 
         private async Task Refresh(bool doUpdate, CancellationToken cancelToken)

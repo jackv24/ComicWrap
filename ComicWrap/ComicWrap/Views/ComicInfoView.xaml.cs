@@ -46,7 +46,7 @@ namespace ComicWrap.Views
             var comic = (ComicData)newValue;
 
             comicInfoView.labelComicName.Text = comic.Name;
-            comicInfoView.labelLastComicPageName.Text = comic.LastReadPage.Name;
+            comicInfoView.labelLastComicPageName.Text = comic.LastReadPage?.Name ?? string.Empty;
             comicInfoView.progressBarReadProgress.Progress = comic.ReadProgress;
         }
 

@@ -23,6 +23,11 @@ namespace ComicWrap.Systems
             });
         }
 
+        public ComicDatabase(Realm realm)
+        {
+            this.realm = realm;
+        }
+
         private readonly Realm realm;
 
         private static ComicDatabase _instance;

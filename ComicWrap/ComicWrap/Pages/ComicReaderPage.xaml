@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              xmlns:views="clr-namespace:ComicWrap.Views"
              mc:Ignorable="d"
              x:Class="ComicWrap.Pages.ComicReaderPage"
@@ -20,7 +21,9 @@
             <views:CustomWebView Source="{Binding PageSource}"
                                  VerticalOptions="FillAndExpand"
                                  NavigatingCommand="{Binding NavigatingCommand}"
-                                 NavigatedCommand="{Binding NavigatedCommand}"/>
+                                 NavigatedCommand="{Binding NavigatedCommand}"
+                                 android:WebView.EnableZoomControls="True"
+                                 android:WebView.DisplayZoomControls="False"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -27,10 +27,10 @@
                        VerticalOptions="Start"/>
                 <StackLayout Orientation="Vertical"
                              VerticalOptions="EndAndExpand">
-                    <Label Text="Chapter 2-01"
+                    <Label x:Name="labelLastComicPageName"
                            HorizontalTextAlignment="Start"
                            FontSize="Small"/>
-                    <ProgressBar Progress="0.7"/>
+                    <ProgressBar x:Name="progressBarReadProgress"/>
                     <Label Text="Updated 3 days ago"
                            HorizontalTextAlignment="Start"
                            FontSize="Small"/>

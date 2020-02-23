@@ -16,11 +16,11 @@ namespace ComicWrap.Systems
     {
         public ComicDatabase()
         {
-            //string dbFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            //string dbFileName = "Comics.db3";
-            //string dbPath = Path.Combine(dbFolderPath, dbFileName);
-
-            realm = Realm.GetInstance();
+            realm = Realm.GetInstance(new RealmConfiguration
+            {
+                SchemaVersion = 0,
+                MigrationCallback = OnRealmMigration
+            });
         }
 
         private readonly Realm realm;
@@ -88,6 +88,11 @@ namespace ComicWrap.Systems
                 action(realm);
                 trans.Commit();
             }
+        }
+
+        private static void OnRealmMigration(Migration migration, ulong oldSchemaVersion)
+        {
+            // Handle realm migration when needed
         }
     }
 }

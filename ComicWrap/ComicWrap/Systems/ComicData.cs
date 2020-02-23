@@ -15,5 +15,43 @@ namespace ComicWrap.Systems
 
         [Backlink(nameof(ComicPageData.Comic))]
         public IQueryable<ComicPageData> Pages { get; }
+
+        public ComicPageData LastReadPage
+        {
+            get
+            {
+                if (Pages.Count() == 0)
+                    return null;
+
+                ComicPageData lastReadPage = null;
+                foreach (var page in Pages)
+                {
+                    if (page.IsRead)
+                        lastReadPage = page;
+                }
+
+                return lastReadPage ?? Pages.ElementAt(0);
+            }
+        }
+
+        public float ReadProgress
+        {
+            get
+            {
+                int pageCount = Pages.Count();
+                if (pageCount == 0)
+                    return 0;
+
+                int lastReadPageIndex = -1;
+                for (int i = 0; i < pageCount; i++)
+                {
+                    var page = Pages.ElementAt(i);
+                    if (page.IsRead)
+                        lastReadPageIndex = i;
+                }
+
+                return (float)(lastReadPageIndex + 1) / pageCount;
+            }
+        }
     }
 }

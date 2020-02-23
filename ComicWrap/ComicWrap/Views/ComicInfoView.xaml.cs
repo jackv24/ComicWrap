@@ -31,7 +31,7 @@ namespace ComicWrap.Views
             returnType: typeof(ComicData),
             declaringType: typeof(ComicInfoView),
             defaultBindingMode: BindingMode.OneWay,
-            propertyChanged: OnComicNamePropertyChanged
+            propertyChanged: OnComicPropertyChanged
             );
 
         public ComicData Comic
@@ -40,12 +40,14 @@ namespace ComicWrap.Views
             set { SetValue(ComicProperty, value); }
         }
 
-        private static void OnComicNamePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        private static void OnComicPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var comicInfoView = (ComicInfoView)bindable;
             var comic = (ComicData)newValue;
 
             comicInfoView.labelComicName.Text = comic.Name;
+            comicInfoView.labelLastComicPageName.Text = comic.LastReadPage.Name;
+            comicInfoView.progressBarReadProgress.Progress = comic.ReadProgress;
         }
 
         private async Task OpenComic()

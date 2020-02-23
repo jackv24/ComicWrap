@@ -50,7 +50,10 @@ namespace ComicWrap.Systems
         {
             using (var trans = realm.BeginWrite())
             {
+                // Delete pages and then comic (so comic data isn't invalidated before it's pages can be delete)
+                realm.RemoveRange(comicData.Pages);
                 realm.Remove(comicData);
+
                 trans.Commit();
             }
         }

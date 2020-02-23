@@ -16,7 +16,7 @@ namespace ComicWrap.Systems
     {
         public ComicDatabase()
         {
-            realm = Realm.GetInstance(new RealmConfiguration
+            Realm = Realm.GetInstance(new RealmConfiguration
             {
                 SchemaVersion = 0,
                 MigrationCallback = OnRealmMigration
@@ -25,10 +25,10 @@ namespace ComicWrap.Systems
 
         public ComicDatabase(Realm realm)
         {
-            this.realm = realm;
+            Realm = realm;
         }
 
-        private readonly Realm realm;
+        public Realm Realm { get; private set; }
 
         private static ComicDatabase _instance;
         public static ComicDatabase Instance
@@ -44,20 +44,20 @@ namespace ComicWrap.Systems
 
         public void AddComic(ComicData comicData)
         {
-            using (var trans = realm.BeginWrite())
+            using (var trans = Realm.BeginWrite())
             {
-                realm.Add(comicData, true);
+                Realm.Add(comicData, true);
                 trans.Commit();
             }
         }
 
         public void DeleteComic(ComicData comicData)
         {
-            using (var trans = realm.BeginWrite())
+            using (var trans = Realm.BeginWrite())
             {
                 // Delete pages and then comic (so comic data isn't invalidated before it's pages can be delete)
-                realm.RemoveRange(comicData.Pages);
-                realm.Remove(comicData);
+                Realm.RemoveRange(comicData.Pages);
+                Realm.Remove(comicData);
 
                 trans.Commit();
             }
@@ -65,7 +65,7 @@ namespace ComicWrap.Systems
 
         public List<ComicData> GetComics()
         {
-            return realm.All<ComicData>()
+            return Realm.All<ComicData>()
                 .ToList();
         }
 
@@ -74,7 +74,7 @@ namespace ComicWrap.Systems
             if (action == null)
                 return;
 
-            using (var trans = realm.BeginWrite())
+            using (var trans = Realm.BeginWrite())
             {
                 action();
                 trans.Commit();
@@ -86,9 +86,9 @@ namespace ComicWrap.Systems
             if (action == null)
                 return;
 
-            using (var trans = realm.BeginWrite())
+            using (var trans = Realm.BeginWrite())
             {
-                action(realm);
+                action(Realm);
                 trans.Commit();
             }
         }

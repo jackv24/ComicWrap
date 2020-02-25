@@ -27,6 +27,7 @@ stages:
     - job: Android
       steps:
       - task: DownloadSecureFile@1
+        name: keystore
         inputs:
           secureFile: 'comicwrap.keystore'
       - task: XamarinAndroid@1

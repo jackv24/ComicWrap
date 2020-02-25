@@ -11,9 +11,26 @@ variables:
   buildConfiguration: 'Release'
   outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
 
-steps:
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'test'
-    projects: 'ComicWrap.Tests/ComicWrap.Tests.csproj'
-    testRunTitle: 'Shared Test'
+stages:
+  - stage: Test
+    jobs:
+    - job: Shared
+      steps:
+        - task: DotNetCoreCLI@2
+          inputs:
+            command: 'test'
+            projects: 'ComicWrap.Tests/ComicWrap.Tests.csproj'
+            testRunTitle: 'Shared Test'
+
+  - stage: Build
+    jobs:
+    - job: Android
+      steps:
+      - task: DownloadSecureFile@1
+        inputs:
+          secureFile: 'comicwrap.keystore'
+      - task: XamarinAndroid@1
+        inputs:
+          projectFile: 'ComicWrap/ComicWrap.Android/ComicWrap.Android.csproj'
+          msbuildArguments: '-restore -t:SignAndroidPackage -p:AndroidPackageFormat=aab -p:AndroidKeyStore=True -p:AndroidSigningKeyStore=$(keystore.secureFilePath) -p:AndroidSigningStorePass=$(KeystorePassword) -p:AndroidSigningKeyAlias=$(KeystoreAlias) -p:AndroidSigningKeyPass=$(KeystorePassword)'
+          jdkOption: 'JDKVersion'

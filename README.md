@@ -2,8 +2,6 @@
 
 NOTE: Currently in development!
 
-[![Build Status](https://jackvine.visualstudio.com/ComicWrap/_apis/build/status/jackv24.ComicWrap?branchName=master)](https://jackvine.visualstudio.com/ComicWrap/_build/latest?definitionId=1&branchName=master)
-
 ComicWrap is an open source webcomic reader and tracker for Android and iOS. It is intended for reading webcomics that are published on their own websites.
 
 ### Main Idea: No Piracy
@@ -16,6 +14,15 @@ This app provides some extra features:
   - Collecting your library in one place
   - Tracking what pages you've read
   - Notifying when a new page has been released
+
+## Status
+
+[![Build Status](https://jackvine.visualstudio.com/ComicWrap/_apis/build/status/jackv24.ComicWrap?branchName=master)](https://jackvine.visualstudio.com/ComicWrap/_build/latest?definitionId=1&branchName=master)
+
+| Stage | Shared | Android | iOS |
+| --- | --- | --- | --- |
+| Test | [![Build Status](https://jackvine.visualstudio.com/ComicWrap/_apis/build/status/jackv24.ComicWrap?branchName=master&stageName=Test&jobName=Shared)](https://jackvine.visualstudio.com/ComicWrap/_build/latest?definitionId=1&branchName=master) | `N/A` | `N/A` |
+| Build | `N/A` | [![Build Status](https://jackvine.visualstudio.com/ComicWrap/_apis/build/status/jackv24.ComicWrap?branchName=master&stageName=Build&jobName=Android)](https://jackvine.visualstudio.com/ComicWrap/_build/latest?definitionId=1&branchName=master) | `TODO` |
 
 ## Contributing
 

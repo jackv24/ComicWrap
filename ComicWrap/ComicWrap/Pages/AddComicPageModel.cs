@@ -13,6 +13,7 @@ using Acr.UserDialogs;
 using Rg.Plugins.Popup.Services;
 using Rg.Plugins.Popup.Pages;
 using AngleSharp;
+using AsyncAwaitBestPractices.MVVM;
 
 using ComicWrap.Systems;
 
@@ -22,8 +23,8 @@ namespace ComicWrap.Pages
     {
         public AddComicPageModel()
         {
-            CancelCommand = new Command(async () => await Cancel());
-            SubmitCommand = new Command(async () => await Submit());
+            CancelCommand = new AsyncCommand(Cancel);
+            SubmitCommand = new AsyncCommand(Submit);
         }
 
         private string _archivePageUrl;
@@ -48,8 +49,8 @@ namespace ComicWrap.Pages
             }
         }
 
-        public Command CancelCommand { get; }
-        public Command SubmitCommand { get; }
+        public IAsyncCommand CancelCommand { get; }
+        public IAsyncCommand SubmitCommand { get; }
 
         private async Task Cancel()
         {

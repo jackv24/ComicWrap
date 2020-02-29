@@ -14,9 +14,9 @@ using ComicWrap.Systems;
 
 namespace ComicWrap.Tests
 {
-    public class ComicDatabaseTests
+    public static class ComicDatabaseTests
     {
-        private ComicDatabase GetNewDatabase()
+        private static ComicDatabase GetNewDatabase()
         {
             string identifier = Guid.NewGuid().ToString();
             var realm = Realm.GetInstance(new InMemoryConfiguration(identifier));
@@ -24,7 +24,7 @@ namespace ComicWrap.Tests
         }
 
         [Test]
-        public void AddNewComic()
+        public static void AddNewComic()
         {
             var database = GetNewDatabase();
 
@@ -36,7 +36,7 @@ namespace ComicWrap.Tests
         }
 
         [Test]
-        public void DeleteComic()
+        public static void DeleteComic()
         {
             var database = GetNewDatabase();
             var comic = new ComicData();
@@ -50,7 +50,7 @@ namespace ComicWrap.Tests
         }
 
         [Test]
-        public void DeletingComicDeletesPages()
+        public static void DeletingComicDeletesPages()
         {
             var database = GetNewDatabase();
             var comic = new ComicData();

@@ -78,6 +78,34 @@ namespace ComicWrap.Tests
                 KnownPageUrl = "http://localhost/comic/page-2",
                 PageCount = 3
             };
+            
+            yield return new MockComic
+            {
+                ArchivePageHtml = @"
+                    <!DOCTYPE html>
+                    <html>
+                    <body>
+                        <div id=""comicwrapouter"">
+                            <div id = ""comicwrapinner"">
+                                <script>
+                                    function changePage(sub, slug)
+                                    {
+                                        window.location.href = 'http://localhost/' + sub + '/' + slug;
+                                    }
+                                </script>
+                                <select name = ""comic"" onChange=""changePage('comic',this.value)"" width=""100"">
+                                    <option value = """" > Select a comic...</option>
+                                    <option value = ""page-1"" > Page 1</option>
+                                    <option value = ""page-2"" > Page 2</option>
+                                    <option value = ""page-3"" > Page 3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </body>
+                    </html>",
+                KnownPageUrl = "http://localhost/comic/page-2",
+                PageCount = 3
+            };
         }
 
         [Test]
@@ -88,10 +116,16 @@ namespace ComicWrap.Tests
             var pages = ComicUpdater.DiscoverPages(document, comic.KnownPageUrl);
 
             // Found expected amount of pages
-            Assert.AreEqual(comic.PageCount, pages.Count);
+            Assert.AreEqual(
+                expected: comic.PageCount,
+                actual: pages.Count,
+                message: "Wrong page count");
 
             // Known page was in page list
-            Assert.AreEqual(true, pages.Any(page => page.Url == comic.KnownPageUrl));
+            Assert.AreEqual(
+                expected: comic.KnownPageUrl,
+                actual: pages[1].Url,
+                message: "Found page URL wrong");
         }
     }
 }

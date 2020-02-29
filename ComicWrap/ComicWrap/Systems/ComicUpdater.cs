@@ -123,18 +123,32 @@ namespace ComicWrap.Systems
         {
             // TODO: Expand to work with more sites
 
-            var uri = new Uri(document.BaseUri);
-            string baseUrl = uri.GetLeftPart(UriPartial.Authority);
-
             var elements = document.GetElementsByName("comic");
             if (elements.Length == 0)
                 return new List<ComicPageData>();
             else
             {
-                return elements[0].Children
+                var options = elements[0].Children
                     .Select(element => new { Text = element.TextContent, Nav = element.GetAttribute("value") })
                     // Ignore empty values (usually 1 empty value is the "Select..." prompt
-                    .Where(a => !string.IsNullOrEmpty(a.Nav))
+                    .Where(a => !string.IsNullOrEmpty(a.Nav));
+
+                // Extract base url using know page url
+                string baseUrl = null;
+                foreach (var opt in options)
+                {
+                    if (knownPageUrl.EndsWith(opt.Nav))
+                    {
+                        baseUrl = knownPageUrl.Substring(0, knownPageUrl.Length - opt.Nav.Length - 1);
+                        break;
+                    }
+                }
+
+                // base url couldn't be extracted
+                if (baseUrl == null)
+                    return new List<ComicPageData>();
+
+                return options
                     .Select(a => new ComicPageData
                     {
                         Name = a.Text,

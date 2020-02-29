@@ -68,10 +68,7 @@ namespace ComicWrap.Pages
             base.ViewIsAppearing(sender, e);
 
             pageCancelTokenSource = new CancellationTokenSource();
-
-            // Will call refresh command (don't set true in manually called refresh command
-            // or it will be called multiple times)
-            IsRefreshing = true;
+            DisplayComics();
         }
 
         protected override void ViewIsDisappearing(object sender, EventArgs e)
@@ -92,16 +89,10 @@ namespace ComicWrap.Pages
         {
             var cancelToken = pageCancelTokenSource.Token;
 
-            // Load comics from local database
-            var loadedComics = ComicDatabase.Instance.GetComics();
-
-            // Update UI
-            Comics.Clear();
-            foreach (var comic in loadedComics)
-                Comics.Add(comic);
+            DisplayComics();
 
             // Update comics from internet after loading from database so UI is filled ASAP
-            foreach (var comic in loadedComics)
+            foreach (var comic in Comics)
                 await ComicUpdater.UpdateComic(comic, cancelToken: cancelToken);
 
             RaisePropertyChanged(nameof(IsAnyComics));
@@ -109,6 +100,17 @@ namespace ComicWrap.Pages
             IsRefreshing = false;
 
             // TODO: Get comic updates in the background
+        }
+
+        private void DisplayComics()
+        {
+            // Load comics from local database
+            var loadedComics = ComicDatabase.Instance.GetComics();
+
+            // Update UI
+            Comics.Clear();
+            foreach (var comic in loadedComics)
+                Comics.Add(comic);
         }
     }
 }

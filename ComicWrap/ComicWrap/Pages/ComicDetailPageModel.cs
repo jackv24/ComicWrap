@@ -32,12 +32,8 @@ namespace ComicWrap.Pages
 
                     var cancelToken = pageCancelTokenSource.Token;
 
-                    // Refresh without updating first so list loads quickly
                     cancelToken.ThrowIfCancellationRequested();
-                    await Refresh(doUpdate: false, cancelToken);
-
-                    cancelToken.ThrowIfCancellationRequested();
-                    await Refresh(doUpdate: true, cancelToken);
+                    await Refresh(cancelToken);
 
                     IsRefreshing = false;
                 }
@@ -93,9 +89,7 @@ namespace ComicWrap.Pages
             base.ViewIsAppearing(sender, e);
 
             pageCancelTokenSource = new CancellationTokenSource();
-
-            if (RefreshCommand.CanExecute(null))
-                RefreshCommand.Execute(null);
+            DisplayPages(Comic.Pages);
         }
 
         protected override void ViewIsDisappearing(object sender, EventArgs e)
@@ -134,12 +128,14 @@ namespace ComicWrap.Pages
             await CoreMethods.PopPageModel();
         }
 
-        private async Task Refresh(bool doUpdate, CancellationToken cancelToken)
+        private async Task Refresh(CancellationToken cancelToken)
         {
-            var newPages = doUpdate
-                ? await ComicUpdater.UpdateComic(Comic, cancelToken: cancelToken)
-                : Comic.Pages;
+            var newPages = await ComicUpdater.UpdateComic(Comic, cancelToken: cancelToken);
+            DisplayPages(newPages);
+        }
 
+        private void DisplayPages(IEnumerable<ComicPageData> newPages)
+        {
             // Display new page list
             var reordered = newPages.Reverse();
 

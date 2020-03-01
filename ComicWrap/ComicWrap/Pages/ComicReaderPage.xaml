@@ -9,8 +9,6 @@
              x:Class="ComicWrap.Pages.ComicReaderPage"
              Title="{Binding PageName}">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="ic_refresh_white_36dp"
-                     Command="{Binding RefreshCommand}"/>
         <ToolbarItem IconImageSource="ic_share_white_36dp"/>
     </ContentPage.ToolbarItems>
 

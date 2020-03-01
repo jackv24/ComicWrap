@@ -1,19 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Xamarin.Essentials;
-
-using Acr.UserDialogs;
 using FreshMvvm;
-using AngleSharp;
-using AsyncAwaitBestPractices;
 using AsyncAwaitBestPractices.MVVM;
 
 using ComicWrap.Systems;
@@ -25,8 +16,6 @@ namespace ComicWrap.Pages
     {
         public ComicReaderPageModel()
         {
-            RefreshCommand = new AsyncCommand(Refresh);
-
             NavigatingCommand = new Command<CustomWebViewNavigatingArgs>(OnNavigating);
             NavigatedCommand = new AsyncCommand<CustomWebViewNavigatedArgs>(OnNavigated);
         }
@@ -34,8 +23,6 @@ namespace ComicWrap.Pages
         private string lastNavigatedUrl;
 
         private Dictionary<string, ComicPageData> cachedPages;
-
-        public IAsyncCommand RefreshCommand { get; }
 
         public Command<CustomWebViewNavigatingArgs> NavigatingCommand { get; }
         public IAsyncCommand<CustomWebViewNavigatedArgs> NavigatedCommand { get; }
@@ -73,11 +60,6 @@ namespace ComicWrap.Pages
             PageSource = new UrlWebViewSource { Url = pageData.Url };
 
             ComicDatabase.Instance.Write(() => pageData.IsRead = true);
-        }
-
-        private async Task Refresh()
-        {
-            await UserDialogs.Instance.AlertAsync("Refreshing not yet implemented!");
         }
 
         private void OnNavigating(CustomWebViewNavigatingArgs args)

@@ -16,6 +16,7 @@ using AngleSharp;
 using AsyncAwaitBestPractices.MVVM;
 
 using ComicWrap.Systems;
+using Res = ComicWrap.Resources.AppResources;
 
 namespace ComicWrap.Pages
 {
@@ -62,7 +63,7 @@ namespace ComicWrap.Pages
             string url = ArchivePageUrl;
             if (!ComicUpdater.IsUrlValid(url))
             {
-                await UserDialogs.Instance.AlertAsync("URL is invalid.");
+                await UserDialogs.Instance.AlertAsync(Res.AddComic_Error_InvalidUrl);
                 return;
             }
 

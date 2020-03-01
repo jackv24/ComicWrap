@@ -11,6 +11,7 @@ using FreshMvvm;
 
 using ComicWrap.Systems;
 using ComicWrap.Pages;
+using Res = ComicWrap.Resources.AppResources;
 
 namespace ComicWrap.Views
 {
@@ -48,7 +49,7 @@ namespace ComicWrap.Views
             comicInfoView.labelComicName.Text = comic.Name;
             comicInfoView.labelLastComicPageName.Text = comic.LastReadPage?.Name ?? string.Empty;
             comicInfoView.progressBarReadProgress.Progress = comic.ReadProgress;
-            comicInfoView.labelLastUpdated.Text = $"Updated {comic.DaysSinceLastUpdated} days ago";
+            comicInfoView.labelLastUpdated.Text = string.Format(Res.ComicInfo_LastUpdated, comic.DaysSinceLastUpdated);
         }
 
         private async Task OpenComic()

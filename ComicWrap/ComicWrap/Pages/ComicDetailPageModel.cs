@@ -15,6 +15,7 @@ using AsyncAwaitBestPractices;
 using AsyncAwaitBestPractices.MVVM;
 
 using ComicWrap.Systems;
+using Res = ComicWrap.Resources.AppResources;
 
 namespace ComicWrap.Pages
 {
@@ -103,26 +104,24 @@ namespace ComicWrap.Pages
         private async Task OpenOptions()
         {
             string buttonPressed = await UserDialogs.Instance.ActionSheetAsync(
-                title: "Comic Options",
-                cancel: "Cancel",
-                destructive: "Delete"
+                title: Res.ComicDetail_Options_Title,
+                cancel: Res.ComicDetail_Options_Cancel,
+                destructive: Res.ComicDetail_Options_Delete
                 );
 
-            switch (buttonPressed)
+            if (buttonPressed == Res.ComicDetail_Options_Cancel)
             {
-                case "Cancel":
-                    return;
-
-                case "Delete":
-                    {
-                        var comicName = Comic.Name;
-                        ComicDatabase.Instance.DeleteComic(Comic);
-                        UserDialogs.Instance.Toast($"Deleted Comic: {comicName}");
-                    }
-                    break;
-
-                default:
-                    throw new NotImplementedException();
+                return;
+            }
+            else if(buttonPressed == Res.ComicDetail_Options_Delete)
+            {
+                var comicName = Comic.Name;
+                ComicDatabase.Instance.DeleteComic(Comic);
+                UserDialogs.Instance.Toast(string.Format(Res.ComicDetail_DeletedComic, comicName));
+            }
+            else
+            {
+                throw new NotImplementedException();
             }
 
             await CoreMethods.PopPageModel();

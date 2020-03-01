@@ -19,7 +19,6 @@
                          Spacing="0"
                          HorizontalOptions="FillAndExpand">
                 <Label x:Name="labelComicName"
-                       Text="Not Working"
                        HorizontalTextAlignment="Start"
                        FontSize="Medium"
                        LineBreakMode="TailTruncation"
@@ -32,7 +31,6 @@
                            FontSize="Small"/>
                     <ProgressBar x:Name="progressBarReadProgress"/>
                     <Label x:Name="labelLastUpdated"
-                           Text="Updated X days ago"
                            HorizontalTextAlignment="Start"
                            FontSize="Small"/>
                 </StackLayout>

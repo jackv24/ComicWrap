@@ -5,9 +5,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:pages="clr-namespace:ComicWrap.Pages"
              xmlns:views="clr-namespace:ComicWrap.Views"
+             xmlns:res="clr-namespace:ComicWrap.Resources"
              mc:Ignorable="d"
              x:Class="ComicWrap.Pages.HomePage"
-             Title="ComicWrap">
+             Title="{x:Static res:AppResources.Home_Title}">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="ic_search_white_36dp" />

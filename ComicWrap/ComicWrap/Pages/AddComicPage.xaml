@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:popupPages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:res="clr-namespace:ComicWrap.Resources"
              mc:Ignorable="d"
              x:Class="ComicWrap.Pages.AddComicPage">
     <popupPages:PopupPage.Content>
@@ -12,18 +13,18 @@
                    WidthRequest="300"
                    BackgroundColor="White">
             <StackLayout>
-                <Label Text="Add New Comic"
+                <Label Text="{x:Static res:AppResources.AddComic_Title}"
                        TextColor="Black"
                        FontSize="Medium"
                        Margin="0, 0, 0, 10"/>
 
-                <Label Text="Archive URL:"
+                <Label Text="{x:Static res:AppResources.AddComic_ArchiveUrl}"
                        TextColor="Black"
                        FontSize="Small"/>
                 <Entry Placeholder="https://webcomic.com/archive"
                        Text="{Binding ArchivePageUrl}"/>
 
-                <Label Text="Current Page Url:"
+                <Label Text="{x:Static res:AppResources.AddComic_CurrentUrl}"
                        TextColor="Black"
                        FontSize="Small"/>
                 <Entry Placeholder="https://webcomic.com/page/1"

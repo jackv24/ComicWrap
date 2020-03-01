@@ -53,5 +53,11 @@ namespace ComicWrap.Systems
                 return (float)(lastReadPageIndex + 1) / pageCount;
             }
         }
+
+        public int DaysSinceLastUpdated
+        {
+            // TODO: Actually implement
+            get { return 0; }
+        }
     }
 }

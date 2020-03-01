@@ -48,6 +48,7 @@ namespace ComicWrap.Views
             comicInfoView.labelComicName.Text = comic.Name;
             comicInfoView.labelLastComicPageName.Text = comic.LastReadPage?.Name ?? string.Empty;
             comicInfoView.progressBarReadProgress.Progress = comic.ReadProgress;
+            comicInfoView.labelLastUpdated.Text = $"Updated {comic.DaysSinceLastUpdated} days ago";
         }
 
         private async Task OpenComic()

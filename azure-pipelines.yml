@@ -21,6 +21,9 @@ stages:
             command: 'test'
             projects: 'ComicWrap.Tests/ComicWrap.Tests.csproj'
             testRunTitle: 'Shared Test'
+          env:
+            Secret_AppSecret_Android: $(Secret_AppSecret_Android)
+            Secret_AppSecret_iOS: $(Secret_AppSecret_iOS)
 
   - stage: Build
     jobs:
@@ -37,3 +40,6 @@ stages:
           jdkOption: 'JDKVersion'
           configuration: '$(buildConfiguration)'
           outputDirectory: '$(outputDirectory)'
+        env:
+            Secret_AppSecret_Android: $(Secret_AppSecret_Android)
+            Secret_AppSecret_iOS: $(Secret_AppSecret_iOS)

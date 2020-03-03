@@ -355,3 +355,5 @@ MigrationBackup/
 # Extra
 [Bb]uilds/
 [Bb]uild/
+
+ComicWrap/ComicWrap/secrets.json

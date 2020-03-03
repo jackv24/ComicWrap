@@ -1,11 +1,15 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 using FreshMvvm;
 
 using ComicWrap.Pages;
 using ComicWrap.Themes;
+using Secrets = ComicWrap.Helpers.Secrets;
 
 namespace ComicWrap
 {
@@ -22,6 +26,8 @@ namespace ComicWrap
 
         protected override void OnStart()
         {
+            AppCenter.Start($"ios={Secrets.AppSecret_iOS};android={Secrets.AppSecret_Android}", typeof(Analytics), typeof(Crashes));
+
             UpdateTheme();
         }
 

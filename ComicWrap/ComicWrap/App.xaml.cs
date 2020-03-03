@@ -26,8 +26,7 @@ namespace ComicWrap
 
         protected override void OnStart()
         {
-            AppCenter.Start($"ios={Secrets.AppSecret_iOS};android={Secrets.AppSecret_Android}", typeof(Analytics), typeof(Crashes));
-
+            AppCenterStart();
             UpdateTheme();
         }
 
@@ -38,6 +37,26 @@ namespace ComicWrap
         protected override void OnResume()
         {
             UpdateTheme();
+        }
+
+        private void AppCenterStart()
+        {
+            string appSecretiOS = Secrets.AppSecret_iOS;
+            string appSecretAndroid = Secrets.AppSecret_Android;
+
+            // Only start app center for platforms that have their secret defined
+            string appSecretString;
+            if (!string.IsNullOrEmpty(appSecretiOS) && !string.IsNullOrEmpty(appSecretAndroid))
+                appSecretString = $"ios={appSecretiOS};android={appSecretAndroid}";
+            else if (!string.IsNullOrEmpty(appSecretiOS))
+                appSecretString = $"ios={appSecretiOS}";
+            else if (!string.IsNullOrEmpty(appSecretAndroid))
+                appSecretString = $"android={appSecretAndroid}";
+            else
+                appSecretString = null;
+
+            if (appSecretString != null)
+                AppCenter.Start(appSecretString, typeof(Analytics), typeof(Crashes));
         }
 
         private void UpdateTheme()

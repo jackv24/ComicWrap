@@ -10,6 +10,8 @@ using Android.OS;
 using Acr.UserDialogs;
 using Plugin.CurrentActivity;
 
+using ComicWrap.Droid.Systems;
+
 namespace ComicWrap.Droid
 {
     [Activity(Label = "ComicWrap", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]

@@ -9,6 +9,7 @@ using FreshMvvm;
 
 using ComicWrap.Pages;
 using ComicWrap.Themes;
+using ComicWrap.Systems;
 using Secrets = ComicWrap.Helpers.Secrets;
 
 namespace ComicWrap
@@ -64,7 +65,7 @@ namespace ComicWrap
             var environment = DependencyService.Get<IEnvironment>();
             var theme = environment.GetOperatingSystemTheme();
 
-            var mergedDictionaries = Application.Current.Resources.MergedDictionaries;
+            var mergedDictionaries = Current.Resources.MergedDictionaries;
             if (mergedDictionaries != null)
             {
                 mergedDictionaries.Clear();

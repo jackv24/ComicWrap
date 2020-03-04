@@ -3,9 +3,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using UIKit;
 using Xamarin.Forms;
+using ComicWrap.Systems;
+using ComicWrap.iOS.Systems;
 
-[assembly: Dependency(typeof(ComicWrap.iOS.Environment_iOS))]
-namespace ComicWrap.iOS
+[assembly: Dependency(typeof(Environment_iOS))]
+namespace ComicWrap.iOS.Systems
 {
     // Original Source: https://codetraveler.io/2019/09/11/check-for-dark-mode-in-xamarin-forms/
 

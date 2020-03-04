@@ -90,7 +90,7 @@
     <PackageReference Include="Realm" Version="4.3.0" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Environment_Android.cs" />
+    <Compile Include="Systems\Environment_Android.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

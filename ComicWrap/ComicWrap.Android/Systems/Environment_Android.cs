@@ -5,9 +5,11 @@ using Android.Content.Res;
 using Android.Views;
 using Xamarin.Forms;
 using Plugin.CurrentActivity;
+using ComicWrap.Systems;
+using ComicWrap.Droid.Systems;
 
-[assembly: Dependency(typeof(ComicWrap.Droid.Environment_Android))]
-namespace ComicWrap.Droid
+[assembly: Dependency(typeof(Environment_Android))]
+namespace ComicWrap.Droid.Systems
 {
     // Original Source: https://codetraveler.io/2019/09/11/check-for-dark-mode-in-xamarin-forms/
 

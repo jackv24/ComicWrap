@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace ComicWrap
+namespace ComicWrap.Systems
 {
     // Original Source: https://codetraveler.io/2019/09/11/check-for-dark-mode-in-xamarin-forms/
 

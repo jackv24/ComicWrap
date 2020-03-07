@@ -5,6 +5,11 @@
     
     <Color x:Key="MainTextColor">White</Color>
     <Color x:Key="DisabledTextColor">Gray</Color>
+    
     <Color x:Key="MainBackgroundColor">Black</Color>
+    <Color x:Key="PopupBackgroundColor">#333333</Color>
+    
+    <Color x:Key="ButtonBackgroundColor">#737373</Color>
+    <Color x:Key="ButtonTextColor">White</Color>
     
 </ResourceDictionary>

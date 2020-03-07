@@ -9,23 +9,23 @@
              x:Class="ComicWrap.Pages.AddComicPage">
     <popupPages:PopupPage.Content>
         <Frame VerticalOptions="Center"
-                   HorizontalOptions="Center"
-                   WidthRequest="300"
-                   BackgroundColor="White">
+               HorizontalOptions="Center"
+               WidthRequest="300"
+               BackgroundColor="{DynamicResource PopupBackgroundColor}">
             <StackLayout>
                 <Label Text="{x:Static res:AppResources.AddComic_Title}"
-                       TextColor="Black"
+                       TextColor="{DynamicResource MainTextColor}"
                        FontSize="Medium"
                        Margin="0, 0, 0, 10"/>
 
                 <Label Text="{x:Static res:AppResources.AddComic_ArchiveUrl}"
-                       TextColor="Black"
+                       TextColor="{DynamicResource MainTextColor}"
                        FontSize="Small"/>
                 <Entry Placeholder="https://webcomic.com/archive"
                        Text="{Binding ArchivePageUrl}"/>
 
                 <Label Text="{x:Static res:AppResources.AddComic_CurrentUrl}"
-                       TextColor="Black"
+                       TextColor="{DynamicResource MainTextColor}"
                        FontSize="Small"/>
                 <Entry Placeholder="https://webcomic.com/page/1"
                        Text="{Binding CurrentPageUrl}"/>

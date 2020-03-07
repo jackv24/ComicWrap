@@ -22,5 +22,14 @@
         <Setter Property="BarBackgroundColor" Value="{DynamicResource MainBackgroundColor}"/>
         <Setter Property="BarTextColor" Value="{DynamicResource MainTextColor}"/>
     </Style>
+    <Style TargetType="Entry">
+        <Setter Property="TextColor" Value="{DynamicResource MainTextColor}"/>
+        <Setter Property="PlaceholderColor" Value="{DynamicResource DisabledTextColor}"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+    </Style>
+    <Style TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{DynamicResource ButtonBackgroundColor}"/>
+        <Setter Property="TextColor" Value="{DynamicResource ButtonTextColor}"/>
+    </Style>
 
 </ResourceDictionary>

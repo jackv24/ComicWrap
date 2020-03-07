@@ -8,8 +8,17 @@
              xmlns:res="clr-namespace:ComicWrap.Resources"
              mc:Ignorable="d"
              x:Class="ComicWrap.Pages.HomePage"
+             x:Name="page"
              Title="{x:Static res:AppResources.Home_Title}">
 
+    <NavigationPage.TitleView>
+        <Label Text="{Binding Source={x:Reference page}, Path=Title}"
+               FontSize="Title"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Start"
+               FontAttributes="Italic, Bold"/>
+    </NavigationPage.TitleView>
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="ic_search_white_36dp" />
         <ToolbarItem IconImageSource="ic_sort_white_36dp" />

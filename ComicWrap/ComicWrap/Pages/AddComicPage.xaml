@@ -34,10 +34,12 @@
                              Margin="0, 20, 0, 0">
                     <Button Text="Cancel"
                             HorizontalOptions="StartAndExpand"
-                            Command="{Binding CancelCommand}"/>
+                            Command="{Binding CancelCommand}"
+                            Padding="20, 10"/>
                     <Button Text="Add"
                             HorizontalOptions="EndAndExpand"
-                            Command="{Binding SubmitCommand}"/>
+                            Command="{Binding SubmitCommand}"
+                            Padding="20, 10"/>
                 </StackLayout>
             </StackLayout>
         </Frame>

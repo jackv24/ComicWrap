@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:ComicWrap.Views"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:droid="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              mc:Ignorable="d"
              x:Class="ComicWrap.Pages.ComicDetailPage"
              x:Name="page"
@@ -21,7 +22,10 @@
                       IsPullToRefreshEnabled="True"
                       IsRefreshing="{Binding IsRefreshing}"
                       RefreshCommand="{Binding RefreshCommand}"
-                      ios:ListView.RowAnimationsEnabled="false">
+                      HorizontalScrollBarVisibility="Always"
+                      SeparatorColor="{DynamicResource DisabledTextColor}"
+                      ios:ListView.RowAnimationsEnabled="false"
+                      droid:ListView.IsFastScrollEnabled="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

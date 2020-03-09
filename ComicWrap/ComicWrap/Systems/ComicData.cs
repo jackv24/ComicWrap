@@ -38,19 +38,18 @@ namespace ComicWrap.Systems
         {
             get
             {
-                int pageCount = Pages.Count();
-                if (pageCount == 0)
-                    return 0;
-
-                int lastReadPageIndex = -1;
-                for (int i = 0; i < pageCount; i++)
+                // ElementAt is always returning the first element, so we need this workaround
+                int pageCount = 0;
+                int lastReadPage = 0;
+                foreach (var page in Pages)
                 {
-                    var page = Pages.ElementAt(i);
+                    pageCount++;
+
                     if (page.IsRead)
-                        lastReadPageIndex = i;
+                        lastReadPage = pageCount;
                 }
 
-                return (float)(lastReadPageIndex + 1) / pageCount;
+                return (float)lastReadPage / pageCount;
             }
         }
 

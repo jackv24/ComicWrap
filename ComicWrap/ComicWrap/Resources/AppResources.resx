@@ -144,6 +144,15 @@
   <data name="ComicInfo_LastUpdated" xml:space="preserve">
     <value>Updated {0} days ago</value>
   </data>
+  <data name="ComicInfo_LastUpdatedShort" xml:space="preserve">
+    <value>{0} days ago</value>
+  </data>
+  <data name="Home_Subtitle_Library" xml:space="preserve">
+    <value>Library</value>
+  </data>
+  <data name="Home_Subtitle_Updates" xml:space="preserve">
+    <value>Updates</value>
+  </data>
   <data name="Home_Title" xml:space="preserve">
     <value>ComicWrap</value>
   </data>

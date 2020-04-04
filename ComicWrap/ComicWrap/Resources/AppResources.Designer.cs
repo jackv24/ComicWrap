@@ -142,6 +142,33 @@ namespace ComicWrap.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} days ago.
+        /// </summary>
+        public static string ComicInfo_LastUpdatedShort {
+            get {
+                return ResourceManager.GetString("ComicInfo_LastUpdatedShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Library.
+        /// </summary>
+        public static string Home_Subtitle_Library {
+            get {
+                return ResourceManager.GetString("Home_Subtitle_Library", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Updates.
+        /// </summary>
+        public static string Home_Subtitle_Updates {
+            get {
+                return ResourceManager.GetString("Home_Subtitle_Updates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ComicWrap.
         /// </summary>
         public static string Home_Title {

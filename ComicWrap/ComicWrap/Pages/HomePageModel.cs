@@ -127,6 +127,10 @@ namespace ComicWrap.Pages
                         ComicUpdates.Add(comic);
                 }
             }
+
+            // Need to manually update properties thate use the ObservableCollections
+            RaisePropertyChanged(nameof(IsAnyComics));
+            RaisePropertyChanged(nameof(IsAnyUpdates));
         }
     }
 }

@@ -37,7 +37,8 @@ namespace ComicWrap.Pages
                 }
             });
 
-            Comics = new ObservableCollection<ComicData>();
+            ComicLibrary = new ObservableCollection<ComicData>();
+            ComicUpdates = new ObservableCollection<ComicData>();
         }
 
         private CancellationTokenSource pageCancelTokenSource;
@@ -56,11 +57,17 @@ namespace ComicWrap.Pages
             }
         }
 
-        public ObservableCollection<ComicData> Comics { get; }
+        public ObservableCollection<ComicData> ComicLibrary { get; }
+        public ObservableCollection<ComicData> ComicUpdates { get; }
 
         public bool IsAnyComics
         {
-            get { return Comics.Count > 0; }
+            get { return ComicLibrary.Count > 0; }
+        }
+
+        public bool IsAnyUpdates
+        {
+            get { return ComicUpdates.Count > 0; }
         }
 
         protected override void ViewIsAppearing(object sender, EventArgs e)
@@ -92,7 +99,7 @@ namespace ComicWrap.Pages
             DisplayComics();
 
             // Update comics from internet after loading from database so UI is filled ASAP
-            foreach (var comic in Comics)
+            foreach (var comic in ComicLibrary)
                 await ComicUpdater.UpdateComic(comic, cancelToken: cancelToken);
 
             RaisePropertyChanged(nameof(IsAnyComics));
@@ -108,9 +115,18 @@ namespace ComicWrap.Pages
             var loadedComics = ComicDatabase.Instance.GetComics();
 
             // Update UI
-            Comics.Clear();
+            ComicLibrary.Clear();
+            ComicUpdates.Clear();
             foreach (var comic in loadedComics)
-                Comics.Add(comic);
+            {
+                ComicLibrary.Add(comic);
+                
+                foreach (var page in comic.Pages)
+                {
+                    if (page.IsNew)
+                        ComicUpdates.Add(comic);
+                }
+            }
         }
     }
 }

@@ -35,12 +35,14 @@
                     <Label Text="{x:Static res:AppResources.Home_Subtitle_Updates}"
                            FontSize="Large"
                            FontAttributes="Italic"
-                           Margin="10, 0, 10, 10"/>
+                           Margin="10, 0, 10, 10"
+                           IsVisible="{Binding IsAnyUpdates}"/>
                     <ScrollView Orientation="Horizontal"
-                                Padding="10, 0, 10, 0">
+                                Padding="10, 0, 10, 20"
+                                IsVisible="{Binding IsAnyUpdates}">
                         <StackLayout Spacing="15"
                                      Orientation="Horizontal"
-                                     BindableLayout.ItemsSource="{Binding Comics}">
+                                     BindableLayout.ItemsSource="{Binding ComicUpdates}">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
                                     <views:ComicInfoSmallView Comic="{Binding}"/>
@@ -52,10 +54,12 @@
                     <Label Text="{x:Static res:AppResources.Home_Subtitle_Library}"
                            FontSize="Large"
                            FontAttributes="Italic"
-                           Margin="10, 20, 10, 10"/>
+                           Margin="10, 0, 10, 10"
+                           IsVisible="{Binding IsAnyComics}"/>
                     <StackLayout Spacing="15"
                                  Margin="10, 0, 10, 0"
-                                 BindableLayout.ItemsSource="{Binding Comics}">
+                                 BindableLayout.ItemsSource="{Binding ComicLibrary}"
+                                 IsVisible="{Binding IsAnyComics}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
                                 <views:ComicInfoView Comic="{Binding}"/>

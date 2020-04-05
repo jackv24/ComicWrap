@@ -48,12 +48,16 @@ namespace ComicWrap.Systems
                 CurrentPageUrl = currentPageUrl
             };
 
-            await UpdateComic(comic, currentPageUrl);
+            await UpdateComic(
+                comic,
+                markReadUpToUrl: currentPageUrl,
+                markNewPagesAsNew: false);
         }
 
         public static async Task<IEnumerable<ComicPageData>> UpdateComic(
             ComicData comic,
             string markReadUpToUrl = null,
+            bool markNewPagesAsNew = false,
             CancellationToken cancelToken = default)
         {
             // Load comic archive page
@@ -86,12 +90,19 @@ namespace ComicWrap.Systems
                     continue;
                 }
 
+                bool foundOldPage = false;
                 foreach (var oldPage in oldPages)
                 {
                     // Transfer persistent data to new page data
                     if (newPage.Url == oldPage.Url)
+                    {
+                        foundOldPage = true;
                         newPage.IsRead = oldPage.IsRead;
+                    }
                 }
+
+                if (!foundOldPage && markNewPagesAsNew)
+                    newPage.IsNew = true;
             }
 
             // NOTE: After this point we can no longer cancel as database is being written to

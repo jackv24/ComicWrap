@@ -14,5 +14,6 @@ namespace ComicWrap.Systems
         public string Url { get; set; }
 
         public bool IsRead { get; set; }
+        public bool IsNew { get; set; }
     }
 }

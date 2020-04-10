@@ -20,9 +20,9 @@
     </NavigationPage.TitleView>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="ic_search_white_36dp" />
-        <ToolbarItem IconImageSource="ic_sort_white_36dp" />
-        <ToolbarItem IconImageSource="ic_more_vert_white_36dp" Command="{Binding AddComicCommand}"/>
+        <ToolbarItem IconImageSource="{DynamicResource FontIconSearch}"/>
+        <ToolbarItem IconImageSource="{DynamicResource FontIconSort}"/>
+        <ToolbarItem IconImageSource="{DynamicResource FontIconMore}" Command="{Binding AddComicCommand}"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>

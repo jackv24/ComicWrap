@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:ComicWrap.Views"
+             xmlns:res="clr-namespace:ComicWrap.Resources"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              xmlns:droid="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              mc:Ignorable="d"
@@ -12,8 +13,7 @@
              Title="{Binding Comic.Name}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="ic_more_vert_white_36dp"
-                     Command="{Binding OpenOptionsCommand}"/>
+        <ToolbarItem IconImageSource="{DynamicResource FontIconMore}" Command="{Binding OpenOptionsCommand}"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>

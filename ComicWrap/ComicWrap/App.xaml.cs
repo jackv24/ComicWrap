@@ -9,6 +9,7 @@ using FreshMvvm;
 
 using ComicWrap.Pages;
 using ComicWrap.Themes;
+using ComicWrap.Resources;
 using ComicWrap.Systems;
 using Secrets = ComicWrap.Helpers.Secrets;
 
@@ -86,8 +87,13 @@ namespace ComicWrap
                 var styleDict = new ElementStyles();
 
                 mergedDictionaries.Add(themeDict);
+
+                // Need to merge theme into style dict before adding as style dict depends on theme
                 styleDict.MergedDictionaries.Add(themeDict);
                 mergedDictionaries.Add(styleDict);
+
+                // Just add font dict since it doesn't depend on any others
+                mergedDictionaries.Add(new AppFonts());
             }
 
             environment.ApplyTheme(theme);

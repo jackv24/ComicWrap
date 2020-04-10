@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:res="clr-namespace:ComicWrap.Resources"
+                    x:Class="ComicWrap.Resources.AppFonts">
+
+    <OnPlatform x:Key="MaterialFontFamily" x:TypeArguments="x:String">
+        <On Platform="Android" Value="materialdesignicons-webfont.ttf#Material Design Icons"/>
+        <On Platform="iOS" Value="Material Design Icons"/>
+    </OnPlatform>
+
+    <x:Double x:Key="ToolbarFontIconSize">36</x:Double>
+    
+    <FontImageSource x:Key="FontIconSearch"
+                     FontFamily="{StaticResource MaterialFontFamily}"
+                     Glyph="{x:Static res:MaterialFontFamily.MdiMagnify}"
+                     Size="{StaticResource ToolbarFontIconSize}"/>
+
+    <FontImageSource x:Key="FontIconSort"
+                     FontFamily="{StaticResource MaterialFontFamily}"
+                     Glyph="{x:Static res:MaterialFontFamily.MdiSort}"
+                     Size="{StaticResource ToolbarFontIconSize}"/>
+
+    <FontImageSource x:Key="FontIconMore"
+                     FontFamily="{StaticResource MaterialFontFamily}"
+                     Glyph="{x:Static res:MaterialFontFamily.MdiDotsVertical}"
+                     Size="{StaticResource ToolbarFontIconSize}"/>
+
+</ResourceDictionary>

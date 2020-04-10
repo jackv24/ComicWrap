@@ -11,5 +11,7 @@
     
     <Color x:Key="ButtonBackgroundColor">#737373</Color>
     <Color x:Key="ButtonTextColor">White</Color>
-    
+
+    <Color x:Key="NewIndicatorColor">Turquoise</Color>
+
 </ResourceDictionary>

@@ -59,7 +59,11 @@ namespace ComicWrap.Pages
             PageName = pageData.Name;
             PageSource = new UrlWebViewSource { Url = pageData.Url };
 
-            ComicDatabase.Instance.Write(() => pageData.IsRead = true);
+            ComicDatabase.Instance.Write(() =>
+            {
+                pageData.IsRead = true;
+                pageData.IsNew = false;
+            });
         }
 
         private void OnNavigating(CustomWebViewNavigatingArgs args)

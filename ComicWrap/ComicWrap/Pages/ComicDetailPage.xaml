@@ -18,23 +18,34 @@
 
     <ContentPage.Content>
         <!-- Page List -->
-            <ListView ItemsSource="{Binding Pages}"
-                      IsPullToRefreshEnabled="True"
-                      IsRefreshing="{Binding IsRefreshing}"
-                      RefreshCommand="{Binding RefreshCommand}"
-                      HorizontalScrollBarVisibility="Always"
-                      SeparatorColor="{DynamicResource DisabledTextColor}"
-                      ios:ListView.RowAnimationsEnabled="false"
-                      droid:ListView.IsFastScrollEnabled="True">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Label Text="{Binding Name}"
-                                   BackgroundColor="{DynamicResource MainBackgroundColor}"
-                                   HorizontalOptions="FillAndExpand"
-                                   VerticalOptions="FillAndExpand"
+        <ListView ItemsSource="{Binding Pages}"
+                    IsPullToRefreshEnabled="True"
+                    IsRefreshing="{Binding IsRefreshing}"
+                    RefreshCommand="{Binding RefreshCommand}"
+                    HorizontalScrollBarVisibility="Always"
+                    SeparatorColor="{DynamicResource DisabledTextColor}"
+                    ios:ListView.RowAnimationsEnabled="false"
+                    droid:ListView.IsFastScrollEnabled="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal"
+                                     Padding="20, 5, 20, 5">
+                            <!-- IsNew Indicator-->
+                            <Label Text="{x:Static res:MaterialFontFamily.MdiCircleMedium}"
+                                   FontFamily="{StaticResource MaterialFontFamily}"
+                                   FontSize="28"
                                    VerticalTextAlignment="Center"
-                                   Padding="20, 5, 20, 5">
+                                   HorizontalTextAlignment="Center"
+                                   IsVisible="{Binding IsNew}"
+                                   TextColor="{DynamicResource NewIndicatorColor}"/>
+                            
+                            <!-- Page Name -->
+                            <Label Text="{Binding Name}"
+                                BackgroundColor="{DynamicResource MainBackgroundColor}"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                VerticalTextAlignment="Center">
                                 <Label.Triggers>
                                     <!-- IsRead Triggers -->
                                     <DataTrigger TargetType="Label" Binding="{Binding IsRead}" Value="false">
@@ -46,12 +57,13 @@
                                 </Label.Triggers>
                                 <Label.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding Source={x:Reference page}, Path=BindingContext.OpenPageCommand}"
-                                                                      CommandParameter="{Binding}" />
+                                                                    CommandParameter="{Binding}" />
                                 </Label.GestureRecognizers>
                             </Label>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>

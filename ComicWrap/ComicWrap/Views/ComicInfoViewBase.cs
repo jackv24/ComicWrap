@@ -27,7 +27,7 @@ namespace ComicWrap.Views
         public static BindableProperty ComicProperty = BindableProperty.Create(
             propertyName: "Comic",
             returnType: typeof(ComicData),
-            declaringType: typeof(ComicInfoView),
+            declaringType: typeof(ComicInfoViewBase),
             defaultBindingMode: BindingMode.OneWay,
             propertyChanged: OnComicPropertyChanged
             );

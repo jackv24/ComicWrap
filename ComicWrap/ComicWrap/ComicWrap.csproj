@@ -54,10 +54,10 @@
     <EmbeddedResource Update="Themes\LightTheme.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ComicInfoSmallView.xaml">
+    <EmbeddedResource Update="Views\ComicInfoUpdateView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ComicInfoView.xaml">
+    <EmbeddedResource Update="Views\ComicInfoLibraryView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\CustomWebView.xaml">
@@ -74,6 +74,12 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ComicInfoUpdateView.xaml.cs">
+      <DependentUpon>ComicInfoUpdateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ComicInfoLibraryView.xaml.cs">
+      <DependentUpon>ComicInfoLibraryView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

@@ -45,7 +45,7 @@
                                      BindableLayout.ItemsSource="{Binding ComicUpdates}">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
-                                    <views:ComicInfoSmallView Comic="{Binding}"/>
+                                    <views:ComicInfoUpdateView Comic="{Binding}"/>
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>
                         </StackLayout>
@@ -62,7 +62,7 @@
                                  IsVisible="{Binding IsAnyComics}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
-                                <views:ComicInfoView Comic="{Binding}"/>
+                                <views:ComicInfoLibraryView Comic="{Binding}"/>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </StackLayout>

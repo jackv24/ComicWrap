@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:ComicWrap.Views"
              mc:Ignorable="d"
-             x:Class="ComicWrap.Views.ComicInfoSmallView">
+             x:Class="ComicWrap.Views.ComicInfoUpdateView">
 
     <views:ComicInfoViewBase.Content>
         <StackLayout Orientation="Vertical"
@@ -22,8 +22,8 @@
                    LineBreakMode="TailTruncation"
                    MaxLines="1"
                    Margin="0, 5, 0, 0"/>
-            <Label x:Name="labelLastComicPageName"
-                   Text="labelLastComicPageName"
+            <Label x:Name="labelComicPageName"
+                   Text="labelComicPageName"
                    LineBreakMode="TailTruncation"
                    MaxLines="1"/>
             <Label x:Name="labelLastUpdated"

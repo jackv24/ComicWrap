@@ -16,9 +16,9 @@ using Res = ComicWrap.Resources.AppResources;
 namespace ComicWrap.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ComicInfoSmallView : ComicInfoViewBase
+    public partial class ComicInfoLibraryView : ComicInfoViewBase
     {
-        public ComicInfoSmallView() : base()
+        public ComicInfoLibraryView() : base()
         {
             InitializeComponent();
         }
@@ -27,7 +27,8 @@ namespace ComicWrap.Views
         {
             labelComicName.Text = GetFormattedComicName(newComic);
             labelLastComicPageName.Text = GetFormattedLastReadPage(newComic);
-            labelLastUpdated.Text = string.Format(Res.ComicInfo_LastUpdatedShort, newComic.DaysSinceLastUpdated);
+            progressBarReadProgress.Progress = newComic.ReadProgress;
+            labelLastUpdated.Text = string.Format(Res.ComicInfo_LastUpdated, newComic.DaysSinceLastUpdated);
         }
     }
 }

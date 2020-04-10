@@ -120,12 +120,9 @@ namespace ComicWrap.Pages
             foreach (var comic in loadedComics)
             {
                 ComicLibrary.Add(comic);
-                
-                foreach (var page in comic.Pages)
-                {
-                    if (page.IsNew)
-                        ComicUpdates.Add(comic);
-                }
+
+                if (comic.Pages.Any(page => page.IsNew))
+                    ComicUpdates.Add(comic);
             }
 
             // Need to manually update properties thate use the ObservableCollections

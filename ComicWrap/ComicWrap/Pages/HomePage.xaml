@@ -20,9 +20,9 @@
     </NavigationPage.TitleView>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="{DynamicResource FontIconSearch}"/>
-        <ToolbarItem IconImageSource="{DynamicResource FontIconSort}"/>
-        <ToolbarItem IconImageSource="{DynamicResource FontIconMore}" Command="{Binding AddComicCommand}"/>
+        <!--<ToolbarItem IconImageSource="{DynamicResource FontIconSearch}"/>-->
+        <!--<ToolbarItem IconImageSource="{DynamicResource FontIconSort}"/>-->
+        <ToolbarItem IconImageSource="{DynamicResource FontIconAdd}" Command="{Binding AddComicCommand}"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>

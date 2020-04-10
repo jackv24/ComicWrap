@@ -26,4 +26,9 @@
                      Glyph="{x:Static res:MaterialFontFamily.MdiDotsVertical}"
                      Size="{StaticResource ToolbarFontIconSize}"/>
 
+    <FontImageSource x:Key="FontIconAdd"
+                     FontFamily="{StaticResource MaterialFontFamily}"
+                     Glyph="{x:Static res:MaterialFontFamily.MdiPlus}"
+                     Size="{StaticResource ToolbarFontIconSize}"/>
+
 </ResourceDictionary>

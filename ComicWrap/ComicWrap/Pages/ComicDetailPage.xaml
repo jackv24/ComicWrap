@@ -19,13 +19,13 @@
     <ContentPage.Content>
         <!-- Page List -->
         <ListView ItemsSource="{Binding Pages}"
-                    IsPullToRefreshEnabled="True"
-                    IsRefreshing="{Binding IsRefreshing}"
-                    RefreshCommand="{Binding RefreshCommand}"
-                    HorizontalScrollBarVisibility="Always"
-                    SeparatorColor="{DynamicResource DisabledTextColor}"
-                    ios:ListView.RowAnimationsEnabled="false"
-                    droid:ListView.IsFastScrollEnabled="True">
+                  IsPullToRefreshEnabled="True"
+                  IsRefreshing="{Binding IsRefreshing}"
+                  RefreshCommand="{Binding RefreshCommand}"
+                  HorizontalScrollBarVisibility="Always"
+                  SeparatorColor="{DynamicResource DisabledTextColor}"
+                  ios:ListView.RowAnimationsEnabled="false"
+                  droid:ListView.IsFastScrollEnabled="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

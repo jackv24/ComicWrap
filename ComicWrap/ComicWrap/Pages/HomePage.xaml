@@ -29,7 +29,7 @@
         <RefreshView IsRefreshing="{Binding IsRefreshing}"
                      Command="{Binding RefreshCommand}">
             <ScrollView Orientation="Vertical">
-                <StackLayout Margin="5, 0, 5, 0"
+                <StackLayout Margin="5, 10, 5, 0"
                              Padding="0, 5, 0, 5">
 
                     <!-- Comic Updates Title -->
@@ -63,7 +63,7 @@
                     
                     <!-- Comic Library List -->
                     <StackLayout Spacing="15"
-                                 Margin="10, 0, 10, 0"
+                                 Margin="10, 0, 10, 10"
                                  BindableLayout.ItemsSource="{Binding ComicLibrary}"
                                  IsVisible="{Binding IsAnyComics}">
                         <BindableLayout.ItemTemplate>

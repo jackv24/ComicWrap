@@ -32,11 +32,14 @@
                 <StackLayout Margin="5, 0, 5, 0"
                              Padding="0, 5, 0, 5">
 
+                    <!-- Comic Updates Title -->
                     <Label Text="{x:Static res:AppResources.Home_Subtitle_Updates}"
                            FontSize="Large"
                            FontAttributes="Italic"
                            Margin="10, 0, 10, 10"
                            IsVisible="{Binding IsAnyUpdates}"/>
+
+                    <!-- Comic Updates List -->
                     <ScrollView Orientation="Horizontal"
                                 Padding="10, 0, 10, 20"
                                 IsVisible="{Binding IsAnyUpdates}">
@@ -51,11 +54,14 @@
                         </StackLayout>
                     </ScrollView>
 
+                    <!-- Comic Library Title -->
                     <Label Text="{x:Static res:AppResources.Home_Subtitle_Library}"
                            FontSize="Large"
                            FontAttributes="Italic"
                            Margin="10, 0, 10, 10"
                            IsVisible="{Binding IsAnyComics}"/>
+                    
+                    <!-- Comic Library List -->
                     <StackLayout Spacing="15"
                                  Margin="10, 0, 10, 0"
                                  BindableLayout.ItemsSource="{Binding ComicLibrary}"

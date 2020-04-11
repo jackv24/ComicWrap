@@ -98,6 +98,7 @@ namespace ComicWrap.Systems
                     {
                         foundOldPage = true;
                         newPage.IsRead = oldPage.IsRead;
+                        newPage.IsNew = oldPage.IsNew;
                     }
                 }
 

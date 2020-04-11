@@ -47,6 +47,8 @@ namespace ComicWrap.Pages
             OpenPageCommand = new AsyncCommand<ComicPageData>(OpenPage);
         }
 
+        public event Action PagesUpdated;
+
         private CancellationTokenSource pageCancelTokenSource;
         private bool _isRefreshing;
         private ComicData _comic;
@@ -90,7 +92,7 @@ namespace ComicWrap.Pages
             base.ViewIsAppearing(sender, e);
 
             pageCancelTokenSource = new CancellationTokenSource();
-            DisplayPages(Comic.Pages);
+            UpdatePages(Comic.Pages);
         }
 
         protected override void ViewIsDisappearing(object sender, EventArgs e)
@@ -130,10 +132,10 @@ namespace ComicWrap.Pages
         private async Task Refresh(CancellationToken cancelToken)
         {
             var newPages = await ComicUpdater.UpdateComic(Comic, cancelToken: cancelToken);
-            DisplayPages(newPages);
+            UpdatePages(newPages);
         }
 
-        private void DisplayPages(IEnumerable<ComicPageData> newPages)
+        private void UpdatePages(IEnumerable<ComicPageData> newPages)
         {
             // Display new page list
             var reordered = newPages.Reverse();
@@ -142,6 +144,8 @@ namespace ComicWrap.Pages
             Pages.Clear();
             foreach (var page in reordered)
                 Pages.Add(page);
+
+            PagesUpdated?.Invoke();
         }
 
         private async Task OpenPage(ComicPageData pageData)

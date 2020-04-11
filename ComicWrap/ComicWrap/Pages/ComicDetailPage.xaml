@@ -20,7 +20,8 @@
         <RefreshView IsRefreshing="{Binding IsRefreshing}"
                      Command="{Binding RefreshCommand}">
             <!-- Page List -->
-            <CollectionView ItemsSource="{Binding Pages}"
+            <CollectionView x:Name="comicPagesCollectionView"
+                            ItemsSource="{Binding Pages}"
                             ItemSizingStrategy="MeasureFirstItem">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>

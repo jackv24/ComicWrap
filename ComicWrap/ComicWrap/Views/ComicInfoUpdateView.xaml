@@ -12,12 +12,17 @@
                      WidthRequest="100"
                      HorizontalOptions="Start"
                      Spacing="0">
-            <Image x:Name="coverImage"
-                   BackgroundColor="Gray"
-                   HeightRequest="100"
+            <Frame CornerRadius="5"
                    HorizontalOptions="FillAndExpand"
                    VerticalOptions="Start"
-                   Aspect="AspectFill"/>
+                   IsClippedToBounds="True"
+                   Padding="0">
+                <Image x:Name="coverImage"
+                       BackgroundColor="Gray"
+                       HeightRequest="100"
+                       Aspect="AspectFill"
+                       Margin="0"/>
+            </Frame>
             <Label x:Name="labelComicName"
                    Text="labelComicName"
                    FontAttributes="Bold"

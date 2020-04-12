@@ -9,13 +9,18 @@
 
     <views:ComicInfoViewBase.Content>
         <StackLayout Orientation="Horizontal">
-            <Image x:Name="coverImage"
-                   BackgroundColor="Gray"
-                   WidthRequest="100"
-                   HeightRequest="140"
+            <Frame CornerRadius="5"
                    HorizontalOptions="Start"
                    VerticalOptions="Start"
-                   Aspect="AspectFill"/>
+                   IsClippedToBounds="True"
+                   Padding="0">
+                <Image x:Name="coverImage"
+                       BackgroundColor="Gray"
+                       WidthRequest="100"
+                       HeightRequest="140"
+                       Aspect="AspectFill"
+                       Margin="0"/>
+            </Frame>
             <StackLayout Orientation="Vertical"
                          Margin="5, 5, 10, 0"
                          Spacing="0"

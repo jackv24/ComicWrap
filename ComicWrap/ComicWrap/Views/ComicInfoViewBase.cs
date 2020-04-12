@@ -76,8 +76,8 @@ namespace ComicWrap.Views
             if (string.IsNullOrEmpty(coverImagePath))
             {
                 // Download image, and then set image source
-                LocalImageService.DownloadImage(new Uri("https://i.ytimg.com/vi/UNlCL2x_W8M/hqdefault.jpg"), Comic.Id, coverImageDownloadCancel.Token)
-                    .ContinueWith((t) => CoverImage.Source = new FileImageSource { File = t.Result }, coverImageDownloadCancel.Token)
+                GetMissingCoverImage(coverImageDownloadCancel.Token)
+                    .ContinueWith(t => CoverImage.Source = new FileImageSource { File = t.Result }, coverImageDownloadCancel.Token)
                     .SafeFireAndForget();
             }
             else
@@ -87,6 +87,20 @@ namespace ComicWrap.Views
             }
 
             OnComicChanged(newComic);
+        }
+
+        private async Task<string> GetMissingCoverImage(CancellationToken cancelToken = default)
+        {
+            if (Comic == null || Comic.Pages.Count() == 0)
+                return null;
+
+            string url = await ComicUpdater.GetComicImageUrl(Comic.Pages.ElementAt(0), cancelToken);
+            if (string.IsNullOrEmpty(url))
+                return null;
+
+            string downloadedPath = await LocalImageService.DownloadImage(new Uri(url), Comic.Id, cancelToken);
+
+            return downloadedPath;
         }
 
         protected abstract void OnComicChanged(ComicData newComic);

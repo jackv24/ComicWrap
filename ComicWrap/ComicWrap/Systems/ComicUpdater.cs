@@ -169,5 +169,15 @@ namespace ComicWrap.Systems
                     .ToList();
             }
         }
+
+        public static async Task<string> GetComicImageUrl(ComicPageData page, CancellationToken cancelToken = default)
+        {
+            // TODO: Expand to work with more sites
+
+            cancelToken.ThrowIfCancellationRequested();
+            var document = await GetBrowsingContext().OpenAsync(page.Url);
+
+            return document.GetElementById("cc-comic")?.GetAttribute("src");
+        }
     }
 }

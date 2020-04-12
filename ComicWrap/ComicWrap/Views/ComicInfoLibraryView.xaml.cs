@@ -24,6 +24,7 @@ namespace ComicWrap.Views
         }
 
         public override ComicPageTargetType PageTarget => ComicPageTargetType.LastRead;
+        public override Image CoverImage => coverImage;
 
         protected override void OnComicChanged(ComicData newComic)
         {

@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using FreshMvvm;
+using AsyncAwaitBestPractices;
 
 using ComicWrap.Systems;
 using ComicWrap.Pages;
@@ -24,6 +26,8 @@ namespace ComicWrap.Views
             GestureRecognizers.Add(tapGesture);
         }
 
+        private CancellationTokenSource coverImageDownloadCancel;
+
         public static BindableProperty ComicProperty = BindableProperty.Create(
             propertyName: "Comic",
             returnType: typeof(ComicData),
@@ -39,20 +43,59 @@ namespace ComicWrap.Views
         }
 
         public abstract ComicPageTargetType PageTarget { get; }
+        public abstract Image CoverImage { get; }
 
         private static void OnComicPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var comicInfoView = (ComicInfoViewBase)bindable;
             var comic = (ComicData)newValue;
 
-            comicInfoView.OnComicChanged(comic);
+            comicInfoView.ComicChanged(comic);
         }
+
+        private void ComicChanged(ComicData newComic)
+        {
+            if (coverImageDownloadCancel != null)
+            {
+                try
+                {
+                    coverImageDownloadCancel.Cancel(true);
+                }
+                catch (OperationCanceledException)
+                {
+                    // Cancel silently
+                }
+            }
+
+            coverImageDownloadCancel = new CancellationTokenSource();
+
+            // Load cover image
+            string coverImagePath = LocalImageService.GetImagePath(Comic.Id);
+            
+            // Cover image hasn't been download yet
+            if (string.IsNullOrEmpty(coverImagePath))
+            {
+                // Download image, and then set image source
+                LocalImageService.DownloadImage(new Uri("https://i.ytimg.com/vi/UNlCL2x_W8M/hqdefault.jpg"), Comic.Id, coverImageDownloadCancel.Token)
+                    .ContinueWith((t) => CoverImage.Source = new FileImageSource { File = t.Result }, coverImageDownloadCancel.Token)
+                    .SafeFireAndForget();
+            }
+            else
+            {
+                // Set image source immediately
+                CoverImage.Source = new FileImageSource { File = coverImagePath };
+            }
+
+            OnComicChanged(newComic);
+        }
+
+        protected abstract void OnComicChanged(ComicData newComic);
 
         private async Task OpenComic()
         {
             // Needed to use page navigation from a non-page
             var navService = FreshIOC.Container.Resolve<IFreshNavigationService>(Constants.DefaultNavigationServiceName);
-            
+
             // Manually create PageModel to inject data into the constructor
             var pageModel = new ComicDetailPageModel(PageTarget);
 
@@ -60,8 +103,6 @@ namespace ComicWrap.Views
             var page = FreshPageModelResolver.ResolvePageModel(Comic, pageModel);
             await navService.PushPage(page, null);
         }
-
-        protected abstract void OnComicChanged(ComicData newComic);
 
         protected static string GetFormattedComicName(ComicData comic)
         {

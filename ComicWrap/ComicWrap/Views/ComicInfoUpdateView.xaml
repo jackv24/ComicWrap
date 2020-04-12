@@ -12,10 +12,12 @@
                      WidthRequest="100"
                      HorizontalOptions="Start"
                      Spacing="0">
-            <BoxView BackgroundColor="Gray"
-                     HeightRequest="100"
-                     HorizontalOptions="FillAndExpand"
-                     VerticalOptions="Start"/>
+            <Image x:Name="coverImage"
+                   BackgroundColor="Gray"
+                   HeightRequest="100"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="Start"
+                   Aspect="AspectFill"/>
             <Label x:Name="labelComicName"
                    Text="labelComicName"
                    FontAttributes="Bold"

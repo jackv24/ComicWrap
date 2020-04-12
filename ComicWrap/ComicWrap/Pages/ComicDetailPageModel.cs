@@ -170,6 +170,9 @@ namespace ComicWrap.Pages
                 Pages.Add(page);
 
             PagesUpdated?.Invoke();
+
+            // Clear ScrollTo target since page shuld have been scrolled during PagesUpdated event (if desired)
+            scrollToPageTarget = ComicPageTargetType.None;
         }
 
         private async Task OpenPage(ComicPageData pageData)

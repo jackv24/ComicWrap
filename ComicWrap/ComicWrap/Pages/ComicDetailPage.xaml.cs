@@ -40,9 +40,7 @@ namespace ComicWrap.Pages
 
         private void OnPagesUpdated()
         {
-            // Scroll to latest read page (page list is in reverse order)
-            var targetPage = model.Pages
-               .FirstOrDefault(page => page.IsRead);
+            var targetPage = model.ScrollToPage;
             if (targetPage != null)
             {
                 int indexOf = model.Pages.IndexOf(targetPage);

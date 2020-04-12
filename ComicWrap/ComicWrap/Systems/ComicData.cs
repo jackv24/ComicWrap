@@ -16,24 +16,6 @@ namespace ComicWrap.Systems
         [Backlink(nameof(ComicPageData.Comic))]
         public IQueryable<ComicPageData> Pages { get; }
 
-        public ComicPageData LastReadPage
-        {
-            get
-            {
-                if (Pages.Count() == 0)
-                    return null;
-
-                ComicPageData lastReadPage = null;
-                foreach (var page in Pages)
-                {
-                    if (page.IsRead)
-                        lastReadPage = page;
-                }
-
-                return lastReadPage ?? Pages.ElementAt(0);
-            }
-        }
-
         public float ReadProgress
         {
             get
@@ -53,10 +35,10 @@ namespace ComicWrap.Systems
             }
         }
 
-        public int DaysSinceLastUpdated
-        {
-            // TODO: Actually implement
-            get { return 0; }
-        }
+        // TODO: Implement
+        public int DaysSinceLastUpdated => -1;
+
+        public ComicPageData LastReadPage => Pages.LastOrDefault(page => page.IsRead);
+        public ComicPageData LatestNewPage => Pages.LastOrDefault(page => page.IsNew);
     }
 }

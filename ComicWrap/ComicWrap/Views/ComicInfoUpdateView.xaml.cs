@@ -23,10 +23,12 @@ namespace ComicWrap.Views
             InitializeComponent();
         }
 
+        public override ComicPageTargetType PageTarget => ComicPageTargetType.FirstNew;
+
         protected override void OnComicChanged(ComicData newComic)
         {
             labelComicName.Text = GetFormattedComicName(newComic);
-            labelComicPageName.Text = newComic.Pages.LastOrDefault()?.Name ?? "$NEWEST_PAGE$";
+            labelComicPageName.Text = newComic.LatestNewPage?.Name ?? "$NEWEST_PAGE$";
             labelLastUpdated.Text = string.Format(Res.ComicInfo_LastUpdatedShort, newComic.DaysSinceLastUpdated);
         }
     }

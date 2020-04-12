@@ -21,8 +21,10 @@ namespace ComicWrap.Pages
 {
     public class ComicDetailPageModel : FreshBasePageModel
     {
-        public ComicDetailPageModel()
+        public ComicDetailPageModel(ComicPageTargetType scrollTo)
         {
+            scrollToPageTarget = scrollTo;
+
             OpenOptionsCommand = new AsyncCommand(OpenOptions);
 
             RefreshCommand = new AsyncCommand(async () =>
@@ -52,10 +54,13 @@ namespace ComicWrap.Pages
         private CancellationTokenSource pageCancelTokenSource;
         private bool _isRefreshing;
         private ComicData _comic;
+        private ComicPageTargetType scrollToPageTarget;
 
         public IAsyncCommand OpenOptionsCommand { get; }
         public IAsyncCommand RefreshCommand { get; }
         public IAsyncCommand<ComicPageData> OpenPageCommand { get; }
+
+        public ObservableCollection<ComicPageData> Pages { get; set; }
 
         public bool IsRefreshing
         {
@@ -78,7 +83,26 @@ namespace ComicWrap.Pages
             }
         }
 
-        public ObservableCollection<ComicPageData> Pages { get; set; }
+        public ComicPageData ScrollToPage
+        {
+            get
+            {
+                switch (scrollToPageTarget)
+                {
+                    case ComicPageTargetType.None:
+                        return null;
+
+                    case ComicPageTargetType.LastRead:
+                        return Comic.LastReadPage;
+
+                    case ComicPageTargetType.FirstNew:
+                        return Comic.LatestNewPage;
+
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
+        }
 
         public override void Init(object initData)
         {

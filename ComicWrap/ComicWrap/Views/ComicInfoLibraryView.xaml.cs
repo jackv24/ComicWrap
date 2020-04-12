@@ -23,6 +23,8 @@ namespace ComicWrap.Views
             InitializeComponent();
         }
 
+        public override ComicPageTargetType PageTarget => ComicPageTargetType.LastRead;
+
         protected override void OnComicChanged(ComicData newComic)
         {
             labelComicName.Text = GetFormattedComicName(newComic);

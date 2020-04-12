@@ -38,6 +38,8 @@ namespace ComicWrap.Views
             set { SetValue(ComicProperty, value); }
         }
 
+        public abstract ComicPageTargetType PageTarget { get; }
+
         private static void OnComicPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var comicInfoView = (ComicInfoViewBase)bindable;
@@ -48,8 +50,14 @@ namespace ComicWrap.Views
 
         private async Task OpenComic()
         {
+            // Needed to use page navigation from a non-page
             var navService = FreshIOC.Container.Resolve<IFreshNavigationService>(Constants.DefaultNavigationServiceName);
-            var page = FreshPageModelResolver.ResolvePageModel<ComicDetailPageModel>(Comic);
+            
+            // Manually create PageModel to inject data into the constructor
+            var pageModel = new ComicDetailPageModel(PageTarget);
+
+            // Use already created PageModel to push Page
+            var page = FreshPageModelResolver.ResolvePageModel(Comic, pageModel);
             await navService.PushPage(page, null);
         }
 

@@ -129,6 +129,12 @@
   <data name="AddComic_Title" xml:space="preserve">
     <value>Add New Comic</value>
   </data>
+  <data name="Alert_Error_Title" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Alert_Generic_Confirm" xml:space="preserve">
+    <value>OK</value>
+  </data>
   <data name="ComicDetail_DeletedComic" xml:space="preserve">
     <value>Deleted Comic: {0}</value>
   </data>
@@ -155,5 +161,20 @@
   </data>
   <data name="Home_Title" xml:space="preserve">
     <value>ComicWrap</value>
+  </data>
+  <data name="ImageDownload_Complete_Msg" xml:space="preserve">
+    <value>Cover image has finished downloading</value>
+  </data>
+  <data name="ImageDownload_Complete_Title" xml:space="preserve">
+    <value>Download Complete</value>
+  </data>
+  <data name="ImageDownload_FoundUrl_Msg" xml:space="preserve">
+    <value>Image URL was found. Download has started, please wait for download completion.</value>
+  </data>
+  <data name="ImageDownload_FoundUrl_Title" xml:space="preserve">
+    <value>Located Image URL</value>
+  </data>
+  <data name="ImageDownload_LocateError_Msg" xml:space="preserve">
+    <value>Could not locate image URL</value>
   </data>
 </root>

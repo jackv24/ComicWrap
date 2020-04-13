@@ -97,6 +97,24 @@ namespace ComicWrap.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string Alert_Error_Title {
+            get {
+                return ResourceManager.GetString("Alert_Error_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        public static string Alert_Generic_Confirm {
+            get {
+                return ResourceManager.GetString("Alert_Generic_Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deleted Comic: {0}.
         /// </summary>
         public static string ComicDetail_DeletedComic {
@@ -174,6 +192,51 @@ namespace ComicWrap.Resources {
         public static string Home_Title {
             get {
                 return ResourceManager.GetString("Home_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cover image has finished downloading.
+        /// </summary>
+        public static string ImageDownload_Complete_Msg {
+            get {
+                return ResourceManager.GetString("ImageDownload_Complete_Msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download Complete.
+        /// </summary>
+        public static string ImageDownload_Complete_Title {
+            get {
+                return ResourceManager.GetString("ImageDownload_Complete_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image URL was found. Download has started, please wait for download completion..
+        /// </summary>
+        public static string ImageDownload_FoundUrl_Msg {
+            get {
+                return ResourceManager.GetString("ImageDownload_FoundUrl_Msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Located Image URL.
+        /// </summary>
+        public static string ImageDownload_FoundUrl_Title {
+            get {
+                return ResourceManager.GetString("ImageDownload_FoundUrl_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not locate image URL.
+        /// </summary>
+        public static string ImageDownload_LocateError_Msg {
+            get {
+                return ResourceManager.GetString("ImageDownload_LocateError_Msg", resourceCulture);
             }
         }
     }

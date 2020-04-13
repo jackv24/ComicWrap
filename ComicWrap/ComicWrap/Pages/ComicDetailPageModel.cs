@@ -40,10 +40,7 @@ namespace ComicWrap.Pages
 
                     IsRefreshing = false;
                 }
-                catch (OperationCanceledException)
-                {
-                    // Should cancel silently
-                }
+                catch (OperationCanceledException) { }
             });
 
             OpenPageCommand = new AsyncCommand<ComicPageData>(OpenPage);
@@ -123,7 +120,7 @@ namespace ComicWrap.Pages
         {
             base.ViewIsDisappearing(sender, e);
 
-            pageCancelTokenSource.Cancel();
+            pageCancelTokenSource.CancelAndDispose();
             IsRefreshing = false;
         }
 

@@ -76,7 +76,7 @@ namespace ComicWrap.Views
             if (string.IsNullOrEmpty(coverImagePath))
             {
                 // Download image, and then set image source
-                GetMissingCoverImage(coverImageDownloadCancel.Token)
+                DownloadCoverImage(coverImageDownloadCancel.Token)
                     .ContinueWith(t => CoverImage.Source = new FileImageSource { File = t.Result }, coverImageDownloadCancel.Token)
                     .SafeFireAndForget();
             }
@@ -89,7 +89,7 @@ namespace ComicWrap.Views
             OnComicChanged(newComic);
         }
 
-        private async Task<string> GetMissingCoverImage(CancellationToken cancelToken = default)
+        private async Task<string> DownloadCoverImage(CancellationToken cancelToken = default)
         {
             if (Comic == null || Comic.Pages.Count() == 0)
                 return null;

@@ -18,7 +18,11 @@ namespace ComicWrap.Systems
             cancellationToken.ThrowIfCancellationRequested();
             
             // Download image
-            WebClient webClient = new WebClient();
+            WebClient webClient = new WebClient()
+            {
+                // Avoid potentially time consuming proxy detection
+                Proxy = null
+            };
             byte[] imageData = await webClient.DownloadDataTaskAsync(url);
             
             cancellationToken.ThrowIfCancellationRequested();

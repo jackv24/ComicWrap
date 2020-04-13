@@ -9,7 +9,7 @@
              x:Class="ComicWrap.Pages.ComicReaderPage"
              Title="{Binding PageName}">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="ic_share_white_36dp"/>
+        <ToolbarItem IconImageSource="{DynamicResource FontIconMore}" Command="{Binding SetCoverImageCommand}"/>
     </ContentPage.ToolbarItems>
 
     

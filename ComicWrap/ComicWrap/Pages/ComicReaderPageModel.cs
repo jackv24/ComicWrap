@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using FreshMvvm;
+using AsyncAwaitBestPractices;
 using AsyncAwaitBestPractices.MVVM;
 
 using ComicWrap.Systems;
 using ComicWrap.Views;
+using ComicWrap.Resources;
 
 namespace ComicWrap.Pages
 {
@@ -18,14 +21,19 @@ namespace ComicWrap.Pages
         {
             NavigatingCommand = new Command<CustomWebViewNavigatingArgs>(OnNavigating);
             NavigatedCommand = new AsyncCommand<CustomWebViewNavigatedArgs>(OnNavigated);
+            SetCoverImageCommand = new AsyncCommand(SetCoverImage);
         }
 
+        private WebView lastNavigatedWebView;
         private string lastNavigatedUrl;
+
+        private CancellationTokenSource pageEndCancel;
 
         private Dictionary<string, ComicPageData> cachedPages;
 
         public Command<CustomWebViewNavigatingArgs> NavigatingCommand { get; }
         public IAsyncCommand<CustomWebViewNavigatedArgs> NavigatedCommand { get; }
+        public IAsyncCommand SetCoverImageCommand { get; }
 
         public ComicData Comic { get; private set; }
 
@@ -66,6 +74,20 @@ namespace ComicWrap.Pages
             });
         }
 
+        protected override void ViewIsAppearing(object sender, EventArgs e)
+        {
+            base.ViewIsAppearing(sender, e);
+
+            pageEndCancel = new CancellationTokenSource();
+        }
+
+        protected override void ViewIsDisappearing(object sender, EventArgs e)
+        {
+            base.ViewIsDisappearing(sender, e);
+
+            pageEndCancel.CancelAndDispose();
+        }
+
         private void OnNavigating(CustomWebViewNavigatingArgs args)
         {
             var webView = (CustomWebView)args.Sender;
@@ -82,6 +104,7 @@ namespace ComicWrap.Pages
             }
 
             lastNavigatedUrl = e.Url;
+            lastNavigatedWebView = webView;
 
             var pageData = LoadPageData(e.Url);
             if (pageData != null && !pageData.IsRead)
@@ -121,6 +144,49 @@ namespace ComicWrap.Pages
                 return cachedPages[pageUrlRelative];
 
             return null;
+        }
+
+        private async Task SetCoverImage()
+        {
+            if (lastNavigatedWebView == null)
+                return;
+
+            // TODO: Expand to work with more sites
+            string imageUrl = await lastNavigatedWebView.EvaluateJavaScriptAsync(
+                "document.getElementById('cc-comic').getAttribute('src')");
+
+            if (string.IsNullOrEmpty(imageUrl))
+            {
+                await CoreMethods.DisplayAlert(
+                    title: AppResources.Alert_Error_Title,
+                    message: AppResources.ImageDownload_LocateError_Msg,
+                    cancel: AppResources.Alert_Generic_Confirm);
+
+                return;
+            }
+
+            try
+            {
+                var cancelToken = pageEndCancel.Token;
+
+                // Start download image task so download can progress while user is reading "Download Started" popup
+                Task<string> downloadImageTask = LocalImageService.DownloadImage(new Uri(imageUrl), Comic.Id, cancelToken);
+
+                await CoreMethods.DisplayAlert(
+                    title: AppResources.ImageDownload_FoundUrl_Title,
+                    message: AppResources.ImageDownload_FoundUrl_Msg,
+                    cancel: AppResources.Alert_Generic_Confirm);
+
+                await downloadImageTask;
+
+                cancelToken.ThrowIfCancellationRequested();
+
+                await CoreMethods.DisplayAlert(
+                    title: AppResources.ImageDownload_Complete_Title,
+                    message: AppResources.ImageDownload_Complete_Msg,
+                    cancel: AppResources.Alert_Generic_Confirm);
+            }
+            catch (OperationCanceledException) { }
         }
     }
 }

@@ -24,18 +24,7 @@ namespace ComicWrap.Pages
         public HomePageModel() : base()
         {
             AddComicCommand = new AsyncCommand(OpenAddComicPopup);
-
-            RefreshCommand = new AsyncCommand(async () =>
-            {
-                try
-                {
-                    await Refresh();
-                }
-                catch (OperationCanceledException)
-                {
-                    // Should cancel silently
-                }
-            });
+            RefreshCommand = new AsyncCommand(Refresh);
 
             ComicLibrary = new ObservableCollection<ComicData>();
             ComicUpdates = new ObservableCollection<ComicData>();
@@ -82,7 +71,7 @@ namespace ComicWrap.Pages
         {
             base.ViewIsDisappearing(sender, e);
 
-            pageCancelTokenSource.Cancel();
+            pageCancelTokenSource.CancelAndDispose();
             IsRefreshing = false;
         }
 
@@ -94,18 +83,22 @@ namespace ComicWrap.Pages
 
         private async Task Refresh()
         {
-            var cancelToken = pageCancelTokenSource.Token;
-
             DisplayComics();
 
-            // Update comics from internet after loading from database so UI is filled ASAP
-            var updateComicTasks = new List<Task>(ComicLibrary.Count);
-            foreach (var comic in ComicLibrary)
-                updateComicTasks.Add(ComicUpdater.UpdateComic(comic, cancelToken: cancelToken));
+            try
+            {
+                var cancelToken = pageCancelTokenSource.Token;
 
-            // Updating comics can all happen at once instead of sequentially for speed
-            await Task.WhenAll(updateComicTasks);
+                // Update comics from internet after loading from database so UI is filled ASAP
+                var updateComicTasks = new List<Task>(ComicLibrary.Count);
+                foreach (var comic in ComicLibrary)
+                    updateComicTasks.Add(ComicUpdater.UpdateComic(comic, cancelToken: cancelToken));
 
+                // Updating comics can all happen at once instead of sequentially for speed
+                await Task.WhenAll(updateComicTasks);
+            }
+            catch (OperationCanceledException) { }
+            
             RaisePropertyChanged(nameof(IsAnyComics));
 
             IsRefreshing = false;

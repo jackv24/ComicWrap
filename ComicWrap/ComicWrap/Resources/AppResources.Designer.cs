@@ -169,6 +169,33 @@ namespace ComicWrap.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string ComicReader_More_Cancel {
+            get {
+                return ResourceManager.GetString("ComicReader_More_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set as Cover Page.
+        /// </summary>
+        public static string ComicReader_More_SetAsCover {
+            get {
+                return ResourceManager.GetString("ComicReader_More_SetAsCover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Page Options.
+        /// </summary>
+        public static string ComicReader_More_Title {
+            get {
+                return ResourceManager.GetString("ComicReader_More_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Library.
         /// </summary>
         public static string Home_Subtitle_Library {

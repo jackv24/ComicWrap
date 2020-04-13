@@ -153,6 +153,15 @@
   <data name="ComicInfo_LastUpdatedShort" xml:space="preserve">
     <value>{0} days ago</value>
   </data>
+  <data name="ComicReader_More_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ComicReader_More_SetAsCover" xml:space="preserve">
+    <value>Set as Cover Page</value>
+  </data>
+  <data name="ComicReader_More_Title" xml:space="preserve">
+    <value>Page Options</value>
+  </data>
   <data name="Home_Subtitle_Library" xml:space="preserve">
     <value>Library</value>
   </data>

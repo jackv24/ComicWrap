@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using FreshMvvm;
 using AsyncAwaitBestPractices;
 using AsyncAwaitBestPractices.MVVM;
+using Acr.UserDialogs;
 
 using ComicWrap.Systems;
 using ComicWrap.Views;
@@ -21,7 +22,7 @@ namespace ComicWrap.Pages
         {
             NavigatingCommand = new Command<CustomWebViewNavigatingArgs>(OnNavigating);
             NavigatedCommand = new AsyncCommand<CustomWebViewNavigatedArgs>(OnNavigated);
-            SetCoverImageCommand = new AsyncCommand(SetCoverImage);
+            MoreCommand = new AsyncCommand(DisplayMoreOptions);
         }
 
         private WebView lastNavigatedWebView;
@@ -33,7 +34,7 @@ namespace ComicWrap.Pages
 
         public Command<CustomWebViewNavigatingArgs> NavigatingCommand { get; }
         public IAsyncCommand<CustomWebViewNavigatedArgs> NavigatedCommand { get; }
-        public IAsyncCommand SetCoverImageCommand { get; }
+        public IAsyncCommand MoreCommand { get; }
 
         public ComicData Comic { get; private set; }
 
@@ -144,6 +145,23 @@ namespace ComicWrap.Pages
                 return cachedPages[pageUrlRelative];
 
             return null;
+        }
+
+        private async Task DisplayMoreOptions()
+        {
+            string result = await UserDialogs.Instance.ActionSheetAsync(
+                title: AppResources.ComicReader_More_Title,
+                cancel: AppResources.ComicReader_More_Cancel,
+                destructive: null,
+                cancelToken: pageEndCancel.Token,
+                AppResources.ComicReader_More_SetAsCover);
+
+            if (result == AppResources.ComicReader_More_Cancel)
+                return;
+            else if (result == AppResources.ComicReader_More_SetAsCover)
+                SetCoverImage().SafeFireAndForget();
+            else
+                throw new NotImplementedException();
         }
 
         private async Task SetCoverImage()

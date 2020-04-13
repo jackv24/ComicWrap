@@ -3,5 +3,5 @@
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:label="ComicWrap.Android" android:usesCleartextTraffic="true"></application>
+	<application android:label="ComicWrap" android:usesCleartextTraffic="true"></application>
 </manifest>

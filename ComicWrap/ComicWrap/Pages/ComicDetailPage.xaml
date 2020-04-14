@@ -30,7 +30,8 @@
                                Padding="0, 1, 0, 0">
                             <!-- Background -->
                             <Frame Padding="20, 5, 20, 5"
-                                   HeightRequest="35">
+                                   HeightRequest="35"
+                                   CornerRadius="0">
                                 <StackLayout Orientation="Horizontal">
                                     <!-- IsNew Indicator-->
                                     <Label Text="{x:Static res:MaterialFontFamily.MdiCircleMedium}"

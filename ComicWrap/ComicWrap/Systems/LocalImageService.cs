@@ -8,6 +8,7 @@ namespace ComicWrap.Systems
 {
     public static class LocalImageService
     {
+        // If these are changed make sure to update backup exclusions in Android backup_rules.xml
         private const Environment.SpecialFolder STORAGE_FOLDER = Environment.SpecialFolder.Personal;
         private const string SUBFOLDER = "Images";
 

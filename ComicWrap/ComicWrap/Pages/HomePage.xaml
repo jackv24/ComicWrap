@@ -13,10 +13,11 @@
 
     <NavigationPage.TitleView>
         <Label Text="{Binding Source={x:Reference page}, Path=Title}"
-               FontSize="Title"
+               FontSize="{OnPlatform Android=Title, iOS=Large}"
+               HorizontalTextAlignment="{OnPlatform Android=Start, iOS=Center}"
                VerticalTextAlignment="Center"
-               HorizontalTextAlignment="Start"
-               FontAttributes="Italic, Bold"/>
+               FontAttributes="Italic, Bold">
+        </Label>
     </NavigationPage.TitleView>
 
     <ContentPage.ToolbarItems>

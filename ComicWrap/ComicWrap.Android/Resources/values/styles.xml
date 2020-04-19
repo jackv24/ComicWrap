@@ -9,19 +9,17 @@
   
   <style name="LightTheme" parent="MainTheme.Base">
     <!-- colorPrimary is used for the default action bar background -->
-    <item name="colorPrimary">#FFFFFF</item>
+    <item name="colorPrimary">#f5f5f5</item>
     <!-- colorPrimaryDark is used for the status bar -->
-    <item name="colorPrimaryDark">#F5F5F5</item>
+    <item name="colorPrimaryDark">#c2c2c2</item>
     <item name="android:windowLightStatusBar">true</item>
-    <item name="android:navigationBarColor">#FFFFFF</item>
     <item name="android:drawableTint">#000000</item>"
     <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
   </style>
 
   <style name="DarkTheme" parent="MainTheme.Base">
-    <item name="colorPrimary">#000000</item>
-    <item name="colorPrimaryDark">#000000</item>
-    <item name="android:navigationBarColor">#000000</item>
+    <item name="colorPrimary">#424242</item>
+    <item name="colorPrimaryDark">#1b1b1b</item>
     <item name="android:drawableTint">#FFFFFF</item>"
   </style>
 
@@ -33,7 +31,7 @@
     <item name="windowActionBar">false</item>
     <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
-    <item name="colorAccent">#FF4081</item>
+    <item name="colorAccent">#40c4ff</item>
     <!-- You can also set colorControlNormal, colorControlActivated
          colorControlHighlight and colorSwitchThumbNormal. -->
     <item name="windowActionModeOverlay">true</item>
@@ -42,7 +40,7 @@
   </style>
   
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
-    <item name="colorAccent">#FF4081</item>
+    <item name="colorAccent">#40c4ff</item>
   </style>
 
   <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">

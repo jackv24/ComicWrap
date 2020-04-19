@@ -2,12 +2,15 @@
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     x:Class="ComicWrap.Themes.DarkTheme">
-    
+
+    <Color x:Key="ColorPrimary">#424242</Color>
+    <Color x:Key="ColorPrimaryDark">#1b1b1b</Color>
+
     <Color x:Key="MainTextColor">White</Color>
     <Color x:Key="DisabledTextColor">Gray</Color>
-    
-    <Color x:Key="MainBackgroundColor">Black</Color>
-    <Color x:Key="PopupBackgroundColor">#333333</Color>
+
+    <Color x:Key="MainBackgroundColor">#212121</Color>
+    <Color x:Key="PopupBackgroundColor">#212121</Color>
     
     <Color x:Key="ButtonBackgroundColor">#737373</Color>
     <Color x:Key="ButtonTextColor">White</Color>

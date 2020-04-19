@@ -31,7 +31,7 @@
     <Style TargetType="fresh:FreshNavigationContainer">
         <!--Also changes flash colour when navigating pages-->
         <Setter Property="BackgroundColor" Value="{DynamicResource MainBackgroundColor}"/>
-        <Setter Property="BarBackgroundColor" Value="{DynamicResource MainBackgroundColor}"/>
+        <Setter Property="BarBackgroundColor" Value="{DynamicResource ColorPrimary}"/>
         <Setter Property="BarTextColor" Value="{DynamicResource MainTextColor}"/>
     </Style>
     

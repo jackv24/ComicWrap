@@ -8,8 +8,6 @@ using Microsoft.AppCenter.Crashes;
 using FreshMvvm;
 
 using ComicWrap.Pages;
-using ComicWrap.Themes;
-using ComicWrap.Resources;
 using ComicWrap.Systems;
 using Secrets = ComicWrap.Helpers.Secrets;
 
@@ -29,7 +27,7 @@ namespace ComicWrap
         protected override void OnStart()
         {
             AppCenterStart();
-            UpdateTheme();
+            Settings.Init(this);
         }
 
         protected override void OnSleep()
@@ -38,7 +36,7 @@ namespace ComicWrap
 
         protected override void OnResume()
         {
-            UpdateTheme();
+            Settings.Init(this);
         }
 
         private void AppCenterStart()
@@ -59,44 +57,6 @@ namespace ComicWrap
 
             if (appSecretString != null)
                 AppCenter.Start(appSecretString, typeof(Analytics), typeof(Crashes));
-        }
-
-        private void UpdateTheme()
-        {
-            var environment = DependencyService.Get<IEnvironment>();
-            var theme = environment.GetOperatingSystemTheme();
-
-            var mergedDictionaries = Current.Resources.MergedDictionaries;
-            if (mergedDictionaries != null)
-            {
-                mergedDictionaries.Clear();
-
-                ResourceDictionary themeDict;
-                switch (theme)
-                {
-                    case Theme.Dark:
-                        themeDict = new DarkTheme();
-                        break;
-
-                    case Theme.Light:
-                    default:
-                        themeDict = new LightTheme();
-                    break;
-                }
-
-                var styleDict = new ElementStyles();
-
-                mergedDictionaries.Add(themeDict);
-
-                // Need to merge theme into style dict before adding as style dict depends on theme
-                styleDict.MergedDictionaries.Add(themeDict);
-                mergedDictionaries.Add(styleDict);
-
-                // Just add font dict since it doesn't depend on any others
-                mergedDictionaries.Add(new AppFonts());
-            }
-
-            environment.ApplyTheme(theme);
         }
     }
 }

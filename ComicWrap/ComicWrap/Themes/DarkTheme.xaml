@@ -5,6 +5,7 @@
 
     <Color x:Key="ColorPrimary">#424242</Color>
     <Color x:Key="ColorPrimaryDark">#1b1b1b</Color>
+    <Color x:Key="AccentColor">#40c4ff</Color>
 
     <Color x:Key="MainTextColor">White</Color>
     <Color x:Key="DisabledTextColor">Gray</Color>

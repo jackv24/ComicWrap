@@ -2619,6 +2619,2596 @@ namespace ComicWrap.Droid
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::ComicWrap.Droid.Resource.Styleable.ProgressWheel_ahText;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::ComicWrap.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::ComicWrap.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
+			global::AiForms.Renderers.Droid.Resource.Animation.abc_fade_in = global::ComicWrap.Droid.Resource.Animation.abc_fade_in;
+			global::AiForms.Renderers.Droid.Resource.Animation.abc_fade_out = global::ComicWrap.Droid.Resource.Animation.abc_fade_out;
+			global::AiForms.Renderers.Droid.Resource.Animation.abc_grow_fade_in_from_bottom = global::ComicWrap.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::AiForms.Renderers.Droid.Resource.Animation.abc_popup_enter = global::ComicWrap.Droid.Resource.Animation.abc_popup_enter;
+			global::AiForms.Renderers.Droid.Resource.Animation.abc_popup_exit = global::ComicWrap.Droid.Resource.Animation.abc_popup_exit;
+			global::AiForms.Renderers.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom = global::ComicWrap.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::AiForms.Renderers.Droid.Resource.Animation.abc_slide_in_bottom = global::ComicWrap.Droid.Resource.Animation.abc_slide_in_bottom;
+			global::AiForms.Renderers.Droid.Resource.Animation.abc_slide_in_top = global::ComicWrap.Droid.Resource.Animation.abc_slide_in_top;
+			global::AiForms.Renderers.Droid.Resource.Animation.abc_slide_out_bottom = global::ComicWrap.Droid.Resource.Animation.abc_slide_out_bottom;
+			global::AiForms.Renderers.Droid.Resource.Animation.abc_slide_out_top = global::ComicWrap.Droid.Resource.Animation.abc_slide_out_top;
+			global::AiForms.Renderers.Droid.Resource.Animation.abc_tooltip_enter = global::ComicWrap.Droid.Resource.Animation.abc_tooltip_enter;
+			global::AiForms.Renderers.Droid.Resource.Animation.abc_tooltip_exit = global::ComicWrap.Droid.Resource.Animation.abc_tooltip_exit;
+			global::AiForms.Renderers.Droid.Resource.Animation.design_bottom_sheet_slide_in = global::ComicWrap.Droid.Resource.Animation.design_bottom_sheet_slide_in;
+			global::AiForms.Renderers.Droid.Resource.Animation.design_bottom_sheet_slide_out = global::ComicWrap.Droid.Resource.Animation.design_bottom_sheet_slide_out;
+			global::AiForms.Renderers.Droid.Resource.Animation.design_snackbar_in = global::ComicWrap.Droid.Resource.Animation.design_snackbar_in;
+			global::AiForms.Renderers.Droid.Resource.Animation.design_snackbar_out = global::ComicWrap.Droid.Resource.Animation.design_snackbar_out;
+			global::AiForms.Renderers.Droid.Resource.Animation.EnterFromLeft = global::ComicWrap.Droid.Resource.Animation.EnterFromLeft;
+			global::AiForms.Renderers.Droid.Resource.Animation.EnterFromRight = global::ComicWrap.Droid.Resource.Animation.EnterFromRight;
+			global::AiForms.Renderers.Droid.Resource.Animation.ExitToLeft = global::ComicWrap.Droid.Resource.Animation.ExitToLeft;
+			global::AiForms.Renderers.Droid.Resource.Animation.ExitToRight = global::ComicWrap.Droid.Resource.Animation.ExitToRight;
+			global::AiForms.Renderers.Droid.Resource.Animator.design_appbar_state_list_animator = global::ComicWrap.Droid.Resource.Animator.design_appbar_state_list_animator;
+			global::AiForms.Renderers.Droid.Resource.Animator.design_fab_hide_motion_spec = global::ComicWrap.Droid.Resource.Animator.design_fab_hide_motion_spec;
+			global::AiForms.Renderers.Droid.Resource.Animator.design_fab_show_motion_spec = global::ComicWrap.Droid.Resource.Animator.design_fab_show_motion_spec;
+			global::AiForms.Renderers.Droid.Resource.Animator.mtrl_btn_state_list_anim = global::ComicWrap.Droid.Resource.Animator.mtrl_btn_state_list_anim;
+			global::AiForms.Renderers.Droid.Resource.Animator.mtrl_btn_unelevated_state_list_anim = global::ComicWrap.Droid.Resource.Animator.mtrl_btn_unelevated_state_list_anim;
+			global::AiForms.Renderers.Droid.Resource.Animator.mtrl_chip_state_list_anim = global::ComicWrap.Droid.Resource.Animator.mtrl_chip_state_list_anim;
+			global::AiForms.Renderers.Droid.Resource.Animator.mtrl_fab_hide_motion_spec = global::ComicWrap.Droid.Resource.Animator.mtrl_fab_hide_motion_spec;
+			global::AiForms.Renderers.Droid.Resource.Animator.mtrl_fab_show_motion_spec = global::ComicWrap.Droid.Resource.Animator.mtrl_fab_show_motion_spec;
+			global::AiForms.Renderers.Droid.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec = global::ComicWrap.Droid.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec;
+			global::AiForms.Renderers.Droid.Resource.Animator.mtrl_fab_transformation_sheet_expand_spec = global::ComicWrap.Droid.Resource.Animator.mtrl_fab_transformation_sheet_expand_spec;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionBarDivider = global::ComicWrap.Droid.Resource.Attribute.actionBarDivider;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionBarItemBackground = global::ComicWrap.Droid.Resource.Attribute.actionBarItemBackground;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionBarPopupTheme = global::ComicWrap.Droid.Resource.Attribute.actionBarPopupTheme;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionBarSize = global::ComicWrap.Droid.Resource.Attribute.actionBarSize;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionBarSplitStyle = global::ComicWrap.Droid.Resource.Attribute.actionBarSplitStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionBarStyle = global::ComicWrap.Droid.Resource.Attribute.actionBarStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionBarTabBarStyle = global::ComicWrap.Droid.Resource.Attribute.actionBarTabBarStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionBarTabStyle = global::ComicWrap.Droid.Resource.Attribute.actionBarTabStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionBarTabTextStyle = global::ComicWrap.Droid.Resource.Attribute.actionBarTabTextStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionBarTheme = global::ComicWrap.Droid.Resource.Attribute.actionBarTheme;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionBarWidgetTheme = global::ComicWrap.Droid.Resource.Attribute.actionBarWidgetTheme;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionButtonStyle = global::ComicWrap.Droid.Resource.Attribute.actionButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionDropDownStyle = global::ComicWrap.Droid.Resource.Attribute.actionDropDownStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionLayout = global::ComicWrap.Droid.Resource.Attribute.actionLayout;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionMenuTextAppearance = global::ComicWrap.Droid.Resource.Attribute.actionMenuTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionMenuTextColor = global::ComicWrap.Droid.Resource.Attribute.actionMenuTextColor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionModeBackground = global::ComicWrap.Droid.Resource.Attribute.actionModeBackground;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionModeCloseButtonStyle = global::ComicWrap.Droid.Resource.Attribute.actionModeCloseButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionModeCloseDrawable = global::ComicWrap.Droid.Resource.Attribute.actionModeCloseDrawable;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionModeCopyDrawable = global::ComicWrap.Droid.Resource.Attribute.actionModeCopyDrawable;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionModeCutDrawable = global::ComicWrap.Droid.Resource.Attribute.actionModeCutDrawable;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionModeFindDrawable = global::ComicWrap.Droid.Resource.Attribute.actionModeFindDrawable;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionModePasteDrawable = global::ComicWrap.Droid.Resource.Attribute.actionModePasteDrawable;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionModePopupWindowStyle = global::ComicWrap.Droid.Resource.Attribute.actionModePopupWindowStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionModeSelectAllDrawable = global::ComicWrap.Droid.Resource.Attribute.actionModeSelectAllDrawable;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionModeShareDrawable = global::ComicWrap.Droid.Resource.Attribute.actionModeShareDrawable;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionModeSplitBackground = global::ComicWrap.Droid.Resource.Attribute.actionModeSplitBackground;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionModeStyle = global::ComicWrap.Droid.Resource.Attribute.actionModeStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionModeWebSearchDrawable = global::ComicWrap.Droid.Resource.Attribute.actionModeWebSearchDrawable;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionOverflowButtonStyle = global::ComicWrap.Droid.Resource.Attribute.actionOverflowButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionOverflowMenuStyle = global::ComicWrap.Droid.Resource.Attribute.actionOverflowMenuStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionProviderClass = global::ComicWrap.Droid.Resource.Attribute.actionProviderClass;
+			global::AiForms.Renderers.Droid.Resource.Attribute.actionViewClass = global::ComicWrap.Droid.Resource.Attribute.actionViewClass;
+			global::AiForms.Renderers.Droid.Resource.Attribute.activityChooserViewStyle = global::ComicWrap.Droid.Resource.Attribute.activityChooserViewStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.alertDialogButtonGroupStyle = global::ComicWrap.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.alertDialogCenterButtons = global::ComicWrap.Droid.Resource.Attribute.alertDialogCenterButtons;
+			global::AiForms.Renderers.Droid.Resource.Attribute.alertDialogStyle = global::ComicWrap.Droid.Resource.Attribute.alertDialogStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.alertDialogTheme = global::ComicWrap.Droid.Resource.Attribute.alertDialogTheme;
+			global::AiForms.Renderers.Droid.Resource.Attribute.allowStacking = global::ComicWrap.Droid.Resource.Attribute.allowStacking;
+			global::AiForms.Renderers.Droid.Resource.Attribute.alpha = global::ComicWrap.Droid.Resource.Attribute.alpha;
+			global::AiForms.Renderers.Droid.Resource.Attribute.alphabeticModifiers = global::ComicWrap.Droid.Resource.Attribute.alphabeticModifiers;
+			global::AiForms.Renderers.Droid.Resource.Attribute.arrowHeadLength = global::ComicWrap.Droid.Resource.Attribute.arrowHeadLength;
+			global::AiForms.Renderers.Droid.Resource.Attribute.arrowShaftLength = global::ComicWrap.Droid.Resource.Attribute.arrowShaftLength;
+			global::AiForms.Renderers.Droid.Resource.Attribute.autoCompleteTextViewStyle = global::ComicWrap.Droid.Resource.Attribute.autoCompleteTextViewStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.autoSizeMaxTextSize = global::ComicWrap.Droid.Resource.Attribute.autoSizeMaxTextSize;
+			global::AiForms.Renderers.Droid.Resource.Attribute.autoSizeMinTextSize = global::ComicWrap.Droid.Resource.Attribute.autoSizeMinTextSize;
+			global::AiForms.Renderers.Droid.Resource.Attribute.autoSizePresetSizes = global::ComicWrap.Droid.Resource.Attribute.autoSizePresetSizes;
+			global::AiForms.Renderers.Droid.Resource.Attribute.autoSizeStepGranularity = global::ComicWrap.Droid.Resource.Attribute.autoSizeStepGranularity;
+			global::AiForms.Renderers.Droid.Resource.Attribute.autoSizeTextType = global::ComicWrap.Droid.Resource.Attribute.autoSizeTextType;
+			global::AiForms.Renderers.Droid.Resource.Attribute.background = global::ComicWrap.Droid.Resource.Attribute.background;
+			global::AiForms.Renderers.Droid.Resource.Attribute.backgroundSplit = global::ComicWrap.Droid.Resource.Attribute.backgroundSplit;
+			global::AiForms.Renderers.Droid.Resource.Attribute.backgroundStacked = global::ComicWrap.Droid.Resource.Attribute.backgroundStacked;
+			global::AiForms.Renderers.Droid.Resource.Attribute.backgroundTint = global::ComicWrap.Droid.Resource.Attribute.backgroundTint;
+			global::AiForms.Renderers.Droid.Resource.Attribute.backgroundTintMode = global::ComicWrap.Droid.Resource.Attribute.backgroundTintMode;
+			global::AiForms.Renderers.Droid.Resource.Attribute.barLength = global::ComicWrap.Droid.Resource.Attribute.barLength;
+			global::AiForms.Renderers.Droid.Resource.Attribute.behavior_autoHide = global::ComicWrap.Droid.Resource.Attribute.behavior_autoHide;
+			global::AiForms.Renderers.Droid.Resource.Attribute.behavior_fitToContents = global::ComicWrap.Droid.Resource.Attribute.behavior_fitToContents;
+			global::AiForms.Renderers.Droid.Resource.Attribute.behavior_hideable = global::ComicWrap.Droid.Resource.Attribute.behavior_hideable;
+			global::AiForms.Renderers.Droid.Resource.Attribute.behavior_overlapTop = global::ComicWrap.Droid.Resource.Attribute.behavior_overlapTop;
+			global::AiForms.Renderers.Droid.Resource.Attribute.behavior_peekHeight = global::ComicWrap.Droid.Resource.Attribute.behavior_peekHeight;
+			global::AiForms.Renderers.Droid.Resource.Attribute.behavior_skipCollapsed = global::ComicWrap.Droid.Resource.Attribute.behavior_skipCollapsed;
+			global::AiForms.Renderers.Droid.Resource.Attribute.borderWidth = global::ComicWrap.Droid.Resource.Attribute.borderWidth;
+			global::AiForms.Renderers.Droid.Resource.Attribute.borderlessButtonStyle = global::ComicWrap.Droid.Resource.Attribute.borderlessButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.bottomAppBarStyle = global::ComicWrap.Droid.Resource.Attribute.bottomAppBarStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.bottomNavigationStyle = global::ComicWrap.Droid.Resource.Attribute.bottomNavigationStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.bottomSheetDialogTheme = global::ComicWrap.Droid.Resource.Attribute.bottomSheetDialogTheme;
+			global::AiForms.Renderers.Droid.Resource.Attribute.bottomSheetStyle = global::ComicWrap.Droid.Resource.Attribute.bottomSheetStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.boxBackgroundColor = global::ComicWrap.Droid.Resource.Attribute.boxBackgroundColor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.boxBackgroundMode = global::ComicWrap.Droid.Resource.Attribute.boxBackgroundMode;
+			global::AiForms.Renderers.Droid.Resource.Attribute.boxCollapsedPaddingTop = global::ComicWrap.Droid.Resource.Attribute.boxCollapsedPaddingTop;
+			global::AiForms.Renderers.Droid.Resource.Attribute.boxCornerRadiusBottomEnd = global::ComicWrap.Droid.Resource.Attribute.boxCornerRadiusBottomEnd;
+			global::AiForms.Renderers.Droid.Resource.Attribute.boxCornerRadiusBottomStart = global::ComicWrap.Droid.Resource.Attribute.boxCornerRadiusBottomStart;
+			global::AiForms.Renderers.Droid.Resource.Attribute.boxCornerRadiusTopEnd = global::ComicWrap.Droid.Resource.Attribute.boxCornerRadiusTopEnd;
+			global::AiForms.Renderers.Droid.Resource.Attribute.boxCornerRadiusTopStart = global::ComicWrap.Droid.Resource.Attribute.boxCornerRadiusTopStart;
+			global::AiForms.Renderers.Droid.Resource.Attribute.boxStrokeColor = global::ComicWrap.Droid.Resource.Attribute.boxStrokeColor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.boxStrokeWidth = global::ComicWrap.Droid.Resource.Attribute.boxStrokeWidth;
+			global::AiForms.Renderers.Droid.Resource.Attribute.buttonBarButtonStyle = global::ComicWrap.Droid.Resource.Attribute.buttonBarButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.buttonBarNegativeButtonStyle = global::ComicWrap.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.buttonBarNeutralButtonStyle = global::ComicWrap.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.buttonBarPositiveButtonStyle = global::ComicWrap.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.buttonBarStyle = global::ComicWrap.Droid.Resource.Attribute.buttonBarStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.buttonGravity = global::ComicWrap.Droid.Resource.Attribute.buttonGravity;
+			global::AiForms.Renderers.Droid.Resource.Attribute.buttonIconDimen = global::ComicWrap.Droid.Resource.Attribute.buttonIconDimen;
+			global::AiForms.Renderers.Droid.Resource.Attribute.buttonPanelSideLayout = global::ComicWrap.Droid.Resource.Attribute.buttonPanelSideLayout;
+			global::AiForms.Renderers.Droid.Resource.Attribute.buttonStyle = global::ComicWrap.Droid.Resource.Attribute.buttonStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.buttonStyleSmall = global::ComicWrap.Droid.Resource.Attribute.buttonStyleSmall;
+			global::AiForms.Renderers.Droid.Resource.Attribute.buttonTint = global::ComicWrap.Droid.Resource.Attribute.buttonTint;
+			global::AiForms.Renderers.Droid.Resource.Attribute.buttonTintMode = global::ComicWrap.Droid.Resource.Attribute.buttonTintMode;
+			global::AiForms.Renderers.Droid.Resource.Attribute.cardBackgroundColor = global::ComicWrap.Droid.Resource.Attribute.cardBackgroundColor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.cardCornerRadius = global::ComicWrap.Droid.Resource.Attribute.cardCornerRadius;
+			global::AiForms.Renderers.Droid.Resource.Attribute.cardElevation = global::ComicWrap.Droid.Resource.Attribute.cardElevation;
+			global::AiForms.Renderers.Droid.Resource.Attribute.cardMaxElevation = global::ComicWrap.Droid.Resource.Attribute.cardMaxElevation;
+			global::AiForms.Renderers.Droid.Resource.Attribute.cardPreventCornerOverlap = global::ComicWrap.Droid.Resource.Attribute.cardPreventCornerOverlap;
+			global::AiForms.Renderers.Droid.Resource.Attribute.cardUseCompatPadding = global::ComicWrap.Droid.Resource.Attribute.cardUseCompatPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.cardViewStyle = global::ComicWrap.Droid.Resource.Attribute.cardViewStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.checkboxStyle = global::ComicWrap.Droid.Resource.Attribute.checkboxStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.checkedChip = global::ComicWrap.Droid.Resource.Attribute.checkedChip;
+			global::AiForms.Renderers.Droid.Resource.Attribute.checkedIcon = global::ComicWrap.Droid.Resource.Attribute.checkedIcon;
+			global::AiForms.Renderers.Droid.Resource.Attribute.checkedIconEnabled = global::ComicWrap.Droid.Resource.Attribute.checkedIconEnabled;
+			global::AiForms.Renderers.Droid.Resource.Attribute.checkedIconVisible = global::ComicWrap.Droid.Resource.Attribute.checkedIconVisible;
+			global::AiForms.Renderers.Droid.Resource.Attribute.checkedTextViewStyle = global::ComicWrap.Droid.Resource.Attribute.checkedTextViewStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.chipBackgroundColor = global::ComicWrap.Droid.Resource.Attribute.chipBackgroundColor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.chipCornerRadius = global::ComicWrap.Droid.Resource.Attribute.chipCornerRadius;
+			global::AiForms.Renderers.Droid.Resource.Attribute.chipEndPadding = global::ComicWrap.Droid.Resource.Attribute.chipEndPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.chipGroupStyle = global::ComicWrap.Droid.Resource.Attribute.chipGroupStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.chipIcon = global::ComicWrap.Droid.Resource.Attribute.chipIcon;
+			global::AiForms.Renderers.Droid.Resource.Attribute.chipIconEnabled = global::ComicWrap.Droid.Resource.Attribute.chipIconEnabled;
+			global::AiForms.Renderers.Droid.Resource.Attribute.chipIconSize = global::ComicWrap.Droid.Resource.Attribute.chipIconSize;
+			global::AiForms.Renderers.Droid.Resource.Attribute.chipIconTint = global::ComicWrap.Droid.Resource.Attribute.chipIconTint;
+			global::AiForms.Renderers.Droid.Resource.Attribute.chipIconVisible = global::ComicWrap.Droid.Resource.Attribute.chipIconVisible;
+			global::AiForms.Renderers.Droid.Resource.Attribute.chipMinHeight = global::ComicWrap.Droid.Resource.Attribute.chipMinHeight;
+			global::AiForms.Renderers.Droid.Resource.Attribute.chipSpacing = global::ComicWrap.Droid.Resource.Attribute.chipSpacing;
+			global::AiForms.Renderers.Droid.Resource.Attribute.chipSpacingHorizontal = global::ComicWrap.Droid.Resource.Attribute.chipSpacingHorizontal;
+			global::AiForms.Renderers.Droid.Resource.Attribute.chipSpacingVertical = global::ComicWrap.Droid.Resource.Attribute.chipSpacingVertical;
+			global::AiForms.Renderers.Droid.Resource.Attribute.chipStandaloneStyle = global::ComicWrap.Droid.Resource.Attribute.chipStandaloneStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.chipStartPadding = global::ComicWrap.Droid.Resource.Attribute.chipStartPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.chipStrokeColor = global::ComicWrap.Droid.Resource.Attribute.chipStrokeColor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.chipStrokeWidth = global::ComicWrap.Droid.Resource.Attribute.chipStrokeWidth;
+			global::AiForms.Renderers.Droid.Resource.Attribute.chipStyle = global::ComicWrap.Droid.Resource.Attribute.chipStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.closeIcon = global::ComicWrap.Droid.Resource.Attribute.closeIcon;
+			global::AiForms.Renderers.Droid.Resource.Attribute.closeIconEnabled = global::ComicWrap.Droid.Resource.Attribute.closeIconEnabled;
+			global::AiForms.Renderers.Droid.Resource.Attribute.closeIconEndPadding = global::ComicWrap.Droid.Resource.Attribute.closeIconEndPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.closeIconSize = global::ComicWrap.Droid.Resource.Attribute.closeIconSize;
+			global::AiForms.Renderers.Droid.Resource.Attribute.closeIconStartPadding = global::ComicWrap.Droid.Resource.Attribute.closeIconStartPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.closeIconTint = global::ComicWrap.Droid.Resource.Attribute.closeIconTint;
+			global::AiForms.Renderers.Droid.Resource.Attribute.closeIconVisible = global::ComicWrap.Droid.Resource.Attribute.closeIconVisible;
+			global::AiForms.Renderers.Droid.Resource.Attribute.closeItemLayout = global::ComicWrap.Droid.Resource.Attribute.closeItemLayout;
+			global::AiForms.Renderers.Droid.Resource.Attribute.collapseContentDescription = global::ComicWrap.Droid.Resource.Attribute.collapseContentDescription;
+			global::AiForms.Renderers.Droid.Resource.Attribute.collapseIcon = global::ComicWrap.Droid.Resource.Attribute.collapseIcon;
+			global::AiForms.Renderers.Droid.Resource.Attribute.collapsedTitleGravity = global::ComicWrap.Droid.Resource.Attribute.collapsedTitleGravity;
+			global::AiForms.Renderers.Droid.Resource.Attribute.collapsedTitleTextAppearance = global::ComicWrap.Droid.Resource.Attribute.collapsedTitleTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Attribute.color = global::ComicWrap.Droid.Resource.Attribute.color;
+			global::AiForms.Renderers.Droid.Resource.Attribute.colorAccent = global::ComicWrap.Droid.Resource.Attribute.colorAccent;
+			global::AiForms.Renderers.Droid.Resource.Attribute.colorBackgroundFloating = global::ComicWrap.Droid.Resource.Attribute.colorBackgroundFloating;
+			global::AiForms.Renderers.Droid.Resource.Attribute.colorButtonNormal = global::ComicWrap.Droid.Resource.Attribute.colorButtonNormal;
+			global::AiForms.Renderers.Droid.Resource.Attribute.colorControlActivated = global::ComicWrap.Droid.Resource.Attribute.colorControlActivated;
+			global::AiForms.Renderers.Droid.Resource.Attribute.colorControlHighlight = global::ComicWrap.Droid.Resource.Attribute.colorControlHighlight;
+			global::AiForms.Renderers.Droid.Resource.Attribute.colorControlNormal = global::ComicWrap.Droid.Resource.Attribute.colorControlNormal;
+			global::AiForms.Renderers.Droid.Resource.Attribute.colorError = global::ComicWrap.Droid.Resource.Attribute.colorError;
+			global::AiForms.Renderers.Droid.Resource.Attribute.colorPrimary = global::ComicWrap.Droid.Resource.Attribute.colorPrimary;
+			global::AiForms.Renderers.Droid.Resource.Attribute.colorPrimaryDark = global::ComicWrap.Droid.Resource.Attribute.colorPrimaryDark;
+			global::AiForms.Renderers.Droid.Resource.Attribute.colorSecondary = global::ComicWrap.Droid.Resource.Attribute.colorSecondary;
+			global::AiForms.Renderers.Droid.Resource.Attribute.colorSwitchThumbNormal = global::ComicWrap.Droid.Resource.Attribute.colorSwitchThumbNormal;
+			global::AiForms.Renderers.Droid.Resource.Attribute.commitIcon = global::ComicWrap.Droid.Resource.Attribute.commitIcon;
+			global::AiForms.Renderers.Droid.Resource.Attribute.contentDescription = global::ComicWrap.Droid.Resource.Attribute.contentDescription;
+			global::AiForms.Renderers.Droid.Resource.Attribute.contentInsetEnd = global::ComicWrap.Droid.Resource.Attribute.contentInsetEnd;
+			global::AiForms.Renderers.Droid.Resource.Attribute.contentInsetEndWithActions = global::ComicWrap.Droid.Resource.Attribute.contentInsetEndWithActions;
+			global::AiForms.Renderers.Droid.Resource.Attribute.contentInsetLeft = global::ComicWrap.Droid.Resource.Attribute.contentInsetLeft;
+			global::AiForms.Renderers.Droid.Resource.Attribute.contentInsetRight = global::ComicWrap.Droid.Resource.Attribute.contentInsetRight;
+			global::AiForms.Renderers.Droid.Resource.Attribute.contentInsetStart = global::ComicWrap.Droid.Resource.Attribute.contentInsetStart;
+			global::AiForms.Renderers.Droid.Resource.Attribute.contentInsetStartWithNavigation = global::ComicWrap.Droid.Resource.Attribute.contentInsetStartWithNavigation;
+			global::AiForms.Renderers.Droid.Resource.Attribute.contentPadding = global::ComicWrap.Droid.Resource.Attribute.contentPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.contentPaddingBottom = global::ComicWrap.Droid.Resource.Attribute.contentPaddingBottom;
+			global::AiForms.Renderers.Droid.Resource.Attribute.contentPaddingLeft = global::ComicWrap.Droid.Resource.Attribute.contentPaddingLeft;
+			global::AiForms.Renderers.Droid.Resource.Attribute.contentPaddingRight = global::ComicWrap.Droid.Resource.Attribute.contentPaddingRight;
+			global::AiForms.Renderers.Droid.Resource.Attribute.contentPaddingTop = global::ComicWrap.Droid.Resource.Attribute.contentPaddingTop;
+			global::AiForms.Renderers.Droid.Resource.Attribute.contentScrim = global::ComicWrap.Droid.Resource.Attribute.contentScrim;
+			global::AiForms.Renderers.Droid.Resource.Attribute.controlBackground = global::ComicWrap.Droid.Resource.Attribute.controlBackground;
+			global::AiForms.Renderers.Droid.Resource.Attribute.coordinatorLayoutStyle = global::ComicWrap.Droid.Resource.Attribute.coordinatorLayoutStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.cornerRadius = global::ComicWrap.Droid.Resource.Attribute.cornerRadius;
+			global::AiForms.Renderers.Droid.Resource.Attribute.counterEnabled = global::ComicWrap.Droid.Resource.Attribute.counterEnabled;
+			global::AiForms.Renderers.Droid.Resource.Attribute.counterMaxLength = global::ComicWrap.Droid.Resource.Attribute.counterMaxLength;
+			global::AiForms.Renderers.Droid.Resource.Attribute.counterOverflowTextAppearance = global::ComicWrap.Droid.Resource.Attribute.counterOverflowTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Attribute.counterTextAppearance = global::ComicWrap.Droid.Resource.Attribute.counterTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Attribute.customNavigationLayout = global::ComicWrap.Droid.Resource.Attribute.customNavigationLayout;
+			global::AiForms.Renderers.Droid.Resource.Attribute.defaultQueryHint = global::ComicWrap.Droid.Resource.Attribute.defaultQueryHint;
+			global::AiForms.Renderers.Droid.Resource.Attribute.dialogCornerRadius = global::ComicWrap.Droid.Resource.Attribute.dialogCornerRadius;
+			global::AiForms.Renderers.Droid.Resource.Attribute.dialogPreferredPadding = global::ComicWrap.Droid.Resource.Attribute.dialogPreferredPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.dialogTheme = global::ComicWrap.Droid.Resource.Attribute.dialogTheme;
+			global::AiForms.Renderers.Droid.Resource.Attribute.displayOptions = global::ComicWrap.Droid.Resource.Attribute.displayOptions;
+			global::AiForms.Renderers.Droid.Resource.Attribute.divider = global::ComicWrap.Droid.Resource.Attribute.divider;
+			global::AiForms.Renderers.Droid.Resource.Attribute.dividerHorizontal = global::ComicWrap.Droid.Resource.Attribute.dividerHorizontal;
+			global::AiForms.Renderers.Droid.Resource.Attribute.dividerPadding = global::ComicWrap.Droid.Resource.Attribute.dividerPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.dividerVertical = global::ComicWrap.Droid.Resource.Attribute.dividerVertical;
+			global::AiForms.Renderers.Droid.Resource.Attribute.drawableSize = global::ComicWrap.Droid.Resource.Attribute.drawableSize;
+			global::AiForms.Renderers.Droid.Resource.Attribute.drawerArrowStyle = global::ComicWrap.Droid.Resource.Attribute.drawerArrowStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.dropDownListViewStyle = global::ComicWrap.Droid.Resource.Attribute.dropDownListViewStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.dropdownListPreferredItemHeight = global::ComicWrap.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::AiForms.Renderers.Droid.Resource.Attribute.editTextBackground = global::ComicWrap.Droid.Resource.Attribute.editTextBackground;
+			global::AiForms.Renderers.Droid.Resource.Attribute.editTextColor = global::ComicWrap.Droid.Resource.Attribute.editTextColor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.editTextStyle = global::ComicWrap.Droid.Resource.Attribute.editTextStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.elevation = global::ComicWrap.Droid.Resource.Attribute.elevation;
+			global::AiForms.Renderers.Droid.Resource.Attribute.enforceMaterialTheme = global::ComicWrap.Droid.Resource.Attribute.enforceMaterialTheme;
+			global::AiForms.Renderers.Droid.Resource.Attribute.enforceTextAppearance = global::ComicWrap.Droid.Resource.Attribute.enforceTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Attribute.errorEnabled = global::ComicWrap.Droid.Resource.Attribute.errorEnabled;
+			global::AiForms.Renderers.Droid.Resource.Attribute.errorTextAppearance = global::ComicWrap.Droid.Resource.Attribute.errorTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable = global::ComicWrap.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::AiForms.Renderers.Droid.Resource.Attribute.expanded = global::ComicWrap.Droid.Resource.Attribute.expanded;
+			global::AiForms.Renderers.Droid.Resource.Attribute.expandedTitleGravity = global::ComicWrap.Droid.Resource.Attribute.expandedTitleGravity;
+			global::AiForms.Renderers.Droid.Resource.Attribute.expandedTitleMargin = global::ComicWrap.Droid.Resource.Attribute.expandedTitleMargin;
+			global::AiForms.Renderers.Droid.Resource.Attribute.expandedTitleMarginBottom = global::ComicWrap.Droid.Resource.Attribute.expandedTitleMarginBottom;
+			global::AiForms.Renderers.Droid.Resource.Attribute.expandedTitleMarginEnd = global::ComicWrap.Droid.Resource.Attribute.expandedTitleMarginEnd;
+			global::AiForms.Renderers.Droid.Resource.Attribute.expandedTitleMarginStart = global::ComicWrap.Droid.Resource.Attribute.expandedTitleMarginStart;
+			global::AiForms.Renderers.Droid.Resource.Attribute.expandedTitleMarginTop = global::ComicWrap.Droid.Resource.Attribute.expandedTitleMarginTop;
+			global::AiForms.Renderers.Droid.Resource.Attribute.expandedTitleTextAppearance = global::ComicWrap.Droid.Resource.Attribute.expandedTitleTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fabAlignmentMode = global::ComicWrap.Droid.Resource.Attribute.fabAlignmentMode;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fabCradleMargin = global::ComicWrap.Droid.Resource.Attribute.fabCradleMargin;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fabCradleRoundedCornerRadius = global::ComicWrap.Droid.Resource.Attribute.fabCradleRoundedCornerRadius;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fabCradleVerticalOffset = global::ComicWrap.Droid.Resource.Attribute.fabCradleVerticalOffset;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fabCustomSize = global::ComicWrap.Droid.Resource.Attribute.fabCustomSize;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fabSize = global::ComicWrap.Droid.Resource.Attribute.fabSize;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fastScrollEnabled = global::ComicWrap.Droid.Resource.Attribute.fastScrollEnabled;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable = global::ComicWrap.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable = global::ComicWrap.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable = global::ComicWrap.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable = global::ComicWrap.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable;
+			global::AiForms.Renderers.Droid.Resource.Attribute.firstBaselineToTopHeight = global::ComicWrap.Droid.Resource.Attribute.firstBaselineToTopHeight;
+			global::AiForms.Renderers.Droid.Resource.Attribute.floatingActionButtonStyle = global::ComicWrap.Droid.Resource.Attribute.floatingActionButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.font = global::ComicWrap.Droid.Resource.Attribute.font;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fontFamily = global::ComicWrap.Droid.Resource.Attribute.fontFamily;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fontProviderAuthority = global::ComicWrap.Droid.Resource.Attribute.fontProviderAuthority;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fontProviderCerts = global::ComicWrap.Droid.Resource.Attribute.fontProviderCerts;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fontProviderFetchStrategy = global::ComicWrap.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fontProviderFetchTimeout = global::ComicWrap.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fontProviderPackage = global::ComicWrap.Droid.Resource.Attribute.fontProviderPackage;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fontProviderQuery = global::ComicWrap.Droid.Resource.Attribute.fontProviderQuery;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fontStyle = global::ComicWrap.Droid.Resource.Attribute.fontStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fontVariationSettings = global::ComicWrap.Droid.Resource.Attribute.fontVariationSettings;
+			global::AiForms.Renderers.Droid.Resource.Attribute.fontWeight = global::ComicWrap.Droid.Resource.Attribute.fontWeight;
+			global::AiForms.Renderers.Droid.Resource.Attribute.foregroundInsidePadding = global::ComicWrap.Droid.Resource.Attribute.foregroundInsidePadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.gapBetweenBars = global::ComicWrap.Droid.Resource.Attribute.gapBetweenBars;
+			global::AiForms.Renderers.Droid.Resource.Attribute.goIcon = global::ComicWrap.Droid.Resource.Attribute.goIcon;
+			global::AiForms.Renderers.Droid.Resource.Attribute.headerLayout = global::ComicWrap.Droid.Resource.Attribute.headerLayout;
+			global::AiForms.Renderers.Droid.Resource.Attribute.height = global::ComicWrap.Droid.Resource.Attribute.height;
+			global::AiForms.Renderers.Droid.Resource.Attribute.helperText = global::ComicWrap.Droid.Resource.Attribute.helperText;
+			global::AiForms.Renderers.Droid.Resource.Attribute.helperTextEnabled = global::ComicWrap.Droid.Resource.Attribute.helperTextEnabled;
+			global::AiForms.Renderers.Droid.Resource.Attribute.helperTextTextAppearance = global::ComicWrap.Droid.Resource.Attribute.helperTextTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Attribute.hideMotionSpec = global::ComicWrap.Droid.Resource.Attribute.hideMotionSpec;
+			global::AiForms.Renderers.Droid.Resource.Attribute.hideOnContentScroll = global::ComicWrap.Droid.Resource.Attribute.hideOnContentScroll;
+			global::AiForms.Renderers.Droid.Resource.Attribute.hideOnScroll = global::ComicWrap.Droid.Resource.Attribute.hideOnScroll;
+			global::AiForms.Renderers.Droid.Resource.Attribute.hintAnimationEnabled = global::ComicWrap.Droid.Resource.Attribute.hintAnimationEnabled;
+			global::AiForms.Renderers.Droid.Resource.Attribute.hintEnabled = global::ComicWrap.Droid.Resource.Attribute.hintEnabled;
+			global::AiForms.Renderers.Droid.Resource.Attribute.hintTextAppearance = global::ComicWrap.Droid.Resource.Attribute.hintTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Attribute.homeAsUpIndicator = global::ComicWrap.Droid.Resource.Attribute.homeAsUpIndicator;
+			global::AiForms.Renderers.Droid.Resource.Attribute.homeLayout = global::ComicWrap.Droid.Resource.Attribute.homeLayout;
+			global::AiForms.Renderers.Droid.Resource.Attribute.hoveredFocusedTranslationZ = global::ComicWrap.Droid.Resource.Attribute.hoveredFocusedTranslationZ;
+			global::AiForms.Renderers.Droid.Resource.Attribute.icon = global::ComicWrap.Droid.Resource.Attribute.icon;
+			global::AiForms.Renderers.Droid.Resource.Attribute.iconEndPadding = global::ComicWrap.Droid.Resource.Attribute.iconEndPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.iconGravity = global::ComicWrap.Droid.Resource.Attribute.iconGravity;
+			global::AiForms.Renderers.Droid.Resource.Attribute.iconPadding = global::ComicWrap.Droid.Resource.Attribute.iconPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.iconSize = global::ComicWrap.Droid.Resource.Attribute.iconSize;
+			global::AiForms.Renderers.Droid.Resource.Attribute.iconStartPadding = global::ComicWrap.Droid.Resource.Attribute.iconStartPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.iconTint = global::ComicWrap.Droid.Resource.Attribute.iconTint;
+			global::AiForms.Renderers.Droid.Resource.Attribute.iconTintMode = global::ComicWrap.Droid.Resource.Attribute.iconTintMode;
+			global::AiForms.Renderers.Droid.Resource.Attribute.iconifiedByDefault = global::ComicWrap.Droid.Resource.Attribute.iconifiedByDefault;
+			global::AiForms.Renderers.Droid.Resource.Attribute.imageButtonStyle = global::ComicWrap.Droid.Resource.Attribute.imageButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.indeterminateProgressStyle = global::ComicWrap.Droid.Resource.Attribute.indeterminateProgressStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.initialActivityCount = global::ComicWrap.Droid.Resource.Attribute.initialActivityCount;
+			global::AiForms.Renderers.Droid.Resource.Attribute.insetForeground = global::ComicWrap.Droid.Resource.Attribute.insetForeground;
+			global::AiForms.Renderers.Droid.Resource.Attribute.isLightTheme = global::ComicWrap.Droid.Resource.Attribute.isLightTheme;
+			global::AiForms.Renderers.Droid.Resource.Attribute.itemBackground = global::ComicWrap.Droid.Resource.Attribute.itemBackground;
+			global::AiForms.Renderers.Droid.Resource.Attribute.itemHorizontalPadding = global::ComicWrap.Droid.Resource.Attribute.itemHorizontalPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.itemHorizontalTranslationEnabled = global::ComicWrap.Droid.Resource.Attribute.itemHorizontalTranslationEnabled;
+			global::AiForms.Renderers.Droid.Resource.Attribute.itemIconPadding = global::ComicWrap.Droid.Resource.Attribute.itemIconPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.itemIconSize = global::ComicWrap.Droid.Resource.Attribute.itemIconSize;
+			global::AiForms.Renderers.Droid.Resource.Attribute.itemIconTint = global::ComicWrap.Droid.Resource.Attribute.itemIconTint;
+			global::AiForms.Renderers.Droid.Resource.Attribute.itemPadding = global::ComicWrap.Droid.Resource.Attribute.itemPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.itemSpacing = global::ComicWrap.Droid.Resource.Attribute.itemSpacing;
+			global::AiForms.Renderers.Droid.Resource.Attribute.itemTextAppearance = global::ComicWrap.Droid.Resource.Attribute.itemTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Attribute.itemTextAppearanceActive = global::ComicWrap.Droid.Resource.Attribute.itemTextAppearanceActive;
+			global::AiForms.Renderers.Droid.Resource.Attribute.itemTextAppearanceInactive = global::ComicWrap.Droid.Resource.Attribute.itemTextAppearanceInactive;
+			global::AiForms.Renderers.Droid.Resource.Attribute.itemTextColor = global::ComicWrap.Droid.Resource.Attribute.itemTextColor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.keylines = global::ComicWrap.Droid.Resource.Attribute.keylines;
+			global::AiForms.Renderers.Droid.Resource.Attribute.labelVisibilityMode = global::ComicWrap.Droid.Resource.Attribute.labelVisibilityMode;
+			global::AiForms.Renderers.Droid.Resource.Attribute.lastBaselineToBottomHeight = global::ComicWrap.Droid.Resource.Attribute.lastBaselineToBottomHeight;
+			global::AiForms.Renderers.Droid.Resource.Attribute.layout = global::ComicWrap.Droid.Resource.Attribute.layout;
+			global::AiForms.Renderers.Droid.Resource.Attribute.layoutManager = global::ComicWrap.Droid.Resource.Attribute.layoutManager;
+			global::AiForms.Renderers.Droid.Resource.Attribute.layout_anchor = global::ComicWrap.Droid.Resource.Attribute.layout_anchor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.layout_anchorGravity = global::ComicWrap.Droid.Resource.Attribute.layout_anchorGravity;
+			global::AiForms.Renderers.Droid.Resource.Attribute.layout_behavior = global::ComicWrap.Droid.Resource.Attribute.layout_behavior;
+			global::AiForms.Renderers.Droid.Resource.Attribute.layout_collapseMode = global::ComicWrap.Droid.Resource.Attribute.layout_collapseMode;
+			global::AiForms.Renderers.Droid.Resource.Attribute.layout_collapseParallaxMultiplier = global::ComicWrap.Droid.Resource.Attribute.layout_collapseParallaxMultiplier;
+			global::AiForms.Renderers.Droid.Resource.Attribute.layout_dodgeInsetEdges = global::ComicWrap.Droid.Resource.Attribute.layout_dodgeInsetEdges;
+			global::AiForms.Renderers.Droid.Resource.Attribute.layout_insetEdge = global::ComicWrap.Droid.Resource.Attribute.layout_insetEdge;
+			global::AiForms.Renderers.Droid.Resource.Attribute.layout_keyline = global::ComicWrap.Droid.Resource.Attribute.layout_keyline;
+			global::AiForms.Renderers.Droid.Resource.Attribute.layout_scrollFlags = global::ComicWrap.Droid.Resource.Attribute.layout_scrollFlags;
+			global::AiForms.Renderers.Droid.Resource.Attribute.layout_scrollInterpolator = global::ComicWrap.Droid.Resource.Attribute.layout_scrollInterpolator;
+			global::AiForms.Renderers.Droid.Resource.Attribute.liftOnScroll = global::ComicWrap.Droid.Resource.Attribute.liftOnScroll;
+			global::AiForms.Renderers.Droid.Resource.Attribute.lineHeight = global::ComicWrap.Droid.Resource.Attribute.lineHeight;
+			global::AiForms.Renderers.Droid.Resource.Attribute.lineSpacing = global::ComicWrap.Droid.Resource.Attribute.lineSpacing;
+			global::AiForms.Renderers.Droid.Resource.Attribute.listChoiceBackgroundIndicator = global::ComicWrap.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::AiForms.Renderers.Droid.Resource.Attribute.listDividerAlertDialog = global::ComicWrap.Droid.Resource.Attribute.listDividerAlertDialog;
+			global::AiForms.Renderers.Droid.Resource.Attribute.listItemLayout = global::ComicWrap.Droid.Resource.Attribute.listItemLayout;
+			global::AiForms.Renderers.Droid.Resource.Attribute.listLayout = global::ComicWrap.Droid.Resource.Attribute.listLayout;
+			global::AiForms.Renderers.Droid.Resource.Attribute.listMenuViewStyle = global::ComicWrap.Droid.Resource.Attribute.listMenuViewStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.listPopupWindowStyle = global::ComicWrap.Droid.Resource.Attribute.listPopupWindowStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.listPreferredItemHeight = global::ComicWrap.Droid.Resource.Attribute.listPreferredItemHeight;
+			global::AiForms.Renderers.Droid.Resource.Attribute.listPreferredItemHeightLarge = global::ComicWrap.Droid.Resource.Attribute.listPreferredItemHeightLarge;
+			global::AiForms.Renderers.Droid.Resource.Attribute.listPreferredItemHeightSmall = global::ComicWrap.Droid.Resource.Attribute.listPreferredItemHeightSmall;
+			global::AiForms.Renderers.Droid.Resource.Attribute.listPreferredItemPaddingLeft = global::ComicWrap.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::AiForms.Renderers.Droid.Resource.Attribute.listPreferredItemPaddingRight = global::ComicWrap.Droid.Resource.Attribute.listPreferredItemPaddingRight;
+			global::AiForms.Renderers.Droid.Resource.Attribute.logo = global::ComicWrap.Droid.Resource.Attribute.logo;
+			global::AiForms.Renderers.Droid.Resource.Attribute.logoDescription = global::ComicWrap.Droid.Resource.Attribute.logoDescription;
+			global::AiForms.Renderers.Droid.Resource.Attribute.materialButtonStyle = global::ComicWrap.Droid.Resource.Attribute.materialButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.materialCardViewStyle = global::ComicWrap.Droid.Resource.Attribute.materialCardViewStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.maxActionInlineWidth = global::ComicWrap.Droid.Resource.Attribute.maxActionInlineWidth;
+			global::AiForms.Renderers.Droid.Resource.Attribute.maxButtonHeight = global::ComicWrap.Droid.Resource.Attribute.maxButtonHeight;
+			global::AiForms.Renderers.Droid.Resource.Attribute.maxImageSize = global::ComicWrap.Droid.Resource.Attribute.maxImageSize;
+			global::AiForms.Renderers.Droid.Resource.Attribute.measureWithLargestChild = global::ComicWrap.Droid.Resource.Attribute.measureWithLargestChild;
+			global::AiForms.Renderers.Droid.Resource.Attribute.menu = global::ComicWrap.Droid.Resource.Attribute.menu;
+			global::AiForms.Renderers.Droid.Resource.Attribute.multiChoiceItemLayout = global::ComicWrap.Droid.Resource.Attribute.multiChoiceItemLayout;
+			global::AiForms.Renderers.Droid.Resource.Attribute.navigationContentDescription = global::ComicWrap.Droid.Resource.Attribute.navigationContentDescription;
+			global::AiForms.Renderers.Droid.Resource.Attribute.navigationIcon = global::ComicWrap.Droid.Resource.Attribute.navigationIcon;
+			global::AiForms.Renderers.Droid.Resource.Attribute.navigationMode = global::ComicWrap.Droid.Resource.Attribute.navigationMode;
+			global::AiForms.Renderers.Droid.Resource.Attribute.navigationViewStyle = global::ComicWrap.Droid.Resource.Attribute.navigationViewStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.numericModifiers = global::ComicWrap.Droid.Resource.Attribute.numericModifiers;
+			global::AiForms.Renderers.Droid.Resource.Attribute.overlapAnchor = global::ComicWrap.Droid.Resource.Attribute.overlapAnchor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.paddingBottomNoButtons = global::ComicWrap.Droid.Resource.Attribute.paddingBottomNoButtons;
+			global::AiForms.Renderers.Droid.Resource.Attribute.paddingEnd = global::ComicWrap.Droid.Resource.Attribute.paddingEnd;
+			global::AiForms.Renderers.Droid.Resource.Attribute.paddingStart = global::ComicWrap.Droid.Resource.Attribute.paddingStart;
+			global::AiForms.Renderers.Droid.Resource.Attribute.paddingTopNoTitle = global::ComicWrap.Droid.Resource.Attribute.paddingTopNoTitle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.panelBackground = global::ComicWrap.Droid.Resource.Attribute.panelBackground;
+			global::AiForms.Renderers.Droid.Resource.Attribute.panelMenuListTheme = global::ComicWrap.Droid.Resource.Attribute.panelMenuListTheme;
+			global::AiForms.Renderers.Droid.Resource.Attribute.panelMenuListWidth = global::ComicWrap.Droid.Resource.Attribute.panelMenuListWidth;
+			global::AiForms.Renderers.Droid.Resource.Attribute.passwordToggleContentDescription = global::ComicWrap.Droid.Resource.Attribute.passwordToggleContentDescription;
+			global::AiForms.Renderers.Droid.Resource.Attribute.passwordToggleDrawable = global::ComicWrap.Droid.Resource.Attribute.passwordToggleDrawable;
+			global::AiForms.Renderers.Droid.Resource.Attribute.passwordToggleEnabled = global::ComicWrap.Droid.Resource.Attribute.passwordToggleEnabled;
+			global::AiForms.Renderers.Droid.Resource.Attribute.passwordToggleTint = global::ComicWrap.Droid.Resource.Attribute.passwordToggleTint;
+			global::AiForms.Renderers.Droid.Resource.Attribute.passwordToggleTintMode = global::ComicWrap.Droid.Resource.Attribute.passwordToggleTintMode;
+			global::AiForms.Renderers.Droid.Resource.Attribute.popupMenuStyle = global::ComicWrap.Droid.Resource.Attribute.popupMenuStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.popupTheme = global::ComicWrap.Droid.Resource.Attribute.popupTheme;
+			global::AiForms.Renderers.Droid.Resource.Attribute.popupWindowStyle = global::ComicWrap.Droid.Resource.Attribute.popupWindowStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.preserveIconSpacing = global::ComicWrap.Droid.Resource.Attribute.preserveIconSpacing;
+			global::AiForms.Renderers.Droid.Resource.Attribute.pressedTranslationZ = global::ComicWrap.Droid.Resource.Attribute.pressedTranslationZ;
+			global::AiForms.Renderers.Droid.Resource.Attribute.progressBarPadding = global::ComicWrap.Droid.Resource.Attribute.progressBarPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.progressBarStyle = global::ComicWrap.Droid.Resource.Attribute.progressBarStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.queryBackground = global::ComicWrap.Droid.Resource.Attribute.queryBackground;
+			global::AiForms.Renderers.Droid.Resource.Attribute.queryHint = global::ComicWrap.Droid.Resource.Attribute.queryHint;
+			global::AiForms.Renderers.Droid.Resource.Attribute.radioButtonStyle = global::ComicWrap.Droid.Resource.Attribute.radioButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.ratingBarStyle = global::ComicWrap.Droid.Resource.Attribute.ratingBarStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.ratingBarStyleIndicator = global::ComicWrap.Droid.Resource.Attribute.ratingBarStyleIndicator;
+			global::AiForms.Renderers.Droid.Resource.Attribute.ratingBarStyleSmall = global::ComicWrap.Droid.Resource.Attribute.ratingBarStyleSmall;
+			global::AiForms.Renderers.Droid.Resource.Attribute.reverseLayout = global::ComicWrap.Droid.Resource.Attribute.reverseLayout;
+			global::AiForms.Renderers.Droid.Resource.Attribute.rippleColor = global::ComicWrap.Droid.Resource.Attribute.rippleColor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.scrimAnimationDuration = global::ComicWrap.Droid.Resource.Attribute.scrimAnimationDuration;
+			global::AiForms.Renderers.Droid.Resource.Attribute.scrimBackground = global::ComicWrap.Droid.Resource.Attribute.scrimBackground;
+			global::AiForms.Renderers.Droid.Resource.Attribute.scrimVisibleHeightTrigger = global::ComicWrap.Droid.Resource.Attribute.scrimVisibleHeightTrigger;
+			global::AiForms.Renderers.Droid.Resource.Attribute.searchHintIcon = global::ComicWrap.Droid.Resource.Attribute.searchHintIcon;
+			global::AiForms.Renderers.Droid.Resource.Attribute.searchIcon = global::ComicWrap.Droid.Resource.Attribute.searchIcon;
+			global::AiForms.Renderers.Droid.Resource.Attribute.searchViewStyle = global::ComicWrap.Droid.Resource.Attribute.searchViewStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.seekBarStyle = global::ComicWrap.Droid.Resource.Attribute.seekBarStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.selectableItemBackground = global::ComicWrap.Droid.Resource.Attribute.selectableItemBackground;
+			global::AiForms.Renderers.Droid.Resource.Attribute.selectableItemBackgroundBorderless = global::ComicWrap.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::AiForms.Renderers.Droid.Resource.Attribute.showAsAction = global::ComicWrap.Droid.Resource.Attribute.showAsAction;
+			global::AiForms.Renderers.Droid.Resource.Attribute.showDividers = global::ComicWrap.Droid.Resource.Attribute.showDividers;
+			global::AiForms.Renderers.Droid.Resource.Attribute.showMotionSpec = global::ComicWrap.Droid.Resource.Attribute.showMotionSpec;
+			global::AiForms.Renderers.Droid.Resource.Attribute.showText = global::ComicWrap.Droid.Resource.Attribute.showText;
+			global::AiForms.Renderers.Droid.Resource.Attribute.showTitle = global::ComicWrap.Droid.Resource.Attribute.showTitle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.singleChoiceItemLayout = global::ComicWrap.Droid.Resource.Attribute.singleChoiceItemLayout;
+			global::AiForms.Renderers.Droid.Resource.Attribute.singleLine = global::ComicWrap.Droid.Resource.Attribute.singleLine;
+			global::AiForms.Renderers.Droid.Resource.Attribute.singleSelection = global::ComicWrap.Droid.Resource.Attribute.singleSelection;
+			global::AiForms.Renderers.Droid.Resource.Attribute.snackbarButtonStyle = global::ComicWrap.Droid.Resource.Attribute.snackbarButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.snackbarStyle = global::ComicWrap.Droid.Resource.Attribute.snackbarStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.spanCount = global::ComicWrap.Droid.Resource.Attribute.spanCount;
+			global::AiForms.Renderers.Droid.Resource.Attribute.spinBars = global::ComicWrap.Droid.Resource.Attribute.spinBars;
+			global::AiForms.Renderers.Droid.Resource.Attribute.spinnerDropDownItemStyle = global::ComicWrap.Droid.Resource.Attribute.spinnerDropDownItemStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.spinnerStyle = global::ComicWrap.Droid.Resource.Attribute.spinnerStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.splitTrack = global::ComicWrap.Droid.Resource.Attribute.splitTrack;
+			global::AiForms.Renderers.Droid.Resource.Attribute.srcCompat = global::ComicWrap.Droid.Resource.Attribute.srcCompat;
+			global::AiForms.Renderers.Droid.Resource.Attribute.stackFromEnd = global::ComicWrap.Droid.Resource.Attribute.stackFromEnd;
+			global::AiForms.Renderers.Droid.Resource.Attribute.state_above_anchor = global::ComicWrap.Droid.Resource.Attribute.state_above_anchor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.state_collapsed = global::ComicWrap.Droid.Resource.Attribute.state_collapsed;
+			global::AiForms.Renderers.Droid.Resource.Attribute.state_collapsible = global::ComicWrap.Droid.Resource.Attribute.state_collapsible;
+			global::AiForms.Renderers.Droid.Resource.Attribute.state_liftable = global::ComicWrap.Droid.Resource.Attribute.state_liftable;
+			global::AiForms.Renderers.Droid.Resource.Attribute.state_lifted = global::ComicWrap.Droid.Resource.Attribute.state_lifted;
+			global::AiForms.Renderers.Droid.Resource.Attribute.statusBarBackground = global::ComicWrap.Droid.Resource.Attribute.statusBarBackground;
+			global::AiForms.Renderers.Droid.Resource.Attribute.statusBarScrim = global::ComicWrap.Droid.Resource.Attribute.statusBarScrim;
+			global::AiForms.Renderers.Droid.Resource.Attribute.strokeColor = global::ComicWrap.Droid.Resource.Attribute.strokeColor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.strokeWidth = global::ComicWrap.Droid.Resource.Attribute.strokeWidth;
+			global::AiForms.Renderers.Droid.Resource.Attribute.subMenuArrow = global::ComicWrap.Droid.Resource.Attribute.subMenuArrow;
+			global::AiForms.Renderers.Droid.Resource.Attribute.submitBackground = global::ComicWrap.Droid.Resource.Attribute.submitBackground;
+			global::AiForms.Renderers.Droid.Resource.Attribute.subtitle = global::ComicWrap.Droid.Resource.Attribute.subtitle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.subtitleTextAppearance = global::ComicWrap.Droid.Resource.Attribute.subtitleTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Attribute.subtitleTextColor = global::ComicWrap.Droid.Resource.Attribute.subtitleTextColor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.subtitleTextStyle = global::ComicWrap.Droid.Resource.Attribute.subtitleTextStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.suggestionRowLayout = global::ComicWrap.Droid.Resource.Attribute.suggestionRowLayout;
+			global::AiForms.Renderers.Droid.Resource.Attribute.switchMinWidth = global::ComicWrap.Droid.Resource.Attribute.switchMinWidth;
+			global::AiForms.Renderers.Droid.Resource.Attribute.switchPadding = global::ComicWrap.Droid.Resource.Attribute.switchPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.switchStyle = global::ComicWrap.Droid.Resource.Attribute.switchStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.switchTextAppearance = global::ComicWrap.Droid.Resource.Attribute.switchTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabBackground = global::ComicWrap.Droid.Resource.Attribute.tabBackground;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabContentStart = global::ComicWrap.Droid.Resource.Attribute.tabContentStart;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabGravity = global::ComicWrap.Droid.Resource.Attribute.tabGravity;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabIconTint = global::ComicWrap.Droid.Resource.Attribute.tabIconTint;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabIconTintMode = global::ComicWrap.Droid.Resource.Attribute.tabIconTintMode;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabIndicator = global::ComicWrap.Droid.Resource.Attribute.tabIndicator;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabIndicatorAnimationDuration = global::ComicWrap.Droid.Resource.Attribute.tabIndicatorAnimationDuration;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabIndicatorColor = global::ComicWrap.Droid.Resource.Attribute.tabIndicatorColor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabIndicatorFullWidth = global::ComicWrap.Droid.Resource.Attribute.tabIndicatorFullWidth;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabIndicatorGravity = global::ComicWrap.Droid.Resource.Attribute.tabIndicatorGravity;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabIndicatorHeight = global::ComicWrap.Droid.Resource.Attribute.tabIndicatorHeight;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabInlineLabel = global::ComicWrap.Droid.Resource.Attribute.tabInlineLabel;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabMaxWidth = global::ComicWrap.Droid.Resource.Attribute.tabMaxWidth;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabMinWidth = global::ComicWrap.Droid.Resource.Attribute.tabMinWidth;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabMode = global::ComicWrap.Droid.Resource.Attribute.tabMode;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabPadding = global::ComicWrap.Droid.Resource.Attribute.tabPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabPaddingBottom = global::ComicWrap.Droid.Resource.Attribute.tabPaddingBottom;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabPaddingEnd = global::ComicWrap.Droid.Resource.Attribute.tabPaddingEnd;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabPaddingStart = global::ComicWrap.Droid.Resource.Attribute.tabPaddingStart;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabPaddingTop = global::ComicWrap.Droid.Resource.Attribute.tabPaddingTop;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabRippleColor = global::ComicWrap.Droid.Resource.Attribute.tabRippleColor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabSelectedTextColor = global::ComicWrap.Droid.Resource.Attribute.tabSelectedTextColor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabStyle = global::ComicWrap.Droid.Resource.Attribute.tabStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabTextAppearance = global::ComicWrap.Droid.Resource.Attribute.tabTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabTextColor = global::ComicWrap.Droid.Resource.Attribute.tabTextColor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tabUnboundedRipple = global::ComicWrap.Droid.Resource.Attribute.tabUnboundedRipple;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAllCaps = global::ComicWrap.Droid.Resource.Attribute.textAllCaps;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceBody1 = global::ComicWrap.Droid.Resource.Attribute.textAppearanceBody1;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceBody2 = global::ComicWrap.Droid.Resource.Attribute.textAppearanceBody2;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceButton = global::ComicWrap.Droid.Resource.Attribute.textAppearanceButton;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceCaption = global::ComicWrap.Droid.Resource.Attribute.textAppearanceCaption;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceHeadline1 = global::ComicWrap.Droid.Resource.Attribute.textAppearanceHeadline1;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceHeadline2 = global::ComicWrap.Droid.Resource.Attribute.textAppearanceHeadline2;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceHeadline3 = global::ComicWrap.Droid.Resource.Attribute.textAppearanceHeadline3;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceHeadline4 = global::ComicWrap.Droid.Resource.Attribute.textAppearanceHeadline4;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceHeadline5 = global::ComicWrap.Droid.Resource.Attribute.textAppearanceHeadline5;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceHeadline6 = global::ComicWrap.Droid.Resource.Attribute.textAppearanceHeadline6;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceLargePopupMenu = global::ComicWrap.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceListItem = global::ComicWrap.Droid.Resource.Attribute.textAppearanceListItem;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceListItemSecondary = global::ComicWrap.Droid.Resource.Attribute.textAppearanceListItemSecondary;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceListItemSmall = global::ComicWrap.Droid.Resource.Attribute.textAppearanceListItemSmall;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceOverline = global::ComicWrap.Droid.Resource.Attribute.textAppearanceOverline;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearancePopupMenuHeader = global::ComicWrap.Droid.Resource.Attribute.textAppearancePopupMenuHeader;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle = global::ComicWrap.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceSearchResultTitle = global::ComicWrap.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceSmallPopupMenu = global::ComicWrap.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceSubtitle1 = global::ComicWrap.Droid.Resource.Attribute.textAppearanceSubtitle1;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textAppearanceSubtitle2 = global::ComicWrap.Droid.Resource.Attribute.textAppearanceSubtitle2;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textColorAlertDialogListItem = global::ComicWrap.Droid.Resource.Attribute.textColorAlertDialogListItem;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textColorSearchUrl = global::ComicWrap.Droid.Resource.Attribute.textColorSearchUrl;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textEndPadding = global::ComicWrap.Droid.Resource.Attribute.textEndPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textInputStyle = global::ComicWrap.Droid.Resource.Attribute.textInputStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.textStartPadding = global::ComicWrap.Droid.Resource.Attribute.textStartPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.theme = global::ComicWrap.Droid.Resource.Attribute.theme;
+			global::AiForms.Renderers.Droid.Resource.Attribute.thickness = global::ComicWrap.Droid.Resource.Attribute.thickness;
+			global::AiForms.Renderers.Droid.Resource.Attribute.thumbTextPadding = global::ComicWrap.Droid.Resource.Attribute.thumbTextPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.thumbTint = global::ComicWrap.Droid.Resource.Attribute.thumbTint;
+			global::AiForms.Renderers.Droid.Resource.Attribute.thumbTintMode = global::ComicWrap.Droid.Resource.Attribute.thumbTintMode;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tickMark = global::ComicWrap.Droid.Resource.Attribute.tickMark;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tickMarkTint = global::ComicWrap.Droid.Resource.Attribute.tickMarkTint;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tickMarkTintMode = global::ComicWrap.Droid.Resource.Attribute.tickMarkTintMode;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tint = global::ComicWrap.Droid.Resource.Attribute.tint;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tintMode = global::ComicWrap.Droid.Resource.Attribute.tintMode;
+			global::AiForms.Renderers.Droid.Resource.Attribute.title = global::ComicWrap.Droid.Resource.Attribute.title;
+			global::AiForms.Renderers.Droid.Resource.Attribute.titleEnabled = global::ComicWrap.Droid.Resource.Attribute.titleEnabled;
+			global::AiForms.Renderers.Droid.Resource.Attribute.titleMargin = global::ComicWrap.Droid.Resource.Attribute.titleMargin;
+			global::AiForms.Renderers.Droid.Resource.Attribute.titleMarginBottom = global::ComicWrap.Droid.Resource.Attribute.titleMarginBottom;
+			global::AiForms.Renderers.Droid.Resource.Attribute.titleMarginEnd = global::ComicWrap.Droid.Resource.Attribute.titleMarginEnd;
+			global::AiForms.Renderers.Droid.Resource.Attribute.titleMarginStart = global::ComicWrap.Droid.Resource.Attribute.titleMarginStart;
+			global::AiForms.Renderers.Droid.Resource.Attribute.titleMarginTop = global::ComicWrap.Droid.Resource.Attribute.titleMarginTop;
+			global::AiForms.Renderers.Droid.Resource.Attribute.titleMargins = global::ComicWrap.Droid.Resource.Attribute.titleMargins;
+			global::AiForms.Renderers.Droid.Resource.Attribute.titleTextAppearance = global::ComicWrap.Droid.Resource.Attribute.titleTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Attribute.titleTextColor = global::ComicWrap.Droid.Resource.Attribute.titleTextColor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.titleTextStyle = global::ComicWrap.Droid.Resource.Attribute.titleTextStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.toolbarId = global::ComicWrap.Droid.Resource.Attribute.toolbarId;
+			global::AiForms.Renderers.Droid.Resource.Attribute.toolbarNavigationButtonStyle = global::ComicWrap.Droid.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.toolbarStyle = global::ComicWrap.Droid.Resource.Attribute.toolbarStyle;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tooltipForegroundColor = global::ComicWrap.Droid.Resource.Attribute.tooltipForegroundColor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tooltipFrameBackground = global::ComicWrap.Droid.Resource.Attribute.tooltipFrameBackground;
+			global::AiForms.Renderers.Droid.Resource.Attribute.tooltipText = global::ComicWrap.Droid.Resource.Attribute.tooltipText;
+			global::AiForms.Renderers.Droid.Resource.Attribute.track = global::ComicWrap.Droid.Resource.Attribute.track;
+			global::AiForms.Renderers.Droid.Resource.Attribute.trackTint = global::ComicWrap.Droid.Resource.Attribute.trackTint;
+			global::AiForms.Renderers.Droid.Resource.Attribute.trackTintMode = global::ComicWrap.Droid.Resource.Attribute.trackTintMode;
+			global::AiForms.Renderers.Droid.Resource.Attribute.ttcIndex = global::ComicWrap.Droid.Resource.Attribute.ttcIndex;
+			global::AiForms.Renderers.Droid.Resource.Attribute.useCompatPadding = global::ComicWrap.Droid.Resource.Attribute.useCompatPadding;
+			global::AiForms.Renderers.Droid.Resource.Attribute.viewInflaterClass = global::ComicWrap.Droid.Resource.Attribute.viewInflaterClass;
+			global::AiForms.Renderers.Droid.Resource.Attribute.voiceIcon = global::ComicWrap.Droid.Resource.Attribute.voiceIcon;
+			global::AiForms.Renderers.Droid.Resource.Attribute.windowActionBar = global::ComicWrap.Droid.Resource.Attribute.windowActionBar;
+			global::AiForms.Renderers.Droid.Resource.Attribute.windowActionBarOverlay = global::ComicWrap.Droid.Resource.Attribute.windowActionBarOverlay;
+			global::AiForms.Renderers.Droid.Resource.Attribute.windowActionModeOverlay = global::ComicWrap.Droid.Resource.Attribute.windowActionModeOverlay;
+			global::AiForms.Renderers.Droid.Resource.Attribute.windowFixedHeightMajor = global::ComicWrap.Droid.Resource.Attribute.windowFixedHeightMajor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.windowFixedHeightMinor = global::ComicWrap.Droid.Resource.Attribute.windowFixedHeightMinor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.windowFixedWidthMajor = global::ComicWrap.Droid.Resource.Attribute.windowFixedWidthMajor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.windowFixedWidthMinor = global::ComicWrap.Droid.Resource.Attribute.windowFixedWidthMinor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.windowMinWidthMajor = global::ComicWrap.Droid.Resource.Attribute.windowMinWidthMajor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.windowMinWidthMinor = global::ComicWrap.Droid.Resource.Attribute.windowMinWidthMinor;
+			global::AiForms.Renderers.Droid.Resource.Attribute.windowNoTitle = global::ComicWrap.Droid.Resource.Attribute.windowNoTitle;
+			global::AiForms.Renderers.Droid.Resource.Boolean.abc_action_bar_embed_tabs = global::ComicWrap.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::AiForms.Renderers.Droid.Resource.Boolean.abc_allow_stacked_button_bar = global::ComicWrap.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::AiForms.Renderers.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::ComicWrap.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::AiForms.Renderers.Droid.Resource.Boolean.mtrl_btn_textappearance_all_caps = global::ComicWrap.Droid.Resource.Boolean.mtrl_btn_textappearance_all_caps;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark = global::ComicWrap.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_background_cache_hint_selector_material_light = global::ComicWrap.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_btn_colored_borderless_text_material = global::ComicWrap.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_btn_colored_text_material = global::ComicWrap.Droid.Resource.Color.abc_btn_colored_text_material;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_color_highlight_material = global::ComicWrap.Droid.Resource.Color.abc_color_highlight_material;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_hint_foreground_material_dark = global::ComicWrap.Droid.Resource.Color.abc_hint_foreground_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_hint_foreground_material_light = global::ComicWrap.Droid.Resource.Color.abc_hint_foreground_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_input_method_navigation_guard = global::ComicWrap.Droid.Resource.Color.abc_input_method_navigation_guard;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_primary_text_disable_only_material_dark = global::ComicWrap.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_primary_text_disable_only_material_light = global::ComicWrap.Droid.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_primary_text_material_dark = global::ComicWrap.Droid.Resource.Color.abc_primary_text_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_primary_text_material_light = global::ComicWrap.Droid.Resource.Color.abc_primary_text_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_search_url_text = global::ComicWrap.Droid.Resource.Color.abc_search_url_text;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_search_url_text_normal = global::ComicWrap.Droid.Resource.Color.abc_search_url_text_normal;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_search_url_text_pressed = global::ComicWrap.Droid.Resource.Color.abc_search_url_text_pressed;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_search_url_text_selected = global::ComicWrap.Droid.Resource.Color.abc_search_url_text_selected;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_secondary_text_material_dark = global::ComicWrap.Droid.Resource.Color.abc_secondary_text_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_secondary_text_material_light = global::ComicWrap.Droid.Resource.Color.abc_secondary_text_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_tint_btn_checkable = global::ComicWrap.Droid.Resource.Color.abc_tint_btn_checkable;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_tint_default = global::ComicWrap.Droid.Resource.Color.abc_tint_default;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_tint_edittext = global::ComicWrap.Droid.Resource.Color.abc_tint_edittext;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_tint_seek_thumb = global::ComicWrap.Droid.Resource.Color.abc_tint_seek_thumb;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_tint_spinner = global::ComicWrap.Droid.Resource.Color.abc_tint_spinner;
+			global::AiForms.Renderers.Droid.Resource.Color.abc_tint_switch_track = global::ComicWrap.Droid.Resource.Color.abc_tint_switch_track;
+			global::AiForms.Renderers.Droid.Resource.Color.accent_material_dark = global::ComicWrap.Droid.Resource.Color.accent_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.accent_material_light = global::ComicWrap.Droid.Resource.Color.accent_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.background_floating_material_dark = global::ComicWrap.Droid.Resource.Color.background_floating_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.background_floating_material_light = global::ComicWrap.Droid.Resource.Color.background_floating_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.background_material_dark = global::ComicWrap.Droid.Resource.Color.background_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.background_material_light = global::ComicWrap.Droid.Resource.Color.background_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.bright_foreground_disabled_material_dark = global::ComicWrap.Droid.Resource.Color.bright_foreground_disabled_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.bright_foreground_disabled_material_light = global::ComicWrap.Droid.Resource.Color.bright_foreground_disabled_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.bright_foreground_inverse_material_dark = global::ComicWrap.Droid.Resource.Color.bright_foreground_inverse_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.bright_foreground_inverse_material_light = global::ComicWrap.Droid.Resource.Color.bright_foreground_inverse_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.bright_foreground_material_dark = global::ComicWrap.Droid.Resource.Color.bright_foreground_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.bright_foreground_material_light = global::ComicWrap.Droid.Resource.Color.bright_foreground_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.browser_actions_bg_grey = global::ComicWrap.Droid.Resource.Color.browser_actions_bg_grey;
+			global::AiForms.Renderers.Droid.Resource.Color.browser_actions_divider_color = global::ComicWrap.Droid.Resource.Color.browser_actions_divider_color;
+			global::AiForms.Renderers.Droid.Resource.Color.browser_actions_text_color = global::ComicWrap.Droid.Resource.Color.browser_actions_text_color;
+			global::AiForms.Renderers.Droid.Resource.Color.browser_actions_title_color = global::ComicWrap.Droid.Resource.Color.browser_actions_title_color;
+			global::AiForms.Renderers.Droid.Resource.Color.button_material_dark = global::ComicWrap.Droid.Resource.Color.button_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.button_material_light = global::ComicWrap.Droid.Resource.Color.button_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.cardview_dark_background = global::ComicWrap.Droid.Resource.Color.cardview_dark_background;
+			global::AiForms.Renderers.Droid.Resource.Color.cardview_light_background = global::ComicWrap.Droid.Resource.Color.cardview_light_background;
+			global::AiForms.Renderers.Droid.Resource.Color.cardview_shadow_end_color = global::ComicWrap.Droid.Resource.Color.cardview_shadow_end_color;
+			global::AiForms.Renderers.Droid.Resource.Color.cardview_shadow_start_color = global::ComicWrap.Droid.Resource.Color.cardview_shadow_start_color;
+			global::AiForms.Renderers.Droid.Resource.Color.design_bottom_navigation_shadow_color = global::ComicWrap.Droid.Resource.Color.design_bottom_navigation_shadow_color;
+			global::AiForms.Renderers.Droid.Resource.Color.design_default_color_primary = global::ComicWrap.Droid.Resource.Color.design_default_color_primary;
+			global::AiForms.Renderers.Droid.Resource.Color.design_default_color_primary_dark = global::ComicWrap.Droid.Resource.Color.design_default_color_primary_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.design_error = global::ComicWrap.Droid.Resource.Color.design_error;
+			global::AiForms.Renderers.Droid.Resource.Color.design_fab_shadow_end_color = global::ComicWrap.Droid.Resource.Color.design_fab_shadow_end_color;
+			global::AiForms.Renderers.Droid.Resource.Color.design_fab_shadow_mid_color = global::ComicWrap.Droid.Resource.Color.design_fab_shadow_mid_color;
+			global::AiForms.Renderers.Droid.Resource.Color.design_fab_shadow_start_color = global::ComicWrap.Droid.Resource.Color.design_fab_shadow_start_color;
+			global::AiForms.Renderers.Droid.Resource.Color.design_fab_stroke_end_inner_color = global::ComicWrap.Droid.Resource.Color.design_fab_stroke_end_inner_color;
+			global::AiForms.Renderers.Droid.Resource.Color.design_fab_stroke_end_outer_color = global::ComicWrap.Droid.Resource.Color.design_fab_stroke_end_outer_color;
+			global::AiForms.Renderers.Droid.Resource.Color.design_fab_stroke_top_inner_color = global::ComicWrap.Droid.Resource.Color.design_fab_stroke_top_inner_color;
+			global::AiForms.Renderers.Droid.Resource.Color.design_fab_stroke_top_outer_color = global::ComicWrap.Droid.Resource.Color.design_fab_stroke_top_outer_color;
+			global::AiForms.Renderers.Droid.Resource.Color.design_snackbar_background_color = global::ComicWrap.Droid.Resource.Color.design_snackbar_background_color;
+			global::AiForms.Renderers.Droid.Resource.Color.design_tint_password_toggle = global::ComicWrap.Droid.Resource.Color.design_tint_password_toggle;
+			global::AiForms.Renderers.Droid.Resource.Color.dim_foreground_disabled_material_dark = global::ComicWrap.Droid.Resource.Color.dim_foreground_disabled_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.dim_foreground_disabled_material_light = global::ComicWrap.Droid.Resource.Color.dim_foreground_disabled_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.dim_foreground_material_dark = global::ComicWrap.Droid.Resource.Color.dim_foreground_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.dim_foreground_material_light = global::ComicWrap.Droid.Resource.Color.dim_foreground_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.error_color_material_dark = global::ComicWrap.Droid.Resource.Color.error_color_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.error_color_material_light = global::ComicWrap.Droid.Resource.Color.error_color_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.foreground_material_dark = global::ComicWrap.Droid.Resource.Color.foreground_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.foreground_material_light = global::ComicWrap.Droid.Resource.Color.foreground_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.highlighted_text_material_dark = global::ComicWrap.Droid.Resource.Color.highlighted_text_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.highlighted_text_material_light = global::ComicWrap.Droid.Resource.Color.highlighted_text_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.material_blue_grey_800 = global::ComicWrap.Droid.Resource.Color.material_blue_grey_800;
+			global::AiForms.Renderers.Droid.Resource.Color.material_blue_grey_900 = global::ComicWrap.Droid.Resource.Color.material_blue_grey_900;
+			global::AiForms.Renderers.Droid.Resource.Color.material_blue_grey_950 = global::ComicWrap.Droid.Resource.Color.material_blue_grey_950;
+			global::AiForms.Renderers.Droid.Resource.Color.material_deep_teal_200 = global::ComicWrap.Droid.Resource.Color.material_deep_teal_200;
+			global::AiForms.Renderers.Droid.Resource.Color.material_deep_teal_500 = global::ComicWrap.Droid.Resource.Color.material_deep_teal_500;
+			global::AiForms.Renderers.Droid.Resource.Color.material_grey_100 = global::ComicWrap.Droid.Resource.Color.material_grey_100;
+			global::AiForms.Renderers.Droid.Resource.Color.material_grey_300 = global::ComicWrap.Droid.Resource.Color.material_grey_300;
+			global::AiForms.Renderers.Droid.Resource.Color.material_grey_50 = global::ComicWrap.Droid.Resource.Color.material_grey_50;
+			global::AiForms.Renderers.Droid.Resource.Color.material_grey_600 = global::ComicWrap.Droid.Resource.Color.material_grey_600;
+			global::AiForms.Renderers.Droid.Resource.Color.material_grey_800 = global::ComicWrap.Droid.Resource.Color.material_grey_800;
+			global::AiForms.Renderers.Droid.Resource.Color.material_grey_850 = global::ComicWrap.Droid.Resource.Color.material_grey_850;
+			global::AiForms.Renderers.Droid.Resource.Color.material_grey_900 = global::ComicWrap.Droid.Resource.Color.material_grey_900;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_bottom_nav_colored_item_tint = global::ComicWrap.Droid.Resource.Color.mtrl_bottom_nav_colored_item_tint;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_bottom_nav_item_tint = global::ComicWrap.Droid.Resource.Color.mtrl_bottom_nav_item_tint;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_btn_bg_color_disabled = global::ComicWrap.Droid.Resource.Color.mtrl_btn_bg_color_disabled;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_btn_bg_color_selector = global::ComicWrap.Droid.Resource.Color.mtrl_btn_bg_color_selector;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_btn_ripple_color = global::ComicWrap.Droid.Resource.Color.mtrl_btn_ripple_color;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_btn_stroke_color_selector = global::ComicWrap.Droid.Resource.Color.mtrl_btn_stroke_color_selector;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_btn_text_btn_ripple_color = global::ComicWrap.Droid.Resource.Color.mtrl_btn_text_btn_ripple_color;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_btn_text_color_disabled = global::ComicWrap.Droid.Resource.Color.mtrl_btn_text_color_disabled;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_btn_text_color_selector = global::ComicWrap.Droid.Resource.Color.mtrl_btn_text_color_selector;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_btn_transparent_bg_color = global::ComicWrap.Droid.Resource.Color.mtrl_btn_transparent_bg_color;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_chip_background_color = global::ComicWrap.Droid.Resource.Color.mtrl_chip_background_color;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_chip_close_icon_tint = global::ComicWrap.Droid.Resource.Color.mtrl_chip_close_icon_tint;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_chip_ripple_color = global::ComicWrap.Droid.Resource.Color.mtrl_chip_ripple_color;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_chip_text_color = global::ComicWrap.Droid.Resource.Color.mtrl_chip_text_color;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_fab_ripple_color = global::ComicWrap.Droid.Resource.Color.mtrl_fab_ripple_color;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_scrim_color = global::ComicWrap.Droid.Resource.Color.mtrl_scrim_color;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_tabs_colored_ripple_color = global::ComicWrap.Droid.Resource.Color.mtrl_tabs_colored_ripple_color;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_tabs_icon_color_selector = global::ComicWrap.Droid.Resource.Color.mtrl_tabs_icon_color_selector;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_tabs_icon_color_selector_colored = global::ComicWrap.Droid.Resource.Color.mtrl_tabs_icon_color_selector_colored;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_tabs_legacy_text_color_selector = global::ComicWrap.Droid.Resource.Color.mtrl_tabs_legacy_text_color_selector;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_tabs_ripple_color = global::ComicWrap.Droid.Resource.Color.mtrl_tabs_ripple_color;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_text_btn_text_color_selector = global::ComicWrap.Droid.Resource.Color.mtrl_text_btn_text_color_selector;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_textinput_default_box_stroke_color = global::ComicWrap.Droid.Resource.Color.mtrl_textinput_default_box_stroke_color;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_textinput_disabled_color = global::ComicWrap.Droid.Resource.Color.mtrl_textinput_disabled_color;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_textinput_filled_box_default_background_color = global::ComicWrap.Droid.Resource.Color.mtrl_textinput_filled_box_default_background_color;
+			global::AiForms.Renderers.Droid.Resource.Color.mtrl_textinput_hovered_box_stroke_color = global::ComicWrap.Droid.Resource.Color.mtrl_textinput_hovered_box_stroke_color;
+			global::AiForms.Renderers.Droid.Resource.Color.notification_action_color_filter = global::ComicWrap.Droid.Resource.Color.notification_action_color_filter;
+			global::AiForms.Renderers.Droid.Resource.Color.notification_icon_bg_color = global::ComicWrap.Droid.Resource.Color.notification_icon_bg_color;
+			global::AiForms.Renderers.Droid.Resource.Color.notification_material_background_media_default_color = global::ComicWrap.Droid.Resource.Color.notification_material_background_media_default_color;
+			global::AiForms.Renderers.Droid.Resource.Color.primary_dark_material_dark = global::ComicWrap.Droid.Resource.Color.primary_dark_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.primary_dark_material_light = global::ComicWrap.Droid.Resource.Color.primary_dark_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.primary_material_dark = global::ComicWrap.Droid.Resource.Color.primary_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.primary_material_light = global::ComicWrap.Droid.Resource.Color.primary_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.primary_text_default_material_dark = global::ComicWrap.Droid.Resource.Color.primary_text_default_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.primary_text_default_material_light = global::ComicWrap.Droid.Resource.Color.primary_text_default_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.primary_text_disabled_material_dark = global::ComicWrap.Droid.Resource.Color.primary_text_disabled_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.primary_text_disabled_material_light = global::ComicWrap.Droid.Resource.Color.primary_text_disabled_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.ripple_material_dark = global::ComicWrap.Droid.Resource.Color.ripple_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.ripple_material_light = global::ComicWrap.Droid.Resource.Color.ripple_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.secondary_text_default_material_dark = global::ComicWrap.Droid.Resource.Color.secondary_text_default_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.secondary_text_default_material_light = global::ComicWrap.Droid.Resource.Color.secondary_text_default_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.secondary_text_disabled_material_dark = global::ComicWrap.Droid.Resource.Color.secondary_text_disabled_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.secondary_text_disabled_material_light = global::ComicWrap.Droid.Resource.Color.secondary_text_disabled_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.switch_thumb_disabled_material_dark = global::ComicWrap.Droid.Resource.Color.switch_thumb_disabled_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.switch_thumb_disabled_material_light = global::ComicWrap.Droid.Resource.Color.switch_thumb_disabled_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.switch_thumb_material_dark = global::ComicWrap.Droid.Resource.Color.switch_thumb_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.switch_thumb_material_light = global::ComicWrap.Droid.Resource.Color.switch_thumb_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.switch_thumb_normal_material_dark = global::ComicWrap.Droid.Resource.Color.switch_thumb_normal_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.switch_thumb_normal_material_light = global::ComicWrap.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::AiForms.Renderers.Droid.Resource.Color.tooltip_background_dark = global::ComicWrap.Droid.Resource.Color.tooltip_background_dark;
+			global::AiForms.Renderers.Droid.Resource.Color.tooltip_background_light = global::ComicWrap.Droid.Resource.Color.tooltip_background_light;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_content_inset_material = global::ComicWrap.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::ComicWrap.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_default_height_material = global::ComicWrap.Droid.Resource.Dimension.abc_action_bar_default_height_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material = global::ComicWrap.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material = global::ComicWrap.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_elevation_material = global::ComicWrap.Droid.Resource.Dimension.abc_action_bar_elevation_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::ComicWrap.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::ComicWrap.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::ComicWrap.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_stacked_max_height = global::ComicWrap.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::ComicWrap.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::ComicWrap.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::ComicWrap.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_button_min_height_material = global::ComicWrap.Droid.Resource.Dimension.abc_action_button_min_height_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_button_min_width_material = global::ComicWrap.Droid.Resource.Dimension.abc_action_button_min_width_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material = global::ComicWrap.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height = global::ComicWrap.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_alert_dialog_button_dimen = global::ComicWrap.Droid.Resource.Dimension.abc_alert_dialog_button_dimen;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_button_inset_horizontal_material = global::ComicWrap.Droid.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_button_inset_vertical_material = global::ComicWrap.Droid.Resource.Dimension.abc_button_inset_vertical_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_button_padding_horizontal_material = global::ComicWrap.Droid.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_button_padding_vertical_material = global::ComicWrap.Droid.Resource.Dimension.abc_button_padding_vertical_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width = global::ComicWrap.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_config_prefDialogWidth = global::ComicWrap.Droid.Resource.Dimension.abc_config_prefDialogWidth;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_control_corner_material = global::ComicWrap.Droid.Resource.Dimension.abc_control_corner_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_control_inset_material = global::ComicWrap.Droid.Resource.Dimension.abc_control_inset_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_control_padding_material = global::ComicWrap.Droid.Resource.Dimension.abc_control_padding_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_dialog_corner_radius_material = global::ComicWrap.Droid.Resource.Dimension.abc_dialog_corner_radius_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_dialog_fixed_height_major = global::ComicWrap.Droid.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_dialog_fixed_height_minor = global::ComicWrap.Droid.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_dialog_fixed_width_major = global::ComicWrap.Droid.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_dialog_fixed_width_minor = global::ComicWrap.Droid.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons = global::ComicWrap.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title = global::ComicWrap.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_dialog_min_width_major = global::ComicWrap.Droid.Resource.Dimension.abc_dialog_min_width_major;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_dialog_min_width_minor = global::ComicWrap.Droid.Resource.Dimension.abc_dialog_min_width_minor;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_dialog_padding_material = global::ComicWrap.Droid.Resource.Dimension.abc_dialog_padding_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_dialog_padding_top_material = global::ComicWrap.Droid.Resource.Dimension.abc_dialog_padding_top_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_dialog_title_divider_material = global::ComicWrap.Droid.Resource.Dimension.abc_dialog_title_divider_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_disabled_alpha_material_dark = global::ComicWrap.Droid.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_disabled_alpha_material_light = global::ComicWrap.Droid.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_dropdownitem_icon_width = global::ComicWrap.Droid.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left = global::ComicWrap.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right = global::ComicWrap.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material = global::ComicWrap.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::ComicWrap.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_edit_text_inset_top_material = global::ComicWrap.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_floating_window_z = global::ComicWrap.Droid.Resource.Dimension.abc_floating_window_z;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material = global::ComicWrap.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_panel_menu_list_width = global::ComicWrap.Droid.Resource.Dimension.abc_panel_menu_list_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_progress_bar_height_material = global::ComicWrap.Droid.Resource.Dimension.abc_progress_bar_height_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_search_view_preferred_height = global::ComicWrap.Droid.Resource.Dimension.abc_search_view_preferred_height;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_search_view_preferred_width = global::ComicWrap.Droid.Resource.Dimension.abc_search_view_preferred_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_seekbar_track_background_height_material = global::ComicWrap.Droid.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material = global::ComicWrap.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_select_dialog_padding_start_material = global::ComicWrap.Droid.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_switch_padding = global::ComicWrap.Droid.Resource.Dimension.abc_switch_padding;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_text_size_body_1_material = global::ComicWrap.Droid.Resource.Dimension.abc_text_size_body_1_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_text_size_body_2_material = global::ComicWrap.Droid.Resource.Dimension.abc_text_size_body_2_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_text_size_button_material = global::ComicWrap.Droid.Resource.Dimension.abc_text_size_button_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_text_size_caption_material = global::ComicWrap.Droid.Resource.Dimension.abc_text_size_caption_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_text_size_display_1_material = global::ComicWrap.Droid.Resource.Dimension.abc_text_size_display_1_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_text_size_display_2_material = global::ComicWrap.Droid.Resource.Dimension.abc_text_size_display_2_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_text_size_display_3_material = global::ComicWrap.Droid.Resource.Dimension.abc_text_size_display_3_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_text_size_display_4_material = global::ComicWrap.Droid.Resource.Dimension.abc_text_size_display_4_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_text_size_headline_material = global::ComicWrap.Droid.Resource.Dimension.abc_text_size_headline_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_text_size_large_material = global::ComicWrap.Droid.Resource.Dimension.abc_text_size_large_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_text_size_medium_material = global::ComicWrap.Droid.Resource.Dimension.abc_text_size_medium_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_text_size_menu_header_material = global::ComicWrap.Droid.Resource.Dimension.abc_text_size_menu_header_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_text_size_menu_material = global::ComicWrap.Droid.Resource.Dimension.abc_text_size_menu_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_text_size_small_material = global::ComicWrap.Droid.Resource.Dimension.abc_text_size_small_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_text_size_subhead_material = global::ComicWrap.Droid.Resource.Dimension.abc_text_size_subhead_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::ComicWrap.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_text_size_title_material = global::ComicWrap.Droid.Resource.Dimension.abc_text_size_title_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.abc_text_size_title_material_toolbar = global::ComicWrap.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::AiForms.Renderers.Droid.Resource.Dimension.browser_actions_context_menu_max_width = global::ComicWrap.Droid.Resource.Dimension.browser_actions_context_menu_max_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.browser_actions_context_menu_min_padding = global::ComicWrap.Droid.Resource.Dimension.browser_actions_context_menu_min_padding;
+			global::AiForms.Renderers.Droid.Resource.Dimension.cardview_compat_inset_shadow = global::ComicWrap.Droid.Resource.Dimension.cardview_compat_inset_shadow;
+			global::AiForms.Renderers.Droid.Resource.Dimension.cardview_default_elevation = global::ComicWrap.Droid.Resource.Dimension.cardview_default_elevation;
+			global::AiForms.Renderers.Droid.Resource.Dimension.cardview_default_radius = global::ComicWrap.Droid.Resource.Dimension.cardview_default_radius;
+			global::AiForms.Renderers.Droid.Resource.Dimension.compat_button_inset_horizontal_material = global::ComicWrap.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.compat_button_inset_vertical_material = global::ComicWrap.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.compat_button_padding_horizontal_material = global::ComicWrap.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.compat_button_padding_vertical_material = global::ComicWrap.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.compat_control_corner_material = global::ComicWrap.Droid.Resource.Dimension.compat_control_corner_material;
+			global::AiForms.Renderers.Droid.Resource.Dimension.compat_notification_large_icon_max_height = global::ComicWrap.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
+			global::AiForms.Renderers.Droid.Resource.Dimension.compat_notification_large_icon_max_width = global::ComicWrap.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_appbar_elevation = global::ComicWrap.Droid.Resource.Dimension.design_appbar_elevation;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::ComicWrap.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_bottom_navigation_active_item_min_width = global::ComicWrap.Droid.Resource.Dimension.design_bottom_navigation_active_item_min_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_bottom_navigation_active_text_size = global::ComicWrap.Droid.Resource.Dimension.design_bottom_navigation_active_text_size;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_bottom_navigation_elevation = global::ComicWrap.Droid.Resource.Dimension.design_bottom_navigation_elevation;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_bottom_navigation_height = global::ComicWrap.Droid.Resource.Dimension.design_bottom_navigation_height;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_bottom_navigation_icon_size = global::ComicWrap.Droid.Resource.Dimension.design_bottom_navigation_icon_size;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_bottom_navigation_item_max_width = global::ComicWrap.Droid.Resource.Dimension.design_bottom_navigation_item_max_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_bottom_navigation_item_min_width = global::ComicWrap.Droid.Resource.Dimension.design_bottom_navigation_item_min_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_bottom_navigation_margin = global::ComicWrap.Droid.Resource.Dimension.design_bottom_navigation_margin;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_bottom_navigation_shadow_height = global::ComicWrap.Droid.Resource.Dimension.design_bottom_navigation_shadow_height;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_bottom_navigation_text_size = global::ComicWrap.Droid.Resource.Dimension.design_bottom_navigation_text_size;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation = global::ComicWrap.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min = global::ComicWrap.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_fab_border_width = global::ComicWrap.Droid.Resource.Dimension.design_fab_border_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_fab_elevation = global::ComicWrap.Droid.Resource.Dimension.design_fab_elevation;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_fab_image_size = global::ComicWrap.Droid.Resource.Dimension.design_fab_image_size;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_fab_size_mini = global::ComicWrap.Droid.Resource.Dimension.design_fab_size_mini;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_fab_size_normal = global::ComicWrap.Droid.Resource.Dimension.design_fab_size_normal;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_fab_translation_z_hovered_focused = global::ComicWrap.Droid.Resource.Dimension.design_fab_translation_z_hovered_focused;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_fab_translation_z_pressed = global::ComicWrap.Droid.Resource.Dimension.design_fab_translation_z_pressed;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_navigation_elevation = global::ComicWrap.Droid.Resource.Dimension.design_navigation_elevation;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_navigation_icon_padding = global::ComicWrap.Droid.Resource.Dimension.design_navigation_icon_padding;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_navigation_icon_size = global::ComicWrap.Droid.Resource.Dimension.design_navigation_icon_size;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_navigation_item_horizontal_padding = global::ComicWrap.Droid.Resource.Dimension.design_navigation_item_horizontal_padding;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_navigation_item_icon_padding = global::ComicWrap.Droid.Resource.Dimension.design_navigation_item_icon_padding;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_navigation_max_width = global::ComicWrap.Droid.Resource.Dimension.design_navigation_max_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_navigation_padding_bottom = global::ComicWrap.Droid.Resource.Dimension.design_navigation_padding_bottom;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_navigation_separator_vertical_padding = global::ComicWrap.Droid.Resource.Dimension.design_navigation_separator_vertical_padding;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_snackbar_action_inline_max_width = global::ComicWrap.Droid.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_snackbar_background_corner_radius = global::ComicWrap.Droid.Resource.Dimension.design_snackbar_background_corner_radius;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_snackbar_elevation = global::ComicWrap.Droid.Resource.Dimension.design_snackbar_elevation;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::ComicWrap.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_snackbar_max_width = global::ComicWrap.Droid.Resource.Dimension.design_snackbar_max_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_snackbar_min_width = global::ComicWrap.Droid.Resource.Dimension.design_snackbar_min_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_snackbar_padding_horizontal = global::ComicWrap.Droid.Resource.Dimension.design_snackbar_padding_horizontal;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_snackbar_padding_vertical = global::ComicWrap.Droid.Resource.Dimension.design_snackbar_padding_vertical;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines = global::ComicWrap.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_snackbar_text_size = global::ComicWrap.Droid.Resource.Dimension.design_snackbar_text_size;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_tab_max_width = global::ComicWrap.Droid.Resource.Dimension.design_tab_max_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_tab_scrollable_min_width = global::ComicWrap.Droid.Resource.Dimension.design_tab_scrollable_min_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_tab_text_size = global::ComicWrap.Droid.Resource.Dimension.design_tab_text_size;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_tab_text_size_2line = global::ComicWrap.Droid.Resource.Dimension.design_tab_text_size_2line;
+			global::AiForms.Renderers.Droid.Resource.Dimension.design_textinput_caption_translate_y = global::ComicWrap.Droid.Resource.Dimension.design_textinput_caption_translate_y;
+			global::AiForms.Renderers.Droid.Resource.Dimension.disabled_alpha_material_dark = global::ComicWrap.Droid.Resource.Dimension.disabled_alpha_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Dimension.disabled_alpha_material_light = global::ComicWrap.Droid.Resource.Dimension.disabled_alpha_material_light;
+			global::AiForms.Renderers.Droid.Resource.Dimension.fastscroll_default_thickness = global::ComicWrap.Droid.Resource.Dimension.fastscroll_default_thickness;
+			global::AiForms.Renderers.Droid.Resource.Dimension.fastscroll_margin = global::ComicWrap.Droid.Resource.Dimension.fastscroll_margin;
+			global::AiForms.Renderers.Droid.Resource.Dimension.fastscroll_minimum_range = global::ComicWrap.Droid.Resource.Dimension.fastscroll_minimum_range;
+			global::AiForms.Renderers.Droid.Resource.Dimension.highlight_alpha_material_colored = global::ComicWrap.Droid.Resource.Dimension.highlight_alpha_material_colored;
+			global::AiForms.Renderers.Droid.Resource.Dimension.highlight_alpha_material_dark = global::ComicWrap.Droid.Resource.Dimension.highlight_alpha_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Dimension.highlight_alpha_material_light = global::ComicWrap.Droid.Resource.Dimension.highlight_alpha_material_light;
+			global::AiForms.Renderers.Droid.Resource.Dimension.hint_alpha_material_dark = global::ComicWrap.Droid.Resource.Dimension.hint_alpha_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Dimension.hint_alpha_material_light = global::ComicWrap.Droid.Resource.Dimension.hint_alpha_material_light;
+			global::AiForms.Renderers.Droid.Resource.Dimension.hint_pressed_alpha_material_dark = global::ComicWrap.Droid.Resource.Dimension.hint_pressed_alpha_material_dark;
+			global::AiForms.Renderers.Droid.Resource.Dimension.hint_pressed_alpha_material_light = global::ComicWrap.Droid.Resource.Dimension.hint_pressed_alpha_material_light;
+			global::AiForms.Renderers.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::ComicWrap.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::AiForms.Renderers.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::ComicWrap.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::AiForms.Renderers.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::ComicWrap.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode = global::ComicWrap.Droid.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin = global::ComicWrap.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius = global::ComicWrap.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset = global::ComicWrap.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_bottomappbar_height = global::ComicWrap.Droid.Resource.Dimension.mtrl_bottomappbar_height;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_corner_radius = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_corner_radius;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_dialog_btn_min_width = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_dialog_btn_min_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_disabled_elevation = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_disabled_elevation;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_disabled_z = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_disabled_z;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_elevation = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_elevation;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_focused_z = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_focused_z;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_hovered_z = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_hovered_z;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_icon_btn_padding_left = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_icon_btn_padding_left;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_icon_padding = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_icon_padding;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_inset = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_inset;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_letter_spacing = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_letter_spacing;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_padding_bottom = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_padding_bottom;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_padding_left = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_padding_left;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_padding_right = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_padding_right;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_padding_top = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_padding_top;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_pressed_z = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_pressed_z;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_stroke_size = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_stroke_size;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_text_btn_icon_padding = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_text_btn_icon_padding;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_left = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_left;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_right = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_right;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_text_size = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_text_size;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_btn_z = global::ComicWrap.Droid.Resource.Dimension.mtrl_btn_z;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_card_elevation = global::ComicWrap.Droid.Resource.Dimension.mtrl_card_elevation;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_card_spacing = global::ComicWrap.Droid.Resource.Dimension.mtrl_card_spacing;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_chip_pressed_translation_z = global::ComicWrap.Droid.Resource.Dimension.mtrl_chip_pressed_translation_z;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_chip_text_size = global::ComicWrap.Droid.Resource.Dimension.mtrl_chip_text_size;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_fab_elevation = global::ComicWrap.Droid.Resource.Dimension.mtrl_fab_elevation;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_fab_translation_z_hovered_focused = global::ComicWrap.Droid.Resource.Dimension.mtrl_fab_translation_z_hovered_focused;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_fab_translation_z_pressed = global::ComicWrap.Droid.Resource.Dimension.mtrl_fab_translation_z_pressed;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_navigation_elevation = global::ComicWrap.Droid.Resource.Dimension.mtrl_navigation_elevation;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_navigation_item_horizontal_padding = global::ComicWrap.Droid.Resource.Dimension.mtrl_navigation_item_horizontal_padding;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_navigation_item_icon_padding = global::ComicWrap.Droid.Resource.Dimension.mtrl_navigation_item_icon_padding;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_snackbar_background_corner_radius = global::ComicWrap.Droid.Resource.Dimension.mtrl_snackbar_background_corner_radius;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_snackbar_margin = global::ComicWrap.Droid.Resource.Dimension.mtrl_snackbar_margin;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_textinput_box_bottom_offset = global::ComicWrap.Droid.Resource.Dimension.mtrl_textinput_box_bottom_offset;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_medium = global::ComicWrap.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_medium;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_small = global::ComicWrap.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_small;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_textinput_box_label_cutout_padding = global::ComicWrap.Droid.Resource.Dimension.mtrl_textinput_box_label_cutout_padding;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_textinput_box_padding_end = global::ComicWrap.Droid.Resource.Dimension.mtrl_textinput_box_padding_end;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_default = global::ComicWrap.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_default;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_focused = global::ComicWrap.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_focused;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding = global::ComicWrap.Droid.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding;
+			global::AiForms.Renderers.Droid.Resource.Dimension.mtrl_toolbar_default_height = global::ComicWrap.Droid.Resource.Dimension.mtrl_toolbar_default_height;
+			global::AiForms.Renderers.Droid.Resource.Dimension.notification_action_icon_size = global::ComicWrap.Droid.Resource.Dimension.notification_action_icon_size;
+			global::AiForms.Renderers.Droid.Resource.Dimension.notification_action_text_size = global::ComicWrap.Droid.Resource.Dimension.notification_action_text_size;
+			global::AiForms.Renderers.Droid.Resource.Dimension.notification_big_circle_margin = global::ComicWrap.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::AiForms.Renderers.Droid.Resource.Dimension.notification_content_margin_start = global::ComicWrap.Droid.Resource.Dimension.notification_content_margin_start;
+			global::AiForms.Renderers.Droid.Resource.Dimension.notification_large_icon_height = global::ComicWrap.Droid.Resource.Dimension.notification_large_icon_height;
+			global::AiForms.Renderers.Droid.Resource.Dimension.notification_large_icon_width = global::ComicWrap.Droid.Resource.Dimension.notification_large_icon_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.notification_main_column_padding_top = global::ComicWrap.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::AiForms.Renderers.Droid.Resource.Dimension.notification_media_narrow_margin = global::ComicWrap.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::AiForms.Renderers.Droid.Resource.Dimension.notification_right_icon_size = global::ComicWrap.Droid.Resource.Dimension.notification_right_icon_size;
+			global::AiForms.Renderers.Droid.Resource.Dimension.notification_right_side_padding_top = global::ComicWrap.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::AiForms.Renderers.Droid.Resource.Dimension.notification_small_icon_background_padding = global::ComicWrap.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::AiForms.Renderers.Droid.Resource.Dimension.notification_small_icon_size_as_large = global::ComicWrap.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::AiForms.Renderers.Droid.Resource.Dimension.notification_subtext_size = global::ComicWrap.Droid.Resource.Dimension.notification_subtext_size;
+			global::AiForms.Renderers.Droid.Resource.Dimension.notification_top_pad = global::ComicWrap.Droid.Resource.Dimension.notification_top_pad;
+			global::AiForms.Renderers.Droid.Resource.Dimension.notification_top_pad_large_text = global::ComicWrap.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::AiForms.Renderers.Droid.Resource.Dimension.subtitle_corner_radius = global::ComicWrap.Droid.Resource.Dimension.subtitle_corner_radius;
+			global::AiForms.Renderers.Droid.Resource.Dimension.subtitle_outline_width = global::ComicWrap.Droid.Resource.Dimension.subtitle_outline_width;
+			global::AiForms.Renderers.Droid.Resource.Dimension.subtitle_shadow_offset = global::ComicWrap.Droid.Resource.Dimension.subtitle_shadow_offset;
+			global::AiForms.Renderers.Droid.Resource.Dimension.subtitle_shadow_radius = global::ComicWrap.Droid.Resource.Dimension.subtitle_shadow_radius;
+			global::AiForms.Renderers.Droid.Resource.Dimension.tooltip_corner_radius = global::ComicWrap.Droid.Resource.Dimension.tooltip_corner_radius;
+			global::AiForms.Renderers.Droid.Resource.Dimension.tooltip_horizontal_padding = global::ComicWrap.Droid.Resource.Dimension.tooltip_horizontal_padding;
+			global::AiForms.Renderers.Droid.Resource.Dimension.tooltip_margin = global::ComicWrap.Droid.Resource.Dimension.tooltip_margin;
+			global::AiForms.Renderers.Droid.Resource.Dimension.tooltip_precise_anchor_extra_offset = global::ComicWrap.Droid.Resource.Dimension.tooltip_precise_anchor_extra_offset;
+			global::AiForms.Renderers.Droid.Resource.Dimension.tooltip_precise_anchor_threshold = global::ComicWrap.Droid.Resource.Dimension.tooltip_precise_anchor_threshold;
+			global::AiForms.Renderers.Droid.Resource.Dimension.tooltip_vertical_padding = global::ComicWrap.Droid.Resource.Dimension.tooltip_vertical_padding;
+			global::AiForms.Renderers.Droid.Resource.Dimension.tooltip_y_offset_non_touch = global::ComicWrap.Droid.Resource.Dimension.tooltip_y_offset_non_touch;
+			global::AiForms.Renderers.Droid.Resource.Dimension.tooltip_y_offset_touch = global::ComicWrap.Droid.Resource.Dimension.tooltip_y_offset_touch;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::ComicWrap.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_action_bar_item_background_material = global::ComicWrap.Droid.Resource.Drawable.abc_action_bar_item_background_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_btn_borderless_material = global::ComicWrap.Droid.Resource.Drawable.abc_btn_borderless_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_btn_check_material = global::ComicWrap.Droid.Resource.Drawable.abc_btn_check_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::ComicWrap.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::ComicWrap.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_btn_colored_material = global::ComicWrap.Droid.Resource.Drawable.abc_btn_colored_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_btn_default_mtrl_shape = global::ComicWrap.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_btn_radio_material = global::ComicWrap.Droid.Resource.Drawable.abc_btn_radio_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::ComicWrap.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::ComicWrap.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::ComicWrap.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::ComicWrap.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_cab_background_internal_bg = global::ComicWrap.Droid.Resource.Drawable.abc_cab_background_internal_bg;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_cab_background_top_material = global::ComicWrap.Droid.Resource.Drawable.abc_cab_background_top_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::ComicWrap.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_control_background_material = global::ComicWrap.Droid.Resource.Drawable.abc_control_background_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_dialog_material_background = global::ComicWrap.Droid.Resource.Drawable.abc_dialog_material_background;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_edit_text_material = global::ComicWrap.Droid.Resource.Drawable.abc_edit_text_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ic_ab_back_material = global::ComicWrap.Droid.Resource.Drawable.abc_ic_ab_back_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp = global::ComicWrap.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ic_clear_material = global::ComicWrap.Droid.Resource.Drawable.abc_ic_clear_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::ComicWrap.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ic_go_search_api_material = global::ComicWrap.Droid.Resource.Drawable.abc_ic_go_search_api_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::ComicWrap.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::ComicWrap.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ic_menu_overflow_material = global::ComicWrap.Droid.Resource.Drawable.abc_ic_menu_overflow_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::ComicWrap.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::ComicWrap.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::ComicWrap.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ic_search_api_material = global::ComicWrap.Droid.Resource.Drawable.abc_ic_search_api_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ic_star_black_16dp = global::ComicWrap.Droid.Resource.Drawable.abc_ic_star_black_16dp;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ic_star_black_36dp = global::ComicWrap.Droid.Resource.Drawable.abc_ic_star_black_36dp;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ic_star_black_48dp = global::ComicWrap.Droid.Resource.Drawable.abc_ic_star_black_48dp;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ic_star_half_black_16dp = global::ComicWrap.Droid.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ic_star_half_black_36dp = global::ComicWrap.Droid.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ic_star_half_black_48dp = global::ComicWrap.Droid.Resource.Drawable.abc_ic_star_half_black_48dp;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ic_voice_search_api_material = global::ComicWrap.Droid.Resource.Drawable.abc_ic_voice_search_api_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_item_background_holo_dark = global::ComicWrap.Droid.Resource.Drawable.abc_item_background_holo_dark;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_item_background_holo_light = global::ComicWrap.Droid.Resource.Drawable.abc_item_background_holo_light;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_list_divider_material = global::ComicWrap.Droid.Resource.Drawable.abc_list_divider_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha = global::ComicWrap.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_list_focused_holo = global::ComicWrap.Droid.Resource.Drawable.abc_list_focused_holo;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_list_longpressed_holo = global::ComicWrap.Droid.Resource.Drawable.abc_list_longpressed_holo;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_list_pressed_holo_dark = global::ComicWrap.Droid.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_list_pressed_holo_light = global::ComicWrap.Droid.Resource.Drawable.abc_list_pressed_holo_light;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::ComicWrap.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::ComicWrap.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::ComicWrap.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light = global::ComicWrap.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_list_selector_holo_dark = global::ComicWrap.Droid.Resource.Drawable.abc_list_selector_holo_dark;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_list_selector_holo_light = global::ComicWrap.Droid.Resource.Drawable.abc_list_selector_holo_light;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::ComicWrap.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_popup_background_mtrl_mult = global::ComicWrap.Droid.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ratingbar_indicator_material = global::ComicWrap.Droid.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ratingbar_material = global::ComicWrap.Droid.Resource.Drawable.abc_ratingbar_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_ratingbar_small_material = global::ComicWrap.Droid.Resource.Drawable.abc_ratingbar_small_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::ComicWrap.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::ComicWrap.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::ComicWrap.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::ComicWrap.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::ComicWrap.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_seekbar_thumb_material = global::ComicWrap.Droid.Resource.Drawable.abc_seekbar_thumb_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_seekbar_tick_mark_material = global::ComicWrap.Droid.Resource.Drawable.abc_seekbar_tick_mark_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_seekbar_track_material = global::ComicWrap.Droid.Resource.Drawable.abc_seekbar_track_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::ComicWrap.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_spinner_textfield_background_material = global::ComicWrap.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_switch_thumb_material = global::ComicWrap.Droid.Resource.Drawable.abc_switch_thumb_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha = global::ComicWrap.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_tab_indicator_material = global::ComicWrap.Droid.Resource.Drawable.abc_tab_indicator_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::ComicWrap.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_text_cursor_material = global::ComicWrap.Droid.Resource.Drawable.abc_text_cursor_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark = global::ComicWrap.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light = global::ComicWrap.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark = global::ComicWrap.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light = global::ComicWrap.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark = global::ComicWrap.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light = global::ComicWrap.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::ComicWrap.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::ComicWrap.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::ComicWrap.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::ComicWrap.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_textfield_search_material = global::ComicWrap.Droid.Resource.Drawable.abc_textfield_search_material;
+			global::AiForms.Renderers.Droid.Resource.Drawable.abc_vector_test = global::ComicWrap.Droid.Resource.Drawable.abc_vector_test;
+			global::AiForms.Renderers.Droid.Resource.Drawable.avd_hide_password = global::ComicWrap.Droid.Resource.Drawable.avd_hide_password;
+			global::AiForms.Renderers.Droid.Resource.Drawable.avd_show_password = global::ComicWrap.Droid.Resource.Drawable.avd_show_password;
+			global::AiForms.Renderers.Droid.Resource.Drawable.design_bottom_navigation_item_background = global::ComicWrap.Droid.Resource.Drawable.design_bottom_navigation_item_background;
+			global::AiForms.Renderers.Droid.Resource.Drawable.design_fab_background = global::ComicWrap.Droid.Resource.Drawable.design_fab_background;
+			global::AiForms.Renderers.Droid.Resource.Drawable.design_ic_visibility = global::ComicWrap.Droid.Resource.Drawable.design_ic_visibility;
+			global::AiForms.Renderers.Droid.Resource.Drawable.design_ic_visibility_off = global::ComicWrap.Droid.Resource.Drawable.design_ic_visibility_off;
+			global::AiForms.Renderers.Droid.Resource.Drawable.design_password_eye = global::ComicWrap.Droid.Resource.Drawable.design_password_eye;
+			global::AiForms.Renderers.Droid.Resource.Drawable.design_snackbar_background = global::ComicWrap.Droid.Resource.Drawable.design_snackbar_background;
+			global::AiForms.Renderers.Droid.Resource.Drawable.ic_mtrl_chip_checked_black = global::ComicWrap.Droid.Resource.Drawable.ic_mtrl_chip_checked_black;
+			global::AiForms.Renderers.Droid.Resource.Drawable.ic_mtrl_chip_checked_circle = global::ComicWrap.Droid.Resource.Drawable.ic_mtrl_chip_checked_circle;
+			global::AiForms.Renderers.Droid.Resource.Drawable.ic_mtrl_chip_close_circle = global::ComicWrap.Droid.Resource.Drawable.ic_mtrl_chip_close_circle;
+			global::AiForms.Renderers.Droid.Resource.Drawable.mtrl_snackbar_background = global::ComicWrap.Droid.Resource.Drawable.mtrl_snackbar_background;
+			global::AiForms.Renderers.Droid.Resource.Drawable.mtrl_tabs_default_indicator = global::ComicWrap.Droid.Resource.Drawable.mtrl_tabs_default_indicator;
+			global::AiForms.Renderers.Droid.Resource.Drawable.navigation_empty_icon = global::ComicWrap.Droid.Resource.Drawable.navigation_empty_icon;
+			global::AiForms.Renderers.Droid.Resource.Drawable.notification_action_background = global::ComicWrap.Droid.Resource.Drawable.notification_action_background;
+			global::AiForms.Renderers.Droid.Resource.Drawable.notification_bg = global::ComicWrap.Droid.Resource.Drawable.notification_bg;
+			global::AiForms.Renderers.Droid.Resource.Drawable.notification_bg_low = global::ComicWrap.Droid.Resource.Drawable.notification_bg_low;
+			global::AiForms.Renderers.Droid.Resource.Drawable.notification_bg_low_normal = global::ComicWrap.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::AiForms.Renderers.Droid.Resource.Drawable.notification_bg_low_pressed = global::ComicWrap.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::AiForms.Renderers.Droid.Resource.Drawable.notification_bg_normal = global::ComicWrap.Droid.Resource.Drawable.notification_bg_normal;
+			global::AiForms.Renderers.Droid.Resource.Drawable.notification_bg_normal_pressed = global::ComicWrap.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::AiForms.Renderers.Droid.Resource.Drawable.notification_icon_background = global::ComicWrap.Droid.Resource.Drawable.notification_icon_background;
+			global::AiForms.Renderers.Droid.Resource.Drawable.notification_template_icon_bg = global::ComicWrap.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::AiForms.Renderers.Droid.Resource.Drawable.notification_template_icon_low_bg = global::ComicWrap.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::AiForms.Renderers.Droid.Resource.Drawable.notification_tile_bg = global::ComicWrap.Droid.Resource.Drawable.notification_tile_bg;
+			global::AiForms.Renderers.Droid.Resource.Drawable.notify_panel_notification_icon_bg = global::ComicWrap.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::AiForms.Renderers.Droid.Resource.Drawable.tooltip_frame_dark = global::ComicWrap.Droid.Resource.Drawable.tooltip_frame_dark;
+			global::AiForms.Renderers.Droid.Resource.Drawable.tooltip_frame_light = global::ComicWrap.Droid.Resource.Drawable.tooltip_frame_light;
+			global::AiForms.Renderers.Droid.Resource.Id.ALT = global::ComicWrap.Droid.Resource.Id.ALT;
+			global::AiForms.Renderers.Droid.Resource.Id.CTRL = global::ComicWrap.Droid.Resource.Id.CTRL;
+			global::AiForms.Renderers.Droid.Resource.Id.CellAccessoryView = global::ComicWrap.Droid.Resource.Id.CellAccessoryView;
+			global::AiForms.Renderers.Droid.Resource.Id.CellBody = global::ComicWrap.Droid.Resource.Id.CellBody;
+			global::AiForms.Renderers.Droid.Resource.Id.CellContentStack = global::ComicWrap.Droid.Resource.Id.CellContentStack;
+			global::AiForms.Renderers.Droid.Resource.Id.CellDescription = global::ComicWrap.Droid.Resource.Id.CellDescription;
+			global::AiForms.Renderers.Droid.Resource.Id.CellHintText = global::ComicWrap.Droid.Resource.Id.CellHintText;
+			global::AiForms.Renderers.Droid.Resource.Id.CellIcon = global::ComicWrap.Droid.Resource.Id.CellIcon;
+			global::AiForms.Renderers.Droid.Resource.Id.CellTitle = global::ComicWrap.Droid.Resource.Id.CellTitle;
+			global::AiForms.Renderers.Droid.Resource.Id.ContentCellBody = global::ComicWrap.Droid.Resource.Id.ContentCellBody;
+			global::AiForms.Renderers.Droid.Resource.Id.ContentCellBorder = global::ComicWrap.Droid.Resource.Id.ContentCellBorder;
+			global::AiForms.Renderers.Droid.Resource.Id.FUNCTION = global::ComicWrap.Droid.Resource.Id.FUNCTION;
+			global::AiForms.Renderers.Droid.Resource.Id.FooterCellText = global::ComicWrap.Droid.Resource.Id.FooterCellText;
+			global::AiForms.Renderers.Droid.Resource.Id.HeaderCellBorder = global::ComicWrap.Droid.Resource.Id.HeaderCellBorder;
+			global::AiForms.Renderers.Droid.Resource.Id.HeaderCellText = global::ComicWrap.Droid.Resource.Id.HeaderCellText;
+			global::AiForms.Renderers.Droid.Resource.Id.META = global::ComicWrap.Droid.Resource.Id.META;
+			global::AiForms.Renderers.Droid.Resource.Id.SHIFT = global::ComicWrap.Droid.Resource.Id.SHIFT;
+			global::AiForms.Renderers.Droid.Resource.Id.SYM = global::ComicWrap.Droid.Resource.Id.SYM;
+			global::AiForms.Renderers.Droid.Resource.Id.action0 = global::ComicWrap.Droid.Resource.Id.action0;
+			global::AiForms.Renderers.Droid.Resource.Id.action_bar = global::ComicWrap.Droid.Resource.Id.action_bar;
+			global::AiForms.Renderers.Droid.Resource.Id.action_bar_activity_content = global::ComicWrap.Droid.Resource.Id.action_bar_activity_content;
+			global::AiForms.Renderers.Droid.Resource.Id.action_bar_container = global::ComicWrap.Droid.Resource.Id.action_bar_container;
+			global::AiForms.Renderers.Droid.Resource.Id.action_bar_root = global::ComicWrap.Droid.Resource.Id.action_bar_root;
+			global::AiForms.Renderers.Droid.Resource.Id.action_bar_spinner = global::ComicWrap.Droid.Resource.Id.action_bar_spinner;
+			global::AiForms.Renderers.Droid.Resource.Id.action_bar_subtitle = global::ComicWrap.Droid.Resource.Id.action_bar_subtitle;
+			global::AiForms.Renderers.Droid.Resource.Id.action_bar_title = global::ComicWrap.Droid.Resource.Id.action_bar_title;
+			global::AiForms.Renderers.Droid.Resource.Id.action_container = global::ComicWrap.Droid.Resource.Id.action_container;
+			global::AiForms.Renderers.Droid.Resource.Id.action_context_bar = global::ComicWrap.Droid.Resource.Id.action_context_bar;
+			global::AiForms.Renderers.Droid.Resource.Id.action_divider = global::ComicWrap.Droid.Resource.Id.action_divider;
+			global::AiForms.Renderers.Droid.Resource.Id.action_image = global::ComicWrap.Droid.Resource.Id.action_image;
+			global::AiForms.Renderers.Droid.Resource.Id.action_menu_divider = global::ComicWrap.Droid.Resource.Id.action_menu_divider;
+			global::AiForms.Renderers.Droid.Resource.Id.action_menu_presenter = global::ComicWrap.Droid.Resource.Id.action_menu_presenter;
+			global::AiForms.Renderers.Droid.Resource.Id.action_mode_bar = global::ComicWrap.Droid.Resource.Id.action_mode_bar;
+			global::AiForms.Renderers.Droid.Resource.Id.action_mode_bar_stub = global::ComicWrap.Droid.Resource.Id.action_mode_bar_stub;
+			global::AiForms.Renderers.Droid.Resource.Id.action_mode_close_button = global::ComicWrap.Droid.Resource.Id.action_mode_close_button;
+			global::AiForms.Renderers.Droid.Resource.Id.action_text = global::ComicWrap.Droid.Resource.Id.action_text;
+			global::AiForms.Renderers.Droid.Resource.Id.actions = global::ComicWrap.Droid.Resource.Id.actions;
+			global::AiForms.Renderers.Droid.Resource.Id.activity_chooser_view_content = global::ComicWrap.Droid.Resource.Id.activity_chooser_view_content;
+			global::AiForms.Renderers.Droid.Resource.Id.add = global::ComicWrap.Droid.Resource.Id.add;
+			global::AiForms.Renderers.Droid.Resource.Id.alertTitle = global::ComicWrap.Droid.Resource.Id.alertTitle;
+			global::AiForms.Renderers.Droid.Resource.Id.all = global::ComicWrap.Droid.Resource.Id.all;
+			global::AiForms.Renderers.Droid.Resource.Id.always = global::ComicWrap.Droid.Resource.Id.always;
+			global::AiForms.Renderers.Droid.Resource.Id.async = global::ComicWrap.Droid.Resource.Id.async;
+			global::AiForms.Renderers.Droid.Resource.Id.auto = global::ComicWrap.Droid.Resource.Id.auto;
+			global::AiForms.Renderers.Droid.Resource.Id.beginning = global::ComicWrap.Droid.Resource.Id.beginning;
+			global::AiForms.Renderers.Droid.Resource.Id.blocking = global::ComicWrap.Droid.Resource.Id.blocking;
+			global::AiForms.Renderers.Droid.Resource.Id.bottom = global::ComicWrap.Droid.Resource.Id.bottom;
+			global::AiForms.Renderers.Droid.Resource.Id.bottomtab_navarea = global::ComicWrap.Droid.Resource.Id.bottomtab_navarea;
+			global::AiForms.Renderers.Droid.Resource.Id.bottomtab_tabbar = global::ComicWrap.Droid.Resource.Id.bottomtab_tabbar;
+			global::AiForms.Renderers.Droid.Resource.Id.browser_actions_header_text = global::ComicWrap.Droid.Resource.Id.browser_actions_header_text;
+			global::AiForms.Renderers.Droid.Resource.Id.browser_actions_menu_item_icon = global::ComicWrap.Droid.Resource.Id.browser_actions_menu_item_icon;
+			global::AiForms.Renderers.Droid.Resource.Id.browser_actions_menu_item_text = global::ComicWrap.Droid.Resource.Id.browser_actions_menu_item_text;
+			global::AiForms.Renderers.Droid.Resource.Id.browser_actions_menu_items = global::ComicWrap.Droid.Resource.Id.browser_actions_menu_items;
+			global::AiForms.Renderers.Droid.Resource.Id.browser_actions_menu_view = global::ComicWrap.Droid.Resource.Id.browser_actions_menu_view;
+			global::AiForms.Renderers.Droid.Resource.Id.buttonPanel = global::ComicWrap.Droid.Resource.Id.buttonPanel;
+			global::AiForms.Renderers.Droid.Resource.Id.cancel_action = global::ComicWrap.Droid.Resource.Id.cancel_action;
+			global::AiForms.Renderers.Droid.Resource.Id.center = global::ComicWrap.Droid.Resource.Id.center;
+			global::AiForms.Renderers.Droid.Resource.Id.center_horizontal = global::ComicWrap.Droid.Resource.Id.center_horizontal;
+			global::AiForms.Renderers.Droid.Resource.Id.center_vertical = global::ComicWrap.Droid.Resource.Id.center_vertical;
+			global::AiForms.Renderers.Droid.Resource.Id.checkbox = global::ComicWrap.Droid.Resource.Id.checkbox;
+			global::AiForms.Renderers.Droid.Resource.Id.chronometer = global::ComicWrap.Droid.Resource.Id.chronometer;
+			global::AiForms.Renderers.Droid.Resource.Id.clip_horizontal = global::ComicWrap.Droid.Resource.Id.clip_horizontal;
+			global::AiForms.Renderers.Droid.Resource.Id.clip_vertical = global::ComicWrap.Droid.Resource.Id.clip_vertical;
+			global::AiForms.Renderers.Droid.Resource.Id.collapseActionView = global::ComicWrap.Droid.Resource.Id.collapseActionView;
+			global::AiForms.Renderers.Droid.Resource.Id.container = global::ComicWrap.Droid.Resource.Id.container;
+			global::AiForms.Renderers.Droid.Resource.Id.content = global::ComicWrap.Droid.Resource.Id.content;
+			global::AiForms.Renderers.Droid.Resource.Id.contentPanel = global::ComicWrap.Droid.Resource.Id.contentPanel;
+			global::AiForms.Renderers.Droid.Resource.Id.coordinator = global::ComicWrap.Droid.Resource.Id.coordinator;
+			global::AiForms.Renderers.Droid.Resource.Id.custom = global::ComicWrap.Droid.Resource.Id.custom;
+			global::AiForms.Renderers.Droid.Resource.Id.customPanel = global::ComicWrap.Droid.Resource.Id.customPanel;
+			global::AiForms.Renderers.Droid.Resource.Id.decor_content_parent = global::ComicWrap.Droid.Resource.Id.decor_content_parent;
+			global::AiForms.Renderers.Droid.Resource.Id.default_activity_button = global::ComicWrap.Droid.Resource.Id.default_activity_button;
+			global::AiForms.Renderers.Droid.Resource.Id.design_bottom_sheet = global::ComicWrap.Droid.Resource.Id.design_bottom_sheet;
+			global::AiForms.Renderers.Droid.Resource.Id.design_menu_item_action_area = global::ComicWrap.Droid.Resource.Id.design_menu_item_action_area;
+			global::AiForms.Renderers.Droid.Resource.Id.design_menu_item_action_area_stub = global::ComicWrap.Droid.Resource.Id.design_menu_item_action_area_stub;
+			global::AiForms.Renderers.Droid.Resource.Id.design_menu_item_text = global::ComicWrap.Droid.Resource.Id.design_menu_item_text;
+			global::AiForms.Renderers.Droid.Resource.Id.design_navigation_view = global::ComicWrap.Droid.Resource.Id.design_navigation_view;
+			global::AiForms.Renderers.Droid.Resource.Id.disableHome = global::ComicWrap.Droid.Resource.Id.disableHome;
+			global::AiForms.Renderers.Droid.Resource.Id.edit_query = global::ComicWrap.Droid.Resource.Id.edit_query;
+			global::AiForms.Renderers.Droid.Resource.Id.end = global::ComicWrap.Droid.Resource.Id.end;
+			global::AiForms.Renderers.Droid.Resource.Id.end_padder = global::ComicWrap.Droid.Resource.Id.end_padder;
+			global::AiForms.Renderers.Droid.Resource.Id.enterAlways = global::ComicWrap.Droid.Resource.Id.enterAlways;
+			global::AiForms.Renderers.Droid.Resource.Id.enterAlwaysCollapsed = global::ComicWrap.Droid.Resource.Id.enterAlwaysCollapsed;
+			global::AiForms.Renderers.Droid.Resource.Id.exitUntilCollapsed = global::ComicWrap.Droid.Resource.Id.exitUntilCollapsed;
+			global::AiForms.Renderers.Droid.Resource.Id.expand_activities_button = global::ComicWrap.Droid.Resource.Id.expand_activities_button;
+			global::AiForms.Renderers.Droid.Resource.Id.expanded_menu = global::ComicWrap.Droid.Resource.Id.expanded_menu;
+			global::AiForms.Renderers.Droid.Resource.Id.fill = global::ComicWrap.Droid.Resource.Id.fill;
+			global::AiForms.Renderers.Droid.Resource.Id.fill_horizontal = global::ComicWrap.Droid.Resource.Id.fill_horizontal;
+			global::AiForms.Renderers.Droid.Resource.Id.fill_vertical = global::ComicWrap.Droid.Resource.Id.fill_vertical;
+			global::AiForms.Renderers.Droid.Resource.Id.filled = global::ComicWrap.Droid.Resource.Id.filled;
+			global::AiForms.Renderers.Droid.Resource.Id.@fixed = global::ComicWrap.Droid.Resource.Id.@fixed;
+			global::AiForms.Renderers.Droid.Resource.Id.flyoutcontent_appbar = global::ComicWrap.Droid.Resource.Id.flyoutcontent_appbar;
+			global::AiForms.Renderers.Droid.Resource.Id.flyoutcontent_recycler = global::ComicWrap.Droid.Resource.Id.flyoutcontent_recycler;
+			global::AiForms.Renderers.Droid.Resource.Id.forever = global::ComicWrap.Droid.Resource.Id.forever;
+			global::AiForms.Renderers.Droid.Resource.Id.ghost_view = global::ComicWrap.Droid.Resource.Id.ghost_view;
+			global::AiForms.Renderers.Droid.Resource.Id.group_divider = global::ComicWrap.Droid.Resource.Id.group_divider;
+			global::AiForms.Renderers.Droid.Resource.Id.home = global::ComicWrap.Droid.Resource.Id.home;
+			global::AiForms.Renderers.Droid.Resource.Id.homeAsUp = global::ComicWrap.Droid.Resource.Id.homeAsUp;
+			global::AiForms.Renderers.Droid.Resource.Id.icon = global::ComicWrap.Droid.Resource.Id.icon;
+			global::AiForms.Renderers.Droid.Resource.Id.icon_group = global::ComicWrap.Droid.Resource.Id.icon_group;
+			global::AiForms.Renderers.Droid.Resource.Id.ifRoom = global::ComicWrap.Droid.Resource.Id.ifRoom;
+			global::AiForms.Renderers.Droid.Resource.Id.image = global::ComicWrap.Droid.Resource.Id.image;
+			global::AiForms.Renderers.Droid.Resource.Id.info = global::ComicWrap.Droid.Resource.Id.info;
+			global::AiForms.Renderers.Droid.Resource.Id.italic = global::ComicWrap.Droid.Resource.Id.italic;
+			global::AiForms.Renderers.Droid.Resource.Id.item_touch_helper_previous_elevation = global::ComicWrap.Droid.Resource.Id.item_touch_helper_previous_elevation;
+			global::AiForms.Renderers.Droid.Resource.Id.labeled = global::ComicWrap.Droid.Resource.Id.labeled;
+			global::AiForms.Renderers.Droid.Resource.Id.largeLabel = global::ComicWrap.Droid.Resource.Id.largeLabel;
+			global::AiForms.Renderers.Droid.Resource.Id.left = global::ComicWrap.Droid.Resource.Id.left;
+			global::AiForms.Renderers.Droid.Resource.Id.line1 = global::ComicWrap.Droid.Resource.Id.line1;
+			global::AiForms.Renderers.Droid.Resource.Id.line3 = global::ComicWrap.Droid.Resource.Id.line3;
+			global::AiForms.Renderers.Droid.Resource.Id.listMode = global::ComicWrap.Droid.Resource.Id.listMode;
+			global::AiForms.Renderers.Droid.Resource.Id.list_item = global::ComicWrap.Droid.Resource.Id.list_item;
+			global::AiForms.Renderers.Droid.Resource.Id.main_appbar = global::ComicWrap.Droid.Resource.Id.main_appbar;
+			global::AiForms.Renderers.Droid.Resource.Id.main_tablayout = global::ComicWrap.Droid.Resource.Id.main_tablayout;
+			global::AiForms.Renderers.Droid.Resource.Id.main_toolbar = global::ComicWrap.Droid.Resource.Id.main_toolbar;
+			global::AiForms.Renderers.Droid.Resource.Id.masked = global::ComicWrap.Droid.Resource.Id.masked;
+			global::AiForms.Renderers.Droid.Resource.Id.media_actions = global::ComicWrap.Droid.Resource.Id.media_actions;
+			global::AiForms.Renderers.Droid.Resource.Id.message = global::ComicWrap.Droid.Resource.Id.message;
+			global::AiForms.Renderers.Droid.Resource.Id.middle = global::ComicWrap.Droid.Resource.Id.middle;
+			global::AiForms.Renderers.Droid.Resource.Id.mini = global::ComicWrap.Droid.Resource.Id.mini;
+			global::AiForms.Renderers.Droid.Resource.Id.mtrl_child_content_container = global::ComicWrap.Droid.Resource.Id.mtrl_child_content_container;
+			global::AiForms.Renderers.Droid.Resource.Id.mtrl_internal_children_alpha_tag = global::ComicWrap.Droid.Resource.Id.mtrl_internal_children_alpha_tag;
+			global::AiForms.Renderers.Droid.Resource.Id.multiply = global::ComicWrap.Droid.Resource.Id.multiply;
+			global::AiForms.Renderers.Droid.Resource.Id.navigation_header_container = global::ComicWrap.Droid.Resource.Id.navigation_header_container;
+			global::AiForms.Renderers.Droid.Resource.Id.never = global::ComicWrap.Droid.Resource.Id.never;
+			global::AiForms.Renderers.Droid.Resource.Id.none = global::ComicWrap.Droid.Resource.Id.none;
+			global::AiForms.Renderers.Droid.Resource.Id.normal = global::ComicWrap.Droid.Resource.Id.normal;
+			global::AiForms.Renderers.Droid.Resource.Id.notification_background = global::ComicWrap.Droid.Resource.Id.notification_background;
+			global::AiForms.Renderers.Droid.Resource.Id.notification_main_column = global::ComicWrap.Droid.Resource.Id.notification_main_column;
+			global::AiForms.Renderers.Droid.Resource.Id.notification_main_column_container = global::ComicWrap.Droid.Resource.Id.notification_main_column_container;
+			global::AiForms.Renderers.Droid.Resource.Id.outline = global::ComicWrap.Droid.Resource.Id.outline;
+			global::AiForms.Renderers.Droid.Resource.Id.parallax = global::ComicWrap.Droid.Resource.Id.parallax;
+			global::AiForms.Renderers.Droid.Resource.Id.parentPanel = global::ComicWrap.Droid.Resource.Id.parentPanel;
+			global::AiForms.Renderers.Droid.Resource.Id.parent_matrix = global::ComicWrap.Droid.Resource.Id.parent_matrix;
+			global::AiForms.Renderers.Droid.Resource.Id.pin = global::ComicWrap.Droid.Resource.Id.pin;
+			global::AiForms.Renderers.Droid.Resource.Id.progress_circular = global::ComicWrap.Droid.Resource.Id.progress_circular;
+			global::AiForms.Renderers.Droid.Resource.Id.progress_horizontal = global::ComicWrap.Droid.Resource.Id.progress_horizontal;
+			global::AiForms.Renderers.Droid.Resource.Id.radio = global::ComicWrap.Droid.Resource.Id.radio;
+			global::AiForms.Renderers.Droid.Resource.Id.right = global::ComicWrap.Droid.Resource.Id.right;
+			global::AiForms.Renderers.Droid.Resource.Id.right_icon = global::ComicWrap.Droid.Resource.Id.right_icon;
+			global::AiForms.Renderers.Droid.Resource.Id.right_side = global::ComicWrap.Droid.Resource.Id.right_side;
+			global::AiForms.Renderers.Droid.Resource.Id.save_image_matrix = global::ComicWrap.Droid.Resource.Id.save_image_matrix;
+			global::AiForms.Renderers.Droid.Resource.Id.save_non_transition_alpha = global::ComicWrap.Droid.Resource.Id.save_non_transition_alpha;
+			global::AiForms.Renderers.Droid.Resource.Id.save_scale_type = global::ComicWrap.Droid.Resource.Id.save_scale_type;
+			global::AiForms.Renderers.Droid.Resource.Id.screen = global::ComicWrap.Droid.Resource.Id.screen;
+			global::AiForms.Renderers.Droid.Resource.Id.scroll = global::ComicWrap.Droid.Resource.Id.scroll;
+			global::AiForms.Renderers.Droid.Resource.Id.scrollIndicatorDown = global::ComicWrap.Droid.Resource.Id.scrollIndicatorDown;
+			global::AiForms.Renderers.Droid.Resource.Id.scrollIndicatorUp = global::ComicWrap.Droid.Resource.Id.scrollIndicatorUp;
+			global::AiForms.Renderers.Droid.Resource.Id.scrollView = global::ComicWrap.Droid.Resource.Id.scrollView;
+			global::AiForms.Renderers.Droid.Resource.Id.scrollable = global::ComicWrap.Droid.Resource.Id.scrollable;
+			global::AiForms.Renderers.Droid.Resource.Id.search_badge = global::ComicWrap.Droid.Resource.Id.search_badge;
+			global::AiForms.Renderers.Droid.Resource.Id.search_bar = global::ComicWrap.Droid.Resource.Id.search_bar;
+			global::AiForms.Renderers.Droid.Resource.Id.search_button = global::ComicWrap.Droid.Resource.Id.search_button;
+			global::AiForms.Renderers.Droid.Resource.Id.search_close_btn = global::ComicWrap.Droid.Resource.Id.search_close_btn;
+			global::AiForms.Renderers.Droid.Resource.Id.search_edit_frame = global::ComicWrap.Droid.Resource.Id.search_edit_frame;
+			global::AiForms.Renderers.Droid.Resource.Id.search_go_btn = global::ComicWrap.Droid.Resource.Id.search_go_btn;
+			global::AiForms.Renderers.Droid.Resource.Id.search_mag_icon = global::ComicWrap.Droid.Resource.Id.search_mag_icon;
+			global::AiForms.Renderers.Droid.Resource.Id.search_plate = global::ComicWrap.Droid.Resource.Id.search_plate;
+			global::AiForms.Renderers.Droid.Resource.Id.search_src_text = global::ComicWrap.Droid.Resource.Id.search_src_text;
+			global::AiForms.Renderers.Droid.Resource.Id.search_voice_btn = global::ComicWrap.Droid.Resource.Id.search_voice_btn;
+			global::AiForms.Renderers.Droid.Resource.Id.select_dialog_listview = global::ComicWrap.Droid.Resource.Id.select_dialog_listview;
+			global::AiForms.Renderers.Droid.Resource.Id.selected = global::ComicWrap.Droid.Resource.Id.selected;
+			global::AiForms.Renderers.Droid.Resource.Id.shellcontent_appbar = global::ComicWrap.Droid.Resource.Id.shellcontent_appbar;
+			global::AiForms.Renderers.Droid.Resource.Id.shellcontent_toolbar = global::ComicWrap.Droid.Resource.Id.shellcontent_toolbar;
+			global::AiForms.Renderers.Droid.Resource.Id.shortcut = global::ComicWrap.Droid.Resource.Id.shortcut;
+			global::AiForms.Renderers.Droid.Resource.Id.showCustom = global::ComicWrap.Droid.Resource.Id.showCustom;
+			global::AiForms.Renderers.Droid.Resource.Id.showHome = global::ComicWrap.Droid.Resource.Id.showHome;
+			global::AiForms.Renderers.Droid.Resource.Id.showTitle = global::ComicWrap.Droid.Resource.Id.showTitle;
+			global::AiForms.Renderers.Droid.Resource.Id.smallLabel = global::ComicWrap.Droid.Resource.Id.smallLabel;
+			global::AiForms.Renderers.Droid.Resource.Id.snackbar_action = global::ComicWrap.Droid.Resource.Id.snackbar_action;
+			global::AiForms.Renderers.Droid.Resource.Id.snackbar_text = global::ComicWrap.Droid.Resource.Id.snackbar_text;
+			global::AiForms.Renderers.Droid.Resource.Id.snap = global::ComicWrap.Droid.Resource.Id.snap;
+			global::AiForms.Renderers.Droid.Resource.Id.snapMargins = global::ComicWrap.Droid.Resource.Id.snapMargins;
+			global::AiForms.Renderers.Droid.Resource.Id.spacer = global::ComicWrap.Droid.Resource.Id.spacer;
+			global::AiForms.Renderers.Droid.Resource.Id.split_action_bar = global::ComicWrap.Droid.Resource.Id.split_action_bar;
+			global::AiForms.Renderers.Droid.Resource.Id.src_atop = global::ComicWrap.Droid.Resource.Id.src_atop;
+			global::AiForms.Renderers.Droid.Resource.Id.src_in = global::ComicWrap.Droid.Resource.Id.src_in;
+			global::AiForms.Renderers.Droid.Resource.Id.src_over = global::ComicWrap.Droid.Resource.Id.src_over;
+			global::AiForms.Renderers.Droid.Resource.Id.start = global::ComicWrap.Droid.Resource.Id.start;
+			global::AiForms.Renderers.Droid.Resource.Id.status_bar_latest_event_content = global::ComicWrap.Droid.Resource.Id.status_bar_latest_event_content;
+			global::AiForms.Renderers.Droid.Resource.Id.stretch = global::ComicWrap.Droid.Resource.Id.stretch;
+			global::AiForms.Renderers.Droid.Resource.Id.submenuarrow = global::ComicWrap.Droid.Resource.Id.submenuarrow;
+			global::AiForms.Renderers.Droid.Resource.Id.submit_area = global::ComicWrap.Droid.Resource.Id.submit_area;
+			global::AiForms.Renderers.Droid.Resource.Id.tabMode = global::ComicWrap.Droid.Resource.Id.tabMode;
+			global::AiForms.Renderers.Droid.Resource.Id.tag_transition_group = global::ComicWrap.Droid.Resource.Id.tag_transition_group;
+			global::AiForms.Renderers.Droid.Resource.Id.tag_unhandled_key_event_manager = global::ComicWrap.Droid.Resource.Id.tag_unhandled_key_event_manager;
+			global::AiForms.Renderers.Droid.Resource.Id.tag_unhandled_key_listeners = global::ComicWrap.Droid.Resource.Id.tag_unhandled_key_listeners;
+			global::AiForms.Renderers.Droid.Resource.Id.text = global::ComicWrap.Droid.Resource.Id.text;
+			global::AiForms.Renderers.Droid.Resource.Id.text2 = global::ComicWrap.Droid.Resource.Id.text2;
+			global::AiForms.Renderers.Droid.Resource.Id.textSpacerNoButtons = global::ComicWrap.Droid.Resource.Id.textSpacerNoButtons;
+			global::AiForms.Renderers.Droid.Resource.Id.textSpacerNoTitle = global::ComicWrap.Droid.Resource.Id.textSpacerNoTitle;
+			global::AiForms.Renderers.Droid.Resource.Id.textStart = global::ComicWrap.Droid.Resource.Id.textStart;
+			global::AiForms.Renderers.Droid.Resource.Id.text_input_password_toggle = global::ComicWrap.Droid.Resource.Id.text_input_password_toggle;
+			global::AiForms.Renderers.Droid.Resource.Id.textinput_counter = global::ComicWrap.Droid.Resource.Id.textinput_counter;
+			global::AiForms.Renderers.Droid.Resource.Id.textinput_error = global::ComicWrap.Droid.Resource.Id.textinput_error;
+			global::AiForms.Renderers.Droid.Resource.Id.textinput_helper_text = global::ComicWrap.Droid.Resource.Id.textinput_helper_text;
+			global::AiForms.Renderers.Droid.Resource.Id.time = global::ComicWrap.Droid.Resource.Id.time;
+			global::AiForms.Renderers.Droid.Resource.Id.title = global::ComicWrap.Droid.Resource.Id.title;
+			global::AiForms.Renderers.Droid.Resource.Id.titleDividerNoCustom = global::ComicWrap.Droid.Resource.Id.titleDividerNoCustom;
+			global::AiForms.Renderers.Droid.Resource.Id.title_template = global::ComicWrap.Droid.Resource.Id.title_template;
+			global::AiForms.Renderers.Droid.Resource.Id.top = global::ComicWrap.Droid.Resource.Id.top;
+			global::AiForms.Renderers.Droid.Resource.Id.topPanel = global::ComicWrap.Droid.Resource.Id.topPanel;
+			global::AiForms.Renderers.Droid.Resource.Id.touch_outside = global::ComicWrap.Droid.Resource.Id.touch_outside;
+			global::AiForms.Renderers.Droid.Resource.Id.transition_current_scene = global::ComicWrap.Droid.Resource.Id.transition_current_scene;
+			global::AiForms.Renderers.Droid.Resource.Id.transition_layout_save = global::ComicWrap.Droid.Resource.Id.transition_layout_save;
+			global::AiForms.Renderers.Droid.Resource.Id.transition_position = global::ComicWrap.Droid.Resource.Id.transition_position;
+			global::AiForms.Renderers.Droid.Resource.Id.transition_scene_layoutid_cache = global::ComicWrap.Droid.Resource.Id.transition_scene_layoutid_cache;
+			global::AiForms.Renderers.Droid.Resource.Id.transition_transform = global::ComicWrap.Droid.Resource.Id.transition_transform;
+			global::AiForms.Renderers.Droid.Resource.Id.uniform = global::ComicWrap.Droid.Resource.Id.uniform;
+			global::AiForms.Renderers.Droid.Resource.Id.unlabeled = global::ComicWrap.Droid.Resource.Id.unlabeled;
+			global::AiForms.Renderers.Droid.Resource.Id.up = global::ComicWrap.Droid.Resource.Id.up;
+			global::AiForms.Renderers.Droid.Resource.Id.useLogo = global::ComicWrap.Droid.Resource.Id.useLogo;
+			global::AiForms.Renderers.Droid.Resource.Id.view_offset_helper = global::ComicWrap.Droid.Resource.Id.view_offset_helper;
+			global::AiForms.Renderers.Droid.Resource.Id.visible = global::ComicWrap.Droid.Resource.Id.visible;
+			global::AiForms.Renderers.Droid.Resource.Id.withText = global::ComicWrap.Droid.Resource.Id.withText;
+			global::AiForms.Renderers.Droid.Resource.Id.wrap_content = global::ComicWrap.Droid.Resource.Id.wrap_content;
+			global::AiForms.Renderers.Droid.Resource.Integer.abc_config_activityDefaultDur = global::ComicWrap.Droid.Resource.Integer.abc_config_activityDefaultDur;
+			global::AiForms.Renderers.Droid.Resource.Integer.abc_config_activityShortDur = global::ComicWrap.Droid.Resource.Integer.abc_config_activityShortDur;
+			global::AiForms.Renderers.Droid.Resource.Integer.app_bar_elevation_anim_duration = global::ComicWrap.Droid.Resource.Integer.app_bar_elevation_anim_duration;
+			global::AiForms.Renderers.Droid.Resource.Integer.bottom_sheet_slide_duration = global::ComicWrap.Droid.Resource.Integer.bottom_sheet_slide_duration;
+			global::AiForms.Renderers.Droid.Resource.Integer.cancel_button_image_alpha = global::ComicWrap.Droid.Resource.Integer.cancel_button_image_alpha;
+			global::AiForms.Renderers.Droid.Resource.Integer.config_tooltipAnimTime = global::ComicWrap.Droid.Resource.Integer.config_tooltipAnimTime;
+			global::AiForms.Renderers.Droid.Resource.Integer.design_snackbar_text_max_lines = global::ComicWrap.Droid.Resource.Integer.design_snackbar_text_max_lines;
+			global::AiForms.Renderers.Droid.Resource.Integer.design_tab_indicator_anim_duration_ms = global::ComicWrap.Droid.Resource.Integer.design_tab_indicator_anim_duration_ms;
+			global::AiForms.Renderers.Droid.Resource.Integer.hide_password_duration = global::ComicWrap.Droid.Resource.Integer.hide_password_duration;
+			global::AiForms.Renderers.Droid.Resource.Integer.mtrl_btn_anim_delay_ms = global::ComicWrap.Droid.Resource.Integer.mtrl_btn_anim_delay_ms;
+			global::AiForms.Renderers.Droid.Resource.Integer.mtrl_btn_anim_duration_ms = global::ComicWrap.Droid.Resource.Integer.mtrl_btn_anim_duration_ms;
+			global::AiForms.Renderers.Droid.Resource.Integer.mtrl_chip_anim_duration = global::ComicWrap.Droid.Resource.Integer.mtrl_chip_anim_duration;
+			global::AiForms.Renderers.Droid.Resource.Integer.mtrl_tab_indicator_anim_duration_ms = global::ComicWrap.Droid.Resource.Integer.mtrl_tab_indicator_anim_duration_ms;
+			global::AiForms.Renderers.Droid.Resource.Integer.show_password_duration = global::ComicWrap.Droid.Resource.Integer.show_password_duration;
+			global::AiForms.Renderers.Droid.Resource.Integer.status_bar_notification_info_maxnum = global::ComicWrap.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::AiForms.Renderers.Droid.Resource.Interpolator.mtrl_fast_out_linear_in = global::ComicWrap.Droid.Resource.Interpolator.mtrl_fast_out_linear_in;
+			global::AiForms.Renderers.Droid.Resource.Interpolator.mtrl_fast_out_slow_in = global::ComicWrap.Droid.Resource.Interpolator.mtrl_fast_out_slow_in;
+			global::AiForms.Renderers.Droid.Resource.Interpolator.mtrl_linear = global::ComicWrap.Droid.Resource.Interpolator.mtrl_linear;
+			global::AiForms.Renderers.Droid.Resource.Interpolator.mtrl_linear_out_slow_in = global::ComicWrap.Droid.Resource.Interpolator.mtrl_linear_out_slow_in;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_action_bar_title_item = global::ComicWrap.Droid.Resource.Layout.abc_action_bar_title_item;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_action_bar_up_container = global::ComicWrap.Droid.Resource.Layout.abc_action_bar_up_container;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_action_menu_item_layout = global::ComicWrap.Droid.Resource.Layout.abc_action_menu_item_layout;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_action_menu_layout = global::ComicWrap.Droid.Resource.Layout.abc_action_menu_layout;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_action_mode_bar = global::ComicWrap.Droid.Resource.Layout.abc_action_mode_bar;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_action_mode_close_item_material = global::ComicWrap.Droid.Resource.Layout.abc_action_mode_close_item_material;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_activity_chooser_view = global::ComicWrap.Droid.Resource.Layout.abc_activity_chooser_view;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_activity_chooser_view_list_item = global::ComicWrap.Droid.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_alert_dialog_button_bar_material = global::ComicWrap.Droid.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_alert_dialog_material = global::ComicWrap.Droid.Resource.Layout.abc_alert_dialog_material;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_alert_dialog_title_material = global::ComicWrap.Droid.Resource.Layout.abc_alert_dialog_title_material;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_cascading_menu_item_layout = global::ComicWrap.Droid.Resource.Layout.abc_cascading_menu_item_layout;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_dialog_title_material = global::ComicWrap.Droid.Resource.Layout.abc_dialog_title_material;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_expanded_menu_layout = global::ComicWrap.Droid.Resource.Layout.abc_expanded_menu_layout;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_list_menu_item_checkbox = global::ComicWrap.Droid.Resource.Layout.abc_list_menu_item_checkbox;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_list_menu_item_icon = global::ComicWrap.Droid.Resource.Layout.abc_list_menu_item_icon;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_list_menu_item_layout = global::ComicWrap.Droid.Resource.Layout.abc_list_menu_item_layout;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_list_menu_item_radio = global::ComicWrap.Droid.Resource.Layout.abc_list_menu_item_radio;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_popup_menu_header_item_layout = global::ComicWrap.Droid.Resource.Layout.abc_popup_menu_header_item_layout;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_popup_menu_item_layout = global::ComicWrap.Droid.Resource.Layout.abc_popup_menu_item_layout;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_screen_content_include = global::ComicWrap.Droid.Resource.Layout.abc_screen_content_include;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_screen_simple = global::ComicWrap.Droid.Resource.Layout.abc_screen_simple;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode = global::ComicWrap.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_screen_toolbar = global::ComicWrap.Droid.Resource.Layout.abc_screen_toolbar;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line = global::ComicWrap.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_search_view = global::ComicWrap.Droid.Resource.Layout.abc_search_view;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_select_dialog_material = global::ComicWrap.Droid.Resource.Layout.abc_select_dialog_material;
+			global::AiForms.Renderers.Droid.Resource.Layout.abc_tooltip = global::ComicWrap.Droid.Resource.Layout.abc_tooltip;
+			global::AiForms.Renderers.Droid.Resource.Layout.BottomTabLayout = global::ComicWrap.Droid.Resource.Layout.BottomTabLayout;
+			global::AiForms.Renderers.Droid.Resource.Layout.browser_actions_context_menu_page = global::ComicWrap.Droid.Resource.Layout.browser_actions_context_menu_page;
+			global::AiForms.Renderers.Droid.Resource.Layout.browser_actions_context_menu_row = global::ComicWrap.Droid.Resource.Layout.browser_actions_context_menu_row;
+			global::AiForms.Renderers.Droid.Resource.Layout.CellBaseView = global::ComicWrap.Droid.Resource.Layout.CellBaseView;
+			global::AiForms.Renderers.Droid.Resource.Layout.ContentCell = global::ComicWrap.Droid.Resource.Layout.ContentCell;
+			global::AiForms.Renderers.Droid.Resource.Layout.design_bottom_navigation_item = global::ComicWrap.Droid.Resource.Layout.design_bottom_navigation_item;
+			global::AiForms.Renderers.Droid.Resource.Layout.design_bottom_sheet_dialog = global::ComicWrap.Droid.Resource.Layout.design_bottom_sheet_dialog;
+			global::AiForms.Renderers.Droid.Resource.Layout.design_layout_snackbar = global::ComicWrap.Droid.Resource.Layout.design_layout_snackbar;
+			global::AiForms.Renderers.Droid.Resource.Layout.design_layout_snackbar_include = global::ComicWrap.Droid.Resource.Layout.design_layout_snackbar_include;
+			global::AiForms.Renderers.Droid.Resource.Layout.design_layout_tab_icon = global::ComicWrap.Droid.Resource.Layout.design_layout_tab_icon;
+			global::AiForms.Renderers.Droid.Resource.Layout.design_layout_tab_text = global::ComicWrap.Droid.Resource.Layout.design_layout_tab_text;
+			global::AiForms.Renderers.Droid.Resource.Layout.design_menu_item_action_area = global::ComicWrap.Droid.Resource.Layout.design_menu_item_action_area;
+			global::AiForms.Renderers.Droid.Resource.Layout.design_navigation_item = global::ComicWrap.Droid.Resource.Layout.design_navigation_item;
+			global::AiForms.Renderers.Droid.Resource.Layout.design_navigation_item_header = global::ComicWrap.Droid.Resource.Layout.design_navigation_item_header;
+			global::AiForms.Renderers.Droid.Resource.Layout.design_navigation_item_separator = global::ComicWrap.Droid.Resource.Layout.design_navigation_item_separator;
+			global::AiForms.Renderers.Droid.Resource.Layout.design_navigation_item_subheader = global::ComicWrap.Droid.Resource.Layout.design_navigation_item_subheader;
+			global::AiForms.Renderers.Droid.Resource.Layout.design_navigation_menu = global::ComicWrap.Droid.Resource.Layout.design_navigation_menu;
+			global::AiForms.Renderers.Droid.Resource.Layout.design_navigation_menu_item = global::ComicWrap.Droid.Resource.Layout.design_navigation_menu_item;
+			global::AiForms.Renderers.Droid.Resource.Layout.design_text_input_password_icon = global::ComicWrap.Droid.Resource.Layout.design_text_input_password_icon;
+			global::AiForms.Renderers.Droid.Resource.Layout.FlyoutContent = global::ComicWrap.Droid.Resource.Layout.FlyoutContent;
+			global::AiForms.Renderers.Droid.Resource.Layout.FooterCell = global::ComicWrap.Droid.Resource.Layout.FooterCell;
+			global::AiForms.Renderers.Droid.Resource.Layout.HeaderCell = global::ComicWrap.Droid.Resource.Layout.HeaderCell;
+			global::AiForms.Renderers.Droid.Resource.Layout.mtrl_layout_snackbar = global::ComicWrap.Droid.Resource.Layout.mtrl_layout_snackbar;
+			global::AiForms.Renderers.Droid.Resource.Layout.mtrl_layout_snackbar_include = global::ComicWrap.Droid.Resource.Layout.mtrl_layout_snackbar_include;
+			global::AiForms.Renderers.Droid.Resource.Layout.notification_action = global::ComicWrap.Droid.Resource.Layout.notification_action;
+			global::AiForms.Renderers.Droid.Resource.Layout.notification_action_tombstone = global::ComicWrap.Droid.Resource.Layout.notification_action_tombstone;
+			global::AiForms.Renderers.Droid.Resource.Layout.notification_media_action = global::ComicWrap.Droid.Resource.Layout.notification_media_action;
+			global::AiForms.Renderers.Droid.Resource.Layout.notification_media_cancel_action = global::ComicWrap.Droid.Resource.Layout.notification_media_cancel_action;
+			global::AiForms.Renderers.Droid.Resource.Layout.notification_template_big_media = global::ComicWrap.Droid.Resource.Layout.notification_template_big_media;
+			global::AiForms.Renderers.Droid.Resource.Layout.notification_template_big_media_custom = global::ComicWrap.Droid.Resource.Layout.notification_template_big_media_custom;
+			global::AiForms.Renderers.Droid.Resource.Layout.notification_template_big_media_narrow = global::ComicWrap.Droid.Resource.Layout.notification_template_big_media_narrow;
+			global::AiForms.Renderers.Droid.Resource.Layout.notification_template_big_media_narrow_custom = global::ComicWrap.Droid.Resource.Layout.notification_template_big_media_narrow_custom;
+			global::AiForms.Renderers.Droid.Resource.Layout.notification_template_custom_big = global::ComicWrap.Droid.Resource.Layout.notification_template_custom_big;
+			global::AiForms.Renderers.Droid.Resource.Layout.notification_template_icon_group = global::ComicWrap.Droid.Resource.Layout.notification_template_icon_group;
+			global::AiForms.Renderers.Droid.Resource.Layout.notification_template_lines_media = global::ComicWrap.Droid.Resource.Layout.notification_template_lines_media;
+			global::AiForms.Renderers.Droid.Resource.Layout.notification_template_media = global::ComicWrap.Droid.Resource.Layout.notification_template_media;
+			global::AiForms.Renderers.Droid.Resource.Layout.notification_template_media_custom = global::ComicWrap.Droid.Resource.Layout.notification_template_media_custom;
+			global::AiForms.Renderers.Droid.Resource.Layout.notification_template_part_chronometer = global::ComicWrap.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::AiForms.Renderers.Droid.Resource.Layout.notification_template_part_time = global::ComicWrap.Droid.Resource.Layout.notification_template_part_time;
+			global::AiForms.Renderers.Droid.Resource.Layout.RootLayout = global::ComicWrap.Droid.Resource.Layout.RootLayout;
+			global::AiForms.Renderers.Droid.Resource.Layout.select_dialog_item_material = global::ComicWrap.Droid.Resource.Layout.select_dialog_item_material;
+			global::AiForms.Renderers.Droid.Resource.Layout.select_dialog_multichoice_material = global::ComicWrap.Droid.Resource.Layout.select_dialog_multichoice_material;
+			global::AiForms.Renderers.Droid.Resource.Layout.select_dialog_singlechoice_material = global::ComicWrap.Droid.Resource.Layout.select_dialog_singlechoice_material;
+			global::AiForms.Renderers.Droid.Resource.Layout.ShellContent = global::ComicWrap.Droid.Resource.Layout.ShellContent;
+			global::AiForms.Renderers.Droid.Resource.Layout.support_simple_spinner_dropdown_item = global::ComicWrap.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::AiForms.Renderers.Droid.Resource.String.abc_action_bar_home_description = global::ComicWrap.Droid.Resource.String.abc_action_bar_home_description;
+			global::AiForms.Renderers.Droid.Resource.String.abc_action_bar_up_description = global::ComicWrap.Droid.Resource.String.abc_action_bar_up_description;
+			global::AiForms.Renderers.Droid.Resource.String.abc_action_menu_overflow_description = global::ComicWrap.Droid.Resource.String.abc_action_menu_overflow_description;
+			global::AiForms.Renderers.Droid.Resource.String.abc_action_mode_done = global::ComicWrap.Droid.Resource.String.abc_action_mode_done;
+			global::AiForms.Renderers.Droid.Resource.String.abc_activity_chooser_view_see_all = global::ComicWrap.Droid.Resource.String.abc_activity_chooser_view_see_all;
+			global::AiForms.Renderers.Droid.Resource.String.abc_activitychooserview_choose_application = global::ComicWrap.Droid.Resource.String.abc_activitychooserview_choose_application;
+			global::AiForms.Renderers.Droid.Resource.String.abc_capital_off = global::ComicWrap.Droid.Resource.String.abc_capital_off;
+			global::AiForms.Renderers.Droid.Resource.String.abc_capital_on = global::ComicWrap.Droid.Resource.String.abc_capital_on;
+			global::AiForms.Renderers.Droid.Resource.String.abc_font_family_body_1_material = global::ComicWrap.Droid.Resource.String.abc_font_family_body_1_material;
+			global::AiForms.Renderers.Droid.Resource.String.abc_font_family_body_2_material = global::ComicWrap.Droid.Resource.String.abc_font_family_body_2_material;
+			global::AiForms.Renderers.Droid.Resource.String.abc_font_family_button_material = global::ComicWrap.Droid.Resource.String.abc_font_family_button_material;
+			global::AiForms.Renderers.Droid.Resource.String.abc_font_family_caption_material = global::ComicWrap.Droid.Resource.String.abc_font_family_caption_material;
+			global::AiForms.Renderers.Droid.Resource.String.abc_font_family_display_1_material = global::ComicWrap.Droid.Resource.String.abc_font_family_display_1_material;
+			global::AiForms.Renderers.Droid.Resource.String.abc_font_family_display_2_material = global::ComicWrap.Droid.Resource.String.abc_font_family_display_2_material;
+			global::AiForms.Renderers.Droid.Resource.String.abc_font_family_display_3_material = global::ComicWrap.Droid.Resource.String.abc_font_family_display_3_material;
+			global::AiForms.Renderers.Droid.Resource.String.abc_font_family_display_4_material = global::ComicWrap.Droid.Resource.String.abc_font_family_display_4_material;
+			global::AiForms.Renderers.Droid.Resource.String.abc_font_family_headline_material = global::ComicWrap.Droid.Resource.String.abc_font_family_headline_material;
+			global::AiForms.Renderers.Droid.Resource.String.abc_font_family_menu_material = global::ComicWrap.Droid.Resource.String.abc_font_family_menu_material;
+			global::AiForms.Renderers.Droid.Resource.String.abc_font_family_subhead_material = global::ComicWrap.Droid.Resource.String.abc_font_family_subhead_material;
+			global::AiForms.Renderers.Droid.Resource.String.abc_font_family_title_material = global::ComicWrap.Droid.Resource.String.abc_font_family_title_material;
+			global::AiForms.Renderers.Droid.Resource.String.abc_menu_alt_shortcut_label = global::ComicWrap.Droid.Resource.String.abc_menu_alt_shortcut_label;
+			global::AiForms.Renderers.Droid.Resource.String.abc_menu_ctrl_shortcut_label = global::ComicWrap.Droid.Resource.String.abc_menu_ctrl_shortcut_label;
+			global::AiForms.Renderers.Droid.Resource.String.abc_menu_delete_shortcut_label = global::ComicWrap.Droid.Resource.String.abc_menu_delete_shortcut_label;
+			global::AiForms.Renderers.Droid.Resource.String.abc_menu_enter_shortcut_label = global::ComicWrap.Droid.Resource.String.abc_menu_enter_shortcut_label;
+			global::AiForms.Renderers.Droid.Resource.String.abc_menu_function_shortcut_label = global::ComicWrap.Droid.Resource.String.abc_menu_function_shortcut_label;
+			global::AiForms.Renderers.Droid.Resource.String.abc_menu_meta_shortcut_label = global::ComicWrap.Droid.Resource.String.abc_menu_meta_shortcut_label;
+			global::AiForms.Renderers.Droid.Resource.String.abc_menu_shift_shortcut_label = global::ComicWrap.Droid.Resource.String.abc_menu_shift_shortcut_label;
+			global::AiForms.Renderers.Droid.Resource.String.abc_menu_space_shortcut_label = global::ComicWrap.Droid.Resource.String.abc_menu_space_shortcut_label;
+			global::AiForms.Renderers.Droid.Resource.String.abc_menu_sym_shortcut_label = global::ComicWrap.Droid.Resource.String.abc_menu_sym_shortcut_label;
+			global::AiForms.Renderers.Droid.Resource.String.abc_prepend_shortcut_label = global::ComicWrap.Droid.Resource.String.abc_prepend_shortcut_label;
+			global::AiForms.Renderers.Droid.Resource.String.abc_search_hint = global::ComicWrap.Droid.Resource.String.abc_search_hint;
+			global::AiForms.Renderers.Droid.Resource.String.abc_searchview_description_clear = global::ComicWrap.Droid.Resource.String.abc_searchview_description_clear;
+			global::AiForms.Renderers.Droid.Resource.String.abc_searchview_description_query = global::ComicWrap.Droid.Resource.String.abc_searchview_description_query;
+			global::AiForms.Renderers.Droid.Resource.String.abc_searchview_description_search = global::ComicWrap.Droid.Resource.String.abc_searchview_description_search;
+			global::AiForms.Renderers.Droid.Resource.String.abc_searchview_description_submit = global::ComicWrap.Droid.Resource.String.abc_searchview_description_submit;
+			global::AiForms.Renderers.Droid.Resource.String.abc_searchview_description_voice = global::ComicWrap.Droid.Resource.String.abc_searchview_description_voice;
+			global::AiForms.Renderers.Droid.Resource.String.abc_shareactionprovider_share_with = global::ComicWrap.Droid.Resource.String.abc_shareactionprovider_share_with;
+			global::AiForms.Renderers.Droid.Resource.String.abc_shareactionprovider_share_with_application = global::ComicWrap.Droid.Resource.String.abc_shareactionprovider_share_with_application;
+			global::AiForms.Renderers.Droid.Resource.String.abc_toolbar_collapse_description = global::ComicWrap.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::AiForms.Renderers.Droid.Resource.String.appbar_scrolling_view_behavior = global::ComicWrap.Droid.Resource.String.appbar_scrolling_view_behavior;
+			global::AiForms.Renderers.Droid.Resource.String.bottom_sheet_behavior = global::ComicWrap.Droid.Resource.String.bottom_sheet_behavior;
+			global::AiForms.Renderers.Droid.Resource.String.character_counter_content_description = global::ComicWrap.Droid.Resource.String.character_counter_content_description;
+			global::AiForms.Renderers.Droid.Resource.String.character_counter_pattern = global::ComicWrap.Droid.Resource.String.character_counter_pattern;
+			global::AiForms.Renderers.Droid.Resource.String.fab_transformation_scrim_behavior = global::ComicWrap.Droid.Resource.String.fab_transformation_scrim_behavior;
+			global::AiForms.Renderers.Droid.Resource.String.fab_transformation_sheet_behavior = global::ComicWrap.Droid.Resource.String.fab_transformation_sheet_behavior;
+			global::AiForms.Renderers.Droid.Resource.String.hide_bottom_view_on_scroll_behavior = global::ComicWrap.Droid.Resource.String.hide_bottom_view_on_scroll_behavior;
+			global::AiForms.Renderers.Droid.Resource.String.library_name = global::ComicWrap.Droid.Resource.String.library_name;
+			global::AiForms.Renderers.Droid.Resource.String.mtrl_chip_close_icon_content_description = global::ComicWrap.Droid.Resource.String.mtrl_chip_close_icon_content_description;
+			global::AiForms.Renderers.Droid.Resource.String.password_toggle_content_description = global::ComicWrap.Droid.Resource.String.password_toggle_content_description;
+			global::AiForms.Renderers.Droid.Resource.String.path_password_eye = global::ComicWrap.Droid.Resource.String.path_password_eye;
+			global::AiForms.Renderers.Droid.Resource.String.path_password_eye_mask_strike_through = global::ComicWrap.Droid.Resource.String.path_password_eye_mask_strike_through;
+			global::AiForms.Renderers.Droid.Resource.String.path_password_eye_mask_visible = global::ComicWrap.Droid.Resource.String.path_password_eye_mask_visible;
+			global::AiForms.Renderers.Droid.Resource.String.path_password_strike_through = global::ComicWrap.Droid.Resource.String.path_password_strike_through;
+			global::AiForms.Renderers.Droid.Resource.String.search_menu_title = global::ComicWrap.Droid.Resource.String.search_menu_title;
+			global::AiForms.Renderers.Droid.Resource.String.status_bar_notification_info_overflow = global::ComicWrap.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::AiForms.Renderers.Droid.Resource.Style.AlertDialog_AppCompat = global::ComicWrap.Droid.Resource.Style.AlertDialog_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.AlertDialog_AppCompat_Light = global::ComicWrap.Droid.Resource.Style.AlertDialog_AppCompat_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Animation_AppCompat_Dialog = global::ComicWrap.Droid.Resource.Style.Animation_AppCompat_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Animation_AppCompat_DropDownUp = global::ComicWrap.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::AiForms.Renderers.Droid.Resource.Style.Animation_AppCompat_Tooltip = global::ComicWrap.Droid.Resource.Style.Animation_AppCompat_Tooltip;
+			global::AiForms.Renderers.Droid.Resource.Style.Animation_Design_BottomSheetDialog = global::ComicWrap.Droid.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_AlertDialog_AppCompat = global::ComicWrap.Droid.Resource.Style.Base_AlertDialog_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light = global::ComicWrap.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Animation_AppCompat_Dialog = global::ComicWrap.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::ComicWrap.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip = global::ComicWrap.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_CardView = global::ComicWrap.Droid.Resource.Style.Base_CardView;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat = global::ComicWrap.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::ComicWrap.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Tooltip = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Tooltip;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::ComicWrap.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_AppCompat = global::ComicWrap.Droid.Resource.Style.Base_Theme_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::ComicWrap.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_AppCompat_Dialog = global::ComicWrap.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::ComicWrap.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::ComicWrap.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::ComicWrap.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::ComicWrap.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_AppCompat_Light = global::ComicWrap.Droid.Resource.Style.Base_Theme_AppCompat_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::ComicWrap.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::ComicWrap.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::ComicWrap.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::ComicWrap.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::ComicWrap.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::ComicWrap.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_MaterialComponents = global::ComicWrap.Droid.Resource.Style.Base_Theme_MaterialComponents;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_MaterialComponents_Bridge = global::ComicWrap.Droid.Resource.Style.Base_Theme_MaterialComponents_Bridge;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_MaterialComponents_CompactMenu = global::ComicWrap.Droid.Resource.Style.Base_Theme_MaterialComponents_CompactMenu;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog = global::ComicWrap.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert = global::ComicWrap.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize = global::ComicWrap.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth = global::ComicWrap.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge = global::ComicWrap.Droid.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_MaterialComponents_Light = global::ComicWrap.Droid.Resource.Style.Base_Theme_MaterialComponents_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Bridge = global::ComicWrap.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Bridge;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar = global::ComicWrap.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::ComicWrap.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog = global::ComicWrap.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert = global::ComicWrap.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize = global::ComicWrap.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth = global::ComicWrap.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge = global::ComicWrap.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_ThemeOverlay_AppCompat = global::ComicWrap.Droid.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::ComicWrap.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::ComicWrap.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::ComicWrap.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::ComicWrap.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::ComicWrap.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::ComicWrap.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog = global::ComicWrap.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert = global::ComicWrap.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V14_Theme_MaterialComponents = global::ComicWrap.Droid.Resource.Style.Base_V14_Theme_MaterialComponents;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge = global::ComicWrap.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog = global::ComicWrap.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light = global::ComicWrap.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge = global::ComicWrap.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::ComicWrap.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog = global::ComicWrap.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog = global::ComicWrap.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert = global::ComicWrap.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V21_Theme_AppCompat = global::ComicWrap.Droid.Resource.Style.Base_V21_Theme_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::ComicWrap.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light = global::ComicWrap.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::ComicWrap.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::ComicWrap.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V22_Theme_AppCompat = global::ComicWrap.Droid.Resource.Style.Base_V22_Theme_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light = global::ComicWrap.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V23_Theme_AppCompat = global::ComicWrap.Droid.Resource.Style.Base_V23_Theme_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light = global::ComicWrap.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V26_Theme_AppCompat = global::ComicWrap.Droid.Resource.Style.Base_V26_Theme_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V26_Theme_AppCompat_Light = global::ComicWrap.Droid.Resource.Style.Base_V26_Theme_AppCompat_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar = global::ComicWrap.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V28_Theme_AppCompat = global::ComicWrap.Droid.Resource.Style.Base_V28_Theme_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V28_Theme_AppCompat_Light = global::ComicWrap.Droid.Resource.Style.Base_V28_Theme_AppCompat_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V7_Theme_AppCompat = global::ComicWrap.Droid.Resource.Style.Base_V7_Theme_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::ComicWrap.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light = global::ComicWrap.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::ComicWrap.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::ComicWrap.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::ComicWrap.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::ComicWrap.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar = global::ComicWrap.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Button = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_Button;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_EditText = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ListView = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_SearchView = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Spinner = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::ComicWrap.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_Design_TabLayout = global::ComicWrap.Droid.Resource.Style.Base_Widget_Design_TabLayout;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_MaterialComponents_Chip = global::ComicWrap.Droid.Resource.Style.Base_Widget_MaterialComponents_Chip;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText = global::ComicWrap.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText;
+			global::AiForms.Renderers.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout = global::ComicWrap.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout;
+			global::AiForms.Renderers.Droid.Resource.Style.CardView = global::ComicWrap.Droid.Resource.Style.CardView;
+			global::AiForms.Renderers.Droid.Resource.Style.CardView_Dark = global::ComicWrap.Droid.Resource.Style.CardView_Dark;
+			global::AiForms.Renderers.Droid.Resource.Style.CardView_Light = global::ComicWrap.Droid.Resource.Style.CardView_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Platform_AppCompat = global::ComicWrap.Droid.Resource.Style.Platform_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.Platform_AppCompat_Light = global::ComicWrap.Droid.Resource.Style.Platform_AppCompat_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Platform_MaterialComponents = global::ComicWrap.Droid.Resource.Style.Platform_MaterialComponents;
+			global::AiForms.Renderers.Droid.Resource.Style.Platform_MaterialComponents_Dialog = global::ComicWrap.Droid.Resource.Style.Platform_MaterialComponents_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Platform_MaterialComponents_Light = global::ComicWrap.Droid.Resource.Style.Platform_MaterialComponents_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Platform_MaterialComponents_Light_Dialog = global::ComicWrap.Droid.Resource.Style.Platform_MaterialComponents_Light_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat = global::ComicWrap.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::ComicWrap.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::AiForms.Renderers.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::ComicWrap.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Platform_V21_AppCompat = global::ComicWrap.Droid.Resource.Style.Platform_V21_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.Platform_V21_AppCompat_Light = global::ComicWrap.Droid.Resource.Style.Platform_V21_AppCompat_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Platform_V25_AppCompat = global::ComicWrap.Droid.Resource.Style.Platform_V25_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.Platform_V25_AppCompat_Light = global::ComicWrap.Droid.Resource.Style.Platform_V25_AppCompat_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner = global::ComicWrap.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::AiForms.Renderers.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::ComicWrap.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::ComicWrap.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::AiForms.Renderers.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::ComicWrap.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::AiForms.Renderers.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::ComicWrap.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::AiForms.Renderers.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::ComicWrap.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::AiForms.Renderers.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut = global::ComicWrap.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut;
+			global::AiForms.Renderers.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow = global::ComicWrap.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow;
+			global::AiForms.Renderers.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::ComicWrap.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::AiForms.Renderers.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Title = global::ComicWrap.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Title;
+			global::AiForms.Renderers.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::ComicWrap.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::AiForms.Renderers.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::ComicWrap.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::AiForms.Renderers.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::ComicWrap.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::AiForms.Renderers.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::ComicWrap.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::AiForms.Renderers.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::ComicWrap.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::AiForms.Renderers.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::ComicWrap.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::AiForms.Renderers.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::ComicWrap.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::AiForms.Renderers.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::ComicWrap.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Body1 = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Body2 = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Button = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Button;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Caption = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Display1 = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Display2 = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Display3 = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Display4 = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Headline = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Inverse = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Large = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Large;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Medium = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Menu = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Small = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Small;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Subhead = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Title = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Title;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Tooltip = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Tooltip;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::ComicWrap.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Compat_Notification = global::ComicWrap.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Compat_Notification_Info = global::ComicWrap.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media = global::ComicWrap.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::ComicWrap.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media = global::ComicWrap.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Compat_Notification_Media = global::ComicWrap.Droid.Resource.Style.TextAppearance_Compat_Notification_Media;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Compat_Notification_Time = global::ComicWrap.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media = global::ComicWrap.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Compat_Notification_Title = global::ComicWrap.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media = global::ComicWrap.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded = global::ComicWrap.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Design_Counter = global::ComicWrap.Droid.Resource.Style.TextAppearance_Design_Counter;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow = global::ComicWrap.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Design_Error = global::ComicWrap.Droid.Resource.Style.TextAppearance_Design_Error;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Design_HelperText = global::ComicWrap.Droid.Resource.Style.TextAppearance_Design_HelperText;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Design_Hint = global::ComicWrap.Droid.Resource.Style.TextAppearance_Design_Hint;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message = global::ComicWrap.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Design_Tab = global::ComicWrap.Droid.Resource.Style.TextAppearance_Design_Tab;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_MaterialComponents_Body1 = global::ComicWrap.Droid.Resource.Style.TextAppearance_MaterialComponents_Body1;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_MaterialComponents_Body2 = global::ComicWrap.Droid.Resource.Style.TextAppearance_MaterialComponents_Body2;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_MaterialComponents_Button = global::ComicWrap.Droid.Resource.Style.TextAppearance_MaterialComponents_Button;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_MaterialComponents_Caption = global::ComicWrap.Droid.Resource.Style.TextAppearance_MaterialComponents_Caption;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_MaterialComponents_Chip = global::ComicWrap.Droid.Resource.Style.TextAppearance_MaterialComponents_Chip;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline1 = global::ComicWrap.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline1;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline2 = global::ComicWrap.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline2;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline3 = global::ComicWrap.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline3;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline4 = global::ComicWrap.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline4;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline5 = global::ComicWrap.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline5;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline6 = global::ComicWrap.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline6;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_MaterialComponents_Overline = global::ComicWrap.Droid.Resource.Style.TextAppearance_MaterialComponents_Overline;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle1 = global::ComicWrap.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle1;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle2 = global::ComicWrap.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle2;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_MaterialComponents_Tab = global::ComicWrap.Droid.Resource.Style.TextAppearance_MaterialComponents_Tab;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::ComicWrap.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::ComicWrap.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::AiForms.Renderers.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::ComicWrap.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_CompactMenu = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_DayNight = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_DayNight;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_Dialog = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_Light = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_Light_Dialog = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_AppCompat_NoActionBar = global::ComicWrap.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_Design = global::ComicWrap.Droid.Resource.Style.Theme_Design;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_Design_BottomSheetDialog = global::ComicWrap.Droid.Resource.Style.Theme_Design_BottomSheetDialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_Design_Light = global::ComicWrap.Droid.Resource.Style.Theme_Design_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog = global::ComicWrap.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_Design_Light_NoActionBar = global::ComicWrap.Droid.Resource.Style.Theme_Design_Light_NoActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_Design_NoActionBar = global::ComicWrap.Droid.Resource.Style.Theme_Design_NoActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_BottomSheetDialog = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_BottomSheetDialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_Bridge = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_Bridge;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_CompactMenu = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_CompactMenu;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_Dialog = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_DialogWhenLarge = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_DialogWhenLarge;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_Light = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_Light_Bridge = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_Light_Bridge;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar_Bridge = global::ComicWrap.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar_Bridge;
+			global::AiForms.Renderers.Droid.Resource.Style.ThemeOverlay_AppCompat = global::ComicWrap.Droid.Resource.Style.ThemeOverlay_AppCompat;
+			global::AiForms.Renderers.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::ComicWrap.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark = global::ComicWrap.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::AiForms.Renderers.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::ComicWrap.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::ComicWrap.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::ComicWrap.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
+			global::AiForms.Renderers.Droid.Resource.Style.ThemeOverlay_AppCompat_Light = global::ComicWrap.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.ThemeOverlay_MaterialComponents = global::ComicWrap.Droid.Resource.Style.ThemeOverlay_MaterialComponents;
+			global::AiForms.Renderers.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar = global::ComicWrap.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark = global::ComicWrap.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark;
+			global::AiForms.Renderers.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar = global::ComicWrap.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog = global::ComicWrap.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert = global::ComicWrap.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::AiForms.Renderers.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Light = global::ComicWrap.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Light;
+			global::AiForms.Renderers.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText = global::ComicWrap.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText;
+			global::AiForms.Renderers.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = global::ComicWrap.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox;
+			global::AiForms.Renderers.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = global::ComicWrap.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense;
+			global::AiForms.Renderers.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = global::ComicWrap.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox;
+			global::AiForms.Renderers.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::ComicWrap.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ActionBar = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ActionButton = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ActionButton;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ActionMode = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ActionMode;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Button = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Button;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Button_Borderless = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Button_Colored = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Button_Small = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Button_Small;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ButtonBar = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_EditText = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_EditText;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ImageButton = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ImageButton;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_SearchView = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ListMenuView = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ListMenuView;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ListView = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ListView;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ListView_Menu = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_PopupMenu = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_PopupWindow = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ProgressBar = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_RatingBar = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_RatingBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_SearchView = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_SearchView;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_SeekBar = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_SeekBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Spinner = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Spinner;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Toolbar = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Toolbar;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::ComicWrap.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_Compat_NotificationActionContainer = global::ComicWrap.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_Compat_NotificationActionText = global::ComicWrap.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_Design_AppBarLayout = global::ComicWrap.Droid.Resource.Style.Widget_Design_AppBarLayout;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_Design_BottomNavigationView = global::ComicWrap.Droid.Resource.Style.Widget_Design_BottomNavigationView;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_Design_BottomSheet_Modal = global::ComicWrap.Droid.Resource.Style.Widget_Design_BottomSheet_Modal;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_Design_CollapsingToolbar = global::ComicWrap.Droid.Resource.Style.Widget_Design_CollapsingToolbar;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_Design_FloatingActionButton = global::ComicWrap.Droid.Resource.Style.Widget_Design_FloatingActionButton;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_Design_NavigationView = global::ComicWrap.Droid.Resource.Style.Widget_Design_NavigationView;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::ComicWrap.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_Design_Snackbar = global::ComicWrap.Droid.Resource.Style.Widget_Design_Snackbar;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_Design_TabLayout = global::ComicWrap.Droid.Resource.Style.Widget_Design_TabLayout;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_Design_TextInputLayout = global::ComicWrap.Droid.Resource.Style.Widget_Design_TextInputLayout;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_Button = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_Button;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_Button_Icon = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_Button_Icon;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_CardView = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_CardView;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_Chip_Action = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_Chip_Action;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_Chip_Choice = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_Chip_Choice;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_Chip_Entry = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_Chip_Entry;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_Chip_Filter = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_Chip_Filter;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_ChipGroup = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_ChipGroup;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_FloatingActionButton = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_FloatingActionButton;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_NavigationView = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_NavigationView;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_Snackbar = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_Snackbar;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_TabLayout = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_TabLayout;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_TabLayout_Colored = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_TabLayout_Colored;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_MaterialComponents_Toolbar = global::ComicWrap.Droid.Resource.Style.Widget_MaterialComponents_Toolbar;
+			global::AiForms.Renderers.Droid.Resource.Style.Widget_Support_CoordinatorLayout = global::ComicWrap.Droid.Resource.Style.Widget_Support_CoordinatorLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar = global::ComicWrap.Droid.Resource.Styleable.ActionBar;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_background = global::ComicWrap.Droid.Resource.Styleable.ActionBar_background;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_backgroundSplit = global::ComicWrap.Droid.Resource.Styleable.ActionBar_backgroundSplit;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_backgroundStacked = global::ComicWrap.Droid.Resource.Styleable.ActionBar_backgroundStacked;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_contentInsetEnd = global::ComicWrap.Droid.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions = global::ComicWrap.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_contentInsetLeft = global::ComicWrap.Droid.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_contentInsetRight = global::ComicWrap.Droid.Resource.Styleable.ActionBar_contentInsetRight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_contentInsetStart = global::ComicWrap.Droid.Resource.Styleable.ActionBar_contentInsetStart;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation = global::ComicWrap.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_customNavigationLayout = global::ComicWrap.Droid.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_displayOptions = global::ComicWrap.Droid.Resource.Styleable.ActionBar_displayOptions;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_divider = global::ComicWrap.Droid.Resource.Styleable.ActionBar_divider;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_elevation = global::ComicWrap.Droid.Resource.Styleable.ActionBar_elevation;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_height = global::ComicWrap.Droid.Resource.Styleable.ActionBar_height;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_hideOnContentScroll = global::ComicWrap.Droid.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator = global::ComicWrap.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_homeLayout = global::ComicWrap.Droid.Resource.Styleable.ActionBar_homeLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_icon = global::ComicWrap.Droid.Resource.Styleable.ActionBar_icon;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::ComicWrap.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_itemPadding = global::ComicWrap.Droid.Resource.Styleable.ActionBar_itemPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_logo = global::ComicWrap.Droid.Resource.Styleable.ActionBar_logo;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_navigationMode = global::ComicWrap.Droid.Resource.Styleable.ActionBar_navigationMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_popupTheme = global::ComicWrap.Droid.Resource.Styleable.ActionBar_popupTheme;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_progressBarPadding = global::ComicWrap.Droid.Resource.Styleable.ActionBar_progressBarPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_progressBarStyle = global::ComicWrap.Droid.Resource.Styleable.ActionBar_progressBarStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_subtitle = global::ComicWrap.Droid.Resource.Styleable.ActionBar_subtitle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_subtitleTextStyle = global::ComicWrap.Droid.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_title = global::ComicWrap.Droid.Resource.Styleable.ActionBar_title;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBar_titleTextStyle = global::ComicWrap.Droid.Resource.Styleable.ActionBar_titleTextStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBarLayout = global::ComicWrap.Droid.Resource.Styleable.ActionBarLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::ComicWrap.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionMenuItemView = global::ComicWrap.Droid.Resource.Styleable.ActionMenuItemView;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth = global::ComicWrap.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionMenuView = global::ComicWrap.Droid.Resource.Styleable.ActionMenuView;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionMode = global::ComicWrap.Droid.Resource.Styleable.ActionMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionMode_background = global::ComicWrap.Droid.Resource.Styleable.ActionMode_background;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionMode_backgroundSplit = global::ComicWrap.Droid.Resource.Styleable.ActionMode_backgroundSplit;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionMode_closeItemLayout = global::ComicWrap.Droid.Resource.Styleable.ActionMode_closeItemLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionMode_height = global::ComicWrap.Droid.Resource.Styleable.ActionMode_height;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionMode_subtitleTextStyle = global::ComicWrap.Droid.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActionMode_titleTextStyle = global::ComicWrap.Droid.Resource.Styleable.ActionMode_titleTextStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActivityChooserView = global::ComicWrap.Droid.Resource.Styleable.ActivityChooserView;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::ComicWrap.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount = global::ComicWrap.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AlertDialog = global::ComicWrap.Droid.Resource.Styleable.AlertDialog;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AlertDialog_android_layout = global::ComicWrap.Droid.Resource.Styleable.AlertDialog_android_layout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AlertDialog_buttonIconDimen = global::ComicWrap.Droid.Resource.Styleable.AlertDialog_buttonIconDimen;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::ComicWrap.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AlertDialog_listItemLayout = global::ComicWrap.Droid.Resource.Styleable.AlertDialog_listItemLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AlertDialog_listLayout = global::ComicWrap.Droid.Resource.Styleable.AlertDialog_listLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::ComicWrap.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AlertDialog_showTitle = global::ComicWrap.Droid.Resource.Styleable.AlertDialog_showTitle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::ComicWrap.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AnimatedStateListDrawableCompat = global::ComicWrap.Droid.Resource.Styleable.AnimatedStateListDrawableCompat;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_constantSize = global::ComicWrap.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_constantSize;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_dither = global::ComicWrap.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_dither;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_enterFadeDuration = global::ComicWrap.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_enterFadeDuration;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_exitFadeDuration = global::ComicWrap.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_exitFadeDuration;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_variablePadding = global::ComicWrap.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_variablePadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_visible = global::ComicWrap.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_visible;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AnimatedStateListDrawableItem = global::ComicWrap.Droid.Resource.Styleable.AnimatedStateListDrawableItem;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AnimatedStateListDrawableItem_android_drawable = global::ComicWrap.Droid.Resource.Styleable.AnimatedStateListDrawableItem_android_drawable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AnimatedStateListDrawableItem_android_id = global::ComicWrap.Droid.Resource.Styleable.AnimatedStateListDrawableItem_android_id;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AnimatedStateListDrawableTransition = global::ComicWrap.Droid.Resource.Styleable.AnimatedStateListDrawableTransition;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_drawable = global::ComicWrap.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_drawable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_fromId = global::ComicWrap.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_fromId;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_reversible = global::ComicWrap.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_reversible;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_toId = global::ComicWrap.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_toId;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppBarLayout = global::ComicWrap.Droid.Resource.Styleable.AppBarLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppBarLayout_android_background = global::ComicWrap.Droid.Resource.Styleable.AppBarLayout_android_background;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster = global::ComicWrap.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus = global::ComicWrap.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppBarLayout_elevation = global::ComicWrap.Droid.Resource.Styleable.AppBarLayout_elevation;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppBarLayout_expanded = global::ComicWrap.Droid.Resource.Styleable.AppBarLayout_expanded;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppBarLayout_liftOnScroll = global::ComicWrap.Droid.Resource.Styleable.AppBarLayout_liftOnScroll;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppBarLayoutStates = global::ComicWrap.Droid.Resource.Styleable.AppBarLayoutStates;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed = global::ComicWrap.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible = global::ComicWrap.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppBarLayoutStates_state_liftable = global::ComicWrap.Droid.Resource.Styleable.AppBarLayoutStates_state_liftable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppBarLayoutStates_state_lifted = global::ComicWrap.Droid.Resource.Styleable.AppBarLayoutStates_state_lifted;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppBarLayout_Layout = global::ComicWrap.Droid.Resource.Styleable.AppBarLayout_Layout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::ComicWrap.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::ComicWrap.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatImageView = global::ComicWrap.Droid.Resource.Styleable.AppCompatImageView;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatImageView_android_src = global::ComicWrap.Droid.Resource.Styleable.AppCompatImageView_android_src;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatImageView_srcCompat = global::ComicWrap.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatImageView_tint = global::ComicWrap.Droid.Resource.Styleable.AppCompatImageView_tint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatImageView_tintMode = global::ComicWrap.Droid.Resource.Styleable.AppCompatImageView_tintMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatSeekBar = global::ComicWrap.Droid.Resource.Styleable.AppCompatSeekBar;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb = global::ComicWrap.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatSeekBar_tickMark = global::ComicWrap.Droid.Resource.Styleable.AppCompatSeekBar_tickMark;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint = global::ComicWrap.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode = global::ComicWrap.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextHelper = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextHelper;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextView = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextView;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextView_fontFamily = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextView_fontFamily;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextView_lineHeight = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextView_lineHeight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTextView_textAllCaps = global::ComicWrap.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionBarSize = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_buttonStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_colorAccent = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_colorError = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_colorError;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_colorPrimary = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_controlBackground = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_dialogCornerRadius = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_dialogCornerRadius;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_dialogTheme = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_dividerVertical = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_editTextBackground = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_editTextColor = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_editTextStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_panelBackground = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_switchStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_tooltipForegroundColor = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_tooltipForegroundColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_tooltipFrameBackground = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_tooltipFrameBackground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_viewInflaterClass = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_viewInflaterClass;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_windowActionBar = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle = global::ComicWrap.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomAppBar = global::ComicWrap.Droid.Resource.Styleable.BottomAppBar;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomAppBar_backgroundTint = global::ComicWrap.Droid.Resource.Styleable.BottomAppBar_backgroundTint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomAppBar_fabAlignmentMode = global::ComicWrap.Droid.Resource.Styleable.BottomAppBar_fabAlignmentMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomAppBar_fabCradleMargin = global::ComicWrap.Droid.Resource.Styleable.BottomAppBar_fabCradleMargin;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius = global::ComicWrap.Droid.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset = global::ComicWrap.Droid.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomAppBar_hideOnScroll = global::ComicWrap.Droid.Resource.Styleable.BottomAppBar_hideOnScroll;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomNavigationView = global::ComicWrap.Droid.Resource.Styleable.BottomNavigationView;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomNavigationView_elevation = global::ComicWrap.Droid.Resource.Styleable.BottomNavigationView_elevation;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomNavigationView_itemBackground = global::ComicWrap.Droid.Resource.Styleable.BottomNavigationView_itemBackground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled = global::ComicWrap.Droid.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomNavigationView_itemIconSize = global::ComicWrap.Droid.Resource.Styleable.BottomNavigationView_itemIconSize;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomNavigationView_itemIconTint = global::ComicWrap.Droid.Resource.Styleable.BottomNavigationView_itemIconTint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomNavigationView_itemTextAppearanceActive = global::ComicWrap.Droid.Resource.Styleable.BottomNavigationView_itemTextAppearanceActive;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomNavigationView_itemTextAppearanceInactive = global::ComicWrap.Droid.Resource.Styleable.BottomNavigationView_itemTextAppearanceInactive;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomNavigationView_itemTextColor = global::ComicWrap.Droid.Resource.Styleable.BottomNavigationView_itemTextColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomNavigationView_labelVisibilityMode = global::ComicWrap.Droid.Resource.Styleable.BottomNavigationView_labelVisibilityMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomNavigationView_menu = global::ComicWrap.Droid.Resource.Styleable.BottomNavigationView_menu;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomSheetBehavior_Layout = global::ComicWrap.Droid.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents = global::ComicWrap.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::ComicWrap.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::ComicWrap.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::ComicWrap.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ButtonBarLayout = global::ComicWrap.Droid.Resource.Styleable.ButtonBarLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ButtonBarLayout_allowStacking = global::ComicWrap.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CardView = global::ComicWrap.Droid.Resource.Styleable.CardView;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CardView_android_minHeight = global::ComicWrap.Droid.Resource.Styleable.CardView_android_minHeight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CardView_android_minWidth = global::ComicWrap.Droid.Resource.Styleable.CardView_android_minWidth;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CardView_cardBackgroundColor = global::ComicWrap.Droid.Resource.Styleable.CardView_cardBackgroundColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CardView_cardCornerRadius = global::ComicWrap.Droid.Resource.Styleable.CardView_cardCornerRadius;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CardView_cardElevation = global::ComicWrap.Droid.Resource.Styleable.CardView_cardElevation;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CardView_cardMaxElevation = global::ComicWrap.Droid.Resource.Styleable.CardView_cardMaxElevation;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap = global::ComicWrap.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CardView_cardUseCompatPadding = global::ComicWrap.Droid.Resource.Styleable.CardView_cardUseCompatPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CardView_contentPadding = global::ComicWrap.Droid.Resource.Styleable.CardView_contentPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CardView_contentPaddingBottom = global::ComicWrap.Droid.Resource.Styleable.CardView_contentPaddingBottom;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CardView_contentPaddingLeft = global::ComicWrap.Droid.Resource.Styleable.CardView_contentPaddingLeft;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CardView_contentPaddingRight = global::ComicWrap.Droid.Resource.Styleable.CardView_contentPaddingRight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CardView_contentPaddingTop = global::ComicWrap.Droid.Resource.Styleable.CardView_contentPaddingTop;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip = global::ComicWrap.Droid.Resource.Styleable.Chip;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_android_checkable = global::ComicWrap.Droid.Resource.Styleable.Chip_android_checkable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_android_ellipsize = global::ComicWrap.Droid.Resource.Styleable.Chip_android_ellipsize;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_android_maxWidth = global::ComicWrap.Droid.Resource.Styleable.Chip_android_maxWidth;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_android_text = global::ComicWrap.Droid.Resource.Styleable.Chip_android_text;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_android_textAppearance = global::ComicWrap.Droid.Resource.Styleable.Chip_android_textAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_checkedIcon = global::ComicWrap.Droid.Resource.Styleable.Chip_checkedIcon;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_checkedIconEnabled = global::ComicWrap.Droid.Resource.Styleable.Chip_checkedIconEnabled;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_checkedIconVisible = global::ComicWrap.Droid.Resource.Styleable.Chip_checkedIconVisible;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_chipBackgroundColor = global::ComicWrap.Droid.Resource.Styleable.Chip_chipBackgroundColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_chipCornerRadius = global::ComicWrap.Droid.Resource.Styleable.Chip_chipCornerRadius;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_chipEndPadding = global::ComicWrap.Droid.Resource.Styleable.Chip_chipEndPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_chipIcon = global::ComicWrap.Droid.Resource.Styleable.Chip_chipIcon;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_chipIconEnabled = global::ComicWrap.Droid.Resource.Styleable.Chip_chipIconEnabled;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_chipIconSize = global::ComicWrap.Droid.Resource.Styleable.Chip_chipIconSize;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_chipIconTint = global::ComicWrap.Droid.Resource.Styleable.Chip_chipIconTint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_chipIconVisible = global::ComicWrap.Droid.Resource.Styleable.Chip_chipIconVisible;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_chipMinHeight = global::ComicWrap.Droid.Resource.Styleable.Chip_chipMinHeight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_chipStartPadding = global::ComicWrap.Droid.Resource.Styleable.Chip_chipStartPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_chipStrokeColor = global::ComicWrap.Droid.Resource.Styleable.Chip_chipStrokeColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_chipStrokeWidth = global::ComicWrap.Droid.Resource.Styleable.Chip_chipStrokeWidth;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_closeIcon = global::ComicWrap.Droid.Resource.Styleable.Chip_closeIcon;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_closeIconEnabled = global::ComicWrap.Droid.Resource.Styleable.Chip_closeIconEnabled;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_closeIconEndPadding = global::ComicWrap.Droid.Resource.Styleable.Chip_closeIconEndPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_closeIconSize = global::ComicWrap.Droid.Resource.Styleable.Chip_closeIconSize;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_closeIconStartPadding = global::ComicWrap.Droid.Resource.Styleable.Chip_closeIconStartPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_closeIconTint = global::ComicWrap.Droid.Resource.Styleable.Chip_closeIconTint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_closeIconVisible = global::ComicWrap.Droid.Resource.Styleable.Chip_closeIconVisible;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_hideMotionSpec = global::ComicWrap.Droid.Resource.Styleable.Chip_hideMotionSpec;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_iconEndPadding = global::ComicWrap.Droid.Resource.Styleable.Chip_iconEndPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_iconStartPadding = global::ComicWrap.Droid.Resource.Styleable.Chip_iconStartPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_rippleColor = global::ComicWrap.Droid.Resource.Styleable.Chip_rippleColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_showMotionSpec = global::ComicWrap.Droid.Resource.Styleable.Chip_showMotionSpec;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_textEndPadding = global::ComicWrap.Droid.Resource.Styleable.Chip_textEndPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Chip_textStartPadding = global::ComicWrap.Droid.Resource.Styleable.Chip_textStartPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ChipGroup = global::ComicWrap.Droid.Resource.Styleable.ChipGroup;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ChipGroup_checkedChip = global::ComicWrap.Droid.Resource.Styleable.ChipGroup_checkedChip;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ChipGroup_chipSpacing = global::ComicWrap.Droid.Resource.Styleable.ChipGroup_chipSpacing;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ChipGroup_chipSpacingHorizontal = global::ComicWrap.Droid.Resource.Styleable.ChipGroup_chipSpacingHorizontal;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ChipGroup_chipSpacingVertical = global::ComicWrap.Droid.Resource.Styleable.ChipGroup_chipSpacingVertical;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ChipGroup_singleLine = global::ComicWrap.Droid.Resource.Styleable.ChipGroup_singleLine;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ChipGroup_singleSelection = global::ComicWrap.Droid.Resource.Styleable.ChipGroup_singleSelection;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout_title = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout_title;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::ComicWrap.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ColorStateListItem = global::ComicWrap.Droid.Resource.Styleable.ColorStateListItem;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ColorStateListItem_alpha = global::ComicWrap.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ColorStateListItem_android_alpha = global::ComicWrap.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ColorStateListItem_android_color = global::ComicWrap.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CompoundButton = global::ComicWrap.Droid.Resource.Styleable.CompoundButton;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CompoundButton_android_button = global::ComicWrap.Droid.Resource.Styleable.CompoundButton_android_button;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CompoundButton_buttonTint = global::ComicWrap.Droid.Resource.Styleable.CompoundButton_buttonTint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CompoundButton_buttonTintMode = global::ComicWrap.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CoordinatorLayout = global::ComicWrap.Droid.Resource.Styleable.CoordinatorLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CoordinatorLayout_keylines = global::ComicWrap.Droid.Resource.Styleable.CoordinatorLayout_keylines;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::ComicWrap.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CoordinatorLayout_Layout = global::ComicWrap.Droid.Resource.Styleable.CoordinatorLayout_Layout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::ComicWrap.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::ComicWrap.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::ComicWrap.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::ComicWrap.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::ComicWrap.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::ComicWrap.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
+			global::AiForms.Renderers.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::ComicWrap.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::AiForms.Renderers.Droid.Resource.Styleable.DesignTheme = global::ComicWrap.Droid.Resource.Styleable.DesignTheme;
+			global::AiForms.Renderers.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme = global::ComicWrap.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme;
+			global::AiForms.Renderers.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle = global::ComicWrap.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.DrawerArrowToggle = global::ComicWrap.Droid.Resource.Styleable.DrawerArrowToggle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::ComicWrap.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::AiForms.Renderers.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::ComicWrap.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::AiForms.Renderers.Droid.Resource.Styleable.DrawerArrowToggle_barLength = global::ComicWrap.Droid.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::AiForms.Renderers.Droid.Resource.Styleable.DrawerArrowToggle_color = global::ComicWrap.Droid.Resource.Styleable.DrawerArrowToggle_color;
+			global::AiForms.Renderers.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize = global::ComicWrap.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::AiForms.Renderers.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::ComicWrap.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::AiForms.Renderers.Droid.Resource.Styleable.DrawerArrowToggle_spinBars = global::ComicWrap.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::AiForms.Renderers.Droid.Resource.Styleable.DrawerArrowToggle_thickness = global::ComicWrap.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FloatingActionButton = global::ComicWrap.Droid.Resource.Styleable.FloatingActionButton;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FloatingActionButton_backgroundTint = global::ComicWrap.Droid.Resource.Styleable.FloatingActionButton_backgroundTint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::ComicWrap.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FloatingActionButton_borderWidth = global::ComicWrap.Droid.Resource.Styleable.FloatingActionButton_borderWidth;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FloatingActionButton_elevation = global::ComicWrap.Droid.Resource.Styleable.FloatingActionButton_elevation;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FloatingActionButton_fabCustomSize = global::ComicWrap.Droid.Resource.Styleable.FloatingActionButton_fabCustomSize;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FloatingActionButton_fabSize = global::ComicWrap.Droid.Resource.Styleable.FloatingActionButton_fabSize;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FloatingActionButton_hideMotionSpec = global::ComicWrap.Droid.Resource.Styleable.FloatingActionButton_hideMotionSpec;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FloatingActionButton_hoveredFocusedTranslationZ = global::ComicWrap.Droid.Resource.Styleable.FloatingActionButton_hoveredFocusedTranslationZ;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FloatingActionButton_maxImageSize = global::ComicWrap.Droid.Resource.Styleable.FloatingActionButton_maxImageSize;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::ComicWrap.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FloatingActionButton_rippleColor = global::ComicWrap.Droid.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FloatingActionButton_showMotionSpec = global::ComicWrap.Droid.Resource.Styleable.FloatingActionButton_showMotionSpec;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding = global::ComicWrap.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::ComicWrap.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::ComicWrap.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FlowLayout = global::ComicWrap.Droid.Resource.Styleable.FlowLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FlowLayout_itemSpacing = global::ComicWrap.Droid.Resource.Styleable.FlowLayout_itemSpacing;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FlowLayout_lineSpacing = global::ComicWrap.Droid.Resource.Styleable.FlowLayout_lineSpacing;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FontFamily = global::ComicWrap.Droid.Resource.Styleable.FontFamily;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FontFamily_fontProviderAuthority = global::ComicWrap.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FontFamily_fontProviderCerts = global::ComicWrap.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::ComicWrap.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::ComicWrap.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FontFamily_fontProviderPackage = global::ComicWrap.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FontFamily_fontProviderQuery = global::ComicWrap.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FontFamilyFont = global::ComicWrap.Droid.Resource.Styleable.FontFamilyFont;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FontFamilyFont_android_font = global::ComicWrap.Droid.Resource.Styleable.FontFamilyFont_android_font;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle = global::ComicWrap.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FontFamilyFont_android_fontVariationSettings = global::ComicWrap.Droid.Resource.Styleable.FontFamilyFont_android_fontVariationSettings;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight = global::ComicWrap.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FontFamilyFont_android_ttcIndex = global::ComicWrap.Droid.Resource.Styleable.FontFamilyFont_android_ttcIndex;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FontFamilyFont_font = global::ComicWrap.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FontFamilyFont_fontStyle = global::ComicWrap.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::ComicWrap.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FontFamilyFont_fontWeight = global::ComicWrap.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.FontFamilyFont_ttcIndex = global::ComicWrap.Droid.Resource.Styleable.FontFamilyFont_ttcIndex;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ForegroundLinearLayout = global::ComicWrap.Droid.Resource.Styleable.ForegroundLinearLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::ComicWrap.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::ComicWrap.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::ComicWrap.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.GradientColor = global::ComicWrap.Droid.Resource.Styleable.GradientColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.GradientColor_android_centerColor = global::ComicWrap.Droid.Resource.Styleable.GradientColor_android_centerColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.GradientColor_android_centerX = global::ComicWrap.Droid.Resource.Styleable.GradientColor_android_centerX;
+			global::AiForms.Renderers.Droid.Resource.Styleable.GradientColor_android_centerY = global::ComicWrap.Droid.Resource.Styleable.GradientColor_android_centerY;
+			global::AiForms.Renderers.Droid.Resource.Styleable.GradientColor_android_endColor = global::ComicWrap.Droid.Resource.Styleable.GradientColor_android_endColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.GradientColor_android_endX = global::ComicWrap.Droid.Resource.Styleable.GradientColor_android_endX;
+			global::AiForms.Renderers.Droid.Resource.Styleable.GradientColor_android_endY = global::ComicWrap.Droid.Resource.Styleable.GradientColor_android_endY;
+			global::AiForms.Renderers.Droid.Resource.Styleable.GradientColor_android_gradientRadius = global::ComicWrap.Droid.Resource.Styleable.GradientColor_android_gradientRadius;
+			global::AiForms.Renderers.Droid.Resource.Styleable.GradientColor_android_startColor = global::ComicWrap.Droid.Resource.Styleable.GradientColor_android_startColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.GradientColor_android_startX = global::ComicWrap.Droid.Resource.Styleable.GradientColor_android_startX;
+			global::AiForms.Renderers.Droid.Resource.Styleable.GradientColor_android_startY = global::ComicWrap.Droid.Resource.Styleable.GradientColor_android_startY;
+			global::AiForms.Renderers.Droid.Resource.Styleable.GradientColor_android_tileMode = global::ComicWrap.Droid.Resource.Styleable.GradientColor_android_tileMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.GradientColor_android_type = global::ComicWrap.Droid.Resource.Styleable.GradientColor_android_type;
+			global::AiForms.Renderers.Droid.Resource.Styleable.GradientColorItem = global::ComicWrap.Droid.Resource.Styleable.GradientColorItem;
+			global::AiForms.Renderers.Droid.Resource.Styleable.GradientColorItem_android_color = global::ComicWrap.Droid.Resource.Styleable.GradientColorItem_android_color;
+			global::AiForms.Renderers.Droid.Resource.Styleable.GradientColorItem_android_offset = global::ComicWrap.Droid.Resource.Styleable.GradientColorItem_android_offset;
+			global::AiForms.Renderers.Droid.Resource.Styleable.LinearLayoutCompat = global::ComicWrap.Droid.Resource.Styleable.LinearLayoutCompat;
+			global::AiForms.Renderers.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::ComicWrap.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::AiForms.Renderers.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::ComicWrap.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::AiForms.Renderers.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity = global::ComicWrap.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::AiForms.Renderers.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation = global::ComicWrap.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::AiForms.Renderers.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::ComicWrap.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::AiForms.Renderers.Droid.Resource.Styleable.LinearLayoutCompat_divider = global::ComicWrap.Droid.Resource.Styleable.LinearLayoutCompat_divider;
+			global::AiForms.Renderers.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::ComicWrap.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::ComicWrap.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::AiForms.Renderers.Droid.Resource.Styleable.LinearLayoutCompat_showDividers = global::ComicWrap.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::AiForms.Renderers.Droid.Resource.Styleable.LinearLayoutCompat_Layout = global::ComicWrap.Droid.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::ComicWrap.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::AiForms.Renderers.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::ComicWrap.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::AiForms.Renderers.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::ComicWrap.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::ComicWrap.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ListPopupWindow = global::ComicWrap.Droid.Resource.Styleable.ListPopupWindow;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::ComicWrap.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::ComicWrap.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialButton = global::ComicWrap.Droid.Resource.Styleable.MaterialButton;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialButton_android_insetBottom = global::ComicWrap.Droid.Resource.Styleable.MaterialButton_android_insetBottom;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialButton_android_insetLeft = global::ComicWrap.Droid.Resource.Styleable.MaterialButton_android_insetLeft;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialButton_android_insetRight = global::ComicWrap.Droid.Resource.Styleable.MaterialButton_android_insetRight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialButton_android_insetTop = global::ComicWrap.Droid.Resource.Styleable.MaterialButton_android_insetTop;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialButton_backgroundTint = global::ComicWrap.Droid.Resource.Styleable.MaterialButton_backgroundTint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialButton_backgroundTintMode = global::ComicWrap.Droid.Resource.Styleable.MaterialButton_backgroundTintMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialButton_cornerRadius = global::ComicWrap.Droid.Resource.Styleable.MaterialButton_cornerRadius;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialButton_icon = global::ComicWrap.Droid.Resource.Styleable.MaterialButton_icon;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialButton_iconGravity = global::ComicWrap.Droid.Resource.Styleable.MaterialButton_iconGravity;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialButton_iconPadding = global::ComicWrap.Droid.Resource.Styleable.MaterialButton_iconPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialButton_iconSize = global::ComicWrap.Droid.Resource.Styleable.MaterialButton_iconSize;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialButton_iconTint = global::ComicWrap.Droid.Resource.Styleable.MaterialButton_iconTint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialButton_iconTintMode = global::ComicWrap.Droid.Resource.Styleable.MaterialButton_iconTintMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialButton_rippleColor = global::ComicWrap.Droid.Resource.Styleable.MaterialButton_rippleColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialButton_strokeColor = global::ComicWrap.Droid.Resource.Styleable.MaterialButton_strokeColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialButton_strokeWidth = global::ComicWrap.Droid.Resource.Styleable.MaterialButton_strokeWidth;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialCardView = global::ComicWrap.Droid.Resource.Styleable.MaterialCardView;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialCardView_strokeColor = global::ComicWrap.Droid.Resource.Styleable.MaterialCardView_strokeColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialCardView_strokeWidth = global::ComicWrap.Droid.Resource.Styleable.MaterialCardView_strokeWidth;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_bottomSheetDialogTheme = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_bottomSheetDialogTheme;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_bottomSheetStyle = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_bottomSheetStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_chipGroupStyle = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_chipGroupStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_chipStandaloneStyle = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_chipStandaloneStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_chipStyle = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_chipStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_colorAccent = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_colorAccent;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_colorBackgroundFloating = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_colorBackgroundFloating;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_colorPrimary = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_colorPrimary;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_colorPrimaryDark = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_colorPrimaryDark;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_colorSecondary = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_colorSecondary;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_editTextStyle = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_editTextStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_floatingActionButtonStyle = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_floatingActionButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_materialButtonStyle = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_materialButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_materialCardViewStyle = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_materialCardViewStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_navigationViewStyle = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_navigationViewStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_scrimBackground = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_scrimBackground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_snackbarButtonStyle = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_snackbarButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_tabStyle = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_tabStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceBody1 = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceBody1;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceBody2 = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceBody2;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceButton = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceButton;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceCaption = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceCaption;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline1 = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline1;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline2 = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline2;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline3 = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline3;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline4 = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline4;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline5 = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline5;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline6 = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceHeadline6;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceOverline = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceOverline;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceSubtitle1 = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceSubtitle1;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceSubtitle2 = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_textAppearanceSubtitle2;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MaterialComponentsTheme_textInputStyle = global::ComicWrap.Droid.Resource.Styleable.MaterialComponentsTheme_textInputStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuGroup = global::ComicWrap.Droid.Resource.Styleable.MenuGroup;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior = global::ComicWrap.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuGroup_android_enabled = global::ComicWrap.Droid.Resource.Styleable.MenuGroup_android_enabled;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuGroup_android_id = global::ComicWrap.Droid.Resource.Styleable.MenuGroup_android_id;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuGroup_android_menuCategory = global::ComicWrap.Droid.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuGroup_android_orderInCategory = global::ComicWrap.Droid.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuGroup_android_visible = global::ComicWrap.Droid.Resource.Styleable.MenuGroup_android_visible;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem = global::ComicWrap.Droid.Resource.Styleable.MenuItem;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_actionLayout = global::ComicWrap.Droid.Resource.Styleable.MenuItem_actionLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_actionProviderClass = global::ComicWrap.Droid.Resource.Styleable.MenuItem_actionProviderClass;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_actionViewClass = global::ComicWrap.Droid.Resource.Styleable.MenuItem_actionViewClass;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_alphabeticModifiers = global::ComicWrap.Droid.Resource.Styleable.MenuItem_alphabeticModifiers;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::ComicWrap.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_android_checkable = global::ComicWrap.Droid.Resource.Styleable.MenuItem_android_checkable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_android_checked = global::ComicWrap.Droid.Resource.Styleable.MenuItem_android_checked;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_android_enabled = global::ComicWrap.Droid.Resource.Styleable.MenuItem_android_enabled;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_android_icon = global::ComicWrap.Droid.Resource.Styleable.MenuItem_android_icon;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_android_id = global::ComicWrap.Droid.Resource.Styleable.MenuItem_android_id;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_android_menuCategory = global::ComicWrap.Droid.Resource.Styleable.MenuItem_android_menuCategory;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_android_numericShortcut = global::ComicWrap.Droid.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_android_onClick = global::ComicWrap.Droid.Resource.Styleable.MenuItem_android_onClick;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_android_orderInCategory = global::ComicWrap.Droid.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_android_title = global::ComicWrap.Droid.Resource.Styleable.MenuItem_android_title;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_android_titleCondensed = global::ComicWrap.Droid.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_android_visible = global::ComicWrap.Droid.Resource.Styleable.MenuItem_android_visible;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_contentDescription = global::ComicWrap.Droid.Resource.Styleable.MenuItem_contentDescription;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_iconTint = global::ComicWrap.Droid.Resource.Styleable.MenuItem_iconTint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_iconTintMode = global::ComicWrap.Droid.Resource.Styleable.MenuItem_iconTintMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_numericModifiers = global::ComicWrap.Droid.Resource.Styleable.MenuItem_numericModifiers;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_showAsAction = global::ComicWrap.Droid.Resource.Styleable.MenuItem_showAsAction;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuItem_tooltipText = global::ComicWrap.Droid.Resource.Styleable.MenuItem_tooltipText;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuView = global::ComicWrap.Droid.Resource.Styleable.MenuView;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuView_android_headerBackground = global::ComicWrap.Droid.Resource.Styleable.MenuView_android_headerBackground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuView_android_horizontalDivider = global::ComicWrap.Droid.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuView_android_itemBackground = global::ComicWrap.Droid.Resource.Styleable.MenuView_android_itemBackground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::ComicWrap.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuView_android_itemTextAppearance = global::ComicWrap.Droid.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuView_android_verticalDivider = global::ComicWrap.Droid.Resource.Styleable.MenuView_android_verticalDivider;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle = global::ComicWrap.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuView_preserveIconSpacing = global::ComicWrap.Droid.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::AiForms.Renderers.Droid.Resource.Styleable.MenuView_subMenuArrow = global::ComicWrap.Droid.Resource.Styleable.MenuView_subMenuArrow;
+			global::AiForms.Renderers.Droid.Resource.Styleable.NavigationView = global::ComicWrap.Droid.Resource.Styleable.NavigationView;
+			global::AiForms.Renderers.Droid.Resource.Styleable.NavigationView_android_background = global::ComicWrap.Droid.Resource.Styleable.NavigationView_android_background;
+			global::AiForms.Renderers.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::ComicWrap.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows;
+			global::AiForms.Renderers.Droid.Resource.Styleable.NavigationView_android_maxWidth = global::ComicWrap.Droid.Resource.Styleable.NavigationView_android_maxWidth;
+			global::AiForms.Renderers.Droid.Resource.Styleable.NavigationView_elevation = global::ComicWrap.Droid.Resource.Styleable.NavigationView_elevation;
+			global::AiForms.Renderers.Droid.Resource.Styleable.NavigationView_headerLayout = global::ComicWrap.Droid.Resource.Styleable.NavigationView_headerLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.NavigationView_itemBackground = global::ComicWrap.Droid.Resource.Styleable.NavigationView_itemBackground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.NavigationView_itemHorizontalPadding = global::ComicWrap.Droid.Resource.Styleable.NavigationView_itemHorizontalPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.NavigationView_itemIconPadding = global::ComicWrap.Droid.Resource.Styleable.NavigationView_itemIconPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.NavigationView_itemIconTint = global::ComicWrap.Droid.Resource.Styleable.NavigationView_itemIconTint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.NavigationView_itemTextAppearance = global::ComicWrap.Droid.Resource.Styleable.NavigationView_itemTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.NavigationView_itemTextColor = global::ComicWrap.Droid.Resource.Styleable.NavigationView_itemTextColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.NavigationView_menu = global::ComicWrap.Droid.Resource.Styleable.NavigationView_menu;
+			global::AiForms.Renderers.Droid.Resource.Styleable.PopupWindow = global::ComicWrap.Droid.Resource.Styleable.PopupWindow;
+			global::AiForms.Renderers.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::ComicWrap.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.PopupWindow_android_popupBackground = global::ComicWrap.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.PopupWindow_overlapAnchor = global::ComicWrap.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.PopupWindowBackgroundState = global::ComicWrap.Droid.Resource.Styleable.PopupWindowBackgroundState;
+			global::AiForms.Renderers.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::ComicWrap.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.RecycleListView = global::ComicWrap.Droid.Resource.Styleable.RecycleListView;
+			global::AiForms.Renderers.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::ComicWrap.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
+			global::AiForms.Renderers.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::ComicWrap.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.RecyclerView = global::ComicWrap.Droid.Resource.Styleable.RecyclerView;
+			global::AiForms.Renderers.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability = global::ComicWrap.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
+			global::AiForms.Renderers.Droid.Resource.Styleable.RecyclerView_android_orientation = global::ComicWrap.Droid.Resource.Styleable.RecyclerView_android_orientation;
+			global::AiForms.Renderers.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled = global::ComicWrap.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled;
+			global::AiForms.Renderers.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable = global::ComicWrap.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable = global::ComicWrap.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable = global::ComicWrap.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable = global::ComicWrap.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.RecyclerView_layoutManager = global::ComicWrap.Droid.Resource.Styleable.RecyclerView_layoutManager;
+			global::AiForms.Renderers.Droid.Resource.Styleable.RecyclerView_reverseLayout = global::ComicWrap.Droid.Resource.Styleable.RecyclerView_reverseLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.RecyclerView_spanCount = global::ComicWrap.Droid.Resource.Styleable.RecyclerView_spanCount;
+			global::AiForms.Renderers.Droid.Resource.Styleable.RecyclerView_stackFromEnd = global::ComicWrap.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ScrimInsetsFrameLayout = global::ComicWrap.Droid.Resource.Styleable.ScrimInsetsFrameLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::ComicWrap.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ScrollingViewBehavior_Layout = global::ComicWrap.Droid.Resource.Styleable.ScrollingViewBehavior_Layout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop = global::ComicWrap.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SearchView = global::ComicWrap.Droid.Resource.Styleable.SearchView;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SearchView_android_focusable = global::ComicWrap.Droid.Resource.Styleable.SearchView_android_focusable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SearchView_android_imeOptions = global::ComicWrap.Droid.Resource.Styleable.SearchView_android_imeOptions;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SearchView_android_inputType = global::ComicWrap.Droid.Resource.Styleable.SearchView_android_inputType;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SearchView_android_maxWidth = global::ComicWrap.Droid.Resource.Styleable.SearchView_android_maxWidth;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SearchView_closeIcon = global::ComicWrap.Droid.Resource.Styleable.SearchView_closeIcon;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SearchView_commitIcon = global::ComicWrap.Droid.Resource.Styleable.SearchView_commitIcon;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SearchView_defaultQueryHint = global::ComicWrap.Droid.Resource.Styleable.SearchView_defaultQueryHint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SearchView_goIcon = global::ComicWrap.Droid.Resource.Styleable.SearchView_goIcon;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SearchView_iconifiedByDefault = global::ComicWrap.Droid.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SearchView_layout = global::ComicWrap.Droid.Resource.Styleable.SearchView_layout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SearchView_queryBackground = global::ComicWrap.Droid.Resource.Styleable.SearchView_queryBackground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SearchView_queryHint = global::ComicWrap.Droid.Resource.Styleable.SearchView_queryHint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SearchView_searchHintIcon = global::ComicWrap.Droid.Resource.Styleable.SearchView_searchHintIcon;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SearchView_searchIcon = global::ComicWrap.Droid.Resource.Styleable.SearchView_searchIcon;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SearchView_submitBackground = global::ComicWrap.Droid.Resource.Styleable.SearchView_submitBackground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SearchView_suggestionRowLayout = global::ComicWrap.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SearchView_voiceIcon = global::ComicWrap.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Snackbar = global::ComicWrap.Droid.Resource.Styleable.Snackbar;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Snackbar_snackbarButtonStyle = global::ComicWrap.Droid.Resource.Styleable.Snackbar_snackbarButtonStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Snackbar_snackbarStyle = global::ComicWrap.Droid.Resource.Styleable.Snackbar_snackbarStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SnackbarLayout = global::ComicWrap.Droid.Resource.Styleable.SnackbarLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth = global::ComicWrap.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SnackbarLayout_elevation = global::ComicWrap.Droid.Resource.Styleable.SnackbarLayout_elevation;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::ComicWrap.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Spinner = global::ComicWrap.Droid.Resource.Styleable.Spinner;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Spinner_android_dropDownWidth = global::ComicWrap.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Spinner_android_entries = global::ComicWrap.Droid.Resource.Styleable.Spinner_android_entries;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Spinner_android_popupBackground = global::ComicWrap.Droid.Resource.Styleable.Spinner_android_popupBackground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Spinner_android_prompt = global::ComicWrap.Droid.Resource.Styleable.Spinner_android_prompt;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Spinner_popupTheme = global::ComicWrap.Droid.Resource.Styleable.Spinner_popupTheme;
+			global::AiForms.Renderers.Droid.Resource.Styleable.StateListDrawable = global::ComicWrap.Droid.Resource.Styleable.StateListDrawable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.StateListDrawable_android_constantSize = global::ComicWrap.Droid.Resource.Styleable.StateListDrawable_android_constantSize;
+			global::AiForms.Renderers.Droid.Resource.Styleable.StateListDrawable_android_dither = global::ComicWrap.Droid.Resource.Styleable.StateListDrawable_android_dither;
+			global::AiForms.Renderers.Droid.Resource.Styleable.StateListDrawable_android_enterFadeDuration = global::ComicWrap.Droid.Resource.Styleable.StateListDrawable_android_enterFadeDuration;
+			global::AiForms.Renderers.Droid.Resource.Styleable.StateListDrawable_android_exitFadeDuration = global::ComicWrap.Droid.Resource.Styleable.StateListDrawable_android_exitFadeDuration;
+			global::AiForms.Renderers.Droid.Resource.Styleable.StateListDrawable_android_variablePadding = global::ComicWrap.Droid.Resource.Styleable.StateListDrawable_android_variablePadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.StateListDrawable_android_visible = global::ComicWrap.Droid.Resource.Styleable.StateListDrawable_android_visible;
+			global::AiForms.Renderers.Droid.Resource.Styleable.StateListDrawableItem = global::ComicWrap.Droid.Resource.Styleable.StateListDrawableItem;
+			global::AiForms.Renderers.Droid.Resource.Styleable.StateListDrawableItem_android_drawable = global::ComicWrap.Droid.Resource.Styleable.StateListDrawableItem_android_drawable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SwitchCompat = global::ComicWrap.Droid.Resource.Styleable.SwitchCompat;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SwitchCompat_android_textOff = global::ComicWrap.Droid.Resource.Styleable.SwitchCompat_android_textOff;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SwitchCompat_android_textOn = global::ComicWrap.Droid.Resource.Styleable.SwitchCompat_android_textOn;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SwitchCompat_android_thumb = global::ComicWrap.Droid.Resource.Styleable.SwitchCompat_android_thumb;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SwitchCompat_showText = global::ComicWrap.Droid.Resource.Styleable.SwitchCompat_showText;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SwitchCompat_splitTrack = global::ComicWrap.Droid.Resource.Styleable.SwitchCompat_splitTrack;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SwitchCompat_switchMinWidth = global::ComicWrap.Droid.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SwitchCompat_switchPadding = global::ComicWrap.Droid.Resource.Styleable.SwitchCompat_switchPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance = global::ComicWrap.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding = global::ComicWrap.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SwitchCompat_thumbTint = global::ComicWrap.Droid.Resource.Styleable.SwitchCompat_thumbTint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SwitchCompat_thumbTintMode = global::ComicWrap.Droid.Resource.Styleable.SwitchCompat_thumbTintMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SwitchCompat_track = global::ComicWrap.Droid.Resource.Styleable.SwitchCompat_track;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SwitchCompat_trackTint = global::ComicWrap.Droid.Resource.Styleable.SwitchCompat_trackTint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.SwitchCompat_trackTintMode = global::ComicWrap.Droid.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabItem = global::ComicWrap.Droid.Resource.Styleable.TabItem;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabItem_android_icon = global::ComicWrap.Droid.Resource.Styleable.TabItem_android_icon;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabItem_android_layout = global::ComicWrap.Droid.Resource.Styleable.TabItem_android_layout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabItem_android_text = global::ComicWrap.Droid.Resource.Styleable.TabItem_android_text;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout = global::ComicWrap.Droid.Resource.Styleable.TabLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabBackground = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabBackground;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabContentStart = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabContentStart;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabGravity = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabGravity;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabIconTint = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabIconTint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabIconTintMode = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabIconTintMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabIndicator = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabIndicator;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabIndicatorAnimationDuration = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabIndicatorAnimationDuration;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabIndicatorColor = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabIndicatorColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabIndicatorFullWidth = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabIndicatorFullWidth;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabIndicatorGravity = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabIndicatorGravity;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabInlineLabel = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabInlineLabel;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabMaxWidth = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabMaxWidth;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabMinWidth = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabMinWidth;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabMode = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabPadding = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabPadding;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabPaddingBottom = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabPaddingBottom;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabPaddingEnd = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabPaddingEnd;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabPaddingStart = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabPaddingStart;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabPaddingTop = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabPaddingTop;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabRippleColor = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabRippleColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabTextAppearance = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabTextColor = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabTextColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TabLayout_tabUnboundedRipple = global::ComicWrap.Droid.Resource.Styleable.TabLayout_tabUnboundedRipple;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextAppearance = global::ComicWrap.Droid.Resource.Styleable.TextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextAppearance_android_fontFamily = global::ComicWrap.Droid.Resource.Styleable.TextAppearance_android_fontFamily;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextAppearance_android_shadowColor = global::ComicWrap.Droid.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextAppearance_android_shadowDx = global::ComicWrap.Droid.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextAppearance_android_shadowDy = global::ComicWrap.Droid.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextAppearance_android_shadowRadius = global::ComicWrap.Droid.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextAppearance_android_textColor = global::ComicWrap.Droid.Resource.Styleable.TextAppearance_android_textColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextAppearance_android_textColorHint = global::ComicWrap.Droid.Resource.Styleable.TextAppearance_android_textColorHint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextAppearance_android_textColorLink = global::ComicWrap.Droid.Resource.Styleable.TextAppearance_android_textColorLink;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextAppearance_android_textSize = global::ComicWrap.Droid.Resource.Styleable.TextAppearance_android_textSize;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextAppearance_android_textStyle = global::ComicWrap.Droid.Resource.Styleable.TextAppearance_android_textStyle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextAppearance_android_typeface = global::ComicWrap.Droid.Resource.Styleable.TextAppearance_android_typeface;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextAppearance_fontFamily = global::ComicWrap.Droid.Resource.Styleable.TextAppearance_fontFamily;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextAppearance_textAllCaps = global::ComicWrap.Droid.Resource.Styleable.TextAppearance_textAllCaps;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_android_hint = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_android_hint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_android_textColorHint = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_android_textColorHint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_boxBackgroundColor = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_boxBackgroundColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_boxBackgroundMode = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_boxBackgroundMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_boxCollapsedPaddingTop = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_boxCollapsedPaddingTop;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomEnd = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomEnd;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomStart = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomStart;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopEnd = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopEnd;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_boxStrokeColor = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_boxStrokeColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_boxStrokeWidth = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_boxStrokeWidth;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_counterEnabled = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_counterEnabled;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_counterMaxLength = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_counterMaxLength;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_errorEnabled = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_helperText = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_helperText;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_helperTextEnabled = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_helperTextEnabled;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_helperTextTextAppearance = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_helperTextTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_hintEnabled = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_hintEnabled;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::ComicWrap.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ThemeEnforcement = global::ComicWrap.Droid.Resource.Styleable.ThemeEnforcement;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ThemeEnforcement_android_textAppearance = global::ComicWrap.Droid.Resource.Styleable.ThemeEnforcement_android_textAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme = global::ComicWrap.Droid.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ThemeEnforcement_enforceTextAppearance = global::ComicWrap.Droid.Resource.Styleable.ThemeEnforcement_enforceTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar = global::ComicWrap.Droid.Resource.Styleable.Toolbar;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_android_gravity = global::ComicWrap.Droid.Resource.Styleable.Toolbar_android_gravity;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_android_minHeight = global::ComicWrap.Droid.Resource.Styleable.Toolbar_android_minHeight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_buttonGravity = global::ComicWrap.Droid.Resource.Styleable.Toolbar_buttonGravity;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_collapseContentDescription = global::ComicWrap.Droid.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_collapseIcon = global::ComicWrap.Droid.Resource.Styleable.Toolbar_collapseIcon;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_contentInsetEnd = global::ComicWrap.Droid.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions = global::ComicWrap.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_contentInsetLeft = global::ComicWrap.Droid.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_contentInsetRight = global::ComicWrap.Droid.Resource.Styleable.Toolbar_contentInsetRight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_contentInsetStart = global::ComicWrap.Droid.Resource.Styleable.Toolbar_contentInsetStart;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation = global::ComicWrap.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_logo = global::ComicWrap.Droid.Resource.Styleable.Toolbar_logo;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_logoDescription = global::ComicWrap.Droid.Resource.Styleable.Toolbar_logoDescription;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_maxButtonHeight = global::ComicWrap.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_navigationContentDescription = global::ComicWrap.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_navigationIcon = global::ComicWrap.Droid.Resource.Styleable.Toolbar_navigationIcon;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_popupTheme = global::ComicWrap.Droid.Resource.Styleable.Toolbar_popupTheme;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_subtitle = global::ComicWrap.Droid.Resource.Styleable.Toolbar_subtitle;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance = global::ComicWrap.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_subtitleTextColor = global::ComicWrap.Droid.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_title = global::ComicWrap.Droid.Resource.Styleable.Toolbar_title;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_titleMargin = global::ComicWrap.Droid.Resource.Styleable.Toolbar_titleMargin;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_titleMarginBottom = global::ComicWrap.Droid.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_titleMarginEnd = global::ComicWrap.Droid.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_titleMarginStart = global::ComicWrap.Droid.Resource.Styleable.Toolbar_titleMarginStart;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_titleMarginTop = global::ComicWrap.Droid.Resource.Styleable.Toolbar_titleMarginTop;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_titleMargins = global::ComicWrap.Droid.Resource.Styleable.Toolbar_titleMargins;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_titleTextAppearance = global::ComicWrap.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::AiForms.Renderers.Droid.Resource.Styleable.Toolbar_titleTextColor = global::ComicWrap.Droid.Resource.Styleable.Toolbar_titleTextColor;
+			global::AiForms.Renderers.Droid.Resource.Styleable.View = global::ComicWrap.Droid.Resource.Styleable.View;
+			global::AiForms.Renderers.Droid.Resource.Styleable.View_android_focusable = global::ComicWrap.Droid.Resource.Styleable.View_android_focusable;
+			global::AiForms.Renderers.Droid.Resource.Styleable.View_android_theme = global::ComicWrap.Droid.Resource.Styleable.View_android_theme;
+			global::AiForms.Renderers.Droid.Resource.Styleable.View_paddingEnd = global::ComicWrap.Droid.Resource.Styleable.View_paddingEnd;
+			global::AiForms.Renderers.Droid.Resource.Styleable.View_paddingStart = global::ComicWrap.Droid.Resource.Styleable.View_paddingStart;
+			global::AiForms.Renderers.Droid.Resource.Styleable.View_theme = global::ComicWrap.Droid.Resource.Styleable.View_theme;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ViewBackgroundHelper = global::ComicWrap.Droid.Resource.Styleable.ViewBackgroundHelper;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ViewBackgroundHelper_android_background = global::ComicWrap.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::ComicWrap.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::ComicWrap.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ViewStubCompat = global::ComicWrap.Droid.Resource.Styleable.ViewStubCompat;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ViewStubCompat_android_id = global::ComicWrap.Droid.Resource.Styleable.ViewStubCompat_android_id;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId = global::ComicWrap.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::AiForms.Renderers.Droid.Resource.Styleable.ViewStubCompat_android_layout = global::ComicWrap.Droid.Resource.Styleable.ViewStubCompat_android_layout;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::ComicWrap.Droid.Resource.Attribute.alpha;
 			global::Xamarin.Essentials.Resource.Attribute.coordinatorLayoutStyle = global::ComicWrap.Droid.Resource.Attribute.coordinatorLayoutStyle;
 			global::Xamarin.Essentials.Resource.Attribute.font = global::ComicWrap.Droid.Resource.Attribute.font;
@@ -11011,638 +13601,674 @@ namespace ComicWrap.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7F080006
-			public const int action0 = 2131230726;
-			
-			// aapt resource value: 0x7F080018
-			public const int actions = 2131230744;
-			
-			// aapt resource value: 0x7F080007
-			public const int action_bar = 2131230727;
-			
-			// aapt resource value: 0x7F080008
-			public const int action_bar_activity_content = 2131230728;
-			
-			// aapt resource value: 0x7F080009
-			public const int action_bar_container = 2131230729;
-			
-			// aapt resource value: 0x7F08000A
-			public const int action_bar_root = 2131230730;
-			
-			// aapt resource value: 0x7F08000B
-			public const int action_bar_spinner = 2131230731;
-			
-			// aapt resource value: 0x7F08000C
-			public const int action_bar_subtitle = 2131230732;
-			
-			// aapt resource value: 0x7F08000D
-			public const int action_bar_title = 2131230733;
-			
-			// aapt resource value: 0x7F08000E
-			public const int action_container = 2131230734;
-			
-			// aapt resource value: 0x7F08000F
-			public const int action_context_bar = 2131230735;
-			
-			// aapt resource value: 0x7F080010
-			public const int action_divider = 2131230736;
-			
-			// aapt resource value: 0x7F080011
-			public const int action_image = 2131230737;
-			
 			// aapt resource value: 0x7F080012
-			public const int action_menu_divider = 2131230738;
+			public const int action0 = 2131230738;
+			
+			// aapt resource value: 0x7F080024
+			public const int actions = 2131230756;
 			
 			// aapt resource value: 0x7F080013
-			public const int action_menu_presenter = 2131230739;
+			public const int action_bar = 2131230739;
 			
 			// aapt resource value: 0x7F080014
-			public const int action_mode_bar = 2131230740;
+			public const int action_bar_activity_content = 2131230740;
 			
 			// aapt resource value: 0x7F080015
-			public const int action_mode_bar_stub = 2131230741;
+			public const int action_bar_container = 2131230741;
 			
 			// aapt resource value: 0x7F080016
-			public const int action_mode_close_button = 2131230742;
+			public const int action_bar_root = 2131230742;
 			
 			// aapt resource value: 0x7F080017
-			public const int action_text = 2131230743;
+			public const int action_bar_spinner = 2131230743;
+			
+			// aapt resource value: 0x7F080018
+			public const int action_bar_subtitle = 2131230744;
 			
 			// aapt resource value: 0x7F080019
-			public const int activity_chooser_view_content = 2131230745;
+			public const int action_bar_title = 2131230745;
 			
 			// aapt resource value: 0x7F08001A
-			public const int add = 2131230746;
+			public const int action_container = 2131230746;
 			
 			// aapt resource value: 0x7F08001B
-			public const int alertTitle = 2131230747;
+			public const int action_context_bar = 2131230747;
 			
 			// aapt resource value: 0x7F08001C
-			public const int all = 2131230748;
+			public const int action_divider = 2131230748;
+			
+			// aapt resource value: 0x7F08001D
+			public const int action_image = 2131230749;
+			
+			// aapt resource value: 0x7F08001E
+			public const int action_menu_divider = 2131230750;
+			
+			// aapt resource value: 0x7F08001F
+			public const int action_menu_presenter = 2131230751;
+			
+			// aapt resource value: 0x7F080020
+			public const int action_mode_bar = 2131230752;
+			
+			// aapt resource value: 0x7F080021
+			public const int action_mode_bar_stub = 2131230753;
+			
+			// aapt resource value: 0x7F080022
+			public const int action_mode_close_button = 2131230754;
+			
+			// aapt resource value: 0x7F080023
+			public const int action_text = 2131230755;
+			
+			// aapt resource value: 0x7F080025
+			public const int activity_chooser_view_content = 2131230757;
+			
+			// aapt resource value: 0x7F080026
+			public const int add = 2131230758;
+			
+			// aapt resource value: 0x7F080027
+			public const int alertTitle = 2131230759;
+			
+			// aapt resource value: 0x7F080028
+			public const int all = 2131230760;
 			
 			// aapt resource value: 0x7F080000
 			public const int ALT = 2131230720;
 			
-			// aapt resource value: 0x7F08001D
-			public const int always = 2131230749;
-			
-			// aapt resource value: 0x7F08001E
-			public const int async = 2131230750;
-			
-			// aapt resource value: 0x7F08001F
-			public const int auto = 2131230751;
-			
-			// aapt resource value: 0x7F080020
-			public const int beginning = 2131230752;
-			
-			// aapt resource value: 0x7F080021
-			public const int blocking = 2131230753;
-			
-			// aapt resource value: 0x7F080022
-			public const int bottom = 2131230754;
-			
-			// aapt resource value: 0x7F080023
-			public const int bottomtab_navarea = 2131230755;
-			
-			// aapt resource value: 0x7F080024
-			public const int bottomtab_tabbar = 2131230756;
-			
-			// aapt resource value: 0x7F080025
-			public const int browser_actions_header_text = 2131230757;
-			
-			// aapt resource value: 0x7F080028
-			public const int browser_actions_menu_items = 2131230760;
-			
-			// aapt resource value: 0x7F080026
-			public const int browser_actions_menu_item_icon = 2131230758;
-			
-			// aapt resource value: 0x7F080027
-			public const int browser_actions_menu_item_text = 2131230759;
-			
 			// aapt resource value: 0x7F080029
-			public const int browser_actions_menu_view = 2131230761;
+			public const int always = 2131230761;
 			
 			// aapt resource value: 0x7F08002A
-			public const int buttonPanel = 2131230762;
+			public const int async = 2131230762;
 			
 			// aapt resource value: 0x7F08002B
-			public const int cancel_action = 2131230763;
+			public const int auto = 2131230763;
 			
 			// aapt resource value: 0x7F08002C
-			public const int center = 2131230764;
+			public const int beginning = 2131230764;
 			
 			// aapt resource value: 0x7F08002D
-			public const int center_horizontal = 2131230765;
+			public const int blocking = 2131230765;
 			
 			// aapt resource value: 0x7F08002E
-			public const int center_vertical = 2131230766;
+			public const int bottom = 2131230766;
 			
 			// aapt resource value: 0x7F08002F
-			public const int checkbox = 2131230767;
+			public const int bottomtab_navarea = 2131230767;
 			
 			// aapt resource value: 0x7F080030
-			public const int chronometer = 2131230768;
+			public const int bottomtab_tabbar = 2131230768;
 			
 			// aapt resource value: 0x7F080031
-			public const int clip_horizontal = 2131230769;
-			
-			// aapt resource value: 0x7F080032
-			public const int clip_vertical = 2131230770;
-			
-			// aapt resource value: 0x7F080033
-			public const int collapseActionView = 2131230771;
+			public const int browser_actions_header_text = 2131230769;
 			
 			// aapt resource value: 0x7F080034
-			public const int container = 2131230772;
+			public const int browser_actions_menu_items = 2131230772;
+			
+			// aapt resource value: 0x7F080032
+			public const int browser_actions_menu_item_icon = 2131230770;
+			
+			// aapt resource value: 0x7F080033
+			public const int browser_actions_menu_item_text = 2131230771;
 			
 			// aapt resource value: 0x7F080035
-			public const int content = 2131230773;
+			public const int browser_actions_menu_view = 2131230773;
 			
 			// aapt resource value: 0x7F080036
-			public const int contentPanel = 2131230774;
+			public const int buttonPanel = 2131230774;
 			
 			// aapt resource value: 0x7F080037
-			public const int coordinator = 2131230775;
+			public const int cancel_action = 2131230775;
+			
+			// aapt resource value: 0x7F080002
+			public const int CellAccessoryView = 2131230722;
+			
+			// aapt resource value: 0x7F080003
+			public const int CellBody = 2131230723;
+			
+			// aapt resource value: 0x7F080004
+			public const int CellContentStack = 2131230724;
+			
+			// aapt resource value: 0x7F080005
+			public const int CellDescription = 2131230725;
+			
+			// aapt resource value: 0x7F080006
+			public const int CellHintText = 2131230726;
+			
+			// aapt resource value: 0x7F080007
+			public const int CellIcon = 2131230727;
+			
+			// aapt resource value: 0x7F080008
+			public const int CellTitle = 2131230728;
+			
+			// aapt resource value: 0x7F080038
+			public const int center = 2131230776;
+			
+			// aapt resource value: 0x7F080039
+			public const int center_horizontal = 2131230777;
+			
+			// aapt resource value: 0x7F08003A
+			public const int center_vertical = 2131230778;
+			
+			// aapt resource value: 0x7F08003B
+			public const int checkbox = 2131230779;
+			
+			// aapt resource value: 0x7F08003C
+			public const int chronometer = 2131230780;
+			
+			// aapt resource value: 0x7F08003D
+			public const int clip_horizontal = 2131230781;
+			
+			// aapt resource value: 0x7F08003E
+			public const int clip_vertical = 2131230782;
+			
+			// aapt resource value: 0x7F08003F
+			public const int collapseActionView = 2131230783;
+			
+			// aapt resource value: 0x7F080040
+			public const int container = 2131230784;
+			
+			// aapt resource value: 0x7F080041
+			public const int content = 2131230785;
+			
+			// aapt resource value: 0x7F080009
+			public const int ContentCellBody = 2131230729;
+			
+			// aapt resource value: 0x7F08000A
+			public const int ContentCellBorder = 2131230730;
+			
+			// aapt resource value: 0x7F080042
+			public const int contentPanel = 2131230786;
+			
+			// aapt resource value: 0x7F080043
+			public const int coordinator = 2131230787;
 			
 			// aapt resource value: 0x7F080001
 			public const int CTRL = 2131230721;
 			
-			// aapt resource value: 0x7F080038
-			public const int custom = 2131230776;
-			
-			// aapt resource value: 0x7F080039
-			public const int customPanel = 2131230777;
-			
-			// aapt resource value: 0x7F08003A
-			public const int decor_content_parent = 2131230778;
-			
-			// aapt resource value: 0x7F08003B
-			public const int default_activity_button = 2131230779;
-			
-			// aapt resource value: 0x7F08003C
-			public const int design_bottom_sheet = 2131230780;
-			
-			// aapt resource value: 0x7F08003D
-			public const int design_menu_item_action_area = 2131230781;
-			
-			// aapt resource value: 0x7F08003E
-			public const int design_menu_item_action_area_stub = 2131230782;
-			
-			// aapt resource value: 0x7F08003F
-			public const int design_menu_item_text = 2131230783;
-			
-			// aapt resource value: 0x7F080040
-			public const int design_navigation_view = 2131230784;
-			
-			// aapt resource value: 0x7F080041
-			public const int disableHome = 2131230785;
-			
-			// aapt resource value: 0x7F080042
-			public const int edit_query = 2131230786;
-			
-			// aapt resource value: 0x7F080043
-			public const int end = 2131230787;
-			
 			// aapt resource value: 0x7F080044
-			public const int end_padder = 2131230788;
+			public const int custom = 2131230788;
 			
 			// aapt resource value: 0x7F080045
-			public const int enterAlways = 2131230789;
+			public const int customPanel = 2131230789;
 			
 			// aapt resource value: 0x7F080046
-			public const int enterAlwaysCollapsed = 2131230790;
+			public const int decor_content_parent = 2131230790;
 			
 			// aapt resource value: 0x7F080047
-			public const int exitUntilCollapsed = 2131230791;
-			
-			// aapt resource value: 0x7F080049
-			public const int expanded_menu = 2131230793;
+			public const int default_activity_button = 2131230791;
 			
 			// aapt resource value: 0x7F080048
-			public const int expand_activities_button = 2131230792;
+			public const int design_bottom_sheet = 2131230792;
+			
+			// aapt resource value: 0x7F080049
+			public const int design_menu_item_action_area = 2131230793;
 			
 			// aapt resource value: 0x7F08004A
-			public const int fill = 2131230794;
-			
-			// aapt resource value: 0x7F08004D
-			public const int filled = 2131230797;
+			public const int design_menu_item_action_area_stub = 2131230794;
 			
 			// aapt resource value: 0x7F08004B
-			public const int fill_horizontal = 2131230795;
+			public const int design_menu_item_text = 2131230795;
 			
 			// aapt resource value: 0x7F08004C
-			public const int fill_vertical = 2131230796;
+			public const int design_navigation_view = 2131230796;
+			
+			// aapt resource value: 0x7F08004D
+			public const int disableHome = 2131230797;
 			
 			// aapt resource value: 0x7F08004E
-			public const int @fixed = 2131230798;
+			public const int edit_query = 2131230798;
 			
 			// aapt resource value: 0x7F08004F
-			public const int flyoutcontent_appbar = 2131230799;
+			public const int end = 2131230799;
 			
 			// aapt resource value: 0x7F080050
-			public const int flyoutcontent_recycler = 2131230800;
+			public const int end_padder = 2131230800;
 			
 			// aapt resource value: 0x7F080051
-			public const int forever = 2131230801;
-			
-			// aapt resource value: 0x7F080002
-			public const int FUNCTION = 2131230722;
+			public const int enterAlways = 2131230801;
 			
 			// aapt resource value: 0x7F080052
-			public const int ghost_view = 2131230802;
+			public const int enterAlwaysCollapsed = 2131230802;
 			
 			// aapt resource value: 0x7F080053
-			public const int group_divider = 2131230803;
-			
-			// aapt resource value: 0x7F080054
-			public const int home = 2131230804;
+			public const int exitUntilCollapsed = 2131230803;
 			
 			// aapt resource value: 0x7F080055
-			public const int homeAsUp = 2131230805;
+			public const int expanded_menu = 2131230805;
+			
+			// aapt resource value: 0x7F080054
+			public const int expand_activities_button = 2131230804;
 			
 			// aapt resource value: 0x7F080056
-			public const int icon = 2131230806;
-			
-			// aapt resource value: 0x7F080057
-			public const int icon_group = 2131230807;
-			
-			// aapt resource value: 0x7F080058
-			public const int ifRoom = 2131230808;
+			public const int fill = 2131230806;
 			
 			// aapt resource value: 0x7F080059
-			public const int image = 2131230809;
+			public const int filled = 2131230809;
+			
+			// aapt resource value: 0x7F080057
+			public const int fill_horizontal = 2131230807;
+			
+			// aapt resource value: 0x7F080058
+			public const int fill_vertical = 2131230808;
 			
 			// aapt resource value: 0x7F08005A
-			public const int info = 2131230810;
+			public const int @fixed = 2131230810;
 			
 			// aapt resource value: 0x7F08005B
-			public const int italic = 2131230811;
+			public const int flyoutcontent_appbar = 2131230811;
 			
 			// aapt resource value: 0x7F08005C
-			public const int item_touch_helper_previous_elevation = 2131230812;
+			public const int flyoutcontent_recycler = 2131230812;
+			
+			// aapt resource value: 0x7F08000C
+			public const int FooterCellText = 2131230732;
 			
 			// aapt resource value: 0x7F08005D
-			public const int labeled = 2131230813;
+			public const int forever = 2131230813;
+			
+			// aapt resource value: 0x7F08000B
+			public const int FUNCTION = 2131230731;
 			
 			// aapt resource value: 0x7F08005E
-			public const int largeLabel = 2131230814;
+			public const int ghost_view = 2131230814;
 			
 			// aapt resource value: 0x7F08005F
-			public const int left = 2131230815;
+			public const int group_divider = 2131230815;
+			
+			// aapt resource value: 0x7F08000D
+			public const int HeaderCellBorder = 2131230733;
+			
+			// aapt resource value: 0x7F08000E
+			public const int HeaderCellText = 2131230734;
 			
 			// aapt resource value: 0x7F080060
-			public const int line1 = 2131230816;
+			public const int home = 2131230816;
 			
 			// aapt resource value: 0x7F080061
-			public const int line3 = 2131230817;
+			public const int homeAsUp = 2131230817;
 			
 			// aapt resource value: 0x7F080062
-			public const int listMode = 2131230818;
+			public const int icon = 2131230818;
 			
 			// aapt resource value: 0x7F080063
-			public const int list_item = 2131230819;
+			public const int icon_group = 2131230819;
 			
 			// aapt resource value: 0x7F080064
-			public const int loadingImage = 2131230820;
+			public const int ifRoom = 2131230820;
 			
 			// aapt resource value: 0x7F080065
-			public const int loadingProgressBar = 2131230821;
+			public const int image = 2131230821;
 			
 			// aapt resource value: 0x7F080066
-			public const int loadingProgressWheel = 2131230822;
+			public const int info = 2131230822;
 			
 			// aapt resource value: 0x7F080067
-			public const int main_appbar = 2131230823;
+			public const int italic = 2131230823;
 			
 			// aapt resource value: 0x7F080068
-			public const int main_tablayout = 2131230824;
+			public const int item_touch_helper_previous_elevation = 2131230824;
 			
 			// aapt resource value: 0x7F080069
-			public const int main_toolbar = 2131230825;
+			public const int labeled = 2131230825;
 			
 			// aapt resource value: 0x7F08006A
-			public const int main_viewpager = 2131230826;
+			public const int largeLabel = 2131230826;
 			
 			// aapt resource value: 0x7F08006B
-			public const int masked = 2131230827;
+			public const int left = 2131230827;
 			
 			// aapt resource value: 0x7F08006C
-			public const int media_actions = 2131230828;
+			public const int line1 = 2131230828;
 			
 			// aapt resource value: 0x7F08006D
-			public const int message = 2131230829;
-			
-			// aapt resource value: 0x7F080003
-			public const int META = 2131230723;
+			public const int line3 = 2131230829;
 			
 			// aapt resource value: 0x7F08006E
-			public const int middle = 2131230830;
+			public const int listMode = 2131230830;
 			
 			// aapt resource value: 0x7F08006F
-			public const int mini = 2131230831;
+			public const int list_item = 2131230831;
 			
 			// aapt resource value: 0x7F080070
-			public const int mtrl_child_content_container = 2131230832;
+			public const int loadingImage = 2131230832;
 			
 			// aapt resource value: 0x7F080071
-			public const int mtrl_internal_children_alpha_tag = 2131230833;
+			public const int loadingProgressBar = 2131230833;
 			
 			// aapt resource value: 0x7F080072
-			public const int multiply = 2131230834;
+			public const int loadingProgressWheel = 2131230834;
 			
 			// aapt resource value: 0x7F080073
-			public const int navigation_header_container = 2131230835;
+			public const int main_appbar = 2131230835;
 			
 			// aapt resource value: 0x7F080074
-			public const int never = 2131230836;
+			public const int main_tablayout = 2131230836;
 			
 			// aapt resource value: 0x7F080075
-			public const int none = 2131230837;
+			public const int main_toolbar = 2131230837;
 			
 			// aapt resource value: 0x7F080076
-			public const int normal = 2131230838;
+			public const int main_viewpager = 2131230838;
 			
 			// aapt resource value: 0x7F080077
-			public const int notification_background = 2131230839;
+			public const int masked = 2131230839;
 			
 			// aapt resource value: 0x7F080078
-			public const int notification_main_column = 2131230840;
+			public const int media_actions = 2131230840;
 			
 			// aapt resource value: 0x7F080079
-			public const int notification_main_column_container = 2131230841;
+			public const int message = 2131230841;
+			
+			// aapt resource value: 0x7F08000F
+			public const int META = 2131230735;
 			
 			// aapt resource value: 0x7F08007A
-			public const int outline = 2131230842;
+			public const int middle = 2131230842;
 			
 			// aapt resource value: 0x7F08007B
-			public const int parallax = 2131230843;
+			public const int mini = 2131230843;
 			
 			// aapt resource value: 0x7F08007C
-			public const int parentPanel = 2131230844;
+			public const int mtrl_child_content_container = 2131230844;
 			
 			// aapt resource value: 0x7F08007D
-			public const int parent_matrix = 2131230845;
+			public const int mtrl_internal_children_alpha_tag = 2131230845;
 			
 			// aapt resource value: 0x7F08007E
-			public const int pin = 2131230846;
+			public const int multiply = 2131230846;
 			
 			// aapt resource value: 0x7F08007F
-			public const int progress_circular = 2131230847;
+			public const int navigation_header_container = 2131230847;
 			
 			// aapt resource value: 0x7F080080
-			public const int progress_horizontal = 2131230848;
+			public const int never = 2131230848;
 			
 			// aapt resource value: 0x7F080081
-			public const int radio = 2131230849;
+			public const int none = 2131230849;
 			
 			// aapt resource value: 0x7F080082
-			public const int right = 2131230850;
+			public const int normal = 2131230850;
 			
 			// aapt resource value: 0x7F080083
-			public const int right_icon = 2131230851;
+			public const int notification_background = 2131230851;
 			
 			// aapt resource value: 0x7F080084
-			public const int right_side = 2131230852;
+			public const int notification_main_column = 2131230852;
 			
 			// aapt resource value: 0x7F080085
-			public const int save_image_matrix = 2131230853;
+			public const int notification_main_column_container = 2131230853;
 			
 			// aapt resource value: 0x7F080086
-			public const int save_non_transition_alpha = 2131230854;
+			public const int outline = 2131230854;
 			
 			// aapt resource value: 0x7F080087
-			public const int save_scale_type = 2131230855;
+			public const int parallax = 2131230855;
 			
 			// aapt resource value: 0x7F080088
-			public const int screen = 2131230856;
+			public const int parentPanel = 2131230856;
 			
 			// aapt resource value: 0x7F080089
-			public const int scroll = 2131230857;
-			
-			// aapt resource value: 0x7F08008D
-			public const int scrollable = 2131230861;
+			public const int parent_matrix = 2131230857;
 			
 			// aapt resource value: 0x7F08008A
-			public const int scrollIndicatorDown = 2131230858;
+			public const int pin = 2131230858;
 			
 			// aapt resource value: 0x7F08008B
-			public const int scrollIndicatorUp = 2131230859;
+			public const int progress_circular = 2131230859;
 			
 			// aapt resource value: 0x7F08008C
-			public const int scrollView = 2131230860;
+			public const int progress_horizontal = 2131230860;
+			
+			// aapt resource value: 0x7F08008D
+			public const int radio = 2131230861;
 			
 			// aapt resource value: 0x7F08008E
-			public const int search_badge = 2131230862;
+			public const int right = 2131230862;
 			
 			// aapt resource value: 0x7F08008F
-			public const int search_bar = 2131230863;
+			public const int right_icon = 2131230863;
 			
 			// aapt resource value: 0x7F080090
-			public const int search_button = 2131230864;
+			public const int right_side = 2131230864;
 			
 			// aapt resource value: 0x7F080091
-			public const int search_close_btn = 2131230865;
+			public const int save_image_matrix = 2131230865;
 			
 			// aapt resource value: 0x7F080092
-			public const int search_edit_frame = 2131230866;
+			public const int save_non_transition_alpha = 2131230866;
 			
 			// aapt resource value: 0x7F080093
-			public const int search_go_btn = 2131230867;
+			public const int save_scale_type = 2131230867;
 			
 			// aapt resource value: 0x7F080094
-			public const int search_mag_icon = 2131230868;
+			public const int screen = 2131230868;
 			
 			// aapt resource value: 0x7F080095
-			public const int search_plate = 2131230869;
-			
-			// aapt resource value: 0x7F080096
-			public const int search_src_text = 2131230870;
-			
-			// aapt resource value: 0x7F080097
-			public const int search_voice_btn = 2131230871;
+			public const int scroll = 2131230869;
 			
 			// aapt resource value: 0x7F080099
-			public const int selected = 2131230873;
+			public const int scrollable = 2131230873;
+			
+			// aapt resource value: 0x7F080096
+			public const int scrollIndicatorDown = 2131230870;
+			
+			// aapt resource value: 0x7F080097
+			public const int scrollIndicatorUp = 2131230871;
 			
 			// aapt resource value: 0x7F080098
-			public const int select_dialog_listview = 2131230872;
+			public const int scrollView = 2131230872;
 			
 			// aapt resource value: 0x7F08009A
-			public const int shellcontent_appbar = 2131230874;
+			public const int search_badge = 2131230874;
 			
 			// aapt resource value: 0x7F08009B
-			public const int shellcontent_toolbar = 2131230875;
-			
-			// aapt resource value: 0x7F080004
-			public const int SHIFT = 2131230724;
+			public const int search_bar = 2131230875;
 			
 			// aapt resource value: 0x7F08009C
-			public const int shortcut = 2131230876;
+			public const int search_button = 2131230876;
 			
 			// aapt resource value: 0x7F08009D
-			public const int showCustom = 2131230877;
+			public const int search_close_btn = 2131230877;
 			
 			// aapt resource value: 0x7F08009E
-			public const int showHome = 2131230878;
+			public const int search_edit_frame = 2131230878;
 			
 			// aapt resource value: 0x7F08009F
-			public const int showTitle = 2131230879;
+			public const int search_go_btn = 2131230879;
 			
 			// aapt resource value: 0x7F0800A0
-			public const int sliding_tabs = 2131230880;
+			public const int search_mag_icon = 2131230880;
 			
 			// aapt resource value: 0x7F0800A1
-			public const int smallLabel = 2131230881;
+			public const int search_plate = 2131230881;
 			
 			// aapt resource value: 0x7F0800A2
-			public const int snackbar_action = 2131230882;
+			public const int search_src_text = 2131230882;
 			
 			// aapt resource value: 0x7F0800A3
-			public const int snackbar_text = 2131230883;
-			
-			// aapt resource value: 0x7F0800A4
-			public const int snap = 2131230884;
+			public const int search_voice_btn = 2131230883;
 			
 			// aapt resource value: 0x7F0800A5
-			public const int snapMargins = 2131230885;
+			public const int selected = 2131230885;
+			
+			// aapt resource value: 0x7F0800A4
+			public const int select_dialog_listview = 2131230884;
 			
 			// aapt resource value: 0x7F0800A6
-			public const int spacer = 2131230886;
+			public const int shellcontent_appbar = 2131230886;
 			
 			// aapt resource value: 0x7F0800A7
-			public const int split_action_bar = 2131230887;
+			public const int shellcontent_toolbar = 2131230887;
+			
+			// aapt resource value: 0x7F080010
+			public const int SHIFT = 2131230736;
 			
 			// aapt resource value: 0x7F0800A8
-			public const int src_atop = 2131230888;
+			public const int shortcut = 2131230888;
 			
 			// aapt resource value: 0x7F0800A9
-			public const int src_in = 2131230889;
+			public const int showCustom = 2131230889;
 			
 			// aapt resource value: 0x7F0800AA
-			public const int src_over = 2131230890;
+			public const int showHome = 2131230890;
 			
 			// aapt resource value: 0x7F0800AB
-			public const int start = 2131230891;
+			public const int showTitle = 2131230891;
 			
 			// aapt resource value: 0x7F0800AC
-			public const int status_bar_latest_event_content = 2131230892;
+			public const int sliding_tabs = 2131230892;
 			
 			// aapt resource value: 0x7F0800AD
-			public const int stretch = 2131230893;
+			public const int smallLabel = 2131230893;
 			
 			// aapt resource value: 0x7F0800AE
-			public const int submenuarrow = 2131230894;
+			public const int snackbar_action = 2131230894;
 			
 			// aapt resource value: 0x7F0800AF
-			public const int submit_area = 2131230895;
-			
-			// aapt resource value: 0x7F080005
-			public const int SYM = 2131230725;
+			public const int snackbar_text = 2131230895;
 			
 			// aapt resource value: 0x7F0800B0
-			public const int tabMode = 2131230896;
+			public const int snap = 2131230896;
 			
 			// aapt resource value: 0x7F0800B1
-			public const int tag_transition_group = 2131230897;
+			public const int snapMargins = 2131230897;
 			
 			// aapt resource value: 0x7F0800B2
-			public const int tag_unhandled_key_event_manager = 2131230898;
+			public const int spacer = 2131230898;
 			
 			// aapt resource value: 0x7F0800B3
-			public const int tag_unhandled_key_listeners = 2131230899;
+			public const int split_action_bar = 2131230899;
 			
 			// aapt resource value: 0x7F0800B4
-			public const int text = 2131230900;
+			public const int src_atop = 2131230900;
 			
 			// aapt resource value: 0x7F0800B5
-			public const int text2 = 2131230901;
-			
-			// aapt resource value: 0x7F0800BB
-			public const int textinput_counter = 2131230907;
-			
-			// aapt resource value: 0x7F0800BC
-			public const int textinput_error = 2131230908;
-			
-			// aapt resource value: 0x7F0800BD
-			public const int textinput_helper_text = 2131230909;
+			public const int src_in = 2131230901;
 			
 			// aapt resource value: 0x7F0800B6
-			public const int textSpacerNoButtons = 2131230902;
+			public const int src_over = 2131230902;
 			
 			// aapt resource value: 0x7F0800B7
-			public const int textSpacerNoTitle = 2131230903;
+			public const int start = 2131230903;
 			
 			// aapt resource value: 0x7F0800B8
-			public const int textStart = 2131230904;
+			public const int status_bar_latest_event_content = 2131230904;
 			
 			// aapt resource value: 0x7F0800B9
-			public const int textViewStatus = 2131230905;
+			public const int stretch = 2131230905;
 			
 			// aapt resource value: 0x7F0800BA
-			public const int text_input_password_toggle = 2131230906;
+			public const int submenuarrow = 2131230906;
+			
+			// aapt resource value: 0x7F0800BB
+			public const int submit_area = 2131230907;
+			
+			// aapt resource value: 0x7F080011
+			public const int SYM = 2131230737;
+			
+			// aapt resource value: 0x7F0800BC
+			public const int tabMode = 2131230908;
+			
+			// aapt resource value: 0x7F0800BD
+			public const int tag_transition_group = 2131230909;
 			
 			// aapt resource value: 0x7F0800BE
-			public const int time = 2131230910;
+			public const int tag_unhandled_key_event_manager = 2131230910;
 			
 			// aapt resource value: 0x7F0800BF
-			public const int title = 2131230911;
+			public const int tag_unhandled_key_listeners = 2131230911;
 			
 			// aapt resource value: 0x7F0800C0
-			public const int titleDividerNoCustom = 2131230912;
+			public const int text = 2131230912;
 			
 			// aapt resource value: 0x7F0800C1
-			public const int title_template = 2131230913;
-			
-			// aapt resource value: 0x7F0800C2
-			public const int toolbar = 2131230914;
-			
-			// aapt resource value: 0x7F0800C3
-			public const int top = 2131230915;
-			
-			// aapt resource value: 0x7F0800C4
-			public const int topPanel = 2131230916;
-			
-			// aapt resource value: 0x7F0800C5
-			public const int touch_outside = 2131230917;
-			
-			// aapt resource value: 0x7F0800C6
-			public const int transition_current_scene = 2131230918;
+			public const int text2 = 2131230913;
 			
 			// aapt resource value: 0x7F0800C7
-			public const int transition_layout_save = 2131230919;
+			public const int textinput_counter = 2131230919;
 			
 			// aapt resource value: 0x7F0800C8
-			public const int transition_position = 2131230920;
+			public const int textinput_error = 2131230920;
 			
 			// aapt resource value: 0x7F0800C9
-			public const int transition_scene_layoutid_cache = 2131230921;
+			public const int textinput_helper_text = 2131230921;
+			
+			// aapt resource value: 0x7F0800C2
+			public const int textSpacerNoButtons = 2131230914;
+			
+			// aapt resource value: 0x7F0800C3
+			public const int textSpacerNoTitle = 2131230915;
+			
+			// aapt resource value: 0x7F0800C4
+			public const int textStart = 2131230916;
+			
+			// aapt resource value: 0x7F0800C5
+			public const int textViewStatus = 2131230917;
+			
+			// aapt resource value: 0x7F0800C6
+			public const int text_input_password_toggle = 2131230918;
 			
 			// aapt resource value: 0x7F0800CA
-			public const int transition_transform = 2131230922;
+			public const int time = 2131230922;
 			
 			// aapt resource value: 0x7F0800CB
-			public const int uniform = 2131230923;
+			public const int title = 2131230923;
 			
 			// aapt resource value: 0x7F0800CC
-			public const int unlabeled = 2131230924;
+			public const int titleDividerNoCustom = 2131230924;
 			
 			// aapt resource value: 0x7F0800CD
-			public const int up = 2131230925;
+			public const int title_template = 2131230925;
 			
 			// aapt resource value: 0x7F0800CE
-			public const int useLogo = 2131230926;
+			public const int toolbar = 2131230926;
 			
 			// aapt resource value: 0x7F0800CF
-			public const int view_offset_helper = 2131230927;
+			public const int top = 2131230927;
 			
 			// aapt resource value: 0x7F0800D0
-			public const int visible = 2131230928;
+			public const int topPanel = 2131230928;
 			
 			// aapt resource value: 0x7F0800D1
-			public const int withText = 2131230929;
+			public const int touch_outside = 2131230929;
 			
 			// aapt resource value: 0x7F0800D2
-			public const int wrap_content = 2131230930;
+			public const int transition_current_scene = 2131230930;
+			
+			// aapt resource value: 0x7F0800D3
+			public const int transition_layout_save = 2131230931;
+			
+			// aapt resource value: 0x7F0800D4
+			public const int transition_position = 2131230932;
+			
+			// aapt resource value: 0x7F0800D5
+			public const int transition_scene_layoutid_cache = 2131230933;
+			
+			// aapt resource value: 0x7F0800D6
+			public const int transition_transform = 2131230934;
+			
+			// aapt resource value: 0x7F0800D7
+			public const int uniform = 2131230935;
+			
+			// aapt resource value: 0x7F0800D8
+			public const int unlabeled = 2131230936;
+			
+			// aapt resource value: 0x7F0800D9
+			public const int up = 2131230937;
+			
+			// aapt resource value: 0x7F0800DA
+			public const int useLogo = 2131230938;
+			
+			// aapt resource value: 0x7F0800DB
+			public const int view_offset_helper = 2131230939;
+			
+			// aapt resource value: 0x7F0800DC
+			public const int visible = 2131230940;
+			
+			// aapt resource value: 0x7F0800DD
+			public const int withText = 2131230941;
+			
+			// aapt resource value: 0x7F0800DE
+			public const int wrap_content = 2131230942;
 			
 			static Id()
 			{
@@ -11834,133 +14460,145 @@ namespace ComicWrap.Droid
 			public const int browser_actions_context_menu_row = 2131427358;
 			
 			// aapt resource value: 0x7F0B001F
-			public const int design_bottom_navigation_item = 2131427359;
+			public const int CellBaseView = 2131427359;
 			
 			// aapt resource value: 0x7F0B0020
-			public const int design_bottom_sheet_dialog = 2131427360;
+			public const int ContentCell = 2131427360;
 			
 			// aapt resource value: 0x7F0B0021
-			public const int design_layout_snackbar = 2131427361;
+			public const int design_bottom_navigation_item = 2131427361;
 			
 			// aapt resource value: 0x7F0B0022
-			public const int design_layout_snackbar_include = 2131427362;
+			public const int design_bottom_sheet_dialog = 2131427362;
 			
 			// aapt resource value: 0x7F0B0023
-			public const int design_layout_tab_icon = 2131427363;
+			public const int design_layout_snackbar = 2131427363;
 			
 			// aapt resource value: 0x7F0B0024
-			public const int design_layout_tab_text = 2131427364;
+			public const int design_layout_snackbar_include = 2131427364;
 			
 			// aapt resource value: 0x7F0B0025
-			public const int design_menu_item_action_area = 2131427365;
+			public const int design_layout_tab_icon = 2131427365;
 			
 			// aapt resource value: 0x7F0B0026
-			public const int design_navigation_item = 2131427366;
+			public const int design_layout_tab_text = 2131427366;
 			
 			// aapt resource value: 0x7F0B0027
-			public const int design_navigation_item_header = 2131427367;
+			public const int design_menu_item_action_area = 2131427367;
 			
 			// aapt resource value: 0x7F0B0028
-			public const int design_navigation_item_separator = 2131427368;
+			public const int design_navigation_item = 2131427368;
 			
 			// aapt resource value: 0x7F0B0029
-			public const int design_navigation_item_subheader = 2131427369;
+			public const int design_navigation_item_header = 2131427369;
 			
 			// aapt resource value: 0x7F0B002A
-			public const int design_navigation_menu = 2131427370;
+			public const int design_navigation_item_separator = 2131427370;
 			
 			// aapt resource value: 0x7F0B002B
-			public const int design_navigation_menu_item = 2131427371;
+			public const int design_navigation_item_subheader = 2131427371;
 			
 			// aapt resource value: 0x7F0B002C
-			public const int design_text_input_password_icon = 2131427372;
+			public const int design_navigation_menu = 2131427372;
 			
 			// aapt resource value: 0x7F0B002D
-			public const int FlyoutContent = 2131427373;
+			public const int design_navigation_menu_item = 2131427373;
 			
 			// aapt resource value: 0x7F0B002E
-			public const int loading = 2131427374;
+			public const int design_text_input_password_icon = 2131427374;
 			
 			// aapt resource value: 0x7F0B002F
-			public const int loadingimage = 2131427375;
+			public const int FlyoutContent = 2131427375;
 			
 			// aapt resource value: 0x7F0B0030
-			public const int loadingprogress = 2131427376;
+			public const int FooterCell = 2131427376;
 			
 			// aapt resource value: 0x7F0B0031
-			public const int mtrl_layout_snackbar = 2131427377;
+			public const int HeaderCell = 2131427377;
 			
 			// aapt resource value: 0x7F0B0032
-			public const int mtrl_layout_snackbar_include = 2131427378;
+			public const int loading = 2131427378;
 			
 			// aapt resource value: 0x7F0B0033
-			public const int notification_action = 2131427379;
+			public const int loadingimage = 2131427379;
 			
 			// aapt resource value: 0x7F0B0034
-			public const int notification_action_tombstone = 2131427380;
+			public const int loadingprogress = 2131427380;
 			
 			// aapt resource value: 0x7F0B0035
-			public const int notification_media_action = 2131427381;
+			public const int mtrl_layout_snackbar = 2131427381;
 			
 			// aapt resource value: 0x7F0B0036
-			public const int notification_media_cancel_action = 2131427382;
+			public const int mtrl_layout_snackbar_include = 2131427382;
 			
 			// aapt resource value: 0x7F0B0037
-			public const int notification_template_big_media = 2131427383;
+			public const int notification_action = 2131427383;
 			
 			// aapt resource value: 0x7F0B0038
-			public const int notification_template_big_media_custom = 2131427384;
+			public const int notification_action_tombstone = 2131427384;
 			
 			// aapt resource value: 0x7F0B0039
-			public const int notification_template_big_media_narrow = 2131427385;
+			public const int notification_media_action = 2131427385;
 			
 			// aapt resource value: 0x7F0B003A
-			public const int notification_template_big_media_narrow_custom = 2131427386;
+			public const int notification_media_cancel_action = 2131427386;
 			
 			// aapt resource value: 0x7F0B003B
-			public const int notification_template_custom_big = 2131427387;
+			public const int notification_template_big_media = 2131427387;
 			
 			// aapt resource value: 0x7F0B003C
-			public const int notification_template_icon_group = 2131427388;
+			public const int notification_template_big_media_custom = 2131427388;
 			
 			// aapt resource value: 0x7F0B003D
-			public const int notification_template_lines_media = 2131427389;
+			public const int notification_template_big_media_narrow = 2131427389;
 			
 			// aapt resource value: 0x7F0B003E
-			public const int notification_template_media = 2131427390;
+			public const int notification_template_big_media_narrow_custom = 2131427390;
 			
 			// aapt resource value: 0x7F0B003F
-			public const int notification_template_media_custom = 2131427391;
+			public const int notification_template_custom_big = 2131427391;
 			
 			// aapt resource value: 0x7F0B0040
-			public const int notification_template_part_chronometer = 2131427392;
+			public const int notification_template_icon_group = 2131427392;
 			
 			// aapt resource value: 0x7F0B0041
-			public const int notification_template_part_time = 2131427393;
+			public const int notification_template_lines_media = 2131427393;
 			
 			// aapt resource value: 0x7F0B0042
-			public const int RootLayout = 2131427394;
+			public const int notification_template_media = 2131427394;
 			
 			// aapt resource value: 0x7F0B0043
-			public const int select_dialog_item_material = 2131427395;
+			public const int notification_template_media_custom = 2131427395;
 			
 			// aapt resource value: 0x7F0B0044
-			public const int select_dialog_multichoice_material = 2131427396;
+			public const int notification_template_part_chronometer = 2131427396;
 			
 			// aapt resource value: 0x7F0B0045
-			public const int select_dialog_singlechoice_material = 2131427397;
+			public const int notification_template_part_time = 2131427397;
 			
 			// aapt resource value: 0x7F0B0046
-			public const int ShellContent = 2131427398;
+			public const int RootLayout = 2131427398;
 			
 			// aapt resource value: 0x7F0B0047
-			public const int support_simple_spinner_dropdown_item = 2131427399;
+			public const int select_dialog_item_material = 2131427399;
 			
 			// aapt resource value: 0x7F0B0048
-			public const int Tabbar = 2131427400;
+			public const int select_dialog_multichoice_material = 2131427400;
 			
 			// aapt resource value: 0x7F0B0049
-			public const int Toolbar = 2131427401;
+			public const int select_dialog_singlechoice_material = 2131427401;
+			
+			// aapt resource value: 0x7F0B004A
+			public const int ShellContent = 2131427402;
+			
+			// aapt resource value: 0x7F0B004B
+			public const int support_simple_spinner_dropdown_item = 2131427403;
+			
+			// aapt resource value: 0x7F0B004C
+			public const int Tabbar = 2131427404;
+			
+			// aapt resource value: 0x7F0B004D
+			public const int Toolbar = 2131427405;
 			
 			static Layout()
 			{

@@ -2,6 +2,7 @@
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" 
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     xmlns:fresh="clr-namespace:FreshMvvm;assembly=FreshMvvm"
+                    xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
                     x:Class="ComicWrap.Themes.ElementStyles">
     
     <Style TargetType="Label">
@@ -44,6 +45,24 @@
     <Style TargetType="Button">
         <Setter Property="BackgroundColor" Value="{DynamicResource ButtonBackgroundColor}"/>
         <Setter Property="TextColor" Value="{DynamicResource ButtonTextColor}"/>
+    </Style>
+
+    <Style TargetType="sv:SettingsView">
+        <Setter Property="SeparatorColor" Value="{DynamicResource DisabledTextColor}"/>
+        <Setter Property="BackgroundColor" Value="{DynamicResource MainBackgroundColor}"/>
+        <Setter Property="HeaderBackgroundColor" Value="{DynamicResource MainBackgroundColor}"/>
+        <Setter Property="CellBackgroundColor" Value="{DynamicResource MainBackgroundColor}"/>
+        <Setter Property="CellTitleColor" Value="{DynamicResource MainTextColor}"/>
+        <Setter Property="CellValueTextColor" Value="{DynamicResource MainTextColor}"/>
+        <!--<Setter Property="CellTitleFontSize" Value="{StaticResource BaseFontSize++}" />-->
+        <!--<Setter Property="CellValueTextFontSize" Value="{StaticResource BaseFontSize}" />-->
+        <Setter Property="CellDescriptionColor" Value="{DynamicResource MainTextColor}"/>
+        <!--<Setter Property="CellDescriptionFontSize" Value="{StaticResource BaseFontSize-}" />-->
+        <Setter Property="CellAccentColor" Value="{DynamicResource AccentColor}"/>
+        <Setter Property="SelectedColor" Value="{DynamicResource AccentColor}"/>
+        <Setter Property="HeaderTextColor" Value="{DynamicResource MainTextColor}"/>
+        <!--<Setter Property="FooterFontSize" Value="{StaticResource BaseFontSize-}" />-->
+        <Setter Property="FooterTextColor" Value="{DynamicResource DisabledTextColor}"/>
     </Style>
 
 </ResourceDictionary>

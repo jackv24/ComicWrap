@@ -138,6 +138,9 @@
     <PackageReference Include="Acr.UserDialogs">
       <Version>7.1.0.442</Version>
     </PackageReference>
+    <PackageReference Include="AiForms.SettingsView">
+      <Version>1.0.9</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.AppCenter.Analytics">
       <Version>3.1.0</Version>
     </PackageReference>

@@ -7,10 +7,10 @@ namespace ComicWrap.Systems
 
     public interface IEnvironment
     {
-        Theme GetOperatingSystemTheme();
-        Task<Theme> GetOperatingSystemThemeAsync();
-        void ApplyTheme(Theme theme);
+        SystemTheme GetOperatingSystemTheme();
+        Task<SystemTheme> GetOperatingSystemThemeAsync();
+        void ApplyTheme(SystemTheme theme);
     }
 
-    public enum Theme { Light, Dark }
+    public enum SystemTheme { Light, Dark }
 }

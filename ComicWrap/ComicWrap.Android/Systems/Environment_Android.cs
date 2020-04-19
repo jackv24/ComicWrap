@@ -17,7 +17,7 @@ namespace ComicWrap.Droid.Systems
     {
         public MainActivity MainActivity { get; set; }
 
-        public Theme GetOperatingSystemTheme()
+        public SystemTheme GetOperatingSystemTheme()
         {
             if (Build.VERSION.SdkInt >= BuildVersionCodes.Froyo)
             {
@@ -26,36 +26,36 @@ namespace ComicWrap.Droid.Systems
 
                 return uiModeFlags switch
                 {
-                    UiMode.NightYes => Theme.Dark,
-                    UiMode.NightNo => Theme.Light,
+                    UiMode.NightYes => SystemTheme.Dark,
+                    UiMode.NightNo => SystemTheme.Light,
                     _ => throw new NotSupportedException($"UiMode {uiModeFlags} not supported"),
                 };
             }
             else
             {
-                return Theme.Light;
+                return SystemTheme.Light;
             }
 
 
         }
 
-        public Task<Theme> GetOperatingSystemThemeAsync()
+        public Task<SystemTheme> GetOperatingSystemThemeAsync()
         {
             return Task.FromResult(GetOperatingSystemTheme());
         }
 
-        public void ApplyTheme(Theme theme)
+        public void ApplyTheme(SystemTheme theme)
         {
             if (MainActivity == null)
                 return;
 
             switch (theme)
             {
-                case Theme.Dark:
+                case SystemTheme.Dark:
                     MainActivity.SetTheme(Resource.Style.DarkTheme);
                     break;
 
-                case Theme.Light:
+                case SystemTheme.Light:
                 default:
                     MainActivity.SetTheme(Resource.Style.LightTheme);
                     break;

@@ -13,7 +13,7 @@ namespace ComicWrap.iOS.Systems
 
     public class Environment_iOS : IEnvironment
     {
-        public Theme GetOperatingSystemTheme()
+        public SystemTheme GetOperatingSystemTheme()
         {
             // `TraitCollection.UserInterfaceStyle` was introduced in iOS 12.0
             if (UIDevice.CurrentDevice.CheckSystemVersion(12, 0))
@@ -24,10 +24,10 @@ namespace ComicWrap.iOS.Systems
                 switch (uiStyle)
                 {
                     case UIUserInterfaceStyle.Light:
-                        return Theme.Light;
+                        return SystemTheme.Light;
 
                     case UIUserInterfaceStyle.Dark:
-                        return Theme.Dark;
+                        return SystemTheme.Dark;
 
                     default:
                         throw new NotSupportedException($"UIUserInterfaceStyle {uiStyle} not supported");
@@ -35,14 +35,14 @@ namespace ComicWrap.iOS.Systems
             }
             else
             {
-                return Theme.Light;
+                return SystemTheme.Light;
             }
         }
 
-        public Task<Theme> GetOperatingSystemThemeAsync()
+        public Task<SystemTheme> GetOperatingSystemThemeAsync()
             => Device.InvokeOnMainThreadAsync(GetOperatingSystemTheme);
 
-        public void ApplyTheme(Theme theme)
+        public void ApplyTheme(SystemTheme theme)
         {
 
         }

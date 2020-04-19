@@ -25,6 +25,7 @@ namespace ComicWrap.Pages
         {
             AddComicCommand = new AsyncCommand(OpenAddComicPopup);
             RefreshCommand = new AsyncCommand(Refresh);
+            OpenSettingsCommand = new AsyncCommand(OpenSettings);
 
             ComicLibrary = new ObservableCollection<ComicData>();
             ComicUpdates = new ObservableCollection<ComicData>();
@@ -35,6 +36,7 @@ namespace ComicWrap.Pages
 
         public IAsyncCommand AddComicCommand { get; }
         public IAsyncCommand RefreshCommand { get; }
+        public IAsyncCommand OpenSettingsCommand { get; }
 
         public bool IsRefreshing
         {
@@ -125,6 +127,11 @@ namespace ComicWrap.Pages
             // Need to manually update properties thate use the ObservableCollections
             RaisePropertyChanged(nameof(IsAnyComics));
             RaisePropertyChanged(nameof(IsAnyUpdates));
+        }
+
+        private async Task OpenSettings()
+        {
+            await CoreMethods.PushPageModel<SettingsPageModel>();
         }
     }
 }

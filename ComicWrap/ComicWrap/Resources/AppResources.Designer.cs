@@ -266,5 +266,50 @@ namespace ComicWrap.Resources {
                 return ResourceManager.GetString("ImageDownload_LocateError_Msg", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dark.
+        /// </summary>
+        public static string Settings_Theme_Dark {
+            get {
+                return ResourceManager.GetString("Settings_Theme_Dark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light.
+        /// </summary>
+        public static string Settings_Theme_Light {
+            get {
+                return ResourceManager.GetString("Settings_Theme_Light", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System.
+        /// </summary>
+        public static string Settings_Theme_System {
+            get {
+                return ResourceManager.GetString("Settings_Theme_System", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string Settings_Title {
+            get {
+                return ResourceManager.GetString("Settings_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Appearance.
+        /// </summary>
+        public static string Settings_Title_Appearance {
+            get {
+                return ResourceManager.GetString("Settings_Title_Appearance", resourceCulture);
+            }
+        }
     }
 }

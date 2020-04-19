@@ -15,8 +15,6 @@ namespace ComicWrap.Droid.Systems
 
     public class Environment_Android : IEnvironment
     {
-        public MainActivity MainActivity { get; set; }
-
         public SystemTheme GetOperatingSystemTheme()
         {
             if (Build.VERSION.SdkInt >= BuildVersionCodes.Froyo)
@@ -46,18 +44,19 @@ namespace ComicWrap.Droid.Systems
 
         public void ApplyTheme(SystemTheme theme)
         {
-            if (MainActivity == null)
-                return;
+            var mainActivity = MainActivity.Instance;
 
             switch (theme)
             {
                 case SystemTheme.Dark:
-                    MainActivity.SetTheme(Resource.Style.DarkTheme);
+                    mainActivity.SetTheme(Resource.Style.DarkTheme);
+                    mainActivity.Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#1b1b1b"));
                     break;
 
                 case SystemTheme.Light:
                 default:
-                    MainActivity.SetTheme(Resource.Style.LightTheme);
+                    mainActivity.SetTheme(Resource.Style.LightTheme);
+                    mainActivity.Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#c2c2c2"));
                     break;
             }
         }

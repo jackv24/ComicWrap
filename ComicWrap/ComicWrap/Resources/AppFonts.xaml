@@ -9,29 +9,22 @@
         <On Platform="iOS" Value="Material Design Icons"/>
     </OnPlatform>
 
-    <FontImageSource x:Key="FontIconSearch"
-                     FontFamily="{StaticResource MaterialFontFamily}"
-                     Glyph="{x:Static res:MaterialFontFamily.MdiMagnify}"
-                     Size="36"/>
-
-    <FontImageSource x:Key="FontIconSort"
-                     FontFamily="{StaticResource MaterialFontFamily}"
-                     Glyph="{x:Static res:MaterialFontFamily.MdiSort}"
-                     Size="36"/>
-
     <FontImageSource x:Key="FontIconMore"
                      FontFamily="{StaticResource MaterialFontFamily}"
                      Glyph="{x:Static res:MaterialFontFamily.MdiDotsVertical}"
-                     Size="36"/>
+                     Size="36"
+                     Color="{DynamicResource MainTextColor}"/>
 
     <FontImageSource x:Key="FontIconAdd"
                      FontFamily="{StaticResource MaterialFontFamily}"
                      Glyph="{x:Static res:MaterialFontFamily.MdiPlus}"
-                     Size="36"/>
+                     Size="36"
+                     Color="{DynamicResource MainTextColor}"/>
 
     <FontImageSource x:Key="FontIconSettings"
                      FontFamily="{StaticResource MaterialFontFamily}"
                      Glyph="{x:Static res:MaterialFontFamily.MdiCog}"
-                     Size="26"/>
+                     Size="26"
+                     Color="{DynamicResource MainTextColor}"/>
 
 </ResourceDictionary>

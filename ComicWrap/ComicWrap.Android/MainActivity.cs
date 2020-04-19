@@ -17,14 +17,11 @@ namespace ComicWrap.Droid
     [Activity(Label = "ComicWrap", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+        public static MainActivity Instance { get; private set; }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            // Android requires theme to be set before creating activity
-            var environment = new Environment_Android
-            {
-                MainActivity = this
-            };
-            environment.ApplyTheme(environment.GetOperatingSystemTheme());
+            Instance = this;
 
             UserDialogs.Init(this);
 

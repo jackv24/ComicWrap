@@ -8,11 +8,11 @@
     <Style TargetType="Label">
         <Setter Property="TextColor" Value="{DynamicResource MainTextColor}"/>
     </Style>
-    
+
     <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
         <Setter Property="BackgroundColor" Value="{DynamicResource MainBackgroundColor}"/>
     </Style>
-    
+
     <Style TargetType="Frame">
         <Setter Property="BackgroundColor" Value="{DynamicResource MainBackgroundColor}"/>
         <Setter Property="HasShadow">

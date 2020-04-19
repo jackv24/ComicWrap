@@ -49,40 +49,40 @@ namespace ComicWrap.Systems
         private static void ApplyTheme(ThemeSetting theme)
         {
             var environment = DependencyService.Get<IEnvironment>();
+            
+            ResourceDictionary themeDict;
             SystemTheme systemTheme = environment.GetOperatingSystemTheme();
 
-            var mergedDictionaries = currentApplication.Resources.MergedDictionaries;
+            switch (theme)
+            {
+                case ThemeSetting.System:
+                    if (systemTheme == SystemTheme.Dark)
+                        themeDict = new DarkTheme();
+                    else
+                        themeDict = new LightTheme();
+                    break;
+
+                case ThemeSetting.Light:
+                    themeDict = new LightTheme();
+                    systemTheme = SystemTheme.Light;
+                    break;
+
+                case ThemeSetting.Dark:
+                    themeDict = new DarkTheme();
+                    systemTheme = SystemTheme.Dark;
+                    break;
+
+                default:
+                    throw new NotImplementedException();
+            }
+
+            var styleDict = new ElementStyles();
+
+            ICollection<ResourceDictionary> mergedDictionaries = currentApplication?.Resources.MergedDictionaries;
+
             if (mergedDictionaries != null)
             {
                 mergedDictionaries.Clear();
-
-                ResourceDictionary themeDict;
-
-                switch (theme)
-                {
-                    case ThemeSetting.System:
-                        if (systemTheme == SystemTheme.Dark)
-                            themeDict = new DarkTheme();
-                        else
-                            themeDict = new LightTheme();
-                        break;
-
-                    case ThemeSetting.Light:
-                        themeDict = new LightTheme();
-                        systemTheme = SystemTheme.Light;
-                        break;
-
-                    case ThemeSetting.Dark:
-                        themeDict = new DarkTheme();
-                        systemTheme = SystemTheme.Dark;
-                        break;
-
-                    default:
-                        throw new NotImplementedException();
-                }
-
-                var styleDict = new ElementStyles();
-
                 mergedDictionaries.Add(themeDict);
 
                 // Need to merge theme into style dict before adding as style dict depends on theme
@@ -94,7 +94,6 @@ namespace ComicWrap.Systems
             }
 
             // Set system theme for platform-specific theming.
-            // TODO: Fix android status bar colour only obeying system theme
             environment.ApplyTheme(systemTheme);
         }
     }

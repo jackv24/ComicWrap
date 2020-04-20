@@ -1,5 +1,0 @@
-<Project>
-    <PropertyGroup>
-        <DisableBuildToolsArtifactCopy>true</DisableBuildToolsArtifactCopy>
-    </PropertyGroup>
-</Project>

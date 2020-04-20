@@ -24,15 +24,15 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <Style TargetType="ListView">
         <Setter Property="BackgroundColor" Value="{DynamicResource MainBackgroundColor}"/>
     </Style>
-    
+
     <Style TargetType="fresh:FreshNavigationContainer">
         <!--Also changes flash colour when navigating pages-->
         <Setter Property="BackgroundColor" Value="{DynamicResource MainBackgroundColor}"/>
-        <Setter Property="BarBackgroundColor" Value="{DynamicResource ColorPrimary}"/>
+        <Setter Property="BarBackgroundColor" Value="{OnPlatform iOS={DynamicResource MainBackgroundColor}, Android={DynamicResource ColorPrimary}}"/>
         <Setter Property="BarTextColor" Value="{DynamicResource MainTextColor}"/>
     </Style>
     

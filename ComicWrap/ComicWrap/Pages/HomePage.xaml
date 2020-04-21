@@ -27,56 +27,67 @@
     <ContentPage.Content>
         <RefreshView IsRefreshing="{Binding IsRefreshing}"
                      Command="{Binding RefreshCommand}">
-            <Frame Margin="0"
-                   Padding="5, 10, 5, 5">
+            <!-- Library Section fills page (Updates section is in Header) -->
+            <CollectionView ItemsSource="{Binding ComicLibrary}"
+                            ItemSizingStrategy="MeasureFirstItem">
+                <CollectionView.Header>
+                    <StackLayout Spacing="0">
 
-                <!-- Library Section fills page (Updates section is in Header) -->
-                <CollectionView ItemsSource="{Binding ComicLibrary}">
-                    <CollectionView.Header>
-                        <StackLayout>
-                            
-                            <!-- Updates Section -->
-                            <Label Text="{x:Static res:AppResources.Home_Subtitle_Updates}"
-                                   FontSize="Large"
-                                   FontAttributes="Italic"
-                                   Margin="10, 0, 10, 10"
-                                   IsVisible="{Binding IsAnyUpdates}"/>
-                            <CollectionView ItemsSource="{Binding ComicUpdates}"
-                                            HeightRequest="200"
-                                            IsVisible="{Binding IsAnyUpdates}">
-                                <CollectionView.ItemTemplate>
-                                    <DataTemplate>
-                                        <views:ComicInfoUpdateView Comic="{Binding}"/>
-                                    </DataTemplate>
-                                </CollectionView.ItemTemplate>
-                                <CollectionView.ItemsLayout>
-                                    <LinearItemsLayout Orientation="Horizontal"
-                                                       ItemSpacing="15"/>
-                                </CollectionView.ItemsLayout>
-                            </CollectionView>
-                            
-                            <!-- Library Header -->
-                            <Label Text="{x:Static res:AppResources.Home_Subtitle_Library}"
-                                   FontSize="Large"
-                                   FontAttributes="Italic"
-                                   Margin="10, 0, 10, 10"
-                                   IsVisible="{Binding IsAnyComics}"/>
-                        </StackLayout>
-                    </CollectionView.Header>
-                    
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <views:ComicInfoLibraryView Comic="{Binding}"/>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                    <CollectionView.ItemsLayout>
-                        <GridItemsLayout x:Name="libraryGridLayout"
-                                         Orientation="Vertical"
-                                         HorizontalItemSpacing="30"
-                                         VerticalItemSpacing="15"/>
-                    </CollectionView.ItemsLayout>
-                </CollectionView>
-            </Frame>
+                        <!-- Updates Section -->
+                        <Label Text="{x:Static res:AppResources.Home_Subtitle_Updates}"
+                               FontSize="Large"
+                               FontAttributes="Italic"
+                               Margin="16, 8, 16, 8"
+                               IsVisible="{Binding IsAnyUpdates}"/>
+
+                        <CollectionView ItemsSource="{Binding ComicUpdates}"
+                                        HeightRequest="165"
+                                        IsVisible="{Binding IsAnyUpdates}"
+                                        ItemSizingStrategy="MeasureFirstItem">
+                            <CollectionView.Header>
+                                <!-- Add padding to start without clipping -->
+                                <BoxView WidthRequest="16"/>
+                            </CollectionView.Header>
+                            <CollectionView.Footer>
+                                <!-- ItemSpacing takes care of footer padding -->
+                                <BoxView WidthRequest="0"/>
+                            </CollectionView.Footer>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <views:ComicInfoUpdateView Comic="{Binding}"/>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal"
+                                                   ItemSpacing="16"/>
+                            </CollectionView.ItemsLayout>
+                        </CollectionView>
+
+                        <!-- Library Header -->
+                        <Label Text="{x:Static res:AppResources.Home_Subtitle_Library}"
+                               FontSize="Large"
+                               FontAttributes="Italic"
+                               Margin="16, 16, 16, 8"
+                               IsVisible="{Binding IsAnyComics}"/>
+                    </StackLayout>
+                </CollectionView.Header>
+                <CollectionView.Footer>
+                    <BoxView HeightRequest="8"/>
+                </CollectionView.Footer>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <views:ComicInfoLibraryView Comic="{Binding}"
+                                                    Padding="16, 0, 16, 16"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout x:Name="libraryGridLayout"
+                                     Orientation="Vertical"
+                                     HorizontalItemSpacing="24"
+                                     VerticalItemSpacing="0"/>
+                </CollectionView.ItemsLayout>
+            </CollectionView>
         </RefreshView>
     </ContentPage.Content>
 </ContentPage>

@@ -9,7 +9,7 @@
 
     <views:ComicInfoViewBase.Content>
         <StackLayout Orientation="Horizontal">
-            <Frame CornerRadius="5"
+            <Frame CornerRadius="8"
                    HorizontalOptions="Start"
                    VerticalOptions="Start"
                    IsClippedToBounds="True"
@@ -22,10 +22,11 @@
                        Margin="0"/>
             </Frame>
             <StackLayout Orientation="Vertical"
-                         Margin="5, 5, 10, 0"
+                         Margin="8, 8, 0, 8"
                          Spacing="0"
                          HorizontalOptions="FillAndExpand">
                 <Label x:Name="labelComicName"
+                       Text="labelComicName"
                        HorizontalTextAlignment="Start"
                        FontSize="Medium"
                        LineBreakMode="TailTruncation"
@@ -34,10 +35,12 @@
                 <StackLayout Orientation="Vertical"
                              VerticalOptions="EndAndExpand">
                     <Label x:Name="labelLastComicPageName"
+                           Text="labelLastComicPageName"
                            HorizontalTextAlignment="Start"
                            FontSize="Small"/>
                     <ProgressBar x:Name="progressBarReadProgress"/>
                     <Label x:Name="labelLastUpdated"
+                           Text="labelLastUpdated"
                            HorizontalTextAlignment="Start"
                            FontSize="Small"/>
                 </StackLayout>

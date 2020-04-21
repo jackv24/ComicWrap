@@ -12,7 +12,7 @@
                      WidthRequest="100"
                      HorizontalOptions="Start"
                      Spacing="0">
-            <Frame CornerRadius="5"
+            <Frame CornerRadius="8"
                    HorizontalOptions="FillAndExpand"
                    VerticalOptions="Start"
                    IsClippedToBounds="True"

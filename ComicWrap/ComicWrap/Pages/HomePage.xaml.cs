@@ -17,6 +17,20 @@ namespace ComicWrap.Pages
         public HomePage()
         {
             InitializeComponent();
+
+            SizeChanged += OnSizeChanged;
+        }
+
+        private void OnSizeChanged(object sender, EventArgs e)
+        {
+            const double baseWidth = 360;
+
+            double width = Width;
+            int columns = width > baseWidth
+                ? (int)Math.Floor(width / baseWidth)
+                : 1;
+
+            libraryGridLayout.Span = columns;
         }
     }
 }

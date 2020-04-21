@@ -67,10 +67,16 @@ namespace ComicWrap.Views
                 }
             }
 
+            if (newComic == null)
+            {
+                CoverImage.Source = null;
+                return;
+            }
+
             coverImageDownloadCancel = new CancellationTokenSource();
 
             // Load cover image
-            string coverImagePath = LocalImageService.GetImagePath(Comic.Id);
+            string coverImagePath = LocalImageService.GetImagePath(newComic.Id);
             
             // Cover image hasn't been download yet
             if (string.IsNullOrEmpty(coverImagePath))

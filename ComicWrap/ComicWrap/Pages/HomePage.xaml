@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:pages="clr-namespace:ComicWrap.Pages"
              xmlns:views="clr-namespace:ComicWrap.Views"
              xmlns:res="clr-namespace:ComicWrap.Resources"
              mc:Ignorable="d"
@@ -28,53 +27,56 @@
     <ContentPage.Content>
         <RefreshView IsRefreshing="{Binding IsRefreshing}"
                      Command="{Binding RefreshCommand}">
-            <ScrollView Orientation="Vertical">
-                <StackLayout Margin="5, 10, 5, 0"
-                             Padding="0, 5, 0, 5">
+            <Frame Margin="0"
+                   Padding="5, 10, 5, 5">
 
-                    <!-- Comic Updates Title -->
-                    <Label Text="{x:Static res:AppResources.Home_Subtitle_Updates}"
-                           FontSize="Large"
-                           FontAttributes="Italic"
-                           Margin="10, 0, 10, 10"
-                           IsVisible="{Binding IsAnyUpdates}"/>
-
-                    <!-- Comic Updates List -->
-                    <ScrollView Orientation="Horizontal"
-                                Padding="10, 0, 10, 20"
-                                IsVisible="{Binding IsAnyUpdates}">
-                        <StackLayout Spacing="15"
-                                     Orientation="Horizontal"
-                                     BindableLayout.ItemsSource="{Binding ComicUpdates}">
-                            <BindableLayout.ItemTemplate>
-                                <DataTemplate>
-                                    <views:ComicInfoUpdateView Comic="{Binding}"/>
-                                </DataTemplate>
-                            </BindableLayout.ItemTemplate>
+                <!-- Library Section fills page (Updates section is in Header) -->
+                <CollectionView ItemsSource="{Binding ComicLibrary}">
+                    <CollectionView.Header>
+                        <StackLayout>
+                            
+                            <!-- Updates Section -->
+                            <Label Text="{x:Static res:AppResources.Home_Subtitle_Updates}"
+                                   FontSize="Large"
+                                   FontAttributes="Italic"
+                                   Margin="10, 0, 10, 10"
+                                   IsVisible="{Binding IsAnyUpdates}"/>
+                            <CollectionView ItemsSource="{Binding ComicUpdates}"
+                                            HeightRequest="200"
+                                            IsVisible="{Binding IsAnyUpdates}">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <views:ComicInfoUpdateView Comic="{Binding}"/>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                                <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout Orientation="Horizontal"
+                                                       ItemSpacing="15"/>
+                                </CollectionView.ItemsLayout>
+                            </CollectionView>
+                            
+                            <!-- Library Header -->
+                            <Label Text="{x:Static res:AppResources.Home_Subtitle_Library}"
+                                   FontSize="Large"
+                                   FontAttributes="Italic"
+                                   Margin="10, 0, 10, 10"
+                                   IsVisible="{Binding IsAnyComics}"/>
                         </StackLayout>
-                    </ScrollView>
-
-                    <!-- Comic Library Title -->
-                    <Label Text="{x:Static res:AppResources.Home_Subtitle_Library}"
-                           FontSize="Large"
-                           FontAttributes="Italic"
-                           Margin="10, 0, 10, 10"
-                           IsVisible="{Binding IsAnyComics}"/>
+                    </CollectionView.Header>
                     
-                    <!-- Comic Library List -->
-                    <StackLayout Spacing="15"
-                                 Margin="10, 0, 10, 10"
-                                 BindableLayout.ItemsSource="{Binding ComicLibrary}"
-                                 IsVisible="{Binding IsAnyComics}">
-                        <BindableLayout.ItemTemplate>
-                            <DataTemplate>
-                                <views:ComicInfoLibraryView Comic="{Binding}"/>
-                            </DataTemplate>
-                        </BindableLayout.ItemTemplate>
-                    </StackLayout>
-                    
-                </StackLayout>
-            </ScrollView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <views:ComicInfoLibraryView Comic="{Binding}"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout x:Name="libraryGridLayout"
+                                         Orientation="Vertical"
+                                         HorizontalItemSpacing="30"
+                                         VerticalItemSpacing="15"/>
+                    </CollectionView.ItemsLayout>
+                </CollectionView>
+            </Frame>
         </RefreshView>
     </ContentPage.Content>
 </ContentPage>

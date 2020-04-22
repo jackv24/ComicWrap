@@ -6,6 +6,8 @@ namespace ComicWrap.Systems
 {
     public class ComicData : RealmObject
     {
+        public event Action Updated;
+
         [PrimaryKey]
         public string Id { get; set; } = Guid.NewGuid().ToString();
 
@@ -40,5 +42,10 @@ namespace ComicWrap.Systems
 
         public ComicPageData LastReadPage => Pages.LastOrDefault(page => page.IsRead);
         public ComicPageData LatestNewPage => Pages.LastOrDefault(page => page.IsNew);
+
+        public void ReportUpdated()
+        {
+            Updated?.Invoke();
+        }
     }
 }

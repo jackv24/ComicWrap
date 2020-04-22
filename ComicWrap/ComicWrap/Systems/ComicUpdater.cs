@@ -57,7 +57,7 @@ namespace ComicWrap.Systems
         public static async Task<IEnumerable<ComicPageData>> UpdateComic(
             ComicData comic,
             string markReadUpToUrl = null,
-            bool markNewPagesAsNew = false,
+            bool markNewPagesAsNew = true,
             CancellationToken cancelToken = default)
         {
             // Load comic archive page
@@ -127,6 +127,9 @@ namespace ComicWrap.Systems
                     realm.Add(page);
                 }
             });
+
+            // Report that comic has updated so UI can refresh, etc.
+            comic.ReportUpdated();
 
             return newPages;
         }

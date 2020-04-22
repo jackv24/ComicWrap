@@ -27,6 +27,7 @@ namespace ComicWrap.Views
         }
 
         private CancellationTokenSource coverImageDownloadCancel;
+        private ComicData previousComic;
 
         public static BindableProperty ComicProperty = BindableProperty.Create(
             propertyName: "Comic",
@@ -55,6 +56,17 @@ namespace ComicWrap.Views
 
         private void ComicChanged(ComicData newComic)
         {
+            if (newComic != previousComic)
+            {
+                if (previousComic != null)
+                    previousComic.Updated -= RefreshComic;
+
+                if (newComic != null)
+                    newComic.Updated += RefreshComic;
+
+                previousComic = newComic;
+            }
+
             if (coverImageDownloadCancel != null)
             {
                 try
@@ -93,6 +105,11 @@ namespace ComicWrap.Views
             }
 
             OnComicChanged(newComic);
+        }
+
+        private void RefreshComic()
+        {
+            ComicChanged(Comic);
         }
 
         private async Task<string> DownloadCoverImage(CancellationToken cancelToken = default)

@@ -10,9 +10,6 @@
     <views:ComicInfoViewBase.Content>
         <StackLayout Orientation="Horizontal">
             <Frame CornerRadius="8"
-                   HorizontalOptions="Start"
-                   VerticalOptions="Start"
-                   IsClippedToBounds="True"
                    Padding="0">
                 <Image x:Name="coverImage"
                        BackgroundColor="Gray"

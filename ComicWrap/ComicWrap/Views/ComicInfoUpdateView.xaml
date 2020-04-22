@@ -13,9 +13,6 @@
                      HorizontalOptions="Start"
                      Spacing="0">
             <Frame CornerRadius="8"
-                   HorizontalOptions="FillAndExpand"
-                   VerticalOptions="Start"
-                   IsClippedToBounds="True"
                    Padding="0">
                 <Image x:Name="coverImage"
                        BackgroundColor="Gray"

@@ -147,8 +147,8 @@
   <data name="ComicDetail_Options_Title" xml:space="preserve">
     <value>Comic Options</value>
   </data>
-  <data name="ComicInfo_LastUpdated" xml:space="preserve">
-    <value>Updated {0} days ago</value>
+  <data name="ComicInfo_LastRead" xml:space="preserve">
+    <value>Read {0} days ago</value>
   </data>
   <data name="ComicInfo_LastUpdatedShort" xml:space="preserve">
     <value>{0} days ago</value>

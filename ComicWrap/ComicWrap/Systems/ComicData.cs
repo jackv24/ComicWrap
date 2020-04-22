@@ -37,11 +37,11 @@ namespace ComicWrap.Systems
             }
         }
 
-        // TODO: Implement
-        public int DaysSinceLastUpdated => -1;
-
         public ComicPageData LastReadPage => Pages.LastOrDefault(page => page.IsRead);
         public ComicPageData LatestNewPage => Pages.LastOrDefault(page => page.IsNew);
+
+        public DateTimeOffset? LastReadDate { get; set; }
+        public DateTimeOffset? LastUpdatedDate { get; set; }
 
         public void ReportUpdated()
         {

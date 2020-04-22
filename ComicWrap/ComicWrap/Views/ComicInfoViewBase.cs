@@ -145,10 +145,5 @@ namespace ComicWrap.Views
         {
             return string.IsNullOrEmpty(comic.Name) ? "$COMIC_NAME$" : comic.Name;
         }
-
-        protected static string GetFormattedLastReadPage(ComicData comic)
-        {
-            return comic.LastReadPage?.Name ?? "$LAST_READ_PAGE$";
-        }
     }
 }

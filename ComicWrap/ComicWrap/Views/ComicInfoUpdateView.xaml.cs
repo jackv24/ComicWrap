@@ -30,7 +30,16 @@ namespace ComicWrap.Views
         {
             labelComicName.Text = GetFormattedComicName(newComic);
             labelComicPageName.Text = newComic.LatestNewPage?.Name ?? "$NEWEST_PAGE$";
-            labelLastUpdated.Text = string.Format(Res.ComicInfo_LastUpdatedShort, newComic.DaysSinceLastUpdated);
+
+            if (newComic.LastUpdatedDate != null)
+            {
+                TimeSpan timeSince = DateTimeOffset.UtcNow - newComic.LastUpdatedDate.Value;
+                labelLastUpdated.Text = string.Format(Res.ComicInfo_LastUpdatedShort, timeSince.Days);
+            }
+            else
+            {
+                labelLastUpdated.Text = string.Empty;
+            }
         }
     }
 }

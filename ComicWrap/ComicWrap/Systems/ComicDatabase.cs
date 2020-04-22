@@ -18,7 +18,7 @@ namespace ComicWrap.Systems
         {
             Realm = Realm.GetInstance(new RealmConfiguration
             {
-                SchemaVersion = 1,
+                SchemaVersion = 2,
                 MigrationCallback = OnRealmMigration
             });
         }
@@ -95,16 +95,27 @@ namespace ComicWrap.Systems
 
         private static void OnRealmMigration(Migration migration, ulong oldSchemaVersion)
         {
-            var oldComicPages = migration.OldRealm.All("ComicPageData");
             var newComicPages = migration.NewRealm.All<ComicPageData>();
 
             for (int i = 0; i < newComicPages.Count(); i++)
             {
-                var oldPage = oldComicPages.ElementAt(i);
                 var newPage = newComicPages.ElementAt(i);
 
                 if (oldSchemaVersion < 1)
                     newPage.IsNew = false;
+            }
+
+            var newComics = migration.NewRealm.All<ComicData>();
+
+            for (int i = 0; i < newComics.Count(); i++)
+            {
+                var newComic = newComics.ElementAt(i);
+
+                if (oldSchemaVersion < 2)
+                {
+                    newComic.LastUpdatedDate = null;
+                    newComic.LastReadDate = null;
+                }
             }
         }
     }

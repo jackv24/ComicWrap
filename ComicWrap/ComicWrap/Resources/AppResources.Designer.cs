@@ -151,11 +151,11 @@ namespace ComicWrap.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Updated {0} days ago.
+        ///   Looks up a localized string similar to Read {0} days ago.
         /// </summary>
-        public static string ComicInfo_LastUpdated {
+        public static string ComicInfo_LastRead {
             get {
-                return ResourceManager.GetString("ComicInfo_LastUpdated", resourceCulture);
+                return ResourceManager.GetString("ComicInfo_LastRead", resourceCulture);
             }
         }
         

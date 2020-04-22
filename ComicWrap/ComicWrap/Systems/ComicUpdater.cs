@@ -71,6 +71,7 @@ namespace ComicWrap.Systems
 
             bool doMarkReadUpTo = !string.IsNullOrEmpty(markReadUpToUrl);
             bool reachedReadPage = false;
+            bool anyNewPages = false;
 
             // New page data is bare, so fill out missing data
             // Loop backwards so we can mark previously read pages
@@ -103,7 +104,10 @@ namespace ComicWrap.Systems
                 }
 
                 if (!foundOldPage && markNewPagesAsNew)
+                {
                     newPage.IsNew = true;
+                    anyNewPages = true;
+                }
             }
 
             // NOTE: After this point we can no longer cancel as database is being written to
@@ -113,6 +117,11 @@ namespace ComicWrap.Systems
             ComicDatabase.Instance.Write(realm =>
             {
                 comic.Name = document.Title;
+
+                // Record date if any new pages were added
+                if (anyNewPages)
+                    comic.LastUpdatedDate = DateTimeOffset.UtcNow;
+
                 realm.Add(comic, update: true);
 
                 // Delete any existing pages that aren't in the new pages

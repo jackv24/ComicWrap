@@ -72,6 +72,8 @@ namespace ComicWrap.Pages
             {
                 pageData.IsRead = true;
                 pageData.IsNew = false;
+
+                Comic.LastReadDate = DateTimeOffset.UtcNow;
             });
         }
 

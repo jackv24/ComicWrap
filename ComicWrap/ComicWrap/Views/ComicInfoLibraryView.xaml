@@ -36,8 +36,8 @@
                            HorizontalTextAlignment="Start"
                            FontSize="Small"/>
                     <ProgressBar x:Name="progressBarReadProgress"/>
-                    <Label x:Name="labelLastUpdated"
-                           Text="labelLastUpdated"
+                    <Label x:Name="labelLastRead"
+                           Text="labelLastRead"
                            HorizontalTextAlignment="Start"
                            FontSize="Small"/>
                 </StackLayout>

@@ -124,9 +124,31 @@ namespace ComicWrap.Pages
                     ComicUpdates.Add(comic);
             }
 
-            // Need to manually update properties thate use the ObservableCollections
+            // Sort and reverse lists
+            ComicLibrary.Sort((a, b) => CompareDates(a.LastReadDate, b.LastReadDate) * -1);
+            ComicUpdates.Sort((a, b) => CompareDates(a.LastUpdatedDate, b.LastUpdatedDate) * -1);
+
+            // Update list bindings
+            RaisePropertyChanged(nameof(ComicLibrary));
+            RaisePropertyChanged(nameof(ComicUpdates));
+
+            // Update other related bindings
             RaisePropertyChanged(nameof(IsAnyComics));
             RaisePropertyChanged(nameof(IsAnyUpdates));
+        }
+
+        private static int CompareDates(DateTimeOffset? a, DateTimeOffset? b)
+        {
+            if (a == null && b == null)
+                return 0;
+
+            if (a == null)
+                return -1;
+
+            if (b == null)
+                return 1;
+
+            return a.Value.CompareTo(b.Value);
         }
 
         private async Task OpenSettings()

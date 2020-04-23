@@ -100,8 +100,8 @@ namespace ComicWrap.Pages
                 await Task.WhenAll(updateComicTasks);
             }
             catch (OperationCanceledException) { }
-            
-            RaisePropertyChanged(nameof(IsAnyComics));
+
+            DisplayComics();
 
             IsRefreshing = false;
 

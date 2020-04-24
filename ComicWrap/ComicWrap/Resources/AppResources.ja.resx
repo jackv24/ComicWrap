@@ -133,7 +133,7 @@
     <value>エラー</value>
   </data>
   <data name="Alert_Generic_Confirm" xml:space="preserve">
-    <value>OK</value>
+    <value>はい</value>
   </data>
   <data name="ComicDetail_DeletedComic" xml:space="preserve">
     <value>削除されたコミック：{0}</value>
@@ -200,5 +200,8 @@
   </data>
   <data name="Settings_Title_Appearance" xml:space="preserve">
     <value>外観</value>
+  </data>
+  <data name="Settings_Title_Language" xml:space="preserve">
+    <value>言語</value>
   </data>
 </root>

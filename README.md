@@ -39,9 +39,17 @@ We use [Mobile.BuildTools](https://github.com/dansiegel/Mobile.BuildTools) for i
 
 ## Contributing
 
+### Code
+
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
 Coding conventions generally adhere to the [Microsoft C# Coding Conventions.](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)
+
+### Localisation
+
+We use [POEditor](https://poeditor.com/) as our localisation platform, due to their generous free plan for open source projects.
+
+Want to help out? [Become a contributor here!](https://poeditor.com/join/project/PkakOxtZhA)
 
 ## License
 

@@ -311,14 +311,5 @@ namespace ComicWrap.Resources {
                 return ResourceManager.GetString("Settings_Title_Appearance", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Language.
-        /// </summary>
-        public static string Settings_Title_Language {
-            get {
-                return ResourceManager.GetString("Settings_Title_Language", resourceCulture);
-            }
-        }
     }
 }

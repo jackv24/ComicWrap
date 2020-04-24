@@ -201,7 +201,4 @@
   <data name="Settings_Title_Appearance" xml:space="preserve">
     <value>Appearance</value>
   </data>
-  <data name="Settings_Title_Language" xml:space="preserve">
-    <value>Language</value>
-  </data>
 </root>

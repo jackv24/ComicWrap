@@ -7,12 +7,25 @@ using System.Threading.Tasks;
 using AngleSharp;
 using AngleSharp.Dom;
 
-using ComicWrap.Systems;
-
 namespace ComicWrap.Systems
 {
-    public static class ComicUpdater
+    public class ComicUpdater : SingletonBase<ComicUpdater>
     {
+        public ComicUpdater()
+        {
+            database = ComicDatabase.Instance;
+            pageLoader = new PageLoader();
+        }
+
+        public ComicUpdater(ComicDatabase database, IPageLoader pageLoader)
+        {
+            this.database = database;
+            this.pageLoader = pageLoader;
+        }
+
+        private readonly ComicDatabase database;
+        private readonly IPageLoader pageLoader;
+
         public static bool IsUrlValid(string url)
         {
             if (string.IsNullOrEmpty(url))
@@ -22,24 +35,19 @@ namespace ComicWrap.Systems
             {
                 var uri = new Uri(url);
             }
+#pragma warning disable CA1031 // Do not catch general exception types
             catch (UriFormatException)
             {
                 return false;
             }
+#pragma warning restore CA1031 // Do not catch general exception types
 
             return true;
         }
 
-        public static IBrowsingContext GetBrowsingContext()
+        public async Task<ComicData> ImportComic(string archiveUrl, string currentPageUrl)
         {
-            var config = Configuration.Default.WithDefaultLoader();
-            var context = BrowsingContext.New(config);
-            return context;
-        }
-
-        public static async Task ImportComic(string archiveUrl, string currentPageUrl)
-        {
-            var document = await GetBrowsingContext().OpenAsync(archiveUrl);
+            var document = await pageLoader.OpenDocument(archiveUrl);
             
             var comic = new ComicData
             {
@@ -52,9 +60,11 @@ namespace ComicWrap.Systems
                 comic,
                 markReadUpToUrl: currentPageUrl,
                 markNewPagesAsNew: false);
+
+            return comic;
         }
 
-        public static async Task<IEnumerable<ComicPageData>> UpdateComic(
+        public async Task<IEnumerable<ComicPageData>> UpdateComic(
             ComicData comic,
             string markReadUpToUrl = null,
             bool markNewPagesAsNew = true,
@@ -62,7 +72,7 @@ namespace ComicWrap.Systems
         {
             // Load comic archive page
             cancelToken.ThrowIfCancellationRequested();
-            var document = await GetBrowsingContext().OpenAsync(comic.ArchiveUrl);
+            var document = await pageLoader.OpenDocument(comic.ArchiveUrl);
 
             var newPages = DiscoverPages(document, comic.CurrentPageUrl);
             cancelToken.ThrowIfCancellationRequested();
@@ -114,7 +124,7 @@ namespace ComicWrap.Systems
             cancelToken.ThrowIfCancellationRequested();
 
             // Run database operations as one transaction to prevent issues
-            ComicDatabase.Instance.Write(realm =>
+            database.Write(realm =>
             {
                 comic.Name = document.Title;
 
@@ -182,12 +192,12 @@ namespace ComicWrap.Systems
             }
         }
 
-        public static async Task<string> GetComicImageUrl(ComicPageData page, CancellationToken cancelToken = default)
+        public async Task<string> GetComicImageUrl(ComicPageData page, CancellationToken cancelToken = default)
         {
             // TODO: Expand to work with more sites
 
             cancelToken.ThrowIfCancellationRequested();
-            var document = await GetBrowsingContext().OpenAsync(page.Url);
+            var document = await pageLoader.OpenDocument(page.Url);
 
             return document.GetElementById("cc-comic")?.GetAttribute("src");
         }

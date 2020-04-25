@@ -16,7 +16,7 @@ namespace ComicWrap.Tests
 {
     public static class ComicDatabaseTests
     {
-        private static ComicDatabase GetNewDatabase()
+        public static ComicDatabase GetNewDatabase()
         {
             string identifier = Guid.NewGuid().ToString();
             var realm = Realm.GetInstance(new InMemoryConfiguration(identifier));
@@ -58,8 +58,10 @@ namespace ComicWrap.Tests
             {
                 // Add 1 comic with 1 page
                 realm.Add(comic);
-                var page = new ComicPageData();
-                page.Comic = comic;
+                var page = new ComicPageData
+                {
+                    Comic = comic
+                };
                 realm.Add(page);
             });
 

@@ -94,7 +94,7 @@ namespace ComicWrap.Pages
                 // Update comics from internet after loading from database so UI is filled ASAP
                 var updateComicTasks = new List<Task>(ComicLibrary.Count);
                 foreach (var comic in ComicLibrary)
-                    updateComicTasks.Add(ComicUpdater.UpdateComic(comic, cancelToken: cancelToken));
+                    updateComicTasks.Add(ComicUpdater.Instance.UpdateComic(comic, cancelToken: cancelToken));
 
                 // Updating comics can all happen at once instead of sequentially for speed
                 await Task.WhenAll(updateComicTasks);

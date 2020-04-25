@@ -12,7 +12,7 @@ using Realms;
 
 namespace ComicWrap.Systems
 {
-    public class ComicDatabase
+    public class ComicDatabase : SingletonBase<ComicDatabase>
     {
         public ComicDatabase()
         {
@@ -29,18 +29,6 @@ namespace ComicWrap.Systems
         }
 
         public Realm Realm { get; private set; }
-
-        private static ComicDatabase _instance;
-        public static ComicDatabase Instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new ComicDatabase();
-
-                return _instance;
-            }
-        }
 
         public void AddComic(ComicData comicData)
         {

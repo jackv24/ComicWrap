@@ -152,7 +152,7 @@ namespace ComicWrap.Pages
 
         private async Task Refresh(CancellationToken cancelToken)
         {
-            var newPages = await ComicUpdater.UpdateComic(Comic, cancelToken: cancelToken);
+            var newPages = await ComicUpdater.Instance.UpdateComic(Comic, cancelToken: cancelToken);
             UpdatePages(newPages);
         }
 

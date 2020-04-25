@@ -72,7 +72,7 @@ namespace ComicWrap.Pages
 
             // TODO: Add "ghost" comic to home page while importing
 
-            await ComicUpdater.ImportComic(ArchivePageUrl, CurrentPageUrl);
+            await ComicUpdater.Instance.ImportComic(ArchivePageUrl, CurrentPageUrl);
 
             // TODO: Refresh home page
         }

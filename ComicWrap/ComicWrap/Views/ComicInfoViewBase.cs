@@ -117,7 +117,7 @@ namespace ComicWrap.Views
             if (Comic == null || Comic.Pages.Count() == 0)
                 return null;
 
-            string url = await ComicUpdater.GetComicImageUrl(Comic.Pages.ElementAt(0), cancelToken);
+            string url = await ComicUpdater.Instance.GetComicImageUrl(Comic.Pages.ElementAt(0), cancelToken);
             if (string.IsNullOrEmpty(url))
                 return null;
 

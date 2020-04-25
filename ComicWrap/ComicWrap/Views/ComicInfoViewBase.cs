@@ -22,7 +22,7 @@ namespace ComicWrap.Views
         public ComicInfoViewBase()
         {
             var tapGesture = new TapGestureRecognizer();
-            tapGesture.Command = new Command(async () => await OpenComic());
+            tapGesture.Command = new Command(async () => await OpenComic(), () => IsEnabled);
             GestureRecognizers.Add(tapGesture);
         }
 

@@ -8,7 +8,8 @@
              x:Class="ComicWrap.Views.ComicInfoLibraryView">
 
     <views:ComicInfoViewBase.Content>
-        <StackLayout Orientation="Horizontal">
+        <StackLayout x:Name="parentStackLayout" 
+                     Orientation="Horizontal">
             <Frame CornerRadius="8"
                    Padding="0">
                 <Image x:Name="coverImage"

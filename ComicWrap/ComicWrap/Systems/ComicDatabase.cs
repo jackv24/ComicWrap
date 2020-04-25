@@ -51,6 +51,11 @@ namespace ComicWrap.Systems
             }
         }
 
+        public IQueryable<ComicData> GetComicsQuery()
+        {
+            return Realm.All<ComicData>();
+        }
+
         public List<ComicData> GetComics()
         {
             return Realm.All<ComicData>()

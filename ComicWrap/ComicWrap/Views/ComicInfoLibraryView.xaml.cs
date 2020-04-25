@@ -41,6 +41,20 @@ namespace ComicWrap.Views
             {
                 labelLastRead.Text = string.Empty;
             }
+
+            // Disable if comic isn't in database yet (must still be importing)
+            if (ComicDatabase.Instance.GetComicsQuery()
+                // Need to use Any since Contains isn't supported
+                .Any(c => c.Id == newComic.Id))
+            {
+                IsEnabled = true;
+                Opacity = 1.0;
+            }
+            else
+            {
+                IsEnabled = false;
+                Opacity = 0.3f;
+            }
         }
     }
 }

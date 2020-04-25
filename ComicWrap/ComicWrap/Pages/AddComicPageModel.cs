@@ -70,11 +70,8 @@ namespace ComicWrap.Pages
             // Pop page immediately, comic will load in background
             await PopupNavigation.Instance.PopAsync();
 
-            // TODO: Add "ghost" comic to home page while importing
-
+            // TODO: Run in background as service (with notification and everything)
             await ComicUpdater.Instance.ImportComic(ArchivePageUrl, CurrentPageUrl);
-
-            // TODO: Refresh home page
         }
     }
 }

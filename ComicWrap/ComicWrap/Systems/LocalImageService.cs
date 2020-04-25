@@ -16,7 +16,8 @@ namespace ComicWrap.Systems
 
         public static async Task<string> DownloadImage(Uri url, string key, CancellationToken cancellationToken = default)
         {
-            cancellationToken.ThrowIfCancellationRequested();
+            if (cancellationToken.IsCancellationRequested)
+                return null;
             
             // Download image
             WebClient webClient = new WebClient()
@@ -25,8 +26,9 @@ namespace ComicWrap.Systems
                 Proxy = null
             };
             byte[] imageData = await webClient.DownloadDataTaskAsync(url);
-            
-            cancellationToken.ThrowIfCancellationRequested();
+
+            if (cancellationToken.IsCancellationRequested)
+                return null;
 
             // Make sure directory exists
             Directory.CreateDirectory(folderPath);

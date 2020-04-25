@@ -15,16 +15,27 @@ namespace ComicWrap.Systems
         {
             database = ComicDatabase.Instance;
             pageLoader = new PageLoader();
+
+            importingComics = new List<ComicData>();
         }
 
         public ComicUpdater(ComicDatabase database, IPageLoader pageLoader)
         {
             this.database = database;
             this.pageLoader = pageLoader;
+
+            importingComics = new List<ComicData>();
         }
+
+        public event Action<ComicData> ImportComicBegun;
+        public event Action<ComicData> ImportComicProgressed;
+        public event Action<ComicData> ImportComicFinished;
 
         private readonly ComicDatabase database;
         private readonly IPageLoader pageLoader;
+
+        private List<ComicData> importingComics;
+        public IEnumerable<ComicData> ImportingComics { get => importingComics; }
 
         public static bool IsUrlValid(string url)
         {
@@ -47,19 +58,30 @@ namespace ComicWrap.Systems
 
         public async Task<ComicData> ImportComic(string archiveUrl, string currentPageUrl)
         {
-            var document = await pageLoader.OpenDocument(archiveUrl);
-            
             var comic = new ComicData
             {
-                Name = document.Title,
+                Name = "!Importing Comic!",
                 ArchiveUrl = archiveUrl,
                 CurrentPageUrl = currentPageUrl
             };
+
+            importingComics.Add(comic);
+            ImportComicBegun?.Invoke(comic);
+
+            var document = await pageLoader.OpenDocument(archiveUrl);
+
+            // TODO: Process title to remove " - Archive", etc.
+            comic.Name = document.Title;
+
+            ImportComicProgressed?.Invoke(comic);
 
             await UpdateComic(
                 comic,
                 markReadUpToUrl: currentPageUrl,
                 markNewPagesAsNew: false);
+
+            importingComics.Remove(comic);
+            ImportComicFinished?.Invoke(comic);
 
             return comic;
         }
@@ -196,7 +218,9 @@ namespace ComicWrap.Systems
         {
             // TODO: Expand to work with more sites
 
-            cancelToken.ThrowIfCancellationRequested();
+            if (cancelToken.IsCancellationRequested)
+                return null;
+
             var document = await pageLoader.OpenDocument(page.Url);
 
             return document.GetElementById("cc-comic")?.GetAttribute("src");

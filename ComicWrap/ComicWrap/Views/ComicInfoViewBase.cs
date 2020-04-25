@@ -68,16 +68,7 @@ namespace ComicWrap.Views
             }
 
             if (coverImageDownloadCancel != null)
-            {
-                try
-                {
-                    coverImageDownloadCancel.Cancel(true);
-                }
-                catch (OperationCanceledException)
-                {
-                    // Cancel silently
-                }
-            }
+                coverImageDownloadCancel.Cancel();
 
             if (newComic == null)
             {
@@ -85,17 +76,16 @@ namespace ComicWrap.Views
                 return;
             }
 
-            coverImageDownloadCancel = new CancellationTokenSource();
-
             // Load cover image
             string coverImagePath = LocalImageService.GetImagePath(newComic.Id);
-            
+
             // Cover image hasn't been download yet
             if (string.IsNullOrEmpty(coverImagePath))
             {
+                coverImageDownloadCancel = new CancellationTokenSource();
+
                 // Download image, and then set image source
                 DownloadCoverImage(coverImageDownloadCancel.Token)
-                    .ContinueWith(t => CoverImage.Source = new FileImageSource { File = t.Result }, coverImageDownloadCancel.Token)
                     .SafeFireAndForget();
             }
             else
@@ -112,18 +102,20 @@ namespace ComicWrap.Views
             ComicChanged(Comic);
         }
 
-        private async Task<string> DownloadCoverImage(CancellationToken cancelToken = default)
+        private async Task DownloadCoverImage(CancellationToken cancelToken = default)
         {
             if (Comic == null || Comic.Pages.Count() == 0)
-                return null;
+                return;
 
             string url = await ComicUpdater.Instance.GetComicImageUrl(Comic.Pages.ElementAt(0), cancelToken);
             if (string.IsNullOrEmpty(url))
-                return null;
+                return;
 
-            string downloadedPath = await LocalImageService.DownloadImage(new Uri(url), Comic.Id, cancelToken);
+            string filePath = await LocalImageService.DownloadImage(new Uri(url), Comic.Id, cancelToken);
+            if (string.IsNullOrEmpty(filePath))
+                return;
 
-            return downloadedPath;
+            CoverImage.Source = new FileImageSource { File = filePath };
         }
 
         protected abstract void OnComicChanged(ComicData newComic);

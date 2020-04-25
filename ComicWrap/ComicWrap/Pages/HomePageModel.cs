@@ -29,10 +29,15 @@ namespace ComicWrap.Pages
 
             ComicLibrary = new ObservableCollection<ComicData>();
             ComicUpdates = new ObservableCollection<ComicData>();
+
+            importingComics = new List<ComicData>();
         }
 
         private CancellationTokenSource pageCancelTokenSource;
         private bool _isRefreshing;
+
+        private ComicUpdater comicUpdater;
+        private List<ComicData> importingComics;
 
         public IAsyncCommand AddComicCommand { get; }
         public IAsyncCommand RefreshCommand { get; }
@@ -66,6 +71,17 @@ namespace ComicWrap.Pages
             base.ViewIsAppearing(sender, e);
 
             pageCancelTokenSource = new CancellationTokenSource();
+
+            // Subscribe to ComicUpdater events so page can be updated while importing comics
+            comicUpdater = ComicUpdater.Instance;
+            comicUpdater.ImportComicBegun += OnImportComicBegun;
+            comicUpdater.ImportComicProgressed += OnImportComicProgressed;
+            comicUpdater.ImportComicFinished += OnImportComicFinished;
+            
+            // Handle comics that were already importing
+            foreach (var comic in comicUpdater.ImportingComics)
+                OnImportComicBegun(comic);
+
             DisplayComics();
         }
 
@@ -75,6 +91,12 @@ namespace ComicWrap.Pages
 
             pageCancelTokenSource.CancelAndDispose();
             IsRefreshing = false;
+
+            // Only need to update page while active
+            comicUpdater.ImportComicBegun -= OnImportComicBegun;
+            comicUpdater.ImportComicProgressed -= OnImportComicProgressed;
+            comicUpdater.ImportComicFinished -= OnImportComicFinished;
+            importingComics.Clear();
         }
 
         private async Task OpenAddComicPopup()
@@ -94,7 +116,7 @@ namespace ComicWrap.Pages
                 // Update comics from internet after loading from database so UI is filled ASAP
                 var updateComicTasks = new List<Task>(ComicLibrary.Count);
                 foreach (var comic in ComicLibrary)
-                    updateComicTasks.Add(ComicUpdater.Instance.UpdateComic(comic, cancelToken: cancelToken));
+                    updateComicTasks.Add(comicUpdater.UpdateComic(comic, cancelToken: cancelToken));
 
                 // Updating comics can all happen at once instead of sequentially for speed
                 await Task.WhenAll(updateComicTasks);
@@ -116,6 +138,7 @@ namespace ComicWrap.Pages
             // Update UI
             ComicLibrary.Clear();
             ComicUpdates.Clear();
+
             foreach (var comic in loadedComics)
             {
                 ComicLibrary.Add(comic);
@@ -127,6 +150,10 @@ namespace ComicWrap.Pages
             // Sort and reverse lists
             ComicLibrary.Sort((a, b) => CompareDates(a.LastReadDate, b.LastReadDate) * -1);
             ComicUpdates.Sort((a, b) => CompareDates(a.LastUpdatedDate, b.LastUpdatedDate) * -1);
+
+            // Display importing comics at top of list
+            foreach (var comic in importingComics)
+                ComicLibrary.Insert(0, comic);
 
             // Update list bindings
             RaisePropertyChanged(nameof(ComicLibrary));
@@ -154,6 +181,31 @@ namespace ComicWrap.Pages
         private async Task OpenSettings()
         {
             await CoreMethods.PushPageModel<SettingsPageModel>();
+        }
+
+        private void OnImportComicBegun(ComicData comic)
+        {
+            importingComics.Add(comic);
+
+            // Just add this comic to start of Library list - no need to refresh whole page
+            ComicLibrary.Insert(0, comic);
+
+            RaisePropertyChanged(nameof(ComicLibrary));
+            RaisePropertyChanged(nameof(IsAnyComics));
+        }
+
+        private void OnImportComicProgressed(ComicData comic)
+        {
+            // Update views that are displaying this comic
+            comic.ReportUpdated();
+        }
+
+        private void OnImportComicFinished(ComicData comic)
+        {
+            importingComics.Remove(comic);
+
+            // Need to refresh whole list for correct ordering
+            DisplayComics();
         }
     }
 }

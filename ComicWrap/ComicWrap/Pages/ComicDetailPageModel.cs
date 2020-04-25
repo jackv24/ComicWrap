@@ -152,8 +152,12 @@ namespace ComicWrap.Pages
 
         private async Task Refresh(CancellationToken cancelToken)
         {
-            var newPages = await ComicUpdater.Instance.UpdateComic(Comic, cancelToken: cancelToken);
-            UpdatePages(newPages);
+            try
+            {
+                var newPages = await ComicUpdater.Instance.UpdateComic(Comic, cancelToken: cancelToken);
+                UpdatePages(newPages);
+            }
+            catch (OperationCanceledException) { }
         }
 
         private void UpdatePages(IEnumerable<ComicPageData> newPages)

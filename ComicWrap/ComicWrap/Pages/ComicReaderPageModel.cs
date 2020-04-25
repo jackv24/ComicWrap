@@ -68,13 +68,7 @@ namespace ComicWrap.Pages
             PageName = pageData.Name;
             PageSource = new UrlWebViewSource { Url = pageData.Url };
 
-            ComicDatabase.Instance.Write(() =>
-            {
-                pageData.IsRead = true;
-                pageData.IsNew = false;
-
-                Comic.LastReadDate = DateTimeOffset.UtcNow;
-            });
+            ComicDatabase.Instance.MarkRead(pageData);
         }
 
         protected override void ViewIsAppearing(object sender, EventArgs e)
@@ -115,7 +109,7 @@ namespace ComicWrap.Pages
                 PageName = pageData.Name;
 
                 // Mark as read and save to database (don't need to update cachedPages since pageData is a class reference)
-                ComicDatabase.Instance.Write(() => pageData.IsRead = true);
+                ComicDatabase.Instance.MarkRead(pageData);
             }
         }
 

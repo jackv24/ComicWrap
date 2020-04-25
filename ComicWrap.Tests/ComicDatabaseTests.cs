@@ -73,5 +73,32 @@ namespace ComicWrap.Tests
             var pageCount = pages.Count();
             Assert.AreEqual(0, pageCount);
         }
+
+        [Test]
+        public static void ComicPageMarkReadClearsIsNew()
+        {
+            var database = GetNewDatabase();
+            var comic = new ComicData();
+            var page = new ComicPageData
+            {
+                Comic = comic,
+                IsRead = false,
+                IsNew = true
+            };
+            database.Write(realm =>
+            {
+                // Add 1 comic with 1 page
+                realm.Add(comic);
+                realm.Add(page);
+            });
+
+            database.MarkRead(page);
+
+            Assert.Multiple(() =>
+            {
+                Assert.IsTrue(page.IsRead);
+                Assert.IsFalse(page.IsNew);
+            });
+        }
     }
 }

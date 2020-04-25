@@ -81,6 +81,17 @@ namespace ComicWrap.Systems
             }
         }
 
+        public void MarkRead(ComicPageData page)
+        {
+            Write(realm =>
+            {
+                page.IsRead = true;
+                page.IsNew = false;
+
+                page.Comic.LastReadDate = DateTimeOffset.UtcNow;
+            });
+        }
+
         private static void OnRealmMigration(Migration migration, ulong oldSchemaVersion)
         {
             var newComicPages = migration.NewRealm.All<ComicPageData>();

@@ -133,27 +133,27 @@ namespace ComicWrap.Pages
         private void DisplayComics()
         {
             // Load comics from local database
-            var loadedComics = ComicDatabase.Instance.GetComics();
+            List<ComicData> newComicLibrary = ComicDatabase.Instance.GetComics();
 
-            // Update UI
-            ComicLibrary.Clear();
-            ComicUpdates.Clear();
-
-            foreach (var comic in loadedComics)
+            // Get comics that have new pages
+            var newComicUpdates = new List<ComicData>();
+            foreach (var comic in newComicLibrary)
             {
-                ComicLibrary.Add(comic);
-
                 if (comic.Pages.Any(page => page.IsNew))
-                    ComicUpdates.Add(comic);
+                    newComicUpdates.Add(comic);
             }
 
             // Sort and reverse lists
-            ComicLibrary.Sort((a, b) => CompareDates(a.LastReadDate, b.LastReadDate) * -1);
-            ComicUpdates.Sort((a, b) => CompareDates(a.LastUpdatedDate, b.LastUpdatedDate) * -1);
+            newComicLibrary.Sort((a, b) => CompareDates(a.LastReadDate, b.LastReadDate) * -1);
+            newComicUpdates.Sort((a, b) => CompareDates(a.LastUpdatedDate, b.LastUpdatedDate) * -1);
 
             // Display importing comics at top of list
             foreach (var comic in importingComics)
-                ComicLibrary.Insert(0, comic);
+                newComicLibrary.Insert(0, comic);
+
+            // Make ObservableCollections match new lists (done this way so UI is animated with changes)
+            UpdateObservableCollection(ComicLibrary, newComicLibrary);
+            UpdateObservableCollection(ComicUpdates, newComicUpdates);
 
             // Update list bindings
             RaisePropertyChanged(nameof(ComicLibrary));
@@ -164,23 +164,9 @@ namespace ComicWrap.Pages
             RaisePropertyChanged(nameof(IsAnyUpdates));
         }
 
-        private static int CompareDates(DateTimeOffset? a, DateTimeOffset? b)
+        private Task OpenSettings()
         {
-            if (a == null && b == null)
-                return 0;
-
-            if (a == null)
-                return -1;
-
-            if (b == null)
-                return 1;
-
-            return a.Value.CompareTo(b.Value);
-        }
-
-        private async Task OpenSettings()
-        {
-            await CoreMethods.PushPageModel<SettingsPageModel>();
+            return CoreMethods.PushPageModel<SettingsPageModel>();
         }
 
         private void OnImportComicBegun(ComicData comic)
@@ -206,6 +192,47 @@ namespace ComicWrap.Pages
 
             // Need to refresh whole list for correct ordering
             DisplayComics();
+        }
+
+        private static int CompareDates(DateTimeOffset? a, DateTimeOffset? b)
+        {
+            if (a == null && b == null)
+                return 0;
+
+            if (a == null)
+                return -1;
+
+            if (b == null)
+                return 1;
+
+            return a.Value.CompareTo(b.Value);
+        }
+
+        private static void UpdateObservableCollection<T>(ObservableCollection<T> observableCollection, IList<T> matchList)
+        {
+            for (int i = 0; i < matchList.Count; i++)
+            {
+                T item = matchList[i];
+
+                if (observableCollection.Contains(item))
+                {
+                    // If already in collection, move existing item to correct index
+                    observableCollection.Move(observableCollection.IndexOf(matchList[i]), i);
+                }
+                else
+                {
+                    // If not in collection ,add to end (since we're looping forwards this should be the correct index)
+                    observableCollection.Add(item);
+                }
+            }
+
+            // Remove items no longer in list, loop backwards since collection will be modified
+            for (int i = observableCollection.Count - 1; i >= 0 ; i--)
+            {
+                T item = observableCollection[i];
+                if (!matchList.Contains(item))
+                    observableCollection.RemoveAt(i);
+            }
         }
     }
 }

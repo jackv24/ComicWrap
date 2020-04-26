@@ -6,6 +6,7 @@ using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 
 using FreshMvvm;
+using AsyncAwaitBestPractices;
 
 using ComicWrap.Pages;
 using ComicWrap.Systems;
@@ -18,6 +19,8 @@ namespace ComicWrap
         public App()
         {
             InitializeComponent();
+
+            SafeFireAndForgetExtensions.SetDefaultExceptionHandling(ExceptionHandler.LogException);
 
             var page = FreshPageModelResolver.ResolvePageModel<HomePageModel>();
             var navContainer = new FreshNavigationContainer(page);

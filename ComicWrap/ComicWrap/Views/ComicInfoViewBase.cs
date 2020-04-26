@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 
 using FreshMvvm;
 using AsyncAwaitBestPractices;
+using AsyncAwaitBestPractices.MVVM;
 
 using ComicWrap.Systems;
 using ComicWrap.Pages;
@@ -23,7 +24,7 @@ namespace ComicWrap.Views
         {
             GestureRecognizers.Add(new TapGestureRecognizer
             {
-                Command = new Command(async () => await OpenComic(), () => IsEnabled)
+                Command = new AsyncCommand(OpenComic, _ => IsEnabled)
             });
         }
 
@@ -86,7 +87,7 @@ namespace ComicWrap.Views
                 coverImageDownloadCancel = new CancellationTokenSource();
 
                 // Download image, and then set image source
-                DownloadCoverImage(coverImageDownloadCancel.Token)
+                DownloadCoverImage(newComic, coverImageDownloadCancel.Token)
                     .SafeFireAndForget();
             }
             else
@@ -103,16 +104,16 @@ namespace ComicWrap.Views
             ComicChanged(Comic);
         }
 
-        private async Task DownloadCoverImage(CancellationToken cancelToken = default)
+        private async Task DownloadCoverImage(ComicData comic, CancellationToken cancelToken = default)
         {
-            if (Comic == null || Comic.Pages.Count() == 0)
+            if (comic == null || comic.Pages.Count() == 0)
                 return;
 
-            string url = await ComicUpdater.Instance.GetComicImageUrl(Comic.Pages.ElementAt(0), cancelToken);
+            string url = await ComicUpdater.Instance.GetComicImageUrl(comic.Pages.ElementAt(0), cancelToken);
             if (string.IsNullOrEmpty(url))
                 return;
 
-            string filePath = await LocalImageService.DownloadImage(new Uri(url), Comic.Id, cancelToken);
+            string filePath = await LocalImageService.DownloadImage(new Uri(url), comic.Id, cancelToken);
             if (string.IsNullOrEmpty(filePath))
                 return;
 

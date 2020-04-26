@@ -19,18 +19,19 @@ namespace ComicWrap.Views
 {
     public abstract class ComicInfoViewBase : ContentView
     {
-        public ComicInfoViewBase()
+        protected ComicInfoViewBase()
         {
-            var tapGesture = new TapGestureRecognizer();
-            tapGesture.Command = new Command(async () => await OpenComic(), () => IsEnabled);
-            GestureRecognizers.Add(tapGesture);
+            GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(async () => await OpenComic(), () => IsEnabled)
+            });
         }
 
         private CancellationTokenSource coverImageDownloadCancel;
         private ComicData previousComic;
 
         public static BindableProperty ComicProperty = BindableProperty.Create(
-            propertyName: "Comic",
+            propertyName: nameof(Comic),
             returnType: typeof(ComicData),
             declaringType: typeof(ComicInfoViewBase),
             defaultBindingMode: BindingMode.OneWay,
@@ -120,7 +121,7 @@ namespace ComicWrap.Views
 
         protected abstract void OnComicChanged(ComicData newComic);
 
-        private async Task OpenComic()
+        private Task OpenComic()
         {
             // Needed to use page navigation from a non-page
             var navService = FreshIOC.Container.Resolve<IFreshNavigationService>(Constants.DefaultNavigationServiceName);
@@ -130,7 +131,7 @@ namespace ComicWrap.Views
 
             // Use already created PageModel to push Page
             var page = FreshPageModelResolver.ResolvePageModel(Comic, pageModel);
-            await navService.PushPage(page, null);
+            return navService.PushPage(page, null);
         }
 
         protected static string GetFormattedComicName(ComicData comic)

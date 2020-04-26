@@ -28,8 +28,8 @@ namespace ComicWrap.Views
 
         protected override void OnComicChanged(ComicData newComic)
         {
-            labelComicName.Text = GetFormattedComicName(newComic);
-            labelComicPageName.Text = newComic.LatestNewPage?.Name ?? "$NEWEST_PAGE$";
+            labelComicName.Text = newComic?.Name;
+            labelComicPageName.Text = newComic.LatestNewPage?.Name;
 
             if (newComic.LastUpdatedDate != null)
             {

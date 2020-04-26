@@ -99,10 +99,10 @@ namespace ComicWrap.Pages
             importingComics.Clear();
         }
 
-        private async Task OpenAddComicPopup()
+        private Task OpenAddComicPopup()
         {
             var page = (PopupPage)FreshPageModelResolver.ResolvePageModel<AddComicPageModel>();
-            await PopupNavigation.Instance.PushAsync(page);
+            return PopupNavigation.Instance.PushAsync(page);
         }
 
         private async Task Refresh()
@@ -210,29 +210,24 @@ namespace ComicWrap.Pages
 
         private static void UpdateObservableCollection<T>(ObservableCollection<T> observableCollection, IList<T> matchList)
         {
-            for (int i = 0; i < matchList.Count; i++)
+            // Add new items to list (will be sorted after)
+            foreach (T item in matchList)
             {
-                T item = matchList[i];
-
-                if (observableCollection.Contains(item))
-                {
-                    // If already in collection, move existing item to correct index
-                    observableCollection.Move(observableCollection.IndexOf(matchList[i]), i);
-                }
-                else
-                {
-                    // If not in collection ,add to end (since we're looping forwards this should be the correct index)
+                if (!observableCollection.Contains(item))
                     observableCollection.Add(item);
-                }
             }
 
             // Remove items no longer in list, loop backwards since collection will be modified
-            for (int i = observableCollection.Count - 1; i >= 0 ; i--)
+            for (int i = observableCollection.Count - 1; i >= 0; i--)
             {
                 T item = observableCollection[i];
                 if (!matchList.Contains(item))
                     observableCollection.RemoveAt(i);
             }
+
+            // Match collection positions (should be same length after add/remove above)
+            for (int i = 0; i < matchList.Count; i++)
+                observableCollection.Move(observableCollection.IndexOf(matchList[i]), i);
         }
     }
 }

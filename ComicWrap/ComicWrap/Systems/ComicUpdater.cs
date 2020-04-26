@@ -60,7 +60,6 @@ namespace ComicWrap.Systems
         {
             var comic = new ComicData
             {
-                Name = "!Importing Comic!",
                 ArchiveUrl = archiveUrl,
                 CurrentPageUrl = currentPageUrl
             };

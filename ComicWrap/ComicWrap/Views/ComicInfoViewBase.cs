@@ -134,10 +134,5 @@ namespace ComicWrap.Views
             var page = FreshPageModelResolver.ResolvePageModel(Comic, pageModel);
             return navService.PushPage(page, null);
         }
-
-        protected static string GetFormattedComicName(ComicData comic)
-        {
-            return string.IsNullOrEmpty(comic.Name) ? "$COMIC_NAME$" : comic.Name;
-        }
     }
 }

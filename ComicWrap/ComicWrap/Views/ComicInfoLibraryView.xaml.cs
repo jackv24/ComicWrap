@@ -28,8 +28,8 @@ namespace ComicWrap.Views
 
         protected override void OnComicChanged(ComicData newComic)
         {
-            labelComicName.Text = GetFormattedComicName(newComic);
-            labelLastComicPageName.Text = newComic.LastReadPage?.Name ?? "$LAST_READ_PAGE$";
+            labelComicName.Text = newComic?.Name;
+            labelLastComicPageName.Text = newComic.LastReadPage?.Name;
             progressBarReadProgress.Progress = newComic.ReadProgress;
 
             if (newComic.LastReadDate != null)

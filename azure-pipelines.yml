@@ -50,4 +50,7 @@ stages:
             solutionFile: '**/*.sln'
             configuration: 'Release'
             packageApp: false
-            runNugetRestore: false
+            runNugetRestore: true
+          env:
+            Secret_AppSecret_Android: $(Secret_AppSecret_Android)
+            Secret_AppSecret_iOS: $(Secret_AppSecret_iOS)

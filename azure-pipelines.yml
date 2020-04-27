@@ -43,3 +43,11 @@ stages:
         env:
             Secret_AppSecret_Android: $(Secret_AppSecret_Android)
             Secret_AppSecret_iOS: $(Secret_AppSecret_iOS)
+    - job: iOS
+      steps:
+        - task: XamariniOS@2
+          inputs:
+            solutionFile: '**/*.sln'
+            configuration: 'Release'
+            packageApp: false
+            runNugetRestore: false

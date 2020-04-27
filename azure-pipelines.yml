@@ -47,8 +47,8 @@ stages:
       steps:
         - task: XamariniOS@2
           inputs:
-            solutionFile: '**/*.sln'
-            configuration: 'Release'
+            solutionFile: 'ComicWrap/ComicWrap.iOS/ComicWrap.iOS.csproj'
+            configuration: '$(buildConfiguration)'
             packageApp: false
             runNugetRestore: true
           env:

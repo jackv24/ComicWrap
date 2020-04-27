@@ -22,7 +22,7 @@ This app provides some extra features:
 | Stage | Shared | Android | iOS |
 | --- | --- | --- | --- |
 | Test | [![Build Status](https://jackvine.visualstudio.com/ComicWrap/_apis/build/status/jackv24.ComicWrap?branchName=master&stageName=Test&jobName=Shared)](https://jackvine.visualstudio.com/ComicWrap/_build/latest?definitionId=1&branchName=master) | `N/A` | `N/A` |
-| Build | `N/A` | [![Build Status](https://jackvine.visualstudio.com/ComicWrap/_apis/build/status/jackv24.ComicWrap?branchName=master&stageName=Build&jobName=Android)](https://jackvine.visualstudio.com/ComicWrap/_build/latest?definitionId=1&branchName=master) | `TODO` |
+| Build | `N/A` | [![Build Status](https://jackvine.visualstudio.com/ComicWrap/_apis/build/status/jackv24.ComicWrap?branchName=master&stageName=Build&jobName=Android)](https://jackvine.visualstudio.com/ComicWrap/_build/latest?definitionId=1&branchName=master) | [![Build Status](https://jackvine.visualstudio.com/ComicWrap/_apis/build/status/jackv24.ComicWrap?branchName=master&stageName=Build&jobName=iOS)](https://jackvine.visualstudio.com/ComicWrap/_build/latest?definitionId=1&branchName=master) |
 
 ## Building Locally
 

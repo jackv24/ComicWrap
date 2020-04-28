@@ -268,6 +268,24 @@ namespace ComicWrap.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Backup.
+        /// </summary>
+        public static string Settings_Data_Backup {
+            get {
+                return ResourceManager.GetString("Settings_Data_Backup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restore.
+        /// </summary>
+        public static string Settings_Data_Restore {
+            get {
+                return ResourceManager.GetString("Settings_Data_Restore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dark.
         /// </summary>
         public static string Settings_Theme_Dark {
@@ -309,6 +327,15 @@ namespace ComicWrap.Resources {
         public static string Settings_Title_Appearance {
             get {
                 return ResourceManager.GetString("Settings_Title_Appearance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data.
+        /// </summary>
+        public static string Settings_Title_Data {
+            get {
+                return ResourceManager.GetString("Settings_Title_Data", resourceCulture);
             }
         }
     }

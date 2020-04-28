@@ -186,6 +186,12 @@
   <data name="ImageDownload_LocateError_Msg" xml:space="preserve">
     <value>Could not locate image URL</value>
   </data>
+  <data name="Settings_Data_Backup" xml:space="preserve">
+    <value>Backup</value>
+  </data>
+  <data name="Settings_Data_Restore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
   <data name="Settings_Theme_Dark" xml:space="preserve">
     <value>Dark</value>
   </data>
@@ -200,5 +206,8 @@
   </data>
   <data name="Settings_Title_Appearance" xml:space="preserve">
     <value>Appearance</value>
+  </data>
+  <data name="Settings_Title_Data" xml:space="preserve">
+    <value>Data</value>
   </data>
 </root>

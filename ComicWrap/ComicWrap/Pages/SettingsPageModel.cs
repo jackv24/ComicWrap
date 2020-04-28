@@ -10,10 +10,6 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using FreshMvvm;
-using Acr.UserDialogs;
-using Rg.Plugins.Popup.Services;
-using Rg.Plugins.Popup.Pages;
-using AngleSharp;
 using AsyncAwaitBestPractices.MVVM;
 
 using ComicWrap.Systems;
@@ -42,9 +38,15 @@ namespace ComicWrap.Pages
                 .ToList();
 
             SelectedTheme = ThemeOptions[(int)Settings.Theme];
+
+            BackupDataCommand = new AsyncCommand(BackupData);
+            RestoreDataCommand = new AsyncCommand(RestoreData);
         }
 
-        public List<ThemeOptionDisplay> ThemeOptions { get; set; }
+        public List<ThemeOptionDisplay> ThemeOptions { get; }
+
+        public IAsyncCommand BackupDataCommand { get; }
+        public IAsyncCommand RestoreDataCommand { get; }
 
         private ThemeOptionDisplay _selectedTheme;
         public ThemeOptionDisplay SelectedTheme
@@ -56,6 +58,16 @@ namespace ComicWrap.Pages
                 Settings.Theme = value.Theme;
                 RaisePropertyChanged();
             }
+        }
+
+        private Task BackupData()
+        {
+            return CoreMethods.DisplayAlert("Error", "Data backup is not yet implemented", "OK");
+        }
+
+        private Task RestoreData()
+        {
+            return CoreMethods.DisplayAlert("Error", "Data restore is not yet implemented", "OK");
         }
     }
 }

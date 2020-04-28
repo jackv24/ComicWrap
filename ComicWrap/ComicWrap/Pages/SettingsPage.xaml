@@ -19,6 +19,12 @@
                 </DataTemplate>
             </sv:Section.ItemTemplate>
         </sv:Section>
+        <sv:Section Title="{x:Static res:AppResources.Settings_Title_Data}">
+            <sv:ButtonCell Title="{x:Static res:AppResources.Settings_Data_Backup}"
+                           Command="{Binding BackupDataCommand}"/>
+            <sv:ButtonCell Title="{x:Static res:AppResources.Settings_Data_Restore}"
+                           Command="{Binding RestoreDataCommand}"/>
+        </sv:Section>
     </sv:SettingsView>
     
 </ContentPage>

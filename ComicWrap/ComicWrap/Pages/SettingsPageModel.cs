@@ -5,9 +5,12 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Reflection;
+using System.IO;
+using System.IO.Compression;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 using FreshMvvm;
 using AsyncAwaitBestPractices.MVVM;
@@ -62,12 +65,83 @@ namespace ComicWrap.Pages
 
         private Task BackupData()
         {
-            return CoreMethods.DisplayAlert("Error", "Data backup is not yet implemented", "OK");
+            // TODO: Tests
+
+            // Save to cache directory temporarily
+            string file = Path.Combine(FileSystem.CacheDirectory, "Backup.zip");
+            if (File.Exists(file))
+                File.Delete(file);
+
+            // Temporary folder to be zipped
+            string backupFolder = Path.Combine(FileSystem.CacheDirectory, "Backup");
+            if (Directory.Exists(backupFolder))
+                Directory.Delete(backupFolder, true);
+            Directory.CreateDirectory(backupFolder);
+
+            // Copy files to temp folder
+            // Database file should always exist
+            File.Copy(
+                Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "default.realm"),
+                Path.Combine(backupFolder, "default.realm"));
+
+            // Images folder may not exist
+            if (Directory.Exists(LocalImageService.FolderPath))
+                DirectoryCopy(LocalImageService.FolderPath, Path.Combine(backupFolder, LocalImageService.SUBFOLDER), true);
+
+            // Create zip of from temp folder
+            ZipFile.CreateFromDirectory(backupFolder, file);
+
+            return Share.RequestAsync(new ShareFileRequest()
+            {
+                File = new ShareFile(file)
+            });
         }
 
         private Task RestoreData()
         {
-            return CoreMethods.DisplayAlert("Error", "Data restore is not yet implemented", "OK");
+            // TODO: Implement, tests
+
+            return CoreMethods.DisplayAlert("!Error!", "!Data restore is not yet implemented!", "!OK!");
+        }
+
+        // From: https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-copy-directories
+        // TODO: Move into another helpers class
+        private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
+        {
+            // Get the subdirectories for the specified directory.
+            DirectoryInfo dir = new DirectoryInfo(sourceDirName);
+
+            if (!dir.Exists)
+            {
+                throw new DirectoryNotFoundException(
+                    "Source directory does not exist or could not be found: "
+                    + sourceDirName);
+            }
+
+            DirectoryInfo[] dirs = dir.GetDirectories();
+            // If the destination directory doesn't exist, create it.
+            if (!Directory.Exists(destDirName))
+            {
+                Directory.CreateDirectory(destDirName);
+            }
+
+            // Get the files in the directory and copy them to the new location.
+            FileInfo[] files = dir.GetFiles();
+            foreach (FileInfo file in files)
+            {
+                string temppath = Path.Combine(destDirName, file.Name);
+                file.CopyTo(temppath, false);
+            }
+
+            // If copying subdirectories, copy them and their contents to new location.
+            if (copySubDirs)
+            {
+                foreach (DirectoryInfo subdir in dirs)
+                {
+                    string temppath = Path.Combine(destDirName, subdir.Name);
+                    DirectoryCopy(subdir.FullName, temppath, copySubDirs);
+                }
+            }
         }
     }
 }

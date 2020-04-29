@@ -9,10 +9,10 @@ namespace ComicWrap.Systems
     public static class LocalImageService
     {
         // If these are changed make sure to update backup exclusions in Android backup_rules.xml
-        private const Environment.SpecialFolder STORAGE_FOLDER = Environment.SpecialFolder.Personal;
-        private const string SUBFOLDER = "Images";
+        public const Environment.SpecialFolder STORAGE_FOLDER = Environment.SpecialFolder.Personal;
+        public const string SUBFOLDER = "Images";
 
-        private static readonly string folderPath = Path.Combine(Environment.GetFolderPath(STORAGE_FOLDER), SUBFOLDER);
+        public static readonly string FolderPath = Path.Combine(Environment.GetFolderPath(STORAGE_FOLDER), SUBFOLDER);
 
         public static async Task<string> DownloadImage(Uri url, string key, CancellationToken cancellationToken = default)
         {
@@ -31,10 +31,10 @@ namespace ComicWrap.Systems
                 return null;
 
             // Make sure directory exists
-            Directory.CreateDirectory(folderPath);
+            Directory.CreateDirectory(FolderPath);
 
             // Save image data to file
-            string filePath = Path.Combine(folderPath, key);
+            string filePath = Path.Combine(FolderPath, key);
             File.WriteAllBytes(filePath, imageData);
 
             return filePath;
@@ -43,10 +43,10 @@ namespace ComicWrap.Systems
         public static string GetImagePath(string key)
         {
             // No images have been downloaded yet
-            if (!Directory.Exists(folderPath))
+            if (!Directory.Exists(FolderPath))
                 return null;
 
-            string filePath = Path.Combine(folderPath, key);
+            string filePath = Path.Combine(FolderPath, key);
 
             // No image exists for key
             if (!File.Exists(filePath))

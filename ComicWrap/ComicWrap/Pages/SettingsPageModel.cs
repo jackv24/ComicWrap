@@ -14,8 +14,11 @@ using Xamarin.Essentials;
 
 using FreshMvvm;
 using AsyncAwaitBestPractices.MVVM;
+using Plugin.FilePicker;
+using Plugin.FilePicker.Abstractions;
 
 using ComicWrap.Systems;
+using ComicWrap.Helpers;
 using Res = ComicWrap.Resources.AppResources;
 
 namespace ComicWrap.Pages
@@ -86,7 +89,7 @@ namespace ComicWrap.Pages
 
             // Images folder may not exist
             if (Directory.Exists(LocalImageService.FolderPath))
-                DirectoryCopy(LocalImageService.FolderPath, Path.Combine(backupFolder, LocalImageService.SUBFOLDER), true);
+                FileHelper.DirectoryCopy(LocalImageService.FolderPath, Path.Combine(backupFolder, LocalImageService.SUBFOLDER), true);
 
             // Create zip of from temp folder
             ZipFile.CreateFromDirectory(backupFolder, file);
@@ -97,50 +100,77 @@ namespace ComicWrap.Pages
             });
         }
 
-        private Task RestoreData()
+        private async Task RestoreData()
         {
-            // TODO: Implement, tests
+            // TODO: Tests
 
-            return CoreMethods.DisplayAlert("!Error!", "!Data restore is not yet implemented!", "!OK!");
-        }
+            // Temporary folder to extract backup into for validation, copying, etc.
+            string backupFolder = Path.Combine(FileSystem.CacheDirectory, "Restore");
+            if (Directory.Exists(backupFolder))
+                Directory.Delete(backupFolder, true);
 
-        // From: https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-copy-directories
-        // TODO: Move into another helpers class
-        private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
-        {
-            // Get the subdirectories for the specified directory.
-            DirectoryInfo dir = new DirectoryInfo(sourceDirName);
-
-            if (!dir.Exists)
+            string[] allowedTypes;
+            switch (Device.RuntimePlatform)
             {
-                throw new DirectoryNotFoundException(
-                    "Source directory does not exist or could not be found: "
-                    + sourceDirName);
+                case Device.iOS:
+                    allowedTypes = new[] { "com.pkware.zip-archive" };
+                    break;
+
+                case Device.Android:
+                    allowedTypes = new[] { "application/zip" };
+                    break;
+
+                default:
+                    throw new NotImplementedException();
             }
 
-            DirectoryInfo[] dirs = dir.GetDirectories();
-            // If the destination directory doesn't exist, create it.
-            if (!Directory.Exists(destDirName))
+            // Select backup zip file
+            using (FileData fileData = await CrossFilePicker.Current.PickFile(allowedTypes))
             {
-                Directory.CreateDirectory(destDirName);
-            }
-
-            // Get the files in the directory and copy them to the new location.
-            FileInfo[] files = dir.GetFiles();
-            foreach (FileInfo file in files)
-            {
-                string temppath = Path.Combine(destDirName, file.Name);
-                file.CopyTo(temppath, false);
-            }
-
-            // If copying subdirectories, copy them and their contents to new location.
-            if (copySubDirs)
-            {
-                foreach (DirectoryInfo subdir in dirs)
+                // User cancelled file picking
+                if (fileData == null)
+                    return;
+                
+                // Extract zip file to temp folder
+                using (var stream = fileData.GetStream())
+                using (var archive = new ZipArchive(stream, ZipArchiveMode.Read))
                 {
-                    string temppath = Path.Combine(destDirName, subdir.Name);
-                    DirectoryCopy(subdir.FullName, temppath, copySubDirs);
+                    archive.ExtractToDirectory(backupFolder);
                 }
+            }
+
+            string databaseBackupPath = Path.Combine(backupFolder, "default.realm");
+
+            // Validate backup contents (backup is not valid if it does not contain a database file)
+            if (!File.Exists(databaseBackupPath))
+            {
+                await CoreMethods.DisplayAlert(
+                    title: Res.Alert_Error_Title,
+                    message: Res.Settings_Restore_Error_Invalid,
+                    cancel: Res.Alert_Generic_Confirm);
+
+                return;
+            }
+
+            // Must close database connection before editing database file
+            var database = ComicDatabase.Instance;
+            database.Close();
+
+            // Replace database file with zip contents
+            string databaseRestorePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "default.realm");
+            File.Delete(databaseRestorePath);
+            File.Copy(databaseBackupPath, databaseRestorePath);
+
+            // Reopen database connection now that database file is back in place
+            database.Open();
+
+            string imageFolderBackupPath = Path.Combine(backupFolder, LocalImageService.SUBFOLDER);
+            if (Directory.Exists(imageFolderBackupPath))
+            {
+                if (Directory.Exists(LocalImageService.FolderPath))
+                    Directory.Delete(LocalImageService.FolderPath, true);
+
+                FileHelper.DirectoryCopy(imageFolderBackupPath, LocalImageService.FolderPath, true);
             }
         }
     }

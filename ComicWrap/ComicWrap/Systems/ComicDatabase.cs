@@ -16,19 +16,40 @@ namespace ComicWrap.Systems
     {
         public ComicDatabase()
         {
-            Realm = Realm.GetInstance(new RealmConfiguration
-            {
-                SchemaVersion = 2,
-                MigrationCallback = OnRealmMigration
-            });
+            Open();
         }
 
         public ComicDatabase(Realm realm)
         {
             Realm = realm;
+            IsOpen = true;
         }
 
         public Realm Realm { get; private set; }
+        public bool IsOpen { get; private set; }
+
+        public void Open()
+        {
+            if (IsOpen)
+                return;
+
+            Realm = Realm.GetInstance(new RealmConfiguration
+            {
+                SchemaVersion = 2,
+                MigrationCallback = OnRealmMigration
+            });
+
+            IsOpen = true;
+        }
+
+        public void Close()
+        {
+            if (!IsOpen)
+                return;
+
+            Realm.Dispose();
+            IsOpen = false;
+        }
 
         public void AddComic(ComicData comicData)
         {

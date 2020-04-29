@@ -286,6 +286,15 @@ namespace ComicWrap.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Selected file was not a valid backup file!.
+        /// </summary>
+        public static string Settings_Restore_Error_Invalid {
+            get {
+                return ResourceManager.GetString("Settings_Restore_Error_Invalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dark.
         /// </summary>
         public static string Settings_Theme_Dark {

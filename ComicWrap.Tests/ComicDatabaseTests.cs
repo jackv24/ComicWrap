@@ -19,8 +19,7 @@ namespace ComicWrap.Tests
         public static ComicDatabase GetNewDatabase()
         {
             string identifier = Guid.NewGuid().ToString();
-            var realm = Realm.GetInstance(new InMemoryConfiguration(identifier));
-            return new ComicDatabase(realm);
+            return new ComicDatabase(new InMemoryConfiguration(identifier));
         }
 
         [Test]

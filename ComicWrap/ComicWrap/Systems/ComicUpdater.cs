@@ -74,6 +74,8 @@ namespace ComicWrap.Systems
 
             ImportComicProgressed?.Invoke(comic);
 
+            database.AddComic(comic);
+
             await UpdateComic(
                 comic,
                 markReadUpToUrl: currentPageUrl,
@@ -135,7 +137,7 @@ namespace ComicWrap.Systems
             {
                 // Need to create a new Realm instance when running on a different thread
 #pragma warning disable AsyncFixer02 // Long running or blocking operations under an async method
-                using (var realm = Realms.Realm.GetInstance(ComicDatabase.DefaultRealmConfiguration))
+                using (var realm = Realms.Realm.GetInstance(database.RealmConfiguration))
 #pragma warning restore AsyncFixer02 // Long running or blocking operations under an async method
                 {
                     var comic = realm.ResolveReference(comicReference);

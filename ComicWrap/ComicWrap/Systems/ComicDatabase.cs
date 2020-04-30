@@ -20,25 +20,19 @@ namespace ComicWrap.Systems
             Open();
         }
 
-        public ComicDatabase(RealmConfiguration realmConfig)
+        public ComicDatabase(RealmConfigurationBase realmConfig)
         {
             RealmConfiguration = realmConfig;
             Open();
         }
 
-        public ComicDatabase(Realm realm)
-        {
-            Realm = realm;
-            IsOpen = true;
-        }
-
-        public static readonly RealmConfiguration DefaultRealmConfiguration = new RealmConfiguration
+        public static readonly RealmConfigurationBase DefaultRealmConfiguration = new RealmConfiguration
         {
             SchemaVersion = 2,
             MigrationCallback = OnRealmMigration
         };
 
-        public RealmConfiguration RealmConfiguration { get; private set; }
+        public RealmConfigurationBase RealmConfiguration { get; private set; }
         public Realm Realm { get; private set; }
         public bool IsOpen { get; private set; }
 

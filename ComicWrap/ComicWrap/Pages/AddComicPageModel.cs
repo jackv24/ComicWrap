@@ -53,9 +53,9 @@ namespace ComicWrap.Pages
         public IAsyncCommand CancelCommand { get; }
         public IAsyncCommand SubmitCommand { get; }
 
-        private async Task Cancel()
+        private Task Cancel()
         {
-            await PopupNavigation.Instance.PopAsync();
+            return PopupNavigation.Instance.PopAsync();
         }
 
         private async Task Submit()

@@ -16,6 +16,13 @@ namespace ComicWrap.Systems
     {
         public ComicDatabase()
         {
+            RealmConfiguration = DefaultRealmConfiguration;
+            Open();
+        }
+
+        public ComicDatabase(RealmConfiguration realmConfig)
+        {
+            RealmConfiguration = realmConfig;
             Open();
         }
 
@@ -25,6 +32,13 @@ namespace ComicWrap.Systems
             IsOpen = true;
         }
 
+        public static readonly RealmConfiguration DefaultRealmConfiguration = new RealmConfiguration
+        {
+            SchemaVersion = 2,
+            MigrationCallback = OnRealmMigration
+        };
+
+        public RealmConfiguration RealmConfiguration { get; private set; }
         public Realm Realm { get; private set; }
         public bool IsOpen { get; private set; }
 
@@ -33,11 +47,7 @@ namespace ComicWrap.Systems
             if (IsOpen)
                 return;
 
-            Realm = Realm.GetInstance(new RealmConfiguration
-            {
-                SchemaVersion = 2,
-                MigrationCallback = OnRealmMigration
-            });
+            Realm = Realm.GetInstance(RealmConfiguration);
 
             IsOpen = true;
         }
@@ -81,18 +91,6 @@ namespace ComicWrap.Systems
         {
             return Realm.All<ComicData>()
                 .ToList();
-        }
-
-        public void Write(Action action)
-        {
-            if (action == null)
-                return;
-
-            using (var trans = Realm.BeginWrite())
-            {
-                action();
-                trans.Commit();
-            }
         }
 
         public void Write(Action<Realm> action)

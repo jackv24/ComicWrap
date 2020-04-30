@@ -86,20 +86,17 @@ namespace ComicWrap.Systems
         }
 
         public async Task<IEnumerable<ComicPageData>> UpdateComic(
-            ComicData comic,
+            ComicData comicData,
             string markReadUpToUrl = null,
             bool markNewPagesAsNew = true,
             CancellationToken cancelToken = default)
         {
             // Load comic archive page
             cancelToken.ThrowIfCancellationRequested();
-            var document = await pageLoader.OpenDocument(comic.ArchiveUrl);
-
-            var tempPages = DiscoverPages(document, comic.CurrentPageUrl);
+            var document = await pageLoader.OpenDocument(comicData.ArchiveUrl);
             cancelToken.ThrowIfCancellationRequested();
 
-            var existingPages = comic.Pages.ToList();
-            cancelToken.ThrowIfCancellationRequested();
+            var tempPages = DiscoverPages(document, comicData.CurrentPageUrl);
 
             bool doMarkReadUpTo = !string.IsNullOrEmpty(markReadUpToUrl);
             bool reachedReadPage = false;
@@ -117,6 +114,7 @@ namespace ComicWrap.Systems
 
                 if (reachedReadPage)
                 {
+                    // We can edit tempPage fields outside of a write transaction since it hasn't been added to a Realm yet
                     tempPage.IsRead = true;
                     continue;
                 }
@@ -128,50 +126,68 @@ namespace ComicWrap.Systems
                 }
             }
 
-            // NOTE: After this point we can no longer cancel as database is being written to
+            // Task.Run spawns a new thread
+            var comicReference = Realms.ThreadSafeReference.Create(comicData);
+
+            // Run realm write operation on background thread
             cancelToken.ThrowIfCancellationRequested();
-
-            // Run database operations as one transaction to prevent issues
-            database.Write(realm =>
+            await Task.Run(() =>
             {
-                comic.Name = document.Title;
-
-                // Record date if any new pages were added
-                if (anyNewPages)
-                    comic.LastUpdatedDate = DateTimeOffset.UtcNow;
-
-                // Make sure comic is in database first
-                realm.Add(comic, update: true);
-
-                // Delete any existing pages that aren't in the new pages
-                var deletePages = existingPages.Where(existingPage =>
-                    !tempPages.Any(tempPage => tempPage.Url == existingPage.Url));
-                foreach (var page in deletePages)
-                    realm.Remove(page);
-
-                foreach (var page in tempPages)
+                // Need to create a new Realm instance when running on a different thread
+#pragma warning disable AsyncFixer02 // Long running or blocking operations under an async method
+                using (var realm = Realms.Realm.GetInstance(ComicDatabase.DefaultRealmConfiguration))
+#pragma warning restore AsyncFixer02 // Long running or blocking operations under an async method
                 {
-                    // We need to update existing pages when we can instead of replacing them all with new ones
-                    var existingPage = existingPages.FirstOrDefault(p => p.Url == page.Url);
-                    if (existingPage != null)
+                    var comic = realm.ResolveReference(comicReference);
+
+                    realm.Write(() =>
                     {
-                        // Update existing pages
-                        existingPage.Name = page.Name;
-                        // URL, IsRead, etc. still the same
-                    }
-                    else
-                    {
-                        // Add new pages
-                        page.Comic = comic;
-                        realm.Add(page);
-                    }
+                        comic.Name = document.Title;
+
+                        // Record date if any new pages were added
+                        if (anyNewPages)
+                            comic.LastUpdatedDate = DateTimeOffset.UtcNow;
+
+                        // Make sure comic is in database first
+                        realm.Add(comic, update: true);
+
+                        var existingPages = comic.Pages.ToList();
+
+                        // Delete any existing pages that aren't in the new pages
+                        var deletePages = existingPages.Where(existingPage =>
+                                !tempPages.Any(tempPage => tempPage.Url == existingPage.Url));
+                        foreach (var page in deletePages)
+                            realm.Remove(page);
+
+                        foreach (var page in tempPages)
+                        {
+                            // We need to update existing pages when we can instead of replacing them all with new ones
+                            var existingPage = existingPages.FirstOrDefault(p => p.Url == page.Url);
+                            if (existingPage != null)
+                            {
+                                // Update existing pages
+                                existingPage.Name = page.Name;
+                                // URL, IsRead, etc. still the same
+                            }
+                            else
+                            {
+                                // Add new pages
+                                page.Comic = comic;
+                                realm.Add(page);
+                            }
+                        }
+
+                        // Throwing at end of write transaction should cancel transaction
+                        cancelToken.ThrowIfCancellationRequested();
+                    });
                 }
             });
+            cancelToken.ThrowIfCancellationRequested();
 
             // Report that comic has updated so UI can refresh, etc.
-            comic.ReportUpdated();
+            comicData.ReportUpdated();
 
-            return comic.Pages;
+            return comicData.Pages;
         }
 
         public static List<ComicPageData> DiscoverPages(IDocument document, string knownPageUrl)

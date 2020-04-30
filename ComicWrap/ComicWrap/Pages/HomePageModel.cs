@@ -152,8 +152,8 @@ namespace ComicWrap.Pages
                 newComicLibrary.Insert(0, comic);
 
             // Make ObservableCollections match new lists (done this way so UI is animated with changes)
-            UpdateObservableCollection(ComicLibrary, newComicLibrary);
-            UpdateObservableCollection(ComicUpdates, newComicUpdates);
+            ComicLibrary.MatchList(newComicLibrary);
+            ComicUpdates.MatchList(newComicUpdates);
 
             // Update list bindings
             RaisePropertyChanged(nameof(ComicLibrary));
@@ -206,28 +206,6 @@ namespace ComicWrap.Pages
                 return 1;
 
             return a.Value.CompareTo(b.Value);
-        }
-
-        private static void UpdateObservableCollection<T>(ObservableCollection<T> observableCollection, IList<T> matchList)
-        {
-            // Add new items to list (will be sorted after)
-            foreach (T item in matchList)
-            {
-                if (!observableCollection.Contains(item))
-                    observableCollection.Add(item);
-            }
-
-            // Remove items no longer in list, loop backwards since collection will be modified
-            for (int i = observableCollection.Count - 1; i >= 0; i--)
-            {
-                T item = observableCollection[i];
-                if (!matchList.Contains(item))
-                    observableCollection.RemoveAt(i);
-            }
-
-            // Match collection positions (should be same length after add/remove above)
-            for (int i = 0; i < matchList.Count; i++)
-                observableCollection.Move(observableCollection.IndexOf(matchList[i]), i);
         }
     }
 }

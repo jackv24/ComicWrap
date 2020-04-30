@@ -162,13 +162,12 @@ namespace ComicWrap.Pages
 
         private void UpdatePages(IEnumerable<ComicPageData> newPages)
         {
-            // Display new page list
-            var reordered = newPages.Reverse();
+            var reordered = newPages
+                .Reverse()
+                .ToList();
 
-            // Need to use ObservableCollection methods so UI is updated
-            Pages.Clear();
-            foreach (var page in reordered)
-                Pages.Add(page);
+            // Need to use ObservableCollection methods so UI is updated with animation
+            Pages.MatchList(reordered);
 
             PagesUpdated?.Invoke();
 
@@ -176,9 +175,9 @@ namespace ComicWrap.Pages
             scrollToPageTarget = ComicPageTargetType.None;
         }
 
-        private async Task OpenPage(ComicPageData pageData)
+        private Task OpenPage(ComicPageData pageData)
         {
-            await CoreMethods.PushPageModel<ComicReaderPageModel>(pageData);
+            return CoreMethods.PushPageModel<ComicReaderPageModel>(pageData);
         }
     }
 }

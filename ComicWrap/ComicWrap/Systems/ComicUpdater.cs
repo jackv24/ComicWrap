@@ -95,9 +95,10 @@ namespace ComicWrap.Systems
             cancelToken.ThrowIfCancellationRequested();
             var document = await pageLoader.OpenDocument(comic.ArchiveUrl);
 
-            var newPages = DiscoverPages(document, comic.CurrentPageUrl);
+            var tempPages = DiscoverPages(document, comic.CurrentPageUrl);
             cancelToken.ThrowIfCancellationRequested();
-            var oldPages = comic.Pages.ToList();
+
+            var existingPages = comic.Pages.ToList();
             cancelToken.ThrowIfCancellationRequested();
 
             bool doMarkReadUpTo = !string.IsNullOrEmpty(markReadUpToUrl);
@@ -106,37 +107,23 @@ namespace ComicWrap.Systems
 
             // New page data is bare, so fill out missing data
             // Loop backwards so we can mark previously read pages
-            for (int i = newPages.Count - 1; i >= 0; i--)
+            for (int i = tempPages.Count - 1; i >= 0; i--)
             {
-                ComicPageData newPage = newPages[i];
+                ComicPageData tempPage = tempPages[i];
 
                 // Mark all pages before current page as read
-                if (doMarkReadUpTo && newPage.Url == markReadUpToUrl)
+                if (doMarkReadUpTo && tempPage.Url == markReadUpToUrl)
                     reachedReadPage = true;
 
                 if (reachedReadPage)
                 {
-                    newPage.IsRead = true;
-
-                    // Page already marked read, no need to check old pages
+                    tempPage.IsRead = true;
                     continue;
                 }
 
-                bool foundOldPage = false;
-                foreach (var oldPage in oldPages)
+                if (markNewPagesAsNew)
                 {
-                    // Transfer persistent data to new page data
-                    if (newPage.Url == oldPage.Url)
-                    {
-                        foundOldPage = true;
-                        newPage.IsRead = oldPage.IsRead;
-                        newPage.IsNew = oldPage.IsNew;
-                    }
-                }
-
-                if (!foundOldPage && markNewPagesAsNew)
-                {
-                    newPage.IsNew = true;
+                    tempPage.IsNew = true;
                     anyNewPages = true;
                 }
             }
@@ -153,25 +140,38 @@ namespace ComicWrap.Systems
                 if (anyNewPages)
                     comic.LastUpdatedDate = DateTimeOffset.UtcNow;
 
+                // Make sure comic is in database first
                 realm.Add(comic, update: true);
 
                 // Delete any existing pages that aren't in the new pages
-                var deletePages = oldPages.Where(page => !newPages.Contains(page));
+                var deletePages = existingPages.Where(existingPage =>
+                    !tempPages.Any(tempPage => tempPage.Url == existingPage.Url));
                 foreach (var page in deletePages)
                     realm.Remove(page);
 
-                // Add pages to database after Comic.Id is set so their ComicId is correct
-                foreach (var page in newPages)
+                foreach (var page in tempPages)
                 {
-                    page.Comic = comic;
-                    realm.Add(page);
+                    // We need to update existing pages when we can instead of replacing them all with new ones
+                    var existingPage = existingPages.FirstOrDefault(p => p.Url == page.Url);
+                    if (existingPage != null)
+                    {
+                        // Update existing pages
+                        existingPage.Name = page.Name;
+                        // URL, IsRead, etc. still the same
+                    }
+                    else
+                    {
+                        // Add new pages
+                        page.Comic = comic;
+                        realm.Add(page);
+                    }
                 }
             });
 
             // Report that comic has updated so UI can refresh, etc.
             comic.ReportUpdated();
 
-            return newPages;
+            return comic.Pages;
         }
 
         public static List<ComicPageData> DiscoverPages(IDocument document, string knownPageUrl)

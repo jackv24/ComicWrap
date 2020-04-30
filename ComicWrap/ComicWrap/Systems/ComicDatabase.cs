@@ -99,6 +99,14 @@ namespace ComicWrap.Systems
             }
         }
 
+        public Task WriteAsync(Action<Realm> action)
+        {
+            if (action == null)
+                return null;
+
+            return Realm.WriteAsync(action);
+        }
+
         public void MarkRead(ComicPageData page)
         {
             Write(realm =>

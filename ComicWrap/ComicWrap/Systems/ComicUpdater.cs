@@ -128,61 +128,53 @@ namespace ComicWrap.Systems
                 }
             }
 
-            // Task.Run spawns a new thread
-            var comicReference = Realms.ThreadSafeReference.Create(comicData);
+            string comicId = comicData.Id;
 
-            // Run realm write operation on background thread
+            // Run expensive operations on background thread
             cancelToken.ThrowIfCancellationRequested();
-            await Task.Run(() =>
+            await database.WriteAsync(realm =>
             {
-                // Need to create a new Realm instance when running on a different thread
-#pragma warning disable AsyncFixer02 // Long running or blocking operations under an async method
-                using (var realm = Realms.Realm.GetInstance(database.RealmConfiguration))
-#pragma warning restore AsyncFixer02 // Long running or blocking operations under an async method
+                // We can't pass realm objects between threads, so we need to find comic by ID again
+                ComicData comic = realm.All<ComicData>()
+                    .First(c => c.Id == comicId);
+
+                comic.Name = document.Title;
+
+                // Record date if any new pages were added
+                if (anyNewPages)
+                    comic.LastUpdatedDate = DateTimeOffset.UtcNow;
+
+                // Make sure comic is in database first
+                realm.Add(comic, update: true);
+
+                var existingPages = comic.Pages.ToList();
+
+                // Delete any existing pages that aren't in the new pages
+                var deletePages = existingPages.Where(existingPage =>
+                    !tempPages.Any(tempPage => tempPage.Url == existingPage.Url));
+                foreach (var page in deletePages)
+                    realm.Remove(page);
+
+                foreach (var page in tempPages)
                 {
-                    var comic = realm.ResolveReference(comicReference);
-
-                    realm.Write(() =>
+                    // We need to update existing pages when we can instead of replacing them all with new ones
+                    var existingPage = existingPages.FirstOrDefault(p => p.Url == page.Url);
+                    if (existingPage != null)
                     {
-                        comic.Name = document.Title;
-
-                        // Record date if any new pages were added
-                        if (anyNewPages)
-                            comic.LastUpdatedDate = DateTimeOffset.UtcNow;
-
-                        // Make sure comic is in database first
-                        realm.Add(comic, update: true);
-
-                        var existingPages = comic.Pages.ToList();
-
-                        // Delete any existing pages that aren't in the new pages
-                        var deletePages = existingPages.Where(existingPage =>
-                                !tempPages.Any(tempPage => tempPage.Url == existingPage.Url));
-                        foreach (var page in deletePages)
-                            realm.Remove(page);
-
-                        foreach (var page in tempPages)
-                        {
-                            // We need to update existing pages when we can instead of replacing them all with new ones
-                            var existingPage = existingPages.FirstOrDefault(p => p.Url == page.Url);
-                            if (existingPage != null)
-                            {
-                                // Update existing pages
-                                existingPage.Name = page.Name;
-                                // URL, IsRead, etc. still the same
-                            }
-                            else
-                            {
-                                // Add new pages
-                                page.Comic = comic;
-                                realm.Add(page);
-                            }
-                        }
-
-                        // Throwing at end of write transaction should cancel transaction
-                        cancelToken.ThrowIfCancellationRequested();
-                    });
+                        // Update existing pages
+                        existingPage.Name = page.Name;
+                        // URL, IsRead, etc. still the same
+                    }
+                    else
+                    {
+                        // Add new pages
+                        page.Comic = comic;
+                        realm.Add(page);
+                    }
                 }
+
+                // Throwing at end of write transaction should cancel transaction
+                cancelToken.ThrowIfCancellationRequested();
             });
             cancelToken.ThrowIfCancellationRequested();
 

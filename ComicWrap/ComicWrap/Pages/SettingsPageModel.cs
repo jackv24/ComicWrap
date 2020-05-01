@@ -96,7 +96,14 @@ namespace ComicWrap.Pages
 
             return Share.RequestAsync(new ShareFileRequest()
             {
-                File = new ShareFile(file)
+                File = new ShareFile(file),
+                
+                // Position at bottom of screen on iPad (too hard to get button bounds from SettingsView)
+                PresentationSourceBounds = new System.Drawing.Rectangle(
+                    (int)CurrentPage.Bounds.Center.X,
+                    (int)CurrentPage.Bounds.Bottom,
+                    0,
+                    0)
             });
         }
 

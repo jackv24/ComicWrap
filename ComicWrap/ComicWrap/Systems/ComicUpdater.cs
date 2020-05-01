@@ -74,26 +74,17 @@ namespace ComicWrap.Systems
 
             ImportComicProgressed?.Invoke(comic);
 
-            database.AddComic(comic);
-
             IEnumerable<ComicPageData> pages = await UpdateComic(
                 comic,
                 markReadUpToUrl: currentPageUrl,
                 markNewPagesAsNew: false);
 
             importingComics.Remove(comic);
-
-            // If there were no pages discovered, comic failed to import
-            if (pages.Count() == 0)
-            {
-                // Don't leave failed comic 
-                database.DeleteComic(comic);
-
-                // Comic has been deleted, don't return it
-                comic = null;
-            }
-
             ImportComicFinished?.Invoke(comic);
+
+            // If comic was never added to database it failed to import
+            if (!comic.IsManaged)
+                return null;
 
             return comic;
         }
@@ -110,6 +101,10 @@ namespace ComicWrap.Systems
             cancelToken.ThrowIfCancellationRequested();
 
             var tempPages = DiscoverPages(document, comicData.CurrentPageUrl);
+
+            // Cancel early if no pages were found
+            if (tempPages.Count == 0)
+                return null;
 
             bool doMarkReadUpTo = !string.IsNullOrEmpty(markReadUpToUrl);
             bool reachedReadPage = false;
@@ -138,6 +133,9 @@ namespace ComicWrap.Systems
                     anyNewPages = true;
                 }
             }
+
+            if (!comicData.IsManaged)
+                database.AddComic(comicData);
 
             string comicId = comicData.Id;
 

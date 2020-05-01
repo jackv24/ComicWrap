@@ -74,10 +74,11 @@ namespace ComicWrap.Pages
             ComicData importedComic = await ComicUpdater.Instance.ImportComic(ArchivePageUrl, CurrentPageUrl);
             if (importedComic == null)
             {
-                await CoreMethods.DisplayAlert(
+                // Alert popup should display even if this page isn't visible anymore
+                await UserDialogs.Instance.AlertAsync(
+                    Res.AddComic_Error_ImportFailed,
                     title: Res.Alert_Error_Title,
-                    message: Res.AddComic_Error_ImportFailed,
-                    cancel: Res.Alert_Generic_Confirm);
+                    okText: Res.Alert_Generic_Confirm);
             }
         }
     }

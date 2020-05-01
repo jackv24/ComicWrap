@@ -183,14 +183,12 @@ namespace ComicWrap.Pages
         private void OnImportComicProgressed(ComicData comic)
         {
             // Update views that are displaying this comic
-            if (comic != null)
-                comic.ReportUpdated();
+            comic.ReportUpdated();
         }
 
         private void OnImportComicFinished(ComicData comic)
         {
-            if (comic != null)
-                importingComics.Remove(comic);
+            importingComics.Remove(comic);
 
             // Need to refresh whole list for correct ordering
             DisplayComics();

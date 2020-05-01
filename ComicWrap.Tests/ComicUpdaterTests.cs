@@ -26,6 +26,19 @@ namespace ComicWrap.Tests
     {
         private IEnumerable<MockComic> comics;
 
+        public static readonly MockComic KnownFailingPage =  new MockComic
+        {
+            ArchivePageHtmlStage1 = @"
+                <!DOCTYPE html>
+                <html>
+                <body>
+                        
+                </body>
+                </html>",
+            ArchivePageUrl = "http://FAIL/comic/archive",
+            KnownPageUrl = "http://FAIL/comic/page-2"
+        };
+
         public Func<MockComic, string> HtmlSelector { get; set; }
 
         public MockPageLoader(IEnumerable<MockComic> comics)
@@ -35,8 +48,12 @@ namespace ComicWrap.Tests
 
         public Task<IDocument> OpenDocument(string pageUrl)
         {
-            var html = string.Empty;
+            // Special case
+            if (pageUrl.Contains("FAIL"))
+                return ComicUpdaterTests.GetDocumentFromHtml(KnownFailingPage.ArchivePageHtmlStage1);
 
+            // Search comics for matching archive url
+            var html = string.Empty;
             foreach (var comic in comics)
             {
                 if (comic.ArchivePageUrl == pageUrl)
@@ -84,10 +101,10 @@ namespace ComicWrap.Tests
             Assert.AreEqual(false, isValid);
         }
 
-        public static async Task<IDocument> GetDocumentFromHtml(string html)
+        public static Task<IDocument> GetDocumentFromHtml(string html)
         {
             var context = PageLoader.GetBrowsingContext();
-            return await context.OpenAsync(req =>
+            return context.OpenAsync(req =>
             {
                 req.Content(html);
             });
@@ -95,6 +112,7 @@ namespace ComicWrap.Tests
 
         public static IEnumerable<MockComic> EnumerateKnownComicTypes()
         {
+            // http://www.comicctrl.com/ Type 1
             yield return new MockComic
             {
                 ArchivePageHtmlStage1 = @"
@@ -154,7 +172,8 @@ namespace ComicWrap.Tests
                 KnownPageUrl = "http://localhost1/comic/page-2",
                 PageCount = 3
             };
-            
+
+            // http://www.comicctrl.com/ Type 2
             yield return new MockComic
             {
                 ArchivePageHtmlStage1 = @"
@@ -229,10 +248,19 @@ namespace ComicWrap.Tests
         }
 
         [Test]
+        public static async Task ImportComicFailedReturnsNull()
+        {
+            MockComic mockComic = MockPageLoader.KnownFailingPage;
+            ComicData savedComic = await comicUpdater.ImportComic(mockComic.ArchivePageHtmlStage1, mockComic.KnownPageUrl);
+
+            Assert.IsNull(savedComic);
+        }
+
+        [Test]
         public static async Task PageIsNewIsFalseWhenImported(
             [ValueSource(nameof(EnumerateKnownComicTypes))] MockComic comic)
         {
-            var savedComic = await comicUpdater.ImportComic(comic.ArchivePageUrl, comic.KnownPageUrl);
+            ComicData savedComic = await comicUpdater.ImportComic(comic.ArchivePageUrl, comic.KnownPageUrl);
 
             Assert.Multiple(() =>
             {
@@ -247,7 +275,7 @@ namespace ComicWrap.Tests
             [ValueSource(nameof(EnumerateKnownComicTypes))] MockComic comic)
         {
             // Initial comic import
-            var savedComic = await comicUpdater.ImportComic(comic.ArchivePageUrl, comic.KnownPageUrl);
+            ComicData savedComic = await comicUpdater.ImportComic(comic.ArchivePageUrl, comic.KnownPageUrl);
 
             // Switch selector to next stage
             pageLoader.HtmlSelector = c => c.ArchivePageHtmlStage2;

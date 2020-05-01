@@ -71,7 +71,14 @@ namespace ComicWrap.Pages
             await PopupNavigation.Instance.PopAsync();
 
             // TODO: Run in background as service (with notification and everything)
-            await ComicUpdater.Instance.ImportComic(ArchivePageUrl, CurrentPageUrl);
+            ComicData importedComic = await ComicUpdater.Instance.ImportComic(ArchivePageUrl, CurrentPageUrl);
+            if (importedComic == null)
+            {
+                await CoreMethods.DisplayAlert(
+                    title: Res.Alert_Error_Title,
+                    message: Res.AddComic_Error_ImportFailed,
+                    cancel: Res.Alert_Generic_Confirm);
+            }
         }
     }
 }

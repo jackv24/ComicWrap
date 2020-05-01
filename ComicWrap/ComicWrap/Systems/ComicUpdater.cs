@@ -76,12 +76,23 @@ namespace ComicWrap.Systems
 
             database.AddComic(comic);
 
-            await UpdateComic(
+            IEnumerable<ComicPageData> pages = await UpdateComic(
                 comic,
                 markReadUpToUrl: currentPageUrl,
                 markNewPagesAsNew: false);
 
             importingComics.Remove(comic);
+
+            // If there were no pages discovered, comic failed to import
+            if (pages.Count() == 0)
+            {
+                // Don't leave failed comic 
+                database.DeleteComic(comic);
+
+                // Comic has been deleted, don't return it
+                comic = null;
+            }
+
             ImportComicFinished?.Invoke(comic);
 
             return comic;

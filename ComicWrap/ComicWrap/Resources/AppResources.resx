@@ -123,6 +123,9 @@
   <data name="AddComic_CurrentUrl" xml:space="preserve">
     <value>Current Page URL:</value>
   </data>
+  <data name="AddComic_Error_ImportFailed" xml:space="preserve">
+    <value>Comic importing failed!</value>
+  </data>
   <data name="AddComic_Error_InvalidUrl" xml:space="preserve">
     <value>URL is invalid.</value>
   </data>

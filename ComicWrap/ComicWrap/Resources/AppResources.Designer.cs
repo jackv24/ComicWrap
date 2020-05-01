@@ -79,6 +79,15 @@ namespace ComicWrap.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Comic importing failed!.
+        /// </summary>
+        public static string AddComic_Error_ImportFailed {
+            get {
+                return ResourceManager.GetString("AddComic_Error_ImportFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to URL is invalid..
         /// </summary>
         public static string AddComic_Error_InvalidUrl {

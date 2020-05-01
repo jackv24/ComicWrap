@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -61,10 +62,16 @@ namespace ComicWrap.Views
             if (newComic != previousComic)
             {
                 if (previousComic != null)
+                {
                     previousComic.Updated -= RefreshComic;
+                    previousComic.PropertyChanged -= OnComicPropertyChanged;
+                }
 
                 if (newComic != null)
+                {
                     newComic.Updated += RefreshComic;
+                    newComic.PropertyChanged += OnComicPropertyChanged;
+                }
 
                 previousComic = newComic;
             }
@@ -120,8 +127,6 @@ namespace ComicWrap.Views
             CoverImage.Source = new FileImageSource { File = filePath };
         }
 
-        protected abstract void OnComicChanged(ComicData newComic);
-
         private Task OpenComic()
         {
             // Needed to use page navigation from a non-page
@@ -134,5 +139,13 @@ namespace ComicWrap.Views
             var page = FreshPageModelResolver.ResolvePageModel(Comic, pageModel);
             return navService.PushPage(page, null);
         }
+
+        private void OnComicPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            // Just refresh whole thing since the view isn't very complex
+            OnComicChanged(Comic);
+        }
+
+        protected abstract void OnComicChanged(ComicData newComic);
     }
 }

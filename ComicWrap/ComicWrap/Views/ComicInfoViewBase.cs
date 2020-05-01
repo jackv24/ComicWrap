@@ -64,13 +64,13 @@ namespace ComicWrap.Views
                 if (previousComic != null)
                 {
                     previousComic.Updated -= RefreshComic;
-                    previousComic.PropertyChanged -= OnComicPropertyChanged;
+                    previousComic.PropertyChanged -= OnComicDataPropertyChanged;
                 }
 
                 if (newComic != null)
                 {
                     newComic.Updated += RefreshComic;
-                    newComic.PropertyChanged += OnComicPropertyChanged;
+                    newComic.PropertyChanged += OnComicDataPropertyChanged;
                 }
 
                 previousComic = newComic;
@@ -140,10 +140,16 @@ namespace ComicWrap.Views
             return navService.PushPage(page, null);
         }
 
-        private void OnComicPropertyChanged(object sender, PropertyChangedEventArgs e)
+        private void OnComicDataPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
+            var comic = Comic;
+
+            // For some reason PropertyChanged is called when comic is deleted
+            if (!comic.IsValid)
+                return;
+
             // Just refresh whole thing since the view isn't very complex
-            OnComicChanged(Comic);
+            OnComicChanged(comic);
         }
 
         protected abstract void OnComicChanged(ComicData newComic);

@@ -19,6 +19,12 @@
         </Label>
     </NavigationPage.TitleView>
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Single x:Key="ComicImageElevation">16</x:Single>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="{DynamicResource FontIconAdd}" Command="{Binding AddComicCommand}"/>
         <ToolbarItem IconImageSource="{DynamicResource FontIconSettings}" Command="{Binding OpenSettingsCommand}"/>
@@ -41,7 +47,7 @@
                                IsVisible="{Binding IsAnyUpdates}"/>
 
                         <CollectionView ItemsSource="{Binding ComicUpdates}"
-                                        HeightRequest="170"
+                                        HeightRequest="178"
                                         IsVisible="{Binding IsAnyUpdates}"
                                         ItemSizingStrategy="MeasureFirstItem">
                             <CollectionView.Header>
@@ -54,7 +60,8 @@
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
                                     <views:ComicInfoUpdateView Comic="{Binding}"
-                                                               Padding="8, 8, 8, 0"/>
+                                                               Padding="8, 8, 8, 0"
+                                                               Elevation="{StaticResource ComicImageElevation}"/>
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                             <CollectionView.ItemsLayout>
@@ -66,7 +73,7 @@
                         <Label Text="{x:Static res:AppResources.Home_Subtitle_Library}"
                                FontSize="Large"
                                FontAttributes="Italic"
-                               Margin="16, 16, 16, 8"
+                               Margin="16, 8, 16, 4"
                                IsVisible="{Binding IsAnyComics}"/>
                     </StackLayout>
                 </CollectionView.Header>
@@ -77,7 +84,9 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <views:ComicInfoLibraryView Comic="{Binding}"
-                                                    Padding="16, 0, 16, 16"/>
+                                                    Padding="16, 4, 16, 12"
+                                                    IsClippedToBounds="False"
+                                                    Elevation="{StaticResource ComicImageElevation}"/>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
                 <CollectionView.ItemsLayout>

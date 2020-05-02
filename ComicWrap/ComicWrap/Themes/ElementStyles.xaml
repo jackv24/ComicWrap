@@ -57,6 +57,4 @@
         <Setter Property="FooterTextColor" Value="{DynamicResource DisabledTextColor}"/>
     </Style>
 
-    <x:Single x:Key="ComicImageElevation">20</x:Single>
-
 </ResourceDictionary>

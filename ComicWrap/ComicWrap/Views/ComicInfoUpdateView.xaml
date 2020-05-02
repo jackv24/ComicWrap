@@ -12,9 +12,9 @@
                      WidthRequest="100"
                      HorizontalOptions="Start"
                      Spacing="0">
-            <views:MaterialFrame CornerRadius="8"
-                                 Padding="0"
-                                 Elevation="{DynamicResource ComicImageElevation}">
+            <views:MaterialFrame x:Name="imageFrame"
+                                 CornerRadius="8"
+                                 Padding="0">
                 <Image x:Name="coverImage"
                        BackgroundColor="Gray"
                        HeightRequest="100"

@@ -89,6 +89,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Renderers\MaterialFrameRenderer_Android.cs" />
     <Compile Include="Systems\Environment_Android.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />

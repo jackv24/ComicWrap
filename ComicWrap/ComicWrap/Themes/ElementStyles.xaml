@@ -15,14 +15,6 @@
 
     <Style TargetType="Frame">
         <Setter Property="BackgroundColor" Value="{DynamicResource MainBackgroundColor}"/>
-        <Setter Property="HasShadow">
-            <Setter.Value>
-                <OnPlatform x:TypeArguments="x:Boolean">
-                    <On Platform="Android">True</On>
-                    <On Platform="iOS">False</On>
-                </OnPlatform>
-            </Setter.Value>
-        </Setter>
     </Style>
 
     <Style TargetType="ListView">
@@ -64,5 +56,7 @@
         <!--<Setter Property="FooterFontSize" Value="{StaticResource BaseFontSize-}" />-->
         <Setter Property="FooterTextColor" Value="{DynamicResource DisabledTextColor}"/>
     </Style>
+
+    <x:Single x:Key="ComicImageElevation">20</x:Single>
 
 </ResourceDictionary>

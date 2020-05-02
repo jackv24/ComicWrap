@@ -77,6 +77,7 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Renderers\MaterialFrameRenderer_iOS.cs" />
     <Compile Include="Systems\Environment_iOS.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />

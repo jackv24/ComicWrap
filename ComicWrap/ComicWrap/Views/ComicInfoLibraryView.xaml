@@ -10,15 +10,16 @@
     <views:ComicInfoViewBase.Content>
         <StackLayout x:Name="parentStackLayout" 
                      Orientation="Horizontal">
-            <Frame CornerRadius="8"
-                   Padding="0">
+            <views:MaterialFrame CornerRadius="8"
+                                 Padding="0"
+                                 Elevation="{DynamicResource ComicImageElevation}">
                 <Image x:Name="coverImage"
                        BackgroundColor="Gray"
                        WidthRequest="100"
                        HeightRequest="140"
                        Aspect="AspectFill"
                        Margin="0"/>
-            </Frame>
+            </views:MaterialFrame>
             <StackLayout Orientation="Vertical"
                          Margin="8, 8, 0, 8"
                          Spacing="0"

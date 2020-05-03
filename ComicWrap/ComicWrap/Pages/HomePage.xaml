@@ -8,7 +8,8 @@
              mc:Ignorable="d"
              x:Class="ComicWrap.Pages.HomePage"
              x:Name="page"
-             Title="{x:Static res:AppResources.Home_Title}">
+             Title="{x:Static res:AppResources.Home_Title}"
+             AutomationId="HomePage">
 
     <NavigationPage.TitleView>
         <Label Text="{Binding Source={x:Reference page}, Path=Title}"
@@ -26,7 +27,7 @@
     </ContentPage.Resources>
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="{DynamicResource FontIconAdd}" Command="{Binding AddComicCommand}"/>
+        <ToolbarItem IconImageSource="{DynamicResource FontIconAdd}" Command="{Binding AddComicCommand}" AutomationId="AddComicButton"/>
         <ToolbarItem IconImageSource="{DynamicResource FontIconSettings}" Command="{Binding OpenSettingsCommand}"/>
     </ContentPage.ToolbarItems>
 

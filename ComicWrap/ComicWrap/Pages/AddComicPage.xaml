@@ -6,7 +6,8 @@
              xmlns:popupPages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
              xmlns:res="clr-namespace:ComicWrap.Resources"
              mc:Ignorable="d"
-             x:Class="ComicWrap.Pages.AddComicPage">
+             x:Class="ComicWrap.Pages.AddComicPage"
+             AutomationId="AddComicPage">
     <popupPages:PopupPage.Content>
         <Frame VerticalOptions="Center"
                HorizontalOptions="Center"
@@ -39,7 +40,8 @@
                     <Button Text="Add"
                             HorizontalOptions="EndAndExpand"
                             Command="{Binding SubmitCommand}"
-                            Padding="20, 10"/>
+                            Padding="20, 10"
+                            AutomationId="SubmitButton"/>
                 </StackLayout>
             </StackLayout>
         </Frame>

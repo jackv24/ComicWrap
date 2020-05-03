@@ -8,7 +8,7 @@ pool:
   vmImage: 'macos-latest'
 
 variables:
-  buildConfiguration: 'Debug'
+  buildConfiguration: 'Release'
   outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
 
 stages:
@@ -43,8 +43,6 @@ stages:
         env:
             Secret_AppSecret_Android: $(Secret_AppSecret_Android)
             Secret_AppSecret_iOS: $(Secret_AppSecret_iOS)
-      - publish: '$(build.binariesDirectory)/$(buildConfiguration)'
-        artifact: AndroidApk
     - job: iOS
       steps:
         - task: InstallAppleCertificate@2

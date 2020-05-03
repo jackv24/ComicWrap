@@ -41,11 +41,11 @@ stages:
           configuration: '$(buildConfiguration)'
           outputDirectory: '$(outputDirectory)'
         env:
-            Secret_AppSecret_Android: ''
-            Secret_AppSecret_iOS: ''
+            Secret_AppSecret_Android: $(Secret_AppSecret_Android)
+            Secret_AppSecret_iOS: $(Secret_AppSecret_iOS)
       - task: PublishBuildArtifacts@1
         inputs:
-          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          PathtoPublish: '$(build.binariesDirectory)/$(buildConfiguration)'
           ArtifactName: 'AndroidApk'
           publishLocation: 'Container'
     - job: iOS
@@ -70,5 +70,5 @@ stages:
             packageApp: true
             runNugetRestore: false
           env:
-            Secret_AppSecret_Android: ''
-            Secret_AppSecret_iOS: ''
+            Secret_AppSecret_Android: $(Secret_AppSecret_Android)
+            Secret_AppSecret_iOS: $(Secret_AppSecret_iOS)

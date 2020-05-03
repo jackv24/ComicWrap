@@ -43,11 +43,8 @@ stages:
         env:
             Secret_AppSecret_Android: $(Secret_AppSecret_Android)
             Secret_AppSecret_iOS: $(Secret_AppSecret_iOS)
-      - task: PublishBuildArtifacts@1
-        inputs:
-          PathtoPublish: '$(build.binariesDirectory)/$(buildConfiguration)'
-          ArtifactName: 'AndroidApk'
-          publishLocation: 'Container'
+      - publish: '$(build.binariesDirectory)/$(buildConfiguration)'
+        artifact: AndroidApk
     - job: iOS
       steps:
         - task: InstallAppleCertificate@2

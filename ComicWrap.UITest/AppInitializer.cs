@@ -13,7 +13,7 @@ namespace ComicWrap.UITest
                 return ConfigureApp.Android.InstalledApp("com.jackvine.comicwrap").StartApp();
             }
 
-            return ConfigureApp.iOS.StartApp();
+            return ConfigureApp.iOS.InstalledApp("com.jackvine.ComicWrap").StartApp();
         }
     }
 }

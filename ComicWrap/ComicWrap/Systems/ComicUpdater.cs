@@ -108,7 +108,6 @@ namespace ComicWrap.Systems
 
             bool doMarkReadUpTo = !string.IsNullOrEmpty(markReadUpToUrl);
             bool reachedReadPage = false;
-            bool anyNewPages = false;
 
             // New page data is bare, so fill out missing data
             // Loop backwards so we can mark previously read pages
@@ -128,10 +127,7 @@ namespace ComicWrap.Systems
                 }
 
                 if (markNewPagesAsNew)
-                {
                     tempPage.IsNew = true;
-                    anyNewPages = true;
-                }
             }
 
             if (!comicData.IsManaged)
@@ -149,10 +145,6 @@ namespace ComicWrap.Systems
 
                 comic.Name = document.Title;
 
-                // Record date if any new pages were added
-                if (anyNewPages)
-                    comic.LastUpdatedDate = DateTimeOffset.UtcNow;
-
                 // Make sure comic is in database first
                 realm.Add(comic, update: true);
 
@@ -163,6 +155,8 @@ namespace ComicWrap.Systems
                     !tempPages.Any(tempPage => tempPage.Url == existingPage.Url));
                 foreach (var page in deletePages)
                     realm.Remove(page);
+
+                bool anyNewPages = false;
 
                 foreach (var page in tempPages)
                 {
@@ -179,8 +173,14 @@ namespace ComicWrap.Systems
                         // Add new pages
                         page.Comic = comic;
                         realm.Add(page);
+
+                        anyNewPages = true;
                     }
                 }
+
+                // Record date if any new pages were added
+                if (anyNewPages)
+                    comic.LastUpdatedDate = DateTimeOffset.UtcNow;
 
                 // Throwing at end of write transaction should cancel transaction
                 cancelToken.ThrowIfCancellationRequested();

@@ -5,11 +5,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:sv="clr-namespace:AiForms.Renderers;assembly=SettingsView"
              xmlns:res="clr-namespace:ComicWrap.Resources"
+             xmlns:local="clr-namespace:ComicWrap.Pages"
              mc:Ignorable="d"
              x:Class="ComicWrap.Pages.SettingsPage"
              Title="{x:Static res:AppResources.Settings_Title}">
 
-    <sv:SettingsView>
+    <!-- For IntelliSense -->
+    <d:ContentPage.BindingContext>
+        <local:SettingsPageModel/>
+    </d:ContentPage.BindingContext>
+
+    <sv:SettingsView HasUnevenRows="True">
+        <sv:Section FooterText="{x:Static res:AppResources.Settings_LinkWarning}">
+            <sv:CommandCell Title="{x:Static res:AppResources.Home_Title}"
+                            Description="{Binding SupportUrl}"
+                            DescriptionFontSize="Small"
+                            IconSource="ic_app_icon_48"
+                            IconSize="48"
+                            Height="72"
+                            Command="{Binding OpenSupportUrlCommand}"/>
+        </sv:Section>
         <sv:Section Title="{x:Static res:AppResources.Settings_Title_Appearance}"
                     ItemsSource="{Binding ThemeOptions}"
                     sv:RadioCell.SelectedValue="{Binding SelectedTheme}">

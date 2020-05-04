@@ -47,12 +47,17 @@ namespace ComicWrap.Pages
 
             BackupDataCommand = new AsyncCommand(BackupData);
             RestoreDataCommand = new AsyncCommand(RestoreData);
+
+            OpenSupportUrlCommand = new AsyncCommand(OpenSupportUrl);
         }
 
         public List<ThemeOptionDisplay> ThemeOptions { get; }
 
         public IAsyncCommand BackupDataCommand { get; }
         public IAsyncCommand RestoreDataCommand { get; }
+
+        public string SupportUrl { get { return "https://github.com/jackv24/ComicWrap"; } }
+        public IAsyncCommand OpenSupportUrlCommand { get; }
 
         private ThemeOptionDisplay _selectedTheme;
         public ThemeOptionDisplay SelectedTheme
@@ -179,6 +184,11 @@ namespace ComicWrap.Pages
 
                 FileHelper.DirectoryCopy(imageFolderBackupPath, LocalImageService.FolderPath, true);
             }
+        }
+
+        private Task OpenSupportUrl()
+        {
+            return Launcher.OpenAsync(SupportUrl);
         }
     }
 }

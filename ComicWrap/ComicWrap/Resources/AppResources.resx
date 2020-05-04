@@ -195,6 +195,9 @@
   <data name="Settings_Data_Restore" xml:space="preserve">
     <value>Restore</value>
   </data>
+  <data name="Settings_LinkWarning" xml:space="preserve">
+    <value>Links will open in an external browser</value>
+  </data>
   <data name="Settings_Restore_Error_Invalid" xml:space="preserve">
     <value>Selected file was not a valid backup file!</value>
   </data>

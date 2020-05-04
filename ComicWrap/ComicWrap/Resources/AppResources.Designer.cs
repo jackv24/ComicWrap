@@ -295,6 +295,15 @@ namespace ComicWrap.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Links will open in an external browser.
+        /// </summary>
+        public static string Settings_LinkWarning {
+            get {
+                return ResourceManager.GetString("Settings_LinkWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Selected file was not a valid backup file!.
         /// </summary>
         public static string Settings_Restore_Error_Invalid {

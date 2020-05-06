@@ -12,7 +12,7 @@
         <Frame VerticalOptions="Center"
                HorizontalOptions="Center"
                WidthRequest="300"
-               BackgroundColor="{DynamicResource PopupBackgroundColor}">
+               BackgroundColor="{DynamicResource MainBackgroundColor}">
             <StackLayout>
                 <Label Text="{x:Static res:AppResources.AddComic_Title}"
                        TextColor="{DynamicResource MainTextColor}"

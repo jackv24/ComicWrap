@@ -3,17 +3,22 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     x:Class="ComicWrap.Themes.DarkTheme">
 
-    <Color x:Key="ColorPrimary">#424242</Color>
-    <Color x:Key="ColorPrimaryDark">#1b1b1b</Color>
+    <Color x:Key="ColorPrimary">#212121</Color>
+    <Color x:Key="ColorPrimaryDark">#000000</Color>
     <Color x:Key="AccentColor">#40c4ff</Color>
 
     <Color x:Key="MainTextColor">White</Color>
     <Color x:Key="DisabledTextColor">Gray</Color>
 
-    <Color x:Key="MainBackgroundColor">#1c1c1c</Color>
-    <Color x:Key="SecondaryBackgroundColor">#0f0f0f</Color>
-    <Color x:Key="PopupBackgroundColor">#1c1c1c</Color>
-    
+    <OnPlatform x:Key="MainBackgroundColor"
+                x:TypeArguments="Color"
+                iOS="#1c1c1c"
+                Android="#424242"/>
+    <OnPlatform x:Key="SecondaryBackgroundColor"
+                x:TypeArguments="Color"
+                iOS="#0f0f0f"
+                Android="#303030"/>
+
     <Color x:Key="ButtonBackgroundColor">#737373</Color>
     <Color x:Key="ButtonTextColor">White</Color>
 

@@ -50,6 +50,7 @@
         <Setter Property="CellDescriptionColor" Value="{DynamicResource MainTextColor}"/>
         <Setter Property="CellAccentColor" Value="{DynamicResource AccentColor}"/>
         <Setter Property="CellHintFontSize" Value="Subtitle"/>
+        <Setter Property="CellDescriptionFontSize" Value="Small"/>
         <Setter Property="CellHintTextColor" Value="{DynamicResource DisabledTextColor}"/>
         <Setter Property="SeparatorColor" Value="{DynamicResource DisabledTextColor}"/>
         <Setter Property="SelectedColor" Value="{DynamicResource AccentColor}"/>

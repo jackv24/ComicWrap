@@ -15,17 +15,25 @@
         <local:SettingsPageModel/>
     </d:ContentPage.BindingContext>
 
-    <sv:SettingsView HasUnevenRows="True">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Double x:Key="HeaderHeight">48</x:Double>
+            <x:Double x:Key="EmptyHeaderHeight">24</x:Double>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <sv:SettingsView HasUnevenRows="True"
+                     HeaderHeight="{StaticResource EmptyHeaderHeight}">
         <sv:Section FooterText="{x:Static res:AppResources.Settings_LinkWarning}">
             <sv:CommandCell Title="{x:Static res:AppResources.Home_Title}"
                             Description="{Binding SupportUrl}"
-                            DescriptionFontSize="Small"
                             IconSource="ic_app_icon_48"
                             IconSize="48"
                             Height="72"
                             Command="{Binding OpenSupportUrlCommand}"/>
         </sv:Section>
         <sv:Section Title="{x:Static res:AppResources.Settings_Title_Appearance}"
+                    HeaderHeight="{StaticResource HeaderHeight}"
                     ItemsSource="{Binding ThemeOptions}"
                     sv:RadioCell.SelectedValue="{Binding SelectedTheme}">
             <sv:Section.ItemTemplate>
@@ -34,7 +42,8 @@
                 </DataTemplate>
             </sv:Section.ItemTemplate>
         </sv:Section>
-        <sv:Section Title="{x:Static res:AppResources.Settings_Title_Data}">
+        <sv:Section Title="{x:Static res:AppResources.Settings_Title_Data}"
+                    HeaderHeight="{StaticResource HeaderHeight}">
             <sv:ButtonCell Title="{x:Static res:AppResources.Settings_Data_Backup}"
                            Command="{Binding BackupDataCommand}"/>
             <sv:ButtonCell Title="{x:Static res:AppResources.Settings_Data_Restore}"

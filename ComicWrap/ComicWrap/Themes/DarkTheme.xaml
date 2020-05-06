@@ -10,8 +10,9 @@
     <Color x:Key="MainTextColor">White</Color>
     <Color x:Key="DisabledTextColor">Gray</Color>
 
-    <Color x:Key="MainBackgroundColor">#121212</Color>
-    <Color x:Key="PopupBackgroundColor">#383838</Color>
+    <Color x:Key="MainBackgroundColor">#1c1c1c</Color>
+    <Color x:Key="SecondaryBackgroundColor">#0f0f0f</Color>
+    <Color x:Key="PopupBackgroundColor">#1c1c1c</Color>
     
     <Color x:Key="ButtonBackgroundColor">#737373</Color>
     <Color x:Key="ButtonTextColor">White</Color>

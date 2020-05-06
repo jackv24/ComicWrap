@@ -29,7 +29,8 @@
                         <StackLayout Spacing="0">
                             <StackLayout Orientation="Horizontal"
                                          Padding="20, 5, 20, 5"
-                                         HeightRequest="35">
+                                         HeightRequest="31"
+                                         BackgroundColor="{DynamicResource MainBackgroundColor}">
                                 <!-- IsNew Indicator-->
                                 <Label Text="{x:Static res:MaterialFontFamily.MdiCircleMedium}"
                                        FontFamily="{StaticResource MaterialFontFamily}"
@@ -41,7 +42,6 @@
 
                                 <!-- Page Name -->
                                 <Label Text="{Binding Name}"
-                                       BackgroundColor="{DynamicResource MainBackgroundColor}"
                                        HorizontalOptions="FillAndExpand"
                                        VerticalOptions="FillAndExpand"
                                        VerticalTextAlignment="Center">
@@ -60,7 +60,8 @@
                                     </Label.GestureRecognizers>
                                 </Label>
                             </StackLayout>
-                            <BoxView BackgroundColor="{DynamicResource DisabledTextColor}"
+                            <!-- Seperator -->
+                            <BoxView BackgroundColor="Transparent"
                                      HeightRequest="1"/>
                         </StackLayout>
                     </DataTemplate>

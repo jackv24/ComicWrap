@@ -147,6 +147,9 @@
   <data name="ComicDetail_Options_Delete" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="ComicDetail_Options_Edit" xml:space="preserve">
+    <value>Edit Comic</value>
+  </data>
   <data name="ComicDetail_Options_Title" xml:space="preserve">
     <value>Comic Options</value>
   </data>
@@ -164,6 +167,9 @@
   </data>
   <data name="ComicReader_More_Title" xml:space="preserve">
     <value>Page Options</value>
+  </data>
+  <data name="EditComic_Name_Title" xml:space="preserve">
+    <value>Name</value>
   </data>
   <data name="Home_Subtitle_Library" xml:space="preserve">
     <value>Library</value>

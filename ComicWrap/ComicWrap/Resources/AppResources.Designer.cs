@@ -151,6 +151,15 @@ namespace ComicWrap.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit Comic.
+        /// </summary>
+        public static string ComicDetail_Options_Edit {
+            get {
+                return ResourceManager.GetString("ComicDetail_Options_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Comic Options.
         /// </summary>
         public static string ComicDetail_Options_Title {
@@ -201,6 +210,15 @@ namespace ComicWrap.Resources {
         public static string ComicReader_More_Title {
             get {
                 return ResourceManager.GetString("ComicReader_More_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string EditComic_Name_Title {
+            get {
+                return ResourceManager.GetString("EditComic_Name_Title", resourceCulture);
             }
         }
         

@@ -49,8 +49,6 @@ namespace ComicWrap.Pages
         public event Action PagesUpdated;
 
         private CancellationTokenSource pageCancelTokenSource;
-        private bool _isRefreshing;
-        private ComicData _comic;
         private ComicPageTargetType scrollToPageTarget;
 
         public IAsyncCommand OpenOptionsCommand { get; }
@@ -59,6 +57,7 @@ namespace ComicWrap.Pages
 
         public ObservableCollection<ComicPageData> Pages { get; set; }
 
+        private bool _isRefreshing;
         public bool IsRefreshing
         {
             get { return _isRefreshing; }
@@ -69,6 +68,7 @@ namespace ComicWrap.Pages
             }
         }
 
+        private ComicData _comic;
         public ComicData Comic
         {
             get { return _comic; }
@@ -129,7 +129,9 @@ namespace ComicWrap.Pages
             string buttonPressed = await UserDialogs.Instance.ActionSheetAsync(
                 title: Res.ComicDetail_Options_Title,
                 cancel: Res.ComicDetail_Options_Cancel,
-                destructive: Res.ComicDetail_Options_Delete
+                destructive: Res.ComicDetail_Options_Delete,
+                cancelToken: pageCancelTokenSource.Token,
+                Res.ComicDetail_Options_Edit
                 );
 
             if (buttonPressed == Res.ComicDetail_Options_Cancel)
@@ -141,6 +143,11 @@ namespace ComicWrap.Pages
                 var comicName = Comic.Name;
                 ComicDatabase.Instance.DeleteComic(Comic);
                 UserDialogs.Instance.Toast(string.Format(Res.ComicDetail_DeletedComic, comicName));
+            }
+            else if (buttonPressed == Res.ComicDetail_Options_Edit)
+            {
+                await CoreMethods.PushPageModel<EditComicPageModel>(Comic);
+                return;
             }
             else
             {

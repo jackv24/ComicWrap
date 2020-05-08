@@ -1,3 +1,5 @@
+#pragma warning disable AsyncFixer02 // Long running or blocking operations under an async method
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -118,6 +120,9 @@ namespace ComicWrap.Tests
                 ArchivePageHtmlStage1 = @"
                     <!DOCTYPE html>
                     <html>
+                    <head>
+                        <title>Type 1 Stage 1</title>
+                    </head>
                     <body>
                         <div id=""wrapper"">
                             <main>
@@ -144,6 +149,9 @@ namespace ComicWrap.Tests
                 ArchivePageHtmlStage2 = @"
                     <!DOCTYPE html>
                     <html>
+                    <head>
+                        <title>Type 1 Stage 2</title>
+                    </head>
                     <body>
                         <div id=""wrapper"">
                             <main>
@@ -179,6 +187,9 @@ namespace ComicWrap.Tests
                 ArchivePageHtmlStage1 = @"
                     <!DOCTYPE html>
                     <html>
+                    <head>
+                        <title>Type 2 Stage 1</title>
+                    </head>
                     <body>
                         <div id=""comicwrapouter"">
                             <div id = ""comicwrapinner"">
@@ -201,6 +212,9 @@ namespace ComicWrap.Tests
                 ArchivePageHtmlStage2 = @"
                     <!DOCTYPE html>
                     <html>
+                    <head>
+                        <title>Type 2 Stage 2</title>
+                    </head>
                     <body>
                         <div id=""comicwrapouter"">
                             <div id = ""comicwrapinner"">
@@ -284,6 +298,21 @@ namespace ComicWrap.Tests
             IEnumerable<ComicPageData> pages = await comicUpdater.UpdateComic(savedComic);
 
             Assert.GreaterOrEqual(pages.Count(p => p.IsNew), 1);
+        }
+
+        [Test]
+        public static async Task ComicNameChangePersistsAfterUpdating(
+            [ValueSource(nameof(EnumerateKnownComicTypes))] MockComic comic)
+        {
+            // Initial comic import
+            ComicData savedComic = await comicUpdater.ImportComic(comic.ArchivePageUrl, comic.KnownPageUrl);
+
+            database.Write(realm => savedComic.Name = "New Name");
+
+            // Update comic now that selector has been switched
+            IEnumerable<ComicPageData> pages = await comicUpdater.UpdateComic(savedComic);
+
+            Assert.AreEqual("New Name", savedComic.Name);
         }
     }
 }

@@ -143,8 +143,6 @@ namespace ComicWrap.Systems
                 ComicData comic = realm.All<ComicData>()
                     .First(c => c.Id == comicId);
 
-                comic.Name = document.Title;
-
                 // Make sure comic is in database first
                 realm.Add(comic, update: true);
 

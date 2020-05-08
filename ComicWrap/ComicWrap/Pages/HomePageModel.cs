@@ -75,7 +75,6 @@ namespace ComicWrap.Pages
             // Subscribe to ComicUpdater events so page can be updated while importing comics
             comicUpdater = ComicUpdater.Instance;
             comicUpdater.ImportComicBegun += OnImportComicBegun;
-            comicUpdater.ImportComicProgressed += OnImportComicProgressed;
             comicUpdater.ImportComicFinished += OnImportComicFinished;
             
             // Handle comics that were already importing
@@ -94,7 +93,6 @@ namespace ComicWrap.Pages
 
             // Only need to update page while active
             comicUpdater.ImportComicBegun -= OnImportComicBegun;
-            comicUpdater.ImportComicProgressed -= OnImportComicProgressed;
             comicUpdater.ImportComicFinished -= OnImportComicFinished;
             importingComics.Clear();
         }
@@ -178,12 +176,6 @@ namespace ComicWrap.Pages
 
             RaisePropertyChanged(nameof(ComicLibrary));
             RaisePropertyChanged(nameof(IsAnyComics));
-        }
-
-        private void OnImportComicProgressed(ComicData comic)
-        {
-            // Update views that are displaying this comic
-            comic.ReportUpdated();
         }
 
         private void OnImportComicFinished(ComicData comic)

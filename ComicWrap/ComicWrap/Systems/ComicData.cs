@@ -13,7 +13,6 @@ namespace ComicWrap.Systems
 
         public string Name { get; set; }
         public string ArchiveUrl { get; set; }
-        public string CurrentPageUrl { get; set; }
 
         [Backlink(nameof(ComicPageData.Comic))]
         public IQueryable<ComicPageData> Pages { get; }

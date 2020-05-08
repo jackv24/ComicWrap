@@ -28,7 +28,6 @@ namespace ComicWrap.Systems
         }
 
         public event Action<ComicData> ImportComicBegun;
-        public event Action<ComicData> ImportComicProgressed;
         public event Action<ComicData> ImportComicFinished;
 
         private readonly ComicDatabase database;
@@ -56,28 +55,19 @@ namespace ComicWrap.Systems
             return true;
         }
 
-        public async Task<ComicData> ImportComic(string archiveUrl, string currentPageUrl)
+        public async Task<ComicData> ImportComic(string pageUrl)
         {
             var comic = new ComicData
             {
-                ArchiveUrl = archiveUrl,
-                CurrentPageUrl = currentPageUrl
+                Name = pageUrl,
+                // Page might not be the archive page, this will be updated when the archive page is found
+                ArchiveUrl = pageUrl
             };
 
             importingComics.Add(comic);
             ImportComicBegun?.Invoke(comic);
 
-            var document = await pageLoader.OpenDocument(archiveUrl);
-
-            // TODO: Process title to remove " - Archive", etc.
-            comic.Name = document.Title;
-
-            ImportComicProgressed?.Invoke(comic);
-
-            IEnumerable<ComicPageData> pages = await UpdateComic(
-                comic,
-                markReadUpToUrl: currentPageUrl,
-                markNewPagesAsNew: false);
+            IEnumerable<ComicPageData> pages = await UpdateComic(comic);
 
             importingComics.Remove(comic);
             ImportComicFinished?.Invoke(comic);
@@ -91,43 +81,72 @@ namespace ComicWrap.Systems
 
         public async Task<IEnumerable<ComicPageData>> UpdateComic(
             ComicData comicData,
-            string markReadUpToUrl = null,
-            bool markNewPagesAsNew = true,
             CancellationToken cancelToken = default)
         {
-            // Load comic archive page
-            cancelToken.ThrowIfCancellationRequested();
-            var document = await pageLoader.OpenDocument(comicData.ArchiveUrl);
+            bool isComicImporting = !comicData.IsManaged;
+
+            // Mark up to current page if comic is being imported
+            string readPageUrl = isComicImporting ? comicData.ArchiveUrl : null;
+
             cancelToken.ThrowIfCancellationRequested();
 
-            var tempPages = DiscoverPages(document, comicData.CurrentPageUrl);
+            List<ComicPageData> tempPages;
+            if (isComicImporting)
+            {
+                string setArchiveUrl = null;
+
+                tempPages = await DiscoverPages(
+                    comicData.ArchiveUrl,
+                    onFoundArchivePage: (document) =>
+                    {
+                        setArchiveUrl = document.Url;
+                        comicData.Name = document.Title;
+                    });
+
+                // Update archive url for for quicker updating next time if we didn't start on the archive page
+                if (!string.IsNullOrEmpty(setArchiveUrl))
+                    comicData.ArchiveUrl = setArchiveUrl;
+            }
+            else
+            {
+                tempPages = await DiscoverPages(comicData.ArchiveUrl);
+            }
+
+            cancelToken.ThrowIfCancellationRequested();
 
             // Cancel early if no pages were found
             if (tempPages.Count == 0)
                 return null;
 
-            bool doMarkReadUpTo = !string.IsNullOrEmpty(markReadUpToUrl);
-            bool reachedReadPage = false;
-
-            // New page data is bare, so fill out missing data
-            // Loop backwards so we can mark previously read pages
-            for (int i = tempPages.Count - 1; i >= 0; i--)
+            if (isComicImporting)
             {
-                ComicPageData tempPage = tempPages[i];
+                bool reachedReadPage = false;
 
-                // Mark all pages before current page as read
-                if (doMarkReadUpTo && tempPage.Url == markReadUpToUrl)
-                    reachedReadPage = true;
+                // New page data is bare, so fill out missing data
+                // Loop backwards so we can mark previously read pages
+                for (int i = tempPages.Count - 1; i >= 0; i--)
+                {
+                    ComicPageData tempPage = tempPages[i];
 
-                if (reachedReadPage)
+                    // Mark all pages before current page as read
+                    if (tempPage.Url == readPageUrl)
+                        reachedReadPage = true;
+
+                    if (reachedReadPage)
+                    {
+                        // We can edit tempPage fields outside of a write transaction since it hasn't been added to a Realm yet
+                        tempPage.IsRead = true;
+                    }
+                }
+            }
+            else
+            {
+
+                foreach (ComicPageData tempPage in tempPages)
                 {
                     // We can edit tempPage fields outside of a write transaction since it hasn't been added to a Realm yet
-                    tempPage.IsRead = true;
-                    continue;
-                }
-
-                if (markNewPagesAsNew)
                     tempPage.IsNew = true;
+                }
             }
 
             if (!comicData.IsManaged)
@@ -191,13 +210,30 @@ namespace ComicWrap.Systems
             return comicData.Pages;
         }
 
-        public static List<ComicPageData> DiscoverPages(IDocument document, string knownPageUrl)
+        public async Task<List<ComicPageData>> DiscoverPages(string pageUrl, Action<IDocument> onFoundArchivePage = null)
         {
-            // TODO: Expand to work with more sites
+            IDocument document = await pageLoader.OpenDocument(pageUrl);
+            List<ComicPageData> pages = FindPagesFromArchiveList(document);
+            if (pages != null)
+            {
+                onFoundArchivePage?.Invoke(document);
+                return pages;
+            }
+
+            string archivePageUrl = FindArchivePageUrl(document);
+            if (!string.IsNullOrEmpty(archivePageUrl) && archivePageUrl != pageUrl)
+                return await DiscoverPages(archivePageUrl, onFoundArchivePage);
+
+            return null;
+        }
+
+        private List<ComicPageData> FindPagesFromArchiveList(IDocument document)
+        {
+            // TODO: Expand to work with more websites
 
             var elements = document.GetElementsByName("comic");
             if (elements.Length == 0)
-                return new List<ComicPageData>();
+                return null;
             else
             {
                 var options = elements[0].Children
@@ -205,20 +241,28 @@ namespace ComicWrap.Systems
                     // Ignore empty values (usually 1 empty value is the "Select..." prompt
                     .Where(a => !string.IsNullOrEmpty(a.Nav));
 
-                // Extract base url using know page url
+                // Extract base url using current page url
+                string pageUrl = document.Url;
+
+                // This method is not very flexible, will need to be improved to work with more sites
                 string baseUrl = null;
-                foreach (var opt in options)
+                int slashCounter = 0;
+                for (int i = 0; i < pageUrl.Length; i++)
                 {
-                    if (knownPageUrl.EndsWith(opt.Nav))
+                    if (pageUrl[i] == '/')
                     {
-                        baseUrl = knownPageUrl.Substring(0, knownPageUrl.Length - opt.Nav.Length - 1);
-                        break;
+                        slashCounter++;
+                        if (slashCounter == 3)
+                        {
+                            baseUrl = pageUrl.Substring(0, i);
+                            break;
+                        }
                     }
                 }
 
-                // base url couldn't be extracted
+                // Couldn't extract base url
                 if (baseUrl == null)
-                    return new List<ComicPageData>();
+                    return null;
 
                 return options
                     .Select(a => new ComicPageData
@@ -228,6 +272,13 @@ namespace ComicWrap.Systems
                     })
                     .ToList();
             }
+        }
+
+        private string FindArchivePageUrl(IDocument document)
+        {
+            // TODO: Expand to work with more websites
+
+            return document.GetElementById("archive")?.GetAttribute("href");
         }
 
         public async Task<string> GetComicImageUrl(ComicPageData page, CancellationToken cancelToken = default)

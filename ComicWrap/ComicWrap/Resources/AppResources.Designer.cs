@@ -61,24 +61,6 @@ namespace ComicWrap.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Archive URL:.
-        /// </summary>
-        public static string AddComic_ArchiveUrl {
-            get {
-                return ResourceManager.GetString("AddComic_ArchiveUrl", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Current Page URL:.
-        /// </summary>
-        public static string AddComic_CurrentUrl {
-            get {
-                return ResourceManager.GetString("AddComic_CurrentUrl", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Comic importing failed!.
         /// </summary>
         public static string AddComic_Error_ImportFailed {
@@ -93,6 +75,15 @@ namespace ComicWrap.Resources {
         public static string AddComic_Error_InvalidUrl {
             get {
                 return ResourceManager.GetString("AddComic_Error_InvalidUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Page URL:.
+        /// </summary>
+        public static string AddComic_PageUrl {
+            get {
+                return ResourceManager.GetString("AddComic_PageUrl", resourceCulture);
             }
         }
         

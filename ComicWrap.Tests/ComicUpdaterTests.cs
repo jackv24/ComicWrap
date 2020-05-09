@@ -6,66 +6,67 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System.IO;
 
 using NUnit.Framework;
 using AngleSharp;
 using AngleSharp.Dom;
+using AngleSharp.Io;
 
 using ComicWrap.Systems;
+using System.Runtime.Serialization;
 
 namespace ComicWrap.Tests
 {
+    public class MockComicState
+    {
+        public string ArchiveUrl { get; set; }
+        public string PageUrl { get; set; }
+        public int PageCount { get; set; }
+    }
+
     public class MockComic
     {
-        public string ArchivePageHtmlStage1 { get; set; }
-        public string ArchivePageHtmlStage2 { get; set; }
-        public string ArchivePageUrl { get; set; }
-        public string KnownPageUrl { get; set; }
-        public int PageCount { get; set; }
+        public MockComicState State1;
+        public MockComicState State2;
     }
 
     public class MockPageLoader : IPageLoader
     {
         private IEnumerable<MockComic> comics;
 
-        public static readonly MockComic KnownFailingPage =  new MockComic
-        {
-            ArchivePageHtmlStage1 = @"
-                <!DOCTYPE html>
-                <html>
-                <body>
-                        
-                </body>
-                </html>",
-            ArchivePageUrl = "http://FAIL/comic/archive",
-            KnownPageUrl = "http://FAIL/comic/page-2"
-        };
-
-        public Func<MockComic, string> HtmlSelector { get; set; }
+        public Func<MockComic, MockComicState> StateSelector { get; set; }
 
         public MockPageLoader(IEnumerable<MockComic> comics)
         {
             this.comics = comics;
         }
 
-        public Task<IDocument> OpenDocument(string pageUrl)
+        public Task<IDocument> OpenDocument(string url)
         {
-            // Special case
-            if (pageUrl.Contains("FAIL"))
-                return ComicUpdaterTests.GetDocumentFromHtml(KnownFailingPage.ArchivePageHtmlStage1);
-
-            // Search comics for matching archive url
-            var html = string.Empty;
-            foreach (var comic in comics)
+            if (StateSelector != null)
             {
-                if (comic.ArchivePageUrl == pageUrl)
+                // Flip out requested url for new state (assumes previous state was State1)
+                foreach (var comic in comics)
                 {
-                    html = HtmlSelector(comic);
-                    break;
+                    if (url == comic.State1.ArchiveUrl)
+                    {
+                        url = StateSelector(comic).ArchiveUrl;
+                        break;
+                    }
+                    else if (url == comic.State1.PageUrl)
+                    {
+                        url = StateSelector(comic).PageUrl;
+                        break;
+                    }
                 }
             }
 
-            return ComicUpdaterTests.GetDocumentFromHtml(html);
+            return PageLoader.GetBrowsingContext().OpenAsync(res =>
+            {
+                res.Content(new FileStream(new Uri(url).LocalPath, FileMode.Open), shouldDispose: true)
+                   .Address(url);
+            });
         }
     }
 
@@ -78,14 +79,9 @@ namespace ComicWrap.Tests
         [SetUp]
         public static void Setup()
         {
-            var knownComicTypes = EnumerateKnownComicTypes();
-
             // Should have a blank database for each test
             database = ComicDatabaseTests.GetNewDatabase();
-            pageLoader = new MockPageLoader(knownComicTypes)
-            {
-                HtmlSelector = comic => comic.ArchivePageHtmlStage1
-            };
+            pageLoader = new MockPageLoader(EnumerateKnownComicTypes());
             comicUpdater = new ComicUpdater(database, pageLoader);
         }
 
@@ -103,169 +99,81 @@ namespace ComicWrap.Tests
             Assert.AreEqual(false, isValid);
         }
 
-        public static Task<IDocument> GetDocumentFromHtml(string html)
-        {
-            var context = PageLoader.GetBrowsingContext();
-            return context.OpenAsync(req =>
-            {
-                req.Content(html);
-            });
-        }
-
         public static IEnumerable<MockComic> EnumerateKnownComicTypes()
         {
-            // http://www.comicctrl.com/ Type 1
-            yield return new MockComic
-            {
-                ArchivePageHtmlStage1 = @"
-                    <!DOCTYPE html>
-                    <html>
-                    <head>
-                        <title>Type 1 Stage 1</title>
-                    </head>
-                    <body>
-                        <div id=""wrapper"">
-                            <main>
-                                <div class=""main-content"">
-                                    <section class=""text-block"">
-                                        <script>
-                                            function changePage(slug)
-                                            {
-                                                window.location.href = 'http://localhost1/' + slug;
-                                            }
-                                        </script>
-                                        <select name = ""comic"" onChange=""changePage(this.value)"">
-                                            <option value = """" > Select a comic...</option>
-                                            <option value = ""comic/page-1"" > Page 1/option>
-                                            <option value = ""comic/page-2"" > Page 2</option>
-                                            <option value = ""comic/page-3"" > Page 3</option>
-                                        </select>
-                                    </section>
-                                </div>
-                            </main>
-                        </div>
-                    </body>
-                    </html>",
-                ArchivePageHtmlStage2 = @"
-                    <!DOCTYPE html>
-                    <html>
-                    <head>
-                        <title>Type 1 Stage 2</title>
-                    </head>
-                    <body>
-                        <div id=""wrapper"">
-                            <main>
-                                <div class=""main-content"">
-                                    <section class=""text-block"">
-                                        <script>
-                                            function changePage(slug)
-                                            {
-                                                window.location.href = 'http://localhost1/' + slug;
-                                            }
-                                        </script>
-                                        <select name = ""comic"" onChange=""changePage(this.value)"">
-                                            <option value = """" > Select a comic...</option>
-                                            <option value = ""comic/page-1"" > Page 1/option>
-                                            <option value = ""comic/page-2"" > Page 2</option>
-                                            <option value = ""comic/page-3"" > Page 3</option>
-                                            <option value = ""comic/page-4"" > Page 3</option>
-                                        </select>
-                                    </section>
-                                </div>
-                            </main>
-                        </div>
-                    </body>
-                    </html>",
-                ArchivePageUrl = "http://localhost1/comic/archive",
-                KnownPageUrl = "http://localhost1/comic/page-2",
-                PageCount = 3
-            };
+            // Use files instead of hardcoding HTML so they behave like actual websites, and can be browsed manually
+            string mockComicsFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "MockWebsites");
 
-            // http://www.comicctrl.com/ Type 2
-            yield return new MockComic
+            string[] mockComicFolders = Directory.GetDirectories(mockComicsFolderPath);
+            foreach (var rootFolder in mockComicFolders)
             {
-                ArchivePageHtmlStage1 = @"
-                    <!DOCTYPE html>
-                    <html>
-                    <head>
-                        <title>Type 2 Stage 1</title>
-                    </head>
-                    <body>
-                        <div id=""comicwrapouter"">
-                            <div id = ""comicwrapinner"">
-                                <script>
-                                    function changePage(sub, slug)
-                                    {
-                                        window.location.href = 'http://localhost2/' + sub + '/' + slug;
-                                    }
-                                </script>
-                                <select name = ""comic"" onChange=""changePage('comic',this.value)"" width=""100"">
-                                    <option value = """" > Select a comic...</option>
-                                    <option value = ""page-1"" > Page 1</option>
-                                    <option value = ""page-2"" > Page 2</option>
-                                    <option value = ""page-3"" > Page 3</option>
-                                </select>
-                            </div>
-                        </div>
-                    </body>
-                    </html>",
-                ArchivePageHtmlStage2 = @"
-                    <!DOCTYPE html>
-                    <html>
-                    <head>
-                        <title>Type 2 Stage 2</title>
-                    </head>
-                    <body>
-                        <div id=""comicwrapouter"">
-                            <div id = ""comicwrapinner"">
-                                <script>
-                                    function changePage(sub, slug)
-                                    {
-                                        window.location.href = 'http://localhost2/' + sub + '/' + slug;
-                                    }
-                                </script>
-                                <select name = ""comic"" onChange=""changePage('comic',this.value)"" width=""100"">
-                                    <option value = """" > Select a comic...</option>
-                                    <option value = ""page-1"" > Page 1</option>
-                                    <option value = ""page-2"" > Page 2</option>
-                                    <option value = ""page-3"" > Page 3</option>
-                                    <option value = ""page-4"" > Page 3</option>
-                                </select>
-                            </div>
-                        </div>
-                    </body>
-                    </html>",
-                ArchivePageUrl = "http://localhost2/comic/archive",
-                KnownPageUrl = "http://localhost2/comic/page-2",
-                PageCount = 3
+                // Put subfolder paths into dictionary for easily picking the ones we care about
+                Dictionary<string, string> subfolders = Directory.GetDirectories(rootFolder)
+                    .ToDictionary(path => new DirectoryInfo(path).Name);
+
+                yield return new MockComic
+                {
+                    State1 = GetComicState(subfolders["State1"], 2),
+                    State2 = GetComicState(subfolders["State2"], 3),
+                };
+            }
+        }
+
+        private static MockComicState GetComicState(string directoryPath, int expectedPageCount)
+        {
+            string archivePath = Path.Combine(directoryPath, "index.html");
+            string knownPagePath = Path.Combine(directoryPath, "page-1.html");
+
+            return new MockComicState
+            {
+                ArchiveUrl = new Uri(archivePath).AbsoluteUri,
+                PageUrl = new Uri(knownPagePath).AbsoluteUri,
+                PageCount = expectedPageCount
             };
         }
 
         [Test]
-        public static async Task DiscoversPagesWorksForKnownTypes(
+        public static async Task DiscoversPagesWorksForKnownTypesFromArchiveUrl(
             [ValueSource(nameof(EnumerateKnownComicTypes))] MockComic comic)
         {
-            var document = await GetDocumentFromHtml(comic.ArchivePageHtmlStage1);
-            var pages = ComicUpdater.DiscoverPages(document, comic.KnownPageUrl);
+            var pages = await comicUpdater.DiscoverPages(comic.State1.ArchiveUrl);
 
             // Found expected amount of pages
             Assert.AreEqual(
-                expected: comic.PageCount,
+                expected: comic.State1.PageCount,
                 actual: pages.Count,
                 message: "Wrong page count");
 
             // Known page was in page list
             Assert.AreEqual(
-                expected: comic.KnownPageUrl,
-                actual: pages[1].Url,
+                expected: comic.State1.PageUrl,
+                actual: pages[0].Url,
+                message: "Found page URL wrong");
+        }
+
+        [Test]
+        public static async Task DiscoversPagesWorksForKnownTypesFromPageUrl(
+            [ValueSource(nameof(EnumerateKnownComicTypes))] MockComic comic)
+        {
+            var pages = await comicUpdater.DiscoverPages(comic.State1.PageUrl);
+
+            // Found expected amount of pages
+            Assert.AreEqual(
+                expected: comic.State1.PageCount,
+                actual: pages.Count,
+                message: "Wrong page count");
+
+            // Known page was in page list
+            Assert.AreEqual(
+                expected: comic.State1.PageUrl,
+                actual: pages[0].Url,
                 message: "Found page URL wrong");
         }
 
         [Test]
         public static async Task ImportComicFailedReturnsNull()
         {
-            MockComic mockComic = MockPageLoader.KnownFailingPage;
-            ComicData savedComic = await comicUpdater.ImportComic(mockComic.ArchivePageHtmlStage1, mockComic.KnownPageUrl);
+            ComicData savedComic = await comicUpdater.ImportComic("garbage url");
 
             Assert.IsNull(savedComic);
         }
@@ -274,7 +182,7 @@ namespace ComicWrap.Tests
         public static async Task PageIsNewIsFalseWhenImported(
             [ValueSource(nameof(EnumerateKnownComicTypes))] MockComic comic)
         {
-            ComicData savedComic = await comicUpdater.ImportComic(comic.ArchivePageUrl, comic.KnownPageUrl);
+            ComicData savedComic = await comicUpdater.ImportComic(comic.State1.ArchiveUrl);
 
             Assert.Multiple(() =>
             {
@@ -289,15 +197,17 @@ namespace ComicWrap.Tests
             [ValueSource(nameof(EnumerateKnownComicTypes))] MockComic comic)
         {
             // Initial comic import
-            ComicData savedComic = await comicUpdater.ImportComic(comic.ArchivePageUrl, comic.KnownPageUrl);
+            ComicData savedComic = await comicUpdater.ImportComic(comic.State1.ArchiveUrl);
 
             // Switch selector to next stage
-            pageLoader.HtmlSelector = c => c.ArchivePageHtmlStage2;
+            pageLoader.StateSelector = c => c.State2;
 
             // Update comic now that selector has been switched
             IEnumerable<ComicPageData> pages = await comicUpdater.UpdateComic(savedComic);
 
             Assert.GreaterOrEqual(pages.Count(p => p.IsNew), 1);
+
+            Assert.Fail();
         }
 
         [Test]
@@ -305,7 +215,7 @@ namespace ComicWrap.Tests
             [ValueSource(nameof(EnumerateKnownComicTypes))] MockComic comic)
         {
             // Initial comic import
-            ComicData savedComic = await comicUpdater.ImportComic(comic.ArchivePageUrl, comic.KnownPageUrl);
+            ComicData savedComic = await comicUpdater.ImportComic(comic.State1.ArchiveUrl);
 
             database.Write(realm => savedComic.Name = "New Name");
 

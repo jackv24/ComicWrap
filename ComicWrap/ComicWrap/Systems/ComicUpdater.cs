@@ -212,6 +212,9 @@ namespace ComicWrap.Systems
 
         public async Task<List<ComicPageData>> DiscoverPages(string pageUrl, Action<IDocument> onFoundArchivePage = null)
         {
+            if (!IsUrlValid(pageUrl))
+                return null;
+
             IDocument document = await pageLoader.OpenDocument(pageUrl);
             List<ComicPageData> pages = FindPagesFromArchiveList(document);
             if (pages != null)
@@ -220,9 +223,12 @@ namespace ComicWrap.Systems
                 return pages;
             }
 
-            string archivePageUrl = FindArchivePageUrl(document);
+            string archivePageUrl = FindArchivePageLink(document);
             if (!string.IsNullOrEmpty(archivePageUrl) && archivePageUrl != pageUrl)
+            {
+                archivePageUrl = GetAbsoluteUri(pageUrl, archivePageUrl);
                 return await DiscoverPages(archivePageUrl, onFoundArchivePage);
+            }
 
             return null;
         }
@@ -241,40 +247,19 @@ namespace ComicWrap.Systems
                     // Ignore empty values (usually 1 empty value is the "Select..." prompt
                     .Where(a => !string.IsNullOrEmpty(a.Nav));
 
-                // Extract base url using current page url
                 string pageUrl = document.Url;
-
-                // This method is not very flexible, will need to be improved to work with more sites
-                string baseUrl = null;
-                int slashCounter = 0;
-                for (int i = 0; i < pageUrl.Length; i++)
-                {
-                    if (pageUrl[i] == '/')
-                    {
-                        slashCounter++;
-                        if (slashCounter == 3)
-                        {
-                            baseUrl = pageUrl.Substring(0, i);
-                            break;
-                        }
-                    }
-                }
-
-                // Couldn't extract base url
-                if (baseUrl == null)
-                    return null;
 
                 return options
                     .Select(a => new ComicPageData
                     {
                         Name = a.Text,
-                        Url = $"{baseUrl}/{a.Nav}"
+                        Url = GetAbsoluteUri(pageUrl, a.Nav)
                     })
                     .ToList();
             }
         }
 
-        private string FindArchivePageUrl(IDocument document)
+        private string FindArchivePageLink(IDocument document)
         {
             // TODO: Expand to work with more websites
 
@@ -292,6 +277,35 @@ namespace ComicWrap.Systems
 
             // All attempts failed
             return null;
+        }
+
+        private string GetAbsoluteUri(string sourceUri, string link)
+        {
+            // Link may be relative
+            if (IsUrlValid(link))
+                return link;
+
+            // Search string from back to front for / character
+            string relativeBaseUrl = null;
+            for (int i = sourceUri.Length - 1; i >= 0; i--)
+            {
+                if (sourceUri[i] == '/')
+                {
+                    relativeBaseUrl = sourceUri.Substring(0, i);
+                    break;
+                }
+            }
+
+            // Convert page url to absolute
+            if (!string.IsNullOrEmpty(relativeBaseUrl))
+            {
+                if (link[0] == '/')
+                    link = relativeBaseUrl + link;
+                else
+                    link = $"{relativeBaseUrl}/{link}";
+            }
+
+            return link;
         }
 
         public async Task<string> GetComicImageUrl(ComicPageData page, CancellationToken cancelToken = default)

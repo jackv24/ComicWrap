@@ -23,7 +23,8 @@
                        TextColor="{DynamicResource MainTextColor}"
                        FontSize="Small"/>
                 <Entry Placeholder="https://webcomic.com/archive"
-                       Text="{Binding PageUrl}"/>
+                       Text="{Binding PageUrl}"
+                       Keyboard="Url"/>
 
                 <StackLayout Orientation="Horizontal"
                              Margin="0, 20, 0, 0">

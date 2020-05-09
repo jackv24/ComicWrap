@@ -278,7 +278,20 @@ namespace ComicWrap.Systems
         {
             // TODO: Expand to work with more websites
 
-            return document.GetElementById("archive")?.GetAttribute("href");
+            // Attempt to find archive link in element tagged "archive"
+            string archiveLink = document.GetElementById("archive")?.GetAttribute("href");
+            if (!string.IsNullOrEmpty(archiveLink))
+                return archiveLink;
+
+            // Attempt to find elements whose text content is "archive"
+            archiveLink = document.GetElementsByTagName("a")
+                .Where(a => a.TextContent.ToUpperInvariant().Contains("ARCHIVE"))
+                .FirstOrDefault()?.GetAttribute("href");
+            if (!string.IsNullOrEmpty(archiveLink))
+                return archiveLink;
+
+            // All attempts failed
+            return null;
         }
 
         public async Task<string> GetComicImageUrl(ComicPageData page, CancellationToken cancelToken = default)

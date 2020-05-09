@@ -115,7 +115,7 @@ namespace ComicWrap.Systems
             cancelToken.ThrowIfCancellationRequested();
 
             // Cancel early if no pages were found
-            if (tempPages.Count == 0)
+            if (tempPages == null || tempPages.Count == 0)
                 return null;
 
             if (isComicImporting)

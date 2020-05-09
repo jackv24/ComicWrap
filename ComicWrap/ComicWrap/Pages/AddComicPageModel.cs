@@ -59,16 +59,7 @@ namespace ComicWrap.Pages
             // Pop page immediately, comic will load in background
             await PopupNavigation.Instance.PopAsync();
 
-            // TODO: Run in background as service (with notification and everything)
-            ComicData importedComic = await ComicUpdater.Instance.ImportComic(url);
-            if (importedComic == null)
-            {
-                // Alert popup should display even if this page isn't visible anymore
-                await UserDialogs.Instance.AlertAsync(
-                    Res.AddComic_Error_ImportFailed,
-                    title: Res.Alert_Error_Title,
-                    okText: Res.Alert_Generic_Confirm);
-            }
+            ComicUpdater.Instance.StartImportComic(url);
         }
     }
 }

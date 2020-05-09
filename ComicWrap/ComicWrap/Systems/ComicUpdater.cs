@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 using AngleSharp;
 using AngleSharp.Dom;
+using AsyncAwaitBestPractices;
+using Acr.UserDialogs;
+
+using Res = ComicWrap.Resources.AppResources;
 
 namespace ComicWrap.Systems
 {
@@ -53,6 +57,24 @@ namespace ComicWrap.Systems
 #pragma warning restore CA1031 // Do not catch general exception types
 
             return true;
+        }
+
+        public void StartImportComic(string pageUrl)
+        {
+            // TODO: Run in background as service (with notification and everything)
+
+            ImportComic(pageUrl).ContinueWith(task =>
+            {
+                if (task.Result == null)
+                {
+                    // Alert popup should display even if this page isn't visible anymore
+                    UserDialogs.Instance.AlertAsync(
+                        Res.AddComic_Error_ImportFailed,
+                        title: Res.Alert_Error_Title,
+                        okText: Res.Alert_Generic_Confirm);
+                }
+            })
+            .SafeFireAndForget();
         }
 
         public async Task<ComicData> ImportComic(string pageUrl)

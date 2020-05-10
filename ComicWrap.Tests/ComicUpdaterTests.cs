@@ -224,5 +224,37 @@ namespace ComicWrap.Tests
 
             Assert.AreEqual("New Name", savedComic.Name);
         }
+
+        [Test, Category(nameof(ComicUpdater.GetAbsoluteUri))]
+        public static void GetAbsoluteUriHttpsSimple()
+        {
+            string url = ComicUpdater.GetAbsoluteUri("https://www.example.com/archive", "page-1");
+
+            Assert.AreEqual("https://www.example.com/page-1", url);
+        }
+
+        [Test, Category(nameof(ComicUpdater.GetAbsoluteUri))]
+        public static void GetAbsoluteUriHttpsComplex()
+        {
+            string url = ComicUpdater.GetAbsoluteUri("https://www.example.com/comic/archive", "comic/page-1");
+
+            Assert.AreEqual("https://www.example.com/comic/page-1", url);
+        }
+
+        [Test, Category(nameof(ComicUpdater.GetAbsoluteUri))]
+        public static void GetAbsoluteUriFileSimple()
+        {
+            string url = ComicUpdater.GetAbsoluteUri("file:///C:/archive.html", "page-1.html");
+
+            Assert.AreEqual("file:///C:/page-1.html", url);
+        }
+
+        [Test, Category(nameof(ComicUpdater.GetAbsoluteUri))]
+        public static void GetAbsoluteUriFileComplex()
+        {
+            string url = ComicUpdater.GetAbsoluteUri("file:///C:/comic/archive.html", "comic/page-1.html");
+
+            Assert.AreEqual("file:///C:/comic/page-1.html", url);
+        }
     }
 }

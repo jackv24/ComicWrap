@@ -301,30 +301,41 @@ namespace ComicWrap.Systems
             return null;
         }
 
-        private string GetAbsoluteUri(string sourceUri, string link)
+        public static string GetAbsoluteUri(string sourceUri, string link)
         {
             // Link may be relative
             if (IsUrlValid(link))
                 return link;
 
-            // Search string from back to front for / character
-            string relativeBaseUrl = null;
-            for (int i = sourceUri.Length - 1; i >= 0; i--)
+            // Handle if url starts with "http://" or "file:///"
+            int splitSlash = new Uri(sourceUri).IsFile ? 4 : 3;
+
+            string baseUrl = null;
+            int slashCounter = 0;
+            for (int i = 0; i < sourceUri.Length; i++)
             {
                 if (sourceUri[i] == '/')
                 {
-                    relativeBaseUrl = sourceUri.Substring(0, i);
-                    break;
+                    slashCounter++;
+                    if (slashCounter == splitSlash)
+                    {
+                        baseUrl = sourceUri.Substring(0, i);
+                        break;
+                    }
                 }
             }
 
+            // Couldn't extract base url
+            if (baseUrl == null)
+                return null;
+
             // Convert page url to absolute
-            if (!string.IsNullOrEmpty(relativeBaseUrl))
+            if (!string.IsNullOrEmpty(baseUrl))
             {
                 if (link[0] == '/')
-                    link = relativeBaseUrl + link;
+                    link = baseUrl + link;
                 else
-                    link = $"{relativeBaseUrl}/{link}";
+                    link = $"{baseUrl}/{link}";
             }
 
             return link;

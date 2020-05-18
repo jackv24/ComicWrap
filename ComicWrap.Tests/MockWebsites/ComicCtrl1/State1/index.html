@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Type 1 Stage 1</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <main>
+            <div class="main-content">
+                <section class="text-block">
+                    <script>
+                        function changePage(slug) {
+                            window.location.href = slug;
+                        }
+                    </script>
+                    <select name="comic" onChange="changePage(this.value)">
+                        <option value="">Select a comic...</option>
+                        <option value="page-1.html">Page 1</option>
+                        <option value="page-2.html">Page 2</option>
+                    </select>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

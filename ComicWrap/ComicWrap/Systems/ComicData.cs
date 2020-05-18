@@ -13,7 +13,6 @@ namespace ComicWrap.Systems
 
         public string Name { get; set; }
         public string ArchiveUrl { get; set; }
-        public string CurrentPageUrl { get; set; }
 
         [Backlink(nameof(ComicPageData.Comic))]
         public IQueryable<ComicPageData> Pages { get; }
@@ -37,7 +36,24 @@ namespace ComicWrap.Systems
             }
         }
 
-        public ComicPageData LastReadPage => Pages.LastOrDefault(page => page.IsRead);
+        public ComicPageData LastReadPage
+        {
+            get
+            {
+                ComicPageData page = Pages
+                    .LastOrDefault(p => p.IsRead);
+
+                if (page != null)
+                    return page;
+
+                // Default to first page if none have been read yet
+                if (Pages.Count() > 0)
+                    return Pages.ElementAt(0);
+
+                return null;
+            }
+        }
+
         public ComicPageData LatestNewPage => Pages.LastOrDefault(page => page.IsNew);
 
         public DateTimeOffset? LastReadDate { get; set; }

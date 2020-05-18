@@ -28,24 +28,13 @@ namespace ComicWrap.Pages
             SubmitCommand = new AsyncCommand(Submit);
         }
 
-        private string _archivePageUrl;
-        public string ArchivePageUrl
+        private string _pageUrl;
+        public string PageUrl
         {
-            get { return _archivePageUrl; }
+            get { return _pageUrl; }
             set
             {
-                _archivePageUrl = value;
-                RaisePropertyChanged();
-            }
-        }
-
-        private string _currentPageUrl;
-        public string CurrentPageUrl
-        {
-            get { return _currentPageUrl; }
-            set
-            {
-                _currentPageUrl = value;
+                _pageUrl = value;
                 RaisePropertyChanged();
             }
         }
@@ -60,7 +49,7 @@ namespace ComicWrap.Pages
 
         private async Task Submit()
         {
-            string url = ArchivePageUrl;
+            string url = PageUrl;
             if (!ComicUpdater.IsUrlValid(url))
             {
                 await UserDialogs.Instance.AlertAsync(Res.AddComic_Error_InvalidUrl);
@@ -70,16 +59,7 @@ namespace ComicWrap.Pages
             // Pop page immediately, comic will load in background
             await PopupNavigation.Instance.PopAsync();
 
-            // TODO: Run in background as service (with notification and everything)
-            ComicData importedComic = await ComicUpdater.Instance.ImportComic(ArchivePageUrl, CurrentPageUrl);
-            if (importedComic == null)
-            {
-                // Alert popup should display even if this page isn't visible anymore
-                await UserDialogs.Instance.AlertAsync(
-                    Res.AddComic_Error_ImportFailed,
-                    title: Res.Alert_Error_Title,
-                    okText: Res.Alert_Generic_Confirm);
-            }
+            ComicUpdater.Instance.StartImportComic(url);
         }
     }
 }

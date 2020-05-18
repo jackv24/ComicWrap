@@ -6,15 +6,21 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Content;
 
 using Acr.UserDialogs;
 using Plugin.CurrentActivity;
 
 using ComicWrap.Droid.Systems;
+using ComicWrap.Systems;
 
 namespace ComicWrap.Droid
 {
     [Activity(Label = "ComicWrap", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [IntentFilter(
+        new[] { Intent.ActionSend },
+        Categories = new[] { Intent.CategoryDefault },
+        DataMimeType = "text/plain")]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         public static MainActivity Instance { get; private set; }
@@ -40,6 +46,13 @@ namespace ComicWrap.Droid
             AiForms.Renderers.Droid.SettingsViewInit.Init();
 
             LoadApplication(new App());
+
+            if (Intent.Action == Intent.ActionSend)
+            {
+                string uri = Intent.Extras.GetString(Intent.ExtraText);
+                if (!string.IsNullOrEmpty(uri))
+                    ComicUpdater.Instance.StartImportComic(uri);
+            }
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

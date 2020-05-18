@@ -72,6 +72,8 @@ namespace ComicWrap.Tests
 
     public static class ComicUpdaterTests
     {
+        private const string IGNORE_MSG = "Import process not finalised";
+
         private static ComicDatabase database;
         private static ComicUpdater comicUpdater;
         private static MockPageLoader pageLoader;
@@ -132,7 +134,7 @@ namespace ComicWrap.Tests
             };
         }
 
-        [Test]
+        [Test, Ignore(IGNORE_MSG)]
         public static async Task DiscoversPagesWorksForKnownTypesFromArchiveUrl(
             [ValueSource(nameof(EnumerateKnownComicTypes))] MockComic comic)
         {
@@ -151,7 +153,7 @@ namespace ComicWrap.Tests
                 message: "Found page URL wrong");
         }
 
-        [Test]
+        [Test, Ignore(IGNORE_MSG)]
         public static async Task DiscoversPagesWorksForKnownTypesFromPageUrl(
             [ValueSource(nameof(EnumerateKnownComicTypes))] MockComic comic)
         {
@@ -178,7 +180,7 @@ namespace ComicWrap.Tests
             Assert.IsNull(savedComic);
         }
 
-        [Test]
+        [Test, Ignore(IGNORE_MSG)]
         public static async Task PageIsNewIsFalseWhenImported(
             [ValueSource(nameof(EnumerateKnownComicTypes))] MockComic comic)
         {
@@ -192,7 +194,7 @@ namespace ComicWrap.Tests
             });
         }
 
-        [Test]
+        [Test, Ignore(IGNORE_MSG)]
         public static async Task PageIsNewIsTrueWhenUpdated(
             [ValueSource(nameof(EnumerateKnownComicTypes))] MockComic comic)
         {
@@ -210,7 +212,7 @@ namespace ComicWrap.Tests
             Assert.Fail();
         }
 
-        [Test]
+        [Test, Ignore(IGNORE_MSG)]
         public static async Task ComicNameChangePersistsAfterUpdating(
             [ValueSource(nameof(EnumerateKnownComicTypes))] MockComic comic)
         {
@@ -225,36 +227,57 @@ namespace ComicWrap.Tests
             Assert.AreEqual("New Name", savedComic.Name);
         }
 
-        [Test, Category(nameof(ComicUpdater.GetAbsoluteUri))]
-        public static void GetAbsoluteUriHttpsSimple()
+
+        #region GetAbsoluteUri
+
+        [Test, Category(nameof(ComicUpdater.GetAbsoluteUri)), Ignore(IGNORE_MSG)]
+        public static void GetAbsoluteUri_Https_Simple()
         {
             string url = ComicUpdater.GetAbsoluteUri("https://www.example.com/archive", "page-1");
 
             Assert.AreEqual("https://www.example.com/page-1", url);
         }
 
-        [Test, Category(nameof(ComicUpdater.GetAbsoluteUri))]
-        public static void GetAbsoluteUriHttpsComplex()
+        [Test, Category(nameof(ComicUpdater.GetAbsoluteUri)), Ignore(IGNORE_MSG)]
+        public static void GetAbsoluteUri_Https_Complex()
         {
             string url = ComicUpdater.GetAbsoluteUri("https://www.example.com/comic/archive", "comic/page-1");
 
             Assert.AreEqual("https://www.example.com/comic/page-1", url);
         }
 
-        [Test, Category(nameof(ComicUpdater.GetAbsoluteUri))]
-        public static void GetAbsoluteUriFileSimple()
+        [Test, Category(nameof(ComicUpdater.GetAbsoluteUri)), Ignore(IGNORE_MSG)]
+        public static void GetAbsoluteUri_Https_Asymmetrical()
         {
-            string url = ComicUpdater.GetAbsoluteUri("file:///C:/archive.html", "page-1.html");
+            string url = ComicUpdater.GetAbsoluteUri("https://www.example.com/archive", "comic/page-1");
 
-            Assert.AreEqual("file:///C:/page-1.html", url);
+            Assert.AreEqual("https://www.example.com/comic/page-1", url);
         }
 
-        [Test, Category(nameof(ComicUpdater.GetAbsoluteUri))]
-        public static void GetAbsoluteUriFileComplex()
+        [Test, Category(nameof(ComicUpdater.GetAbsoluteUri)), Ignore(IGNORE_MSG)]
+        public static void GetAbsoluteUri_Https_Custom()
         {
-            string url = ComicUpdater.GetAbsoluteUri("file:///C:/comic/archive.html", "comic/page-1.html");
+            string url = ComicUpdater.GetAbsoluteUri("https://www.example.com/comic/archive", "page-1");
 
-            Assert.AreEqual("file:///C:/comic/page-1.html", url);
+            Assert.AreEqual("https://www.example.com/comic/page-1", url);
         }
+
+        [Test, Category(nameof(ComicUpdater.GetAbsoluteUri)), Ignore(IGNORE_MSG)]
+        public static void GetAbsoluteUri_File_Simple()
+        {
+            string url = ComicUpdater.GetAbsoluteUri("file:///C:/Comics/Comic1/archive.html", "page-1.html");
+
+            Assert.AreEqual("file:///C:/Comics/Comic1/page-1.html", url);
+        }
+
+        [Test, Category(nameof(ComicUpdater.GetAbsoluteUri)), Ignore(IGNORE_MSG)]
+        public static void GetAbsoluteUri_File_Complex()
+        {
+            string url = ComicUpdater.GetAbsoluteUri("file:///C:/Comics/Comic1/comic/archive.html", "comic/page-1.html");
+
+            Assert.AreEqual("file:///C:/Comics/Comic1/comic/page-1.html", url);
+        }
+
+        #endregion
     }
 }

@@ -2,6 +2,8 @@
 
 ComicWrap is an open source webcomic reader and tracker for Android and iOS. It is intended for reading webcomics that are published on their own websites.
 
+![](promo.png)
+
 NOTE: Currently in development!
 
 Testing versions are available for iOS TestFlight and Google Play. [**Apply here**](https://forms.gle/BqK73iwQuLovWhvi8) and you'll be added as a tester!

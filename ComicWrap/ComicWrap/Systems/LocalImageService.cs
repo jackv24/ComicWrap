@@ -62,6 +62,9 @@ namespace ComicWrap.Systems
 
         public static void DeleteImage(string key)
         {
+            if (!Directory.Exists(FolderPath))
+                return;
+
             string filePath = Path.Combine(FolderPath, key);
             if (File.Exists(filePath))
                 File.Delete(filePath);

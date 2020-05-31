@@ -61,10 +61,16 @@ namespace ComicWrap.Systems
                 DirectoryInfo directory = Directory.GetParent(path);
                 string fileName = Path.GetFileNameWithoutExtension(path);
 
-                foreach (DirectoryInfo dirInfo in directory.GetDirectories())
+                foreach (DirectoryInfo info in directory.GetDirectories())
                 {
-                    if (dirInfo.Name.Contains(fileName))
-                        dirInfo.Delete(true);
+                    if (info.Name.Contains(fileName))
+                        info.Delete(true);
+                }
+
+                foreach (FileInfo info in directory.GetFiles())
+                {
+                    if (info.Name.Contains(fileName))
+                        info.Delete();
                 }
             }
         }

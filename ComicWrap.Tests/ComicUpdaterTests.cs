@@ -90,6 +90,12 @@ namespace ComicWrap.Tests
             comicUpdater = new ComicUpdater(database, pageLoader);
         }
 
+        [TearDown]
+        public static void Teardown()
+        {
+            database.Close();
+        }
+
         [Test]
         public static void IsUrlValidReturnsTrueWhenValid()
         {

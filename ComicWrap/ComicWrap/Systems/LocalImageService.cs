@@ -30,12 +30,17 @@ namespace ComicWrap.Systems
             if (cancellationToken.IsCancellationRequested)
                 return null;
 
+            return WriteImage(key, imageData);
+        }
+
+        public static string WriteImage(string key, byte[] data)
+        {
             // Make sure directory exists
             Directory.CreateDirectory(FolderPath);
 
             // Save image data to file
             string filePath = Path.Combine(FolderPath, key);
-            File.WriteAllBytes(filePath, imageData);
+            File.WriteAllBytes(filePath, data);
 
             return filePath;
         }
@@ -53,6 +58,17 @@ namespace ComicWrap.Systems
                 return null;
 
             return filePath;
+        }
+
+        public static void DeleteImage(string key)
+        {
+            string filePath = Path.Combine(FolderPath, key);
+            if (File.Exists(filePath))
+                File.Delete(filePath);
+
+            // Remove images folder if it's empty so we don't leave garbage when unit testing, etc.
+            if (Directory.GetFiles(FolderPath).Length == 0)
+                Directory.Delete(FolderPath, true);
         }
     }
 }

@@ -53,6 +53,20 @@ namespace ComicWrap.Systems
 
             Realm.Dispose();
             IsOpen = false;
+
+            // Clean up management files for in memory realms (unit tests were filling desktop documents folder when unit testing)
+            if (RealmConfiguration is InMemoryConfiguration)
+            {
+                string path = RealmConfiguration.DatabasePath;
+                DirectoryInfo directory = Directory.GetParent(path);
+                string fileName = Path.GetFileNameWithoutExtension(path);
+
+                foreach (DirectoryInfo dirInfo in directory.GetDirectories())
+                {
+                    if (dirInfo.Name.Contains(fileName))
+                        dirInfo.Delete(true);
+                }
+            }
         }
 
         public void AddComic(ComicData comicData)
@@ -66,6 +80,8 @@ namespace ComicWrap.Systems
 
         public void DeleteComic(ComicData comicData)
         {
+            LocalImageService.DeleteImage(comicData.Id);
+
             using (var trans = Realm.BeginWrite())
             {
                 // Delete pages and then comic (so comic data isn't invalidated before it's pages can be delete)

@@ -12,6 +12,7 @@ using NUnit.Framework;
 using AngleSharp;
 using AngleSharp.Dom;
 using AngleSharp.Io;
+using Realms;
 
 using ComicWrap.Systems;
 using System.Runtime.Serialization;
@@ -82,7 +83,9 @@ namespace ComicWrap.Tests
         public static void Setup()
         {
             // Should have a blank database for each test
-            database = ComicDatabaseTests.GetNewDatabase();
+            string identifier = Guid.NewGuid().ToString();
+            database = new ComicDatabase(new InMemoryConfiguration(identifier));
+
             pageLoader = new MockPageLoader(EnumerateKnownComicTypes());
             comicUpdater = new ComicUpdater(database, pageLoader);
         }

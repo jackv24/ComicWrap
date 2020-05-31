@@ -11,22 +11,30 @@ using AngleSharp;
 using Realms;
 
 using ComicWrap.Systems;
+using System.IO;
 
 namespace ComicWrap.Tests
 {
     public static class ComicDatabaseTests
     {
-        public static ComicDatabase GetNewDatabase()
+        private static ComicDatabase database;
+
+        [SetUp]
+        public static void Setup()
         {
             string identifier = Guid.NewGuid().ToString();
-            return new ComicDatabase(new InMemoryConfiguration(identifier));
+            database = new ComicDatabase(new InMemoryConfiguration(identifier));
+        }
+
+        [TearDown]
+        public static void Teardown()
+        {
+            database.Close();
         }
 
         [Test]
         public static void AddNewComic()
         {
-            var database = GetNewDatabase();
-
             database.AddComic(new ComicData());
 
             var comics = database.GetComics();
@@ -37,7 +45,6 @@ namespace ComicWrap.Tests
         [Test]
         public static void DeleteComic()
         {
-            var database = GetNewDatabase();
             var comic = new ComicData();
             database.AddComic(comic);
 
@@ -51,7 +58,6 @@ namespace ComicWrap.Tests
         [Test]
         public static void DeletingComicDeletesPages()
         {
-            var database = GetNewDatabase();
             var comic = new ComicData();
             database.Write(realm =>
             {
@@ -74,9 +80,21 @@ namespace ComicWrap.Tests
         }
 
         [Test]
+        public static void DeletingComicDeletesCoverImage()
+        {
+            var comic = new ComicData();
+
+            database.AddComic(comic);
+            string imagePath = LocalImageService.WriteImage(comic.Id, new byte[0]);
+
+            database.DeleteComic(comic);
+
+            Assert.IsFalse(File.Exists(imagePath), "Comic cover image was not deleted.");
+        }
+
+        [Test]
         public static void ComicPageMarkReadClearsIsNew()
         {
-            var database = GetNewDatabase();
             var comic = new ComicData();
             var page = new ComicPageData
             {

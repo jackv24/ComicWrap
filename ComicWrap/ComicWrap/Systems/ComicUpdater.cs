@@ -112,138 +112,160 @@ namespace ComicWrap.Systems
 
             cancelToken.ThrowIfCancellationRequested();
 
-            List<ComicPageData> tempPages;
-            if (isComicImporting)
+            try
             {
-                string setArchiveUrl = null;
-
-                tempPages = await DiscoverPages(
-                    comicData.ArchiveUrl,
-                    onFoundArchivePage: (document) =>
-                    {
-                        setArchiveUrl = document.Url;
-                        comicData.Name = document.Title;
-                    });
-
-                // Update archive url for for quicker updating next time if we didn't start on the archive page
-                if (!string.IsNullOrEmpty(setArchiveUrl))
-                    comicData.ArchiveUrl = setArchiveUrl;
-            }
-            else
-            {
-                tempPages = await DiscoverPages(comicData.ArchiveUrl);
-            }
-
-            cancelToken.ThrowIfCancellationRequested();
-
-            // Cancel early if no pages were found
-            if (tempPages == null || tempPages.Count == 0)
-                return null;
-
-            if (isComicImporting)
-            {
-                bool reachedReadPage = false;
-
-                // New page data is bare, so fill out missing data
-                // Loop backwards so we can mark previously read pages
-                for (int i = tempPages.Count - 1; i >= 0; i--)
+                List<ComicPageData> tempPages;
+                if (isComicImporting)
                 {
-                    ComicPageData tempPage = tempPages[i];
+                    string setArchiveUrl = null;
 
-                    // Mark all pages before current page as read
-                    if (tempPage.Url == readPageUrl)
-                        reachedReadPage = true;
+                    tempPages = await DiscoverPages(
+                        comicData.ArchiveUrl,
+                        onFoundArchivePage: (document) =>
+                        {
+                            setArchiveUrl = document.Url;
+                            comicData.Name = document.Title;
+                        },
+                        cancelToken: cancelToken);
 
-                    if (reachedReadPage)
+                    // Update archive url for for quicker updating next time if we didn't start on the archive page
+                    if (!string.IsNullOrEmpty(setArchiveUrl))
+                        comicData.ArchiveUrl = setArchiveUrl;
+                }
+                else
+                {
+                    // Comic can change display state to signify it's updating
+                    comicData.IsUpdating = true;
+                    comicData.ReportUpdated();
+
+                    tempPages = await DiscoverPages(comicData.ArchiveUrl, cancelToken: cancelToken);
+                }
+
+                cancelToken.ThrowIfCancellationRequested();
+
+                // Cancel early if no pages were found
+                if (tempPages == null || tempPages.Count == 0)
+                    return null;
+
+                if (isComicImporting)
+                {
+                    bool reachedReadPage = false;
+
+                    // New page data is bare, so fill out missing data
+                    // Loop backwards so we can mark previously read pages
+                    for (int i = tempPages.Count - 1; i >= 0; i--)
+                    {
+                        ComicPageData tempPage = tempPages[i];
+
+                        // Mark all pages before current page as read
+                        if (tempPage.Url == readPageUrl)
+                            reachedReadPage = true;
+
+                        if (reachedReadPage)
+                        {
+                            // We can edit tempPage fields outside of a write transaction since it hasn't been added to a Realm yet
+                            tempPage.IsRead = true;
+                        }
+                    }
+                }
+                else
+                {
+
+                    foreach (ComicPageData tempPage in tempPages)
                     {
                         // We can edit tempPage fields outside of a write transaction since it hasn't been added to a Realm yet
-                        tempPage.IsRead = true;
-                    }
-                }
-            }
-            else
-            {
-
-                foreach (ComicPageData tempPage in tempPages)
-                {
-                    // We can edit tempPage fields outside of a write transaction since it hasn't been added to a Realm yet
-                    tempPage.IsNew = true;
-                }
-            }
-
-            if (!comicData.IsManaged)
-                database.AddComic(comicData);
-
-            string comicId = comicData.Id;
-
-            // Run expensive operations on background thread
-            cancelToken.ThrowIfCancellationRequested();
-            await database.WriteAsync(realm =>
-            {
-                // We can't pass realm objects between threads, so we need to find comic by ID again
-                ComicData comic = realm.All<ComicData>()
-                    .First(c => c.Id == comicId);
-
-                // Make sure comic is in database first
-                realm.Add(comic, update: true);
-
-                var existingPages = comic.Pages.ToList();
-
-                // Any existing pgaes that aren't in the new pages mark for deletion (create new list so we can modify existingPages collection)
-                var deletePages = existingPages
-                    .Where(existingPage => !tempPages.Any(tempPage => tempPage.Url == existingPage.Url))
-                    .ToList();
-
-                // Delete pages
-                foreach (var page in deletePages)
-                {
-                    existingPages.Remove(page);
-                    realm.Remove(page);
-                }
-
-                bool anyNewPages = false;
-
-                foreach (var page in tempPages)
-                {
-                    // We need to update existing pages when we can instead of replacing them all with new ones
-                    var existingPage = existingPages.FirstOrDefault(p => p.Url == page.Url);
-                    if (existingPage != null)
-                    {
-                        // Update existing pages
-                        existingPage.Name = page.Name;
-                        // URL, IsRead, etc. still the same
-                    }
-                    else
-                    {
-                        // Add new pages
-                        page.Comic = comic;
-                        realm.Add(page);
-
-                        anyNewPages = true;
+                        tempPage.IsNew = true;
                     }
                 }
 
-                // Record date if any new pages were added
-                if (anyNewPages)
-                    comic.LastUpdatedDate = DateTimeOffset.UtcNow;
+                if (!comicData.IsManaged)
+                    database.AddComic(comicData);
 
-                // Throwing at end of write transaction should cancel transaction
+                string comicId = comicData.Id;
+
+                // Run expensive operations on background thread
                 cancelToken.ThrowIfCancellationRequested();
-            });
-            cancelToken.ThrowIfCancellationRequested();
+                await database.WriteAsync(realm =>
+                {
+                    // We can't pass realm objects between threads, so we need to find comic by ID again
+                    ComicData comic = realm.All<ComicData>()
+                            .First(c => c.Id == comicId);
 
-            // Report that comic has updated so UI can refresh, etc.
-            comicData.ReportUpdated();
+                    // Make sure comic is in database first
+                    realm.Add(comic, update: true);
+
+                    var existingPages = comic.Pages.ToList();
+
+                    // Any existing pgaes that aren't in the new pages mark for deletion (create new list so we can modify existingPages collection)
+                    var deletePages = existingPages
+                            .Where(existingPage => !tempPages.Any(tempPage => tempPage.Url == existingPage.Url))
+                            .ToList();
+
+                    // Delete pages
+                    foreach (var page in deletePages)
+                    {
+                        existingPages.Remove(page);
+                        realm.Remove(page);
+                    }
+
+                    bool anyNewPages = false;
+
+                    foreach (var page in tempPages)
+                    {
+                        // We need to update existing pages when we can instead of replacing them all with new ones
+                        var existingPage = existingPages.FirstOrDefault(p => p.Url == page.Url);
+                        if (existingPage != null)
+                        {
+                            // Update existing pages
+                            existingPage.Name = page.Name;
+                            // URL, IsRead, etc. still the same
+                        }
+                        else
+                        {
+                            // Add new pages
+                            page.Comic = comic;
+                            realm.Add(page);
+
+                            anyNewPages = true;
+                        }
+                    }
+
+                    // Record date if any new pages were added
+                    if (anyNewPages)
+                        comic.LastUpdatedDate = DateTimeOffset.UtcNow;
+
+                    // Throwing at end of write transaction should cancel transaction
+                    cancelToken.ThrowIfCancellationRequested();
+                });
+                cancelToken.ThrowIfCancellationRequested();
+            }
+            finally
+            {
+                // Comic may have just been deleted, so don't fire of anything that may attempt to access it
+                if (comicData.IsValid)
+                {
+                    // Report that comic has updated so UI can refresh, etc.
+                    comicData.IsUpdating = false;
+                    comicData.ReportUpdated();
+                }
+            }
 
             return comicData.Pages;
         }
 
-        public async Task<List<ComicPageData>> DiscoverPages(string pageUrl, Action<IDocument> onFoundArchivePage = null)
+        public async Task<List<ComicPageData>> DiscoverPages(
+            string pageUrl,
+            Action<IDocument> onFoundArchivePage = null,
+            CancellationToken cancelToken = default)
         {
+            cancelToken.ThrowIfCancellationRequested();
+
             if (!IsUrlValid(pageUrl))
                 return null;
 
             IDocument document = await pageLoader.OpenDocument(pageUrl);
+            cancelToken.ThrowIfCancellationRequested();
+
             List<ComicPageData> pages = FindPagesFromArchiveList(document);
             if (pages != null)
             {
@@ -255,7 +277,10 @@ namespace ComicWrap.Systems
             if (!string.IsNullOrEmpty(archivePageUrl) && archivePageUrl != pageUrl)
             {
                 archivePageUrl = GetAbsoluteUri(pageUrl, archivePageUrl);
-                return await DiscoverPages(archivePageUrl, onFoundArchivePage);
+                return await DiscoverPages(
+                    archivePageUrl,
+                    onFoundArchivePage: onFoundArchivePage,
+                    cancelToken: cancelToken);
             }
 
             return null;

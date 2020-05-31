@@ -59,6 +59,9 @@ namespace ComicWrap.Systems
         public DateTimeOffset? LastReadDate { get; set; }
         public DateTimeOffset? LastUpdatedDate { get; set; }
 
+        [Ignored]
+        public bool IsUpdating { get; set; }
+
         public void ReportUpdated()
         {
             Updated?.Invoke();

@@ -323,8 +323,12 @@ namespace ComicWrap.Systems
 
             // Attempt to find elements whose text content is "archive"
             archiveLink = document.GetElementsByTagName("a")
-                .Where(a => a.TextContent.ToUpperInvariant().Contains("ARCHIVE"))
-                .FirstOrDefault()?.GetAttribute("href");
+                .Where(a => (a.TextContent?.ToUpperInvariant().Contains("ARCHIVE") ?? false)
+                    || (a.GetAttribute("title")?.ToUpperInvariant().Contains("ARCHIVE") ?? false))
+                .Select(a => a.GetAttribute("href"))
+                .Where(link => !string.IsNullOrEmpty(link))
+                .FirstOrDefault();
+
             if (!string.IsNullOrEmpty(archiveLink))
                 return archiveLink;
 

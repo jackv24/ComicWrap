@@ -189,11 +189,17 @@ namespace ComicWrap.Systems
 
                 var existingPages = comic.Pages.ToList();
 
-                // Delete any existing pages that aren't in the new pages
-                var deletePages = existingPages.Where(existingPage =>
-                    !tempPages.Any(tempPage => tempPage.Url == existingPage.Url));
+                // Any existing pgaes that aren't in the new pages mark for deletion (create new list so we can modify existingPages collection)
+                var deletePages = existingPages
+                    .Where(existingPage => !tempPages.Any(tempPage => tempPage.Url == existingPage.Url))
+                    .ToList();
+
+                // Delete pages
                 foreach (var page in deletePages)
+                {
+                    existingPages.Remove(page);
                     realm.Remove(page);
+                }
 
                 bool anyNewPages = false;
 

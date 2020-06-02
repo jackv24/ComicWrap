@@ -2,13 +2,13 @@
 
 ComicWrap is an open source webcomic reader and tracker for Android and iOS. It is intended for reading webcomics that are published on their own websites.
 
-![](promo.png)
+![promo images](promo.png)
 
 NOTE: Currently in development!
 
-Testing versions are available for iOS TestFlight and Google Play. [**Apply here**](https://forms.gle/BqK73iwQuLovWhvi8) and you'll be added as a tester!
+### Beta version is available on [Google Play](https://play.google.com/apps/testing/com.jackvine.comicwrap) | iOS TestFlight hopefully coming soon
 
-### Main Idea: No Piracy
+#### Main Idea: No Piracy
 
 This app is not intended to scrape comic websites. Instead, comics are read directly on the website like a normal web browser. This ensures that the app does not have a negative effect on things such as ad revenue for the webcomic creator.
 
@@ -17,7 +17,7 @@ Why not just use a web browser?
 This app provides some extra features:
   - Collecting your library in one place
   - Tracking what pages you've read
-  - Notifying when a new page has been released
+  - Notifying when a new page has been released (planned)
 
 ## Status
 

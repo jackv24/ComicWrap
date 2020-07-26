@@ -1,26 +1,35 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <views:ComicInfoViewBase xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:views="clr-namespace:ComicWrap.Views"
-             mc:Ignorable="d"
-             x:Class="ComicWrap.Views.ComicInfoUpdateView">
+                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                         xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                         xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+                         xmlns:views="clr-namespace:ComicWrap.Views"
+                         mc:Ignorable="d"
+                         x:Class="ComicWrap.Views.ComicInfoUpdateView">
 
     <views:ComicInfoViewBase.Content>
         <StackLayout Orientation="Vertical"
                      WidthRequest="100"
                      HorizontalOptions="Start"
-                     Spacing="0">
-            <views:MaterialFrame x:Name="imageFrame"
-                                 CornerRadius="8"
-                                 Padding="0">
-                <Image x:Name="coverImage"
-                       BackgroundColor="Gray"
-                       HeightRequest="100"
-                       Aspect="AspectFill"
-                       Margin="0"/>
-            </views:MaterialFrame>
+                     Spacing="0"
+                     IsClippedToBounds="False">
+            <sh:Shadows CornerRadius="8"
+                        Shades="{sh:SingleShade Offset='1, 3',
+                                                Opacity=0.2,
+                                                Color=Black}">
+                <Frame x:Name="imageFrame"
+                       CornerRadius="8"
+                       Padding="0"
+                       IsClippedToBounds="True"
+                       HasShadow="False">
+                    <Image x:Name="coverImage"
+                           BackgroundColor="Gray"
+                           HeightRequest="100"
+                           Aspect="AspectFill"
+                           Margin="0"/>
+                </Frame>
+            </sh:Shadows>
             <Label x:Name="labelComicName"
                    Text="labelComicName"
                    FontAttributes="Bold"

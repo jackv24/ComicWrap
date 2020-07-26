@@ -61,10 +61,5 @@ namespace ComicWrap.Views
                 Opacity = 1.0;
             }
         }
-
-        protected override void OnElevationChanged(float elevation)
-        {
-            imageFrame.Elevation = elevation;
-        }
     }
 }

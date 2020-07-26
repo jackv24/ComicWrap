@@ -41,10 +41,5 @@ namespace ComicWrap.Views
                 labelLastUpdated.Text = string.Empty;
             }
         }
-
-        protected override void OnElevationChanged(float elevation)
-        {
-            imageFrame.Elevation = elevation;
-        }
     }
 }

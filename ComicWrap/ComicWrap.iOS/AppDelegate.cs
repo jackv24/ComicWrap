@@ -31,6 +31,7 @@ namespace ComicWrap.iOS
             global::Xamarin.Forms.Forms.Init();
 
             AiForms.Renderers.iOS.SettingsViewInit.Init();
+            Sharpnado.Shades.iOS.iOSShadowsRenderer.Initialize();
 
             LoadApplication(new App());
 

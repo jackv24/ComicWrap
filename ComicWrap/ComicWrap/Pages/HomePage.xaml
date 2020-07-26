@@ -19,12 +19,6 @@
                FontAttributes="Italic, Bold">
         </Label>
     </NavigationPage.TitleView>
-
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <x:Single x:Key="ComicImageElevation">16</x:Single>
-        </ResourceDictionary>
-    </ContentPage.Resources>
     
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="{DynamicResource FontIconAdd}" Command="{Binding AddComicCommand}" AutomationId="AddComicButton"/>
@@ -61,8 +55,7 @@
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
                                     <views:ComicInfoUpdateView Comic="{Binding}"
-                                                               Padding="8, 8, 8, 0"
-                                                               Elevation="{StaticResource ComicImageElevation}"/>
+                                                               Padding="8, 8, 8, 0"/>
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                             <CollectionView.ItemsLayout>
@@ -86,8 +79,7 @@
                     <DataTemplate>
                         <views:ComicInfoLibraryView Comic="{Binding}"
                                                     Padding="16, 4, 16, 12"
-                                                    IsClippedToBounds="False"
-                                                    Elevation="{StaticResource ComicImageElevation}"/>
+                                                    IsClippedToBounds="False"/>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
                 <CollectionView.ItemsLayout>

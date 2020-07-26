@@ -87,9 +87,11 @@
     <PackageReference Include="Xamarin.Plugin.FilePicker">
       <Version>2.1.41</Version>
     </PackageReference>
+    <PackageReference Include="Sharpnado.Shadows">
+      <Version>1.1.0</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Renderers\MaterialFrameRenderer_Android.cs" />
     <Compile Include="Systems\Environment_Android.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />

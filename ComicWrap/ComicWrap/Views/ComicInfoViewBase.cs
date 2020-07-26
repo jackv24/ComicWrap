@@ -39,23 +39,10 @@ namespace ComicWrap.Views
             defaultBindingMode: BindingMode.OneWay,
             propertyChanged: OnComicPropertyChanged);
 
-        public static BindableProperty ElevationProperty = BindableProperty.Create(
-            propertyName: nameof(Elevation),
-            returnType: typeof(float),
-            declaringType: typeof(ComicInfoViewBase),
-            defaultBindingMode: BindingMode.OneWay,
-            propertyChanged: OnElevationPropertyChanged);
-
         public ComicData Comic
         {
             get { return (ComicData)GetValue(ComicProperty); }
             set { SetValue(ComicProperty, value); }
-        }
-
-        public float Elevation
-        {
-            get { return (float)GetValue(ElevationProperty); }
-            set { SetValue(ElevationProperty, value); }
         }
 
         public abstract ComicPageTargetType PageTarget { get; }
@@ -67,14 +54,6 @@ namespace ComicWrap.Views
             var comic = (ComicData)newValue;
 
             comicInfoView.ComicChanged(comic);
-        }
-
-        private static void OnElevationPropertyChanged(BindableObject bindable, object oldValue, object newValue)
-        {
-            var comicInfoView = (ComicInfoViewBase)bindable;
-            var elevation = (float)newValue;
-
-            comicInfoView.OnElevationChanged(elevation);
         }
 
         private void ComicChanged(ComicData newComic)
@@ -173,6 +152,5 @@ namespace ComicWrap.Views
         }
 
         protected abstract void OnComicChanged(ComicData newComic);
-        protected abstract void OnElevationChanged(float elevation);
     }
 }

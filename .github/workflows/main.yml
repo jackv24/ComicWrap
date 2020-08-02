@@ -1,0 +1,25 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  Android:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Android_Build
+      run: |
+        nuget restore
+        cd ComicWrap
+        cd ComicWrap.Android
+        msbuild ComicWrap.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
+  iOS:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: iOS_Build
+      run: |
+        nuget restore
+        cd ComicWrap
+        cd ComicWrap.iOS
+        msbuild ComicWrap.iOS.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug

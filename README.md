@@ -17,15 +17,6 @@ This app provides some extra features:
 
 [**Found a webcomic that doesn't work? Submit links to webcomics here!**](https://forms.gle/vAzhLjZvZM3YkBDG9)
 
-## Status
-
-[![Build Status](https://jackvine.visualstudio.com/ComicWrap/_apis/build/status/jackv24.ComicWrap?branchName=master)](https://jackvine.visualstudio.com/ComicWrap/_build/latest?definitionId=1&branchName=master)
-
-| Stage | Shared | Android | iOS |
-| --- | --- | --- | --- |
-| Test | [![Build Status](https://jackvine.visualstudio.com/ComicWrap/_apis/build/status/jackv24.ComicWrap?branchName=master&stageName=Test&jobName=Shared)](https://jackvine.visualstudio.com/ComicWrap/_build/latest?definitionId=1&branchName=master) | `N/A` | `N/A` |
-| Build | `N/A` | [![Build Status](https://jackvine.visualstudio.com/ComicWrap/_apis/build/status/jackv24.ComicWrap?branchName=master&stageName=Build&jobName=Android)](https://jackvine.visualstudio.com/ComicWrap/_build/latest?definitionId=1&branchName=master) | [![Build Status](https://jackvine.visualstudio.com/ComicWrap/_apis/build/status/jackv24.ComicWrap?branchName=master&stageName=Build&jobName=iOS)](https://jackvine.visualstudio.com/ComicWrap/_build/latest?definitionId=1&branchName=master) |
-
 ## Building Locally
 
 Add a new file called `secrets.json` to `ComicWrap\ComicWrap` with the following contents:

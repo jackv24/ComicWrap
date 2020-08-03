@@ -3,7 +3,15 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-  Android:
+  Test_Shared:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          nuget restore
+          cd ComicWrap.Tests
+          dotnet test ComicWrap.Tests.csproj
+  Build_Android:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
@@ -11,12 +19,9 @@ jobs:
       run: |
         nuget restore
         cd ComicWrap
-        cd ComicWrap
-        echo "{\"AppSecret_Android\": \"\",\"AppSecret_iOS\": \"\"}" > secrets.json
-        cd ..
         cd ComicWrap.Android
         msbuild ComicWrap.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
-  iOS:
+  Build_iOS:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2

@@ -4,15 +4,16 @@ on: [push, pull_request]
 
 env:
   SECRETS_FILE_CONTENT: "{\"AppSecret_Android\": \"\",\"AppSecret_iOS\": \"\"}"
+  SECRETS_FILE_LOCATION:  "ComicWrap/ComicWrap/secrets.json"
 
 jobs:
   Test_Shared:
-    runs-on: macos-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
       - run: |
           nuget restore
-          echo $SECRETS_FILE_CONTENT > ComicWrap/ComicWrap/secrets.json
+          echo $SECRETS_FILE_CONTENT > $SECRETS_FILE_LOCATION
           cd ComicWrap.Tests
           dotnet test ComicWrap.Tests.csproj
   Build_Android:
@@ -22,7 +23,7 @@ jobs:
     - name: Android_Build
       run: |
         nuget restore
-        echo $SECRETS_FILE_CONTENT > ComicWrap/ComicWrap/secrets.json
+        echo $SECRETS_FILE_CONTENT > $SECRETS_FILE_LOCATION
         cd ComicWrap/ComicWrap.Android
         msbuild ComicWrap.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
   Build_iOS:
@@ -32,6 +33,6 @@ jobs:
     - name: iOS_Build
       run: |
         nuget restore
-        echo $SECRETS_FILE_CONTENT > ComicWrap/ComicWrap/secrets.json
+        echo $SECRETS_FILE_CONTENT > $SECRETS_FILE_LOCATION
         cd ComicWrap/ComicWrap.iOS
         msbuild ComicWrap.iOS.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug

@@ -24,7 +24,10 @@
     <Style TargetType="fresh:FreshNavigationContainer">
         <!--Also changes flash colour when navigating pages-->
         <Setter Property="BackgroundColor" Value="{DynamicResource SecondaryBackgroundColor}"/>
-        <Setter Property="BarBackgroundColor" Value="{OnPlatform iOS={DynamicResource MainBackgroundColor}, Android={DynamicResource ColorPrimary}}"/>
+        <!-- ReSharper disable Xaml.DynamicResourceError -->
+        <Setter Property="BarBackgroundColor"
+                Value="{OnPlatform iOS={DynamicResource MainBackgroundColor}, Android={DynamicResource ColorPrimary}}" />
+        <!-- ReSharper restore Xaml.DynamicResourceError -->
         <Setter Property="BarTextColor" Value="{DynamicResource MainTextColor}"/>
     </Style>
     
@@ -52,7 +55,6 @@
         <Setter Property="CellHintFontSize" Value="Subtitle"/>
         <Setter Property="CellDescriptionFontSize" Value="Small"/>
         <Setter Property="CellHintTextColor" Value="{DynamicResource DisabledTextColor}"/>
-        <Setter Property="SeparatorColor" Value="{DynamicResource DisabledTextColor}"/>
         <Setter Property="SelectedColor" Value="{DynamicResource AccentColor}"/>
         <Setter Property="FooterTextColor" Value="{DynamicResource DisabledTextColor}"/>
     </Style>

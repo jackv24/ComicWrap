@@ -5,6 +5,7 @@
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     <ReleaseVersion>0.5.2</ReleaseVersion>
     <Version>1.0.0</Version>
+    <PackageVersion>0.7.2</PackageVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

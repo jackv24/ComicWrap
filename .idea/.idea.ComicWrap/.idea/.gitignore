@@ -1,0 +1,11 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/contentModel.xml
+/modules.xml
+/.idea.ComicWrap.iml
+# Datasource local storage ignored files
+/../../../../../../../../../../:\Users\jackv\Documents\Development\C#\ComicWrap\.idea\.idea.ComicWrap\.idea/dataSources/
+/dataSources.local.xml

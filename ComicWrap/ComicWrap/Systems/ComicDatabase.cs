@@ -28,7 +28,7 @@ namespace ComicWrap.Systems
 
         public static readonly RealmConfigurationBase DefaultRealmConfiguration = new RealmConfiguration
         {
-            SchemaVersion = 3,
+            SchemaVersion = 4,
             MigrationCallback = OnRealmMigration
         };
 
@@ -165,6 +165,7 @@ namespace ComicWrap.Systems
                 }
 
                 // Schema 3: Removed CurrentPageUrl from ComicData
+                // Schema 4: RecentHistory added to ComicData
             }
         }
     }

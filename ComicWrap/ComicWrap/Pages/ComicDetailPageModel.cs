@@ -128,13 +128,13 @@ namespace ComicWrap.Pages
         {
             string buttonPressed = await UserDialogs.Instance.ActionSheetAsync(
                 title: Res.ComicDetail_Options_Title,
-                cancel: Res.ComicDetail_Options_Cancel,
+                cancel: Res.Alert_Generic_Cancel,
                 destructive: Res.ComicDetail_Options_Delete,
                 cancelToken: pageCancelTokenSource.Token,
                 Res.ComicDetail_Options_Edit
                 );
 
-            if (buttonPressed == Res.ComicDetail_Options_Cancel)
+            if (buttonPressed == Res.Alert_Generic_Cancel)
             {
                 return;
             }
@@ -161,7 +161,7 @@ namespace ComicWrap.Pages
         {
             try
             {
-                var newPages = await ComicUpdater.Instance.UpdateComic(Comic, cancelToken: cancelToken);
+                var newPages = await ComicUpdater.Instance.UpdateComic(Comic, cancelToken);
                 UpdatePages(newPages);
             }
             catch (OperationCanceledException) { }
@@ -169,12 +169,26 @@ namespace ComicWrap.Pages
 
         private void UpdatePages(IEnumerable<ComicPageData> newPages)
         {
-            var reordered = newPages
+            if (newPages == null || !newPages.Any())
+            {
+                // Use history if no actual pages exist
+                newPages = Comic.RecentHistory
+                    .Select(
+                        historyItem => new ComicPageData
+                        {
+                            Comic = Comic,
+                            Name = historyItem,
+                            Url = historyItem,
+                            IsRead = true
+                        });
+            }
+
+            var reversed = newPages
                 .Reverse()
                 .ToList();
 
             // Need to use ObservableCollection methods so UI is updated with animation
-            Pages.MatchList(reordered);
+            Pages.MatchList(reversed);
 
             PagesUpdated?.Invoke();
 

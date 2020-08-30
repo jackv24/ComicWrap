@@ -103,14 +103,18 @@ namespace ComicWrap.Pages
             lastNavigatedUrl = e.Url;
             lastNavigatedWebView = webView;
 
+            // Record page read history if we're navigating to a new page
+            if (Comic.RecentHistory.LastOrDefault() != e.Url)
+                Comic.RecordHistory(e.Url);
+            
             var pageData = LoadPageData(e.Url);
-            if (pageData != null && !pageData.IsRead)
-            {
-                PageName = pageData.Name;
+            if (pageData == null || pageData.IsRead)
+                return;
+            
+            PageName = pageData.Name;
 
-                // Mark as read and save to database (don't need to update cachedPages since pageData is a class reference)
-                ComicDatabase.Instance.MarkRead(pageData);
-            }
+            // Mark as read and save to database (don't need to update cachedPages since pageData is a class reference)
+            ComicDatabase.Instance.MarkRead(pageData);
         }
 
         private async Task OnNavigated(CustomWebViewNavigatedArgs args)
@@ -147,12 +151,12 @@ namespace ComicWrap.Pages
         {
             string result = await UserDialogs.Instance.ActionSheetAsync(
                 title: AppResources.ComicReader_More_Title,
-                cancel: AppResources.ComicReader_More_Cancel,
+                cancel: AppResources.Alert_Generic_Cancel,
                 destructive: null,
                 cancelToken: pageEndCancel.Token,
                 AppResources.ComicReader_More_SetAsCover);
 
-            if (result == AppResources.ComicReader_More_Cancel)
+            if (result == AppResources.Alert_Generic_Cancel)
                 return;
             else if (result == AppResources.ComicReader_More_SetAsCover)
                 SetCoverImage().SafeFireAndForget();

@@ -62,19 +62,9 @@ namespace ComicWrap.Systems
         public void StartImportComic(string pageUrl)
         {
             // TODO: Run in background as service (with notification and everything)
-
-            ImportComic(pageUrl).ContinueWith(task =>
-            {
-                if (task.Result == null)
-                {
-                    // Alert popup should display even if this page isn't visible anymore
-                    UserDialogs.Instance.AlertAsync(
-                        Res.AddComic_Error_ImportFailed,
-                        title: Res.Alert_Error_Title,
-                        okText: Res.Alert_Generic_Confirm);
-                }
-            })
-            .SafeFireAndForget();
+            
+            // Alert popup should display even if this page isn't visible anymore
+            ImportComic(pageUrl).SafeFireAndForget();
         }
 
         public async Task<ComicData> ImportComic(string pageUrl)
@@ -89,15 +79,28 @@ namespace ComicWrap.Systems
             importingComics.Add(comic);
             ImportComicBegun?.Invoke(comic);
 
-            IEnumerable<ComicPageData> pages = await UpdateComic(comic);
-
-            importingComics.Remove(comic);
-            ImportComicFinished?.Invoke(comic);
-
+            await UpdateComic(comic);
+            
             // If comic was never added to database it failed to import
             if (!comic.IsManaged)
-                return null;
+            {
+                bool continueImport = await UserDialogs.Instance.ConfirmAsync(
+                    Res.AddComic_Error_ImportFailed,
+                    Res.Alert_Error_Title,
+                    Res.Alert_Generic_Confirm,
+                    Res.Alert_Generic_Cancel);
 
+                // If desired, add comic to database anyway
+                if (continueImport)
+                    database.AddComic(comic);
+            }
+
+            // First item of history so navigation can be started even if no pages found
+            comic.RecordHistory(comic.ArchiveUrl);
+            
+            importingComics.Remove(comic);
+            ImportComicFinished?.Invoke(comic);
+            
             return comic;
         }
 
@@ -119,14 +122,17 @@ namespace ComicWrap.Systems
                 {
                     string setArchiveUrl = null;
 
+                    void UpdateComicInfo(IDocument document)
+                    {
+                        setArchiveUrl = document.Url;
+                        comicData.Name = document.Title;
+                    }
+
                     tempPages = await DiscoverPages(
                         comicData.ArchiveUrl,
-                        onFoundArchivePage: (document) =>
-                        {
-                            setArchiveUrl = document.Url;
-                            comicData.Name = document.Title;
-                        },
-                        cancelToken: cancelToken);
+                        UpdateComicInfo,
+                        UpdateComicInfo,
+                        cancelToken);
 
                     // Update archive url for for quicker updating next time if we didn't start on the archive page
                     if (!string.IsNullOrEmpty(setArchiveUrl))
@@ -256,6 +262,7 @@ namespace ComicWrap.Systems
         public async Task<List<ComicPageData>> DiscoverPages(
             string pageUrl,
             Action<IDocument> onFoundArchivePage = null,
+            Action<IDocument> onNotFoundArchivePage = null,
             CancellationToken cancelToken = default)
         {
             cancelToken.ThrowIfCancellationRequested();
@@ -277,13 +284,16 @@ namespace ComicWrap.Systems
             if (!string.IsNullOrEmpty(archivePageUrl) && archivePageUrl != pageUrl)
             {
                 archivePageUrl = GetAbsoluteUri(pageUrl, archivePageUrl);
-                return await DiscoverPages(
+                pages = await DiscoverPages(
                     archivePageUrl,
-                    onFoundArchivePage: onFoundArchivePage,
+                    onFoundArchivePage,
                     cancelToken: cancelToken);
             }
-
-            return null;
+            
+            // Isn't passed in to recursive call above, so should be called for first page
+            onNotFoundArchivePage?.Invoke(document);
+            
+            return pages;
         }
 
         private List<ComicPageData> FindPagesFromArchiveList(IDocument document)

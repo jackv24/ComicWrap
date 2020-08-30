@@ -19,7 +19,7 @@ namespace ComicWrap.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class AppResources {
@@ -61,7 +61,7 @@ namespace ComicWrap.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Comic importing failed!.
+        ///   Looks up a localized string similar to Page discovery failed! Add anyway?.
         /// </summary>
         public static string AddComic_Error_ImportFailed {
             get {
@@ -106,6 +106,15 @@ namespace ComicWrap.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Alert_Generic_Cancel {
+            get {
+                return ResourceManager.GetString("Alert_Generic_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
         public static string Alert_Generic_Confirm {
@@ -120,15 +129,6 @@ namespace ComicWrap.Resources {
         public static string ComicDetail_DeletedComic {
             get {
                 return ResourceManager.GetString("ComicDetail_DeletedComic", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cancel.
-        /// </summary>
-        public static string ComicDetail_Options_Cancel {
-            get {
-                return ResourceManager.GetString("ComicDetail_Options_Cancel", resourceCulture);
             }
         }
         
@@ -174,15 +174,6 @@ namespace ComicWrap.Resources {
         public static string ComicInfo_LastUpdatedShort {
             get {
                 return ResourceManager.GetString("ComicInfo_LastUpdatedShort", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cancel.
-        /// </summary>
-        public static string ComicReader_More_Cancel {
-            get {
-                return ResourceManager.GetString("ComicReader_More_Cancel", resourceCulture);
             }
         }
         

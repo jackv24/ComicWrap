@@ -181,14 +181,6 @@ namespace ComicWrap.Tests
                 message: "Found page URL wrong");
         }
 
-        [Test]
-        public static async Task ImportComicFailedReturnsNull()
-        {
-            ComicData savedComic = await comicUpdater.ImportComic("garbage url");
-
-            Assert.IsNull(savedComic);
-        }
-
         [Test, Ignore(IGNORE_MSG)]
         public static async Task PageIsNewIsFalseWhenImported(
             [ValueSource(nameof(EnumerateKnownComicTypes))] MockComic comic)

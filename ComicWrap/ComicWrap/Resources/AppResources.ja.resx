@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddComic_ArchiveUrl" xml:space="preserve">
-    <value>アーカイブURL：</value>
-  </data>
-  <data name="AddComic_CurrentUrl" xml:space="preserve">
-    <value>現在のページのURL：</value>
-  </data>
   <data name="AddComic_Error_InvalidUrl" xml:space="preserve">
     <value>URLが無効です。</value>
   </data>
@@ -138,7 +132,7 @@
   <data name="ComicDetail_DeletedComic" xml:space="preserve">
     <value>削除されたコミック：{0}</value>
   </data>
-  <data name="ComicDetail_Options_Cancel" xml:space="preserve">
+  <data name="Alert_Generic_Cancel" xml:space="preserve">
     <value>キャンセル</value>
   </data>
   <data name="ComicDetail_Options_Delete" xml:space="preserve">
@@ -152,9 +146,6 @@
   </data>
   <data name="ComicInfo_LastUpdatedShort" xml:space="preserve">
     <value>{0}日前</value>
-  </data>
-  <data name="ComicReader_More_Cancel" xml:space="preserve">
-    <value>キャンセル</value>
   </data>
   <data name="ComicReader_More_SetAsCover" xml:space="preserve">
     <value>送付状に設定</value>
@@ -200,8 +191,5 @@
   </data>
   <data name="Settings_Title_Appearance" xml:space="preserve">
     <value>外観</value>
-  </data>
-  <data name="Settings_Title_Language" xml:space="preserve">
-    <value>言語</value>
   </data>
 </root>

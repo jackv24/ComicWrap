@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Realms;
+
+// ReSharper disable UnassignedGetOnlyAutoProperty
 
 namespace ComicWrap.Systems
 {
@@ -9,6 +12,7 @@ namespace ComicWrap.Systems
         public event Action Updated;
 
         [PrimaryKey]
+        // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
         public string Id { get; set; } = Guid.NewGuid().ToString();
 
         public string Name { get; set; }
@@ -17,6 +21,8 @@ namespace ComicWrap.Systems
         [Backlink(nameof(ComicPageData.Comic))]
         public IQueryable<ComicPageData> Pages { get; }
 
+        public IList<string> RecentHistory { get; }
+        
         public float ReadProgress
         {
             get
@@ -40,17 +46,14 @@ namespace ComicWrap.Systems
         {
             get
             {
-                ComicPageData page = Pages
+                var page = Pages
                     .LastOrDefault(p => p.IsRead);
 
                 if (page != null)
                     return page;
 
                 // Default to first page if none have been read yet
-                if (Pages.Count() > 0)
-                    return Pages.ElementAt(0);
-
-                return null;
+                return Pages.Any() ? Pages.ElementAt(0) : null;
             }
         }
 
@@ -65,6 +68,26 @@ namespace ComicWrap.Systems
         public void ReportUpdated()
         {
             Updated?.Invoke();
+        }
+
+        public void RecordHistory(string url)
+        {
+            ComicDatabase.Instance.Write(
+                realm =>
+                {
+                    // Need to get an instance local to realm of write transaction
+                    var comic = realm.Find<ComicData>(Id);
+
+                    comic.RecentHistory.Add(url);
+
+                    // Remove oldest history
+                    int historyCount = comic.RecentHistory.Count;
+                    while (historyCount > 20)
+                    {
+                        comic.RecentHistory.RemoveAt(0);
+                        historyCount--;
+                    }
+                });
         }
     }
 }

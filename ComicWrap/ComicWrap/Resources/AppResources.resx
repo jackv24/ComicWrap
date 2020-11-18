@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AddComic_Error_ImportFailed" xml:space="preserve">
-    <value>Comic importing failed!</value>
+    <value>Page discovery failed! Add anyway?</value>
   </data>
   <data name="AddComic_Error_InvalidUrl" xml:space="preserve">
     <value>URL is invalid.</value>
@@ -138,7 +138,7 @@
   <data name="ComicDetail_DeletedComic" xml:space="preserve">
     <value>Deleted Comic: {0}</value>
   </data>
-  <data name="ComicDetail_Options_Cancel" xml:space="preserve">
+  <data name="Alert_Generic_Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
   <data name="ComicDetail_Options_Delete" xml:space="preserve">
@@ -155,9 +155,6 @@
   </data>
   <data name="ComicInfo_LastUpdatedShort" xml:space="preserve">
     <value>{0} days ago</value>
-  </data>
-  <data name="ComicReader_More_Cancel" xml:space="preserve">
-    <value>Cancel</value>
   </data>
   <data name="ComicReader_More_SetAsCover" xml:space="preserve">
     <value>Set as Cover Page</value>

@@ -1,21 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
 using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
 using FreshMvvm;
 using Acr.UserDialogs;
 using Rg.Plugins.Popup.Services;
-using Rg.Plugins.Popup.Pages;
-using AngleSharp;
 using AsyncAwaitBestPractices.MVVM;
-
 using ComicWrap.Systems;
+using Xamarin.Essentials;
 using Res = ComicWrap.Resources.AppResources;
 
 namespace ComicWrap.Pages
@@ -28,13 +18,14 @@ namespace ComicWrap.Pages
             SubmitCommand = new AsyncCommand(Submit);
         }
 
-        private string _pageUrl;
+        private const string PAGEURL_PREFS_KEY = "AddComic_LastPageUrl"; 
+        
         public string PageUrl
         {
-            get { return _pageUrl; }
+            get => Preferences.Get(PAGEURL_PREFS_KEY, string.Empty);
             set
             {
-                _pageUrl = value;
+                Preferences.Set(PAGEURL_PREFS_KEY, value);
                 RaisePropertyChanged();
             }
         }
@@ -50,7 +41,7 @@ namespace ComicWrap.Pages
         private async Task Submit()
         {
             string url = PageUrl;
-            if (!ComicUpdater.IsUrlValid(url))
+            if (!TryGetValidUrl(url, out url))
             {
                 await UserDialogs.Instance.AlertAsync(Res.AddComic_Error_InvalidUrl);
                 return;
@@ -60,6 +51,26 @@ namespace ComicWrap.Pages
             await PopupNavigation.Instance.PopAsync();
 
             ComicUpdater.Instance.StartImportComic(url);
+        }
+
+        private bool TryGetValidUrl(string sourceUrl, out string outUrl)
+        {
+            if (ComicUpdater.IsUrlValid(sourceUrl))
+            {
+                outUrl = sourceUrl;
+                return true;
+            }
+
+            // Should hopefully be redirected into https if the server supports it
+            string addHttp = "http://" + sourceUrl;
+            if (ComicUpdater.IsUrlValid(addHttp))
+            {
+                outUrl = addHttp;
+                return true;
+            }
+            
+            outUrl = string.Empty;
+            return false;
         }
     }
 }
